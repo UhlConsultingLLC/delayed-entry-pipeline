@@ -2,9 +2,7 @@
 from __future__ import annotations
 
 import dataclasses
-import zipfile
 from pathlib import Path
-from xml.sax.saxutils import escape
 
 import duckdb
 import numpy as np
@@ -190,58 +188,5 @@ def hand_made_tables(settings: Settings, **kw) -> StandardTables:
     return genie_bpc.tables_from_connection(con, settings)[0]
 
 
-# ---- A minimal .xlsx writer, for the reader's tests ----
-def write_xlsx(path: Path, sheets: dict[str, list[list]], date_cells: set[tuple[str, int, int]] = frozenset()) -> Path:
-    """Write sheets of rows. Text is stored as shared strings, numbers as numbers, booleans as booleans, and
-    the cells named in date_cells (sheet, row, column) get a date style (their value is an Excel day number)."""
-    shared: list[str] = []
-    def sidx(s):
-        if s not in shared:
-            shared.append(s)
-        return shared.index(s)
-    def col(i):
-        out = ""
-        i += 1
-        while i:
-            i, r = divmod(i - 1, 26)
-            out = chr(65 + r) + out
-        return out
-    parts = {}
-    for n, (name, rows) in enumerate(sheets.items(), start=1):
-        xml_rows = []
-        for ri, row in enumerate(rows):
-            cells = []
-            for ci, v in enumerate(row):
-                ref = f"{col(ci)}{ri + 1}"
-                style = ' s="1"' if (name, ri, ci) in date_cells else ""
-                if v is None:
-                    continue
-                if isinstance(v, bool):
-                    cells.append(f'<c r="{ref}" t="b"><v>{int(v)}</v></c>')
-                elif isinstance(v, (int, float)):
-                    cells.append(f'<c r="{ref}"{style}><v>{v}</v></c>')
-                else:
-                    cells.append(f'<c r="{ref}" t="s"><v>{sidx(str(v))}</v></c>')
-            xml_rows.append(f'<row r="{ri + 1}">{"".join(cells)}</row>')
-        parts[f"xl/worksheets/sheet{n}.xml"] = (
-            '<?xml version="1.0" encoding="UTF-8"?><worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">'
-            f'<sheetData>{"".join(xml_rows)}</sheetData></worksheet>')
-    ns = 'xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"'
-    parts["xl/workbook.xml"] = (f'<?xml version="1.0" encoding="UTF-8"?><workbook {ns}><sheets>'
-                                + "".join(f'<sheet name="{escape(name)}" sheetId="{n}" r:id="rId{n}"/>'
-                                          for n, name in enumerate(sheets, start=1)) + "</sheets></workbook>")
-    parts["xl/_rels/workbook.xml.rels"] = (
-        '<?xml version="1.0" encoding="UTF-8"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'
-        + "".join(f'<Relationship Id="rId{n}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" '
-                  f'Target="worksheets/sheet{n}.xml"/>' for n in range(1, len(sheets) + 1)) + "</Relationships>")
-    parts["xl/sharedStrings.xml"] = (
-        '<?xml version="1.0" encoding="UTF-8"?><sst xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">'
-        + "".join(f"<si><t>{escape(s)}</t></si>" for s in shared) + "</sst>")
-    parts["xl/styles.xml"] = (
-        '<?xml version="1.0" encoding="UTF-8"?><styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">'
-        '<cellXfs count="2"><xf numFmtId="0"/><xf numFmtId="14"/></cellXfs></styleSheet>')
-    parts["[Content_Types].xml"] = '<?xml version="1.0" encoding="UTF-8"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"/>'
-    with zipfile.ZipFile(path, "w") as z:
-        for name, xml in parts.items():
-            z.writestr(name, xml)
-    return path
+# ---- .xlsx files: the package's own writer (adapters/xlsx.py) ----
+from delayed_entry.adapters.xlsx import write_xlsx  # noqa: E402,F401

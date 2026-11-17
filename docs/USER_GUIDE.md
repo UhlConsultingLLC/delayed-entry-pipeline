@@ -134,6 +134,29 @@ Fill in every choice: `value`, `made_by` and `source`. Where the template shows 
 `value: default` uses it, and the plan will list it with its source. Choices specific to a study (cohort
 rules, genotype groups, coverage, horizon, analyses, privacy minimum) have no default.
 
+To skip editing the file by hand, use the guided setup. It asks each choice in turn, in the template's words,
+with its default and the default's source, and writes the same settings file:
+- **A questionnaire** in the terminal. It checks each value as it is given and saves after each answer. Type `q`
+  to stop, and run it again on the same file to go on where it stopped. Enter takes a choice's default, `-`
+  passes over an optional choice, and `@rules.yaml` reads a long value, such as the cohort rules, from a YAML
+  file.
+
+  ```powershell
+  python -m delayed_entry setup settings\my_study.yaml
+  ```
+- **A spreadsheet form** a clinician can fill in: one row per choice, with what it controls, its form, its
+  default and an example, and Value, Made by and Source to fill in. A second sheet says how. `--from` fills the
+  form from an existing settings file, for a review. Reading it back writes the settings file and lists what the
+  settings check finds.
+
+  ```powershell
+  python -m delayed_entry setup-sheet <work folder>\settings_form.xlsx [--from settings\crc_bpc.yaml]
+  python -m delayed_entry setup-read <work folder>\settings_form.xlsx settings\my_study.yaml
+  ```
+
+In both, a value is written as YAML: words, a number, `[a, list]`, or several lines of YAML in a cell for a list
+of rules. An answer that is only valid as plain text (a study named Yes) is kept as text.
+
 Then check the file. It lists every problem with its line number, or says it is OK:
 
 ```powershell
@@ -513,3 +536,4 @@ on keeps its notes there.
 | 2026-11-17 | The R tests run on GitHub too: a second job installs R and the packages in `.github/r-packages`. |
 | 2026-11-17 | SAS (.sas7bdat, .xpt) and Stata (.dta) files in the flat-file adapter (step 4): dates held as numbers (`days_from`, `seconds_from`), Stata value labels or codes (`value_labels`), and a file's text encoding (`encoding`). |
 | 2026-11-17 | MAF and annotated VCF (VEP CSQ, SnpEff ANN) files in the flat-file adapter (step 4): a VCF's two reading rules (`annotation: {pick, filters}`), the `hgvsp_short` transform, and file patterns with `source_file`. |
+| 2026-11-17 | The guided setup (step 1): the `setup` questionnaire and the spreadsheet form (`setup-sheet`, `setup-read`). |

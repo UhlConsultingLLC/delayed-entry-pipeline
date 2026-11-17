@@ -817,6 +817,22 @@ def load_settings(path: str | Path, defaults: dict | None = None) -> Settings:
 def blank_template(defaults: dict | None = None) -> str:
     """The settings template with every choice blank. Each choice says what it controls, its form, an
     example where the form is complex, and its default if it has one (write `value: default` to use it)."""
+    return settings_text({}, defaults)
+
+
+def applies_to(choice: Choice, answers: dict[str, dict]) -> bool | None:
+    """Whether a choice applies, given answers ({path: {value, made_by, source}}): True, False, or None while the
+    choice it depends on is unanswered."""
+    if choice.when is None:
+        return True
+    other = answers.get(choice.when[0], {}).get("value")
+    return None if other is None else other == choice.when[1]
+
+
+def settings_text(answers: dict[str, dict], defaults: dict | None = None) -> str:
+    """The template with these answers filled in ({path: {value, made_by, source, note}}): the blank template when
+    there are none. With answers, a choice that doesn't apply is left out, and so is an optional choice left
+    unanswered; every other unanswered choice stays blank, for the loader to name."""
     defaults = load_defaults() if defaults is None else defaults
     out = ["# Settings template. Every choice must be filled in: value, made_by (who made the choice) and",
            "# source (the source behind it). A blank, a missing choice or an unknown key stops the tool and",
@@ -824,8 +840,10 @@ def blank_template(defaults: dict | None = None) -> str:
            "# lists every default used and its source. Choices marked 'no default' must be filled in.",
            "",
            f"settings_format: {SETTINGS_FORMAT}", ""]
+    shown = SCHEMA if not answers else [c for c in SCHEMA if applies_to(c, answers) is not False
+                                        and (c.path in answers or not c.optional)]
     open_sections: list[str] = []
-    for c in SCHEMA:
+    for c in shown:
         parts = c.path.split(".")
         common = 0
         while common < min(len(open_sections), len(parts) - 1) and open_sections[common] == parts[common]:
@@ -851,7 +869,15 @@ def blank_template(defaults: dict | None = None) -> str:
             out.append(f"{indent}# Example:")
             out += [f"{indent}#   {x}" for x in ex]
         out.append(f"{indent}{parts[-1]}:")
-        out += [f"{indent}  value: null", f"{indent}  made_by: null", f"{indent}  source: null"]
+        a = answers.get(c.path)
+        if a is None:
+            out += [f"{indent}  value: null", f"{indent}  made_by: null", f"{indent}  source: null"]
+        else:
+            entry = {k: a.get(k) for k in ("value", "made_by", "source")}
+            if a.get("note"):
+                entry["note"] = a["note"]
+            text_ = yaml.safe_dump(entry, sort_keys=False, allow_unicode=True, default_flow_style=False, width=110)
+            out += [f"{indent}  {x}" for x in text_.rstrip().splitlines()]
     return "\n".join(out) + "\n"
 
 

@@ -143,6 +143,14 @@ settings file, with who made it and the source behind it:
 - `settings/template_blank.yaml`: every choice blank. Loading it lists every choice still to fill in,
   each with its line. A missing choice, a blank value or an unknown key is an error naming the line.
 - `settings/crc_bpc.yaml`: the registered CRC BPC values, as a worked example.
+- **The guided setup** writes a settings file without editing YAML by hand (`delayed_entry.setup`):
+  - `setup`: a questionnaire that asks each choice in turn, in the template's words, with its default and
+    why. It checks each value as it is given, and saves after each answer so it can be stopped and resumed.
+  - `setup-sheet` and `setup-read`: a spreadsheet form a clinician can fill in, one row per choice. `--from`
+    fills it from an existing file for a review, and reading it back writes the file and lists what the
+    settings check finds.
+
+  Both write the same commented file. The CRC settings come back unchanged through either.
 - `settings/nsclc_bpc.yaml`: a DRAFT for NSCLC (GENIE BPC NSCLC v2.0-public), awaiting a lung
   oncologist's review. The review's questions and answers will be published once the settings are locked.
 - A value may be the word `default`, which takes the documented default in
@@ -232,6 +240,9 @@ The command line (run from this folder, with `src` on the path or the package in
 
 ```bash
 python -m delayed_entry template settings/my_study.yaml
+python -m delayed_entry setup settings/my_study.yaml
+python -m delayed_entry setup-sheet settings_form.xlsx [--from settings/crc_bpc.yaml]
+python -m delayed_entry setup-read settings_form.xlsx settings/my_study.yaml
 python -m delayed_entry check-settings settings/my_study.yaml
 python -m delayed_entry lock-settings settings/my_study.yaml <work folder>/settings_lock --locked-by "<reviewer>"
 python -m delayed_entry draft-mapping mapping.yaml patients=patients.csv tests=tests.xlsx#Tests results=results.parquet panels=panels.csv
@@ -279,6 +290,7 @@ scripts/                  the phase 1 and phase 2 acceptance checks (local data 
 src/delayed_entry/
   tables.py               the standard tables and the outcome-blind view
   settings.py             the settings schema and loader; defaults.yml
+  setup.py                the guided setup: the questionnaire and the spreadsheet form
   profile.py              capability profiles
   cohort.py               cohort rules, the first test, genotype groups, panel coverage
   screen.py               the readiness screen

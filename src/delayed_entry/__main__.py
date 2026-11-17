@@ -1,6 +1,10 @@
 """Command line: python -m delayed_entry <command> ...
 
     template <out.yaml>                        write the blank settings template
+    setup <settings>                           a questionnaire that writes a settings file, one choice at a time
+                                               (run it again on the file to go on where it stopped)
+    setup-sheet <form.xlsx> [--from SETTINGS]  write the settings as a spreadsheet form to fill in
+    setup-read <form.xlsx> <settings>          read a filled form back into a settings file, and check it
     check-settings <settings>                  load a settings file and list every problem, with its line
     lock-settings <settings> <folder> --locked-by NAME
                                                lock the settings alone, before any data are downloaded
@@ -65,6 +69,14 @@ def main(argv: list[str] | None = None) -> None:
     sub = ap.add_subparsers(dest="command", required=True)
     t = sub.add_parser("template")
     t.add_argument("out")
+    su = sub.add_parser("setup")
+    su.add_argument("settings")
+    ss = sub.add_parser("setup-sheet")
+    ss.add_argument("form")
+    ss.add_argument("--from", dest="from_file")
+    sr = sub.add_parser("setup-read")
+    sr.add_argument("form")
+    sr.add_argument("settings")
     c = sub.add_parser("check-settings")
     c.add_argument("settings")
     ls = sub.add_parser("lock-settings")
@@ -104,6 +116,19 @@ def main(argv: list[str] | None = None) -> None:
 
     if a.command == "template":
         print(write_blank_template(a.out))
+    elif a.command == "setup":
+        from delayed_entry.setup import questionnaire
+        questionnaire(a.settings)
+    elif a.command == "setup-sheet":
+        from delayed_entry.setup import write_form
+        print(write_form(a.form, a.from_file))
+    elif a.command == "setup-read":
+        from delayed_entry.setup import form_to_settings
+        problems = form_to_settings(a.form, a.settings)
+        print(f"written: {a.settings}")
+        print("the settings check finds no problem" if not problems else "the settings check finds:\n" + "\n".join(problems))
+        if problems:
+            sys.exit(1)
     elif a.command == "check-settings":
         try:
             s = load_settings(a.settings)
