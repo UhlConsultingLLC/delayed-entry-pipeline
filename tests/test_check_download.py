@@ -252,10 +252,16 @@ def test_a_missing_manifest_stops_it(release):
     assert release.status("The clinical download left its checksum manifest") == cd.FAIL
 
 
-def test_a_panel_coverage_file_stops_it(release):
+def test_a_centers_bed_file_stops_it(release):
+    (release.genomic / "DFCI-1.bed").write_text("1\t100\t200\n", encoding="utf-8")
+    release.refresh()
+    assert release.status("No center BED file") == cd.FAIL
+
+
+def test_a_genomic_information_file_the_settings_dont_read_is_for_review(release):
     (release.genomic / "genomic_information.txt").write_text("x\n", encoding="utf-8")
     release.refresh()
-    assert release.status("No panel coverage or size file") == cd.FAIL
+    assert release.status("The genomic_information file, for panel sizes") == cd.REVIEW
 
 
 # ---- Reading the files ----

@@ -68,6 +68,19 @@ source:
       value: null
       made_by: null
       source: null
+    # How each panel's size in megabases is worked out from a genomic_information file in the genomic folder, for a biomarker's mutation-burden fallback: the panel's regions of the listed feature types (only those marked includeInPanel, or all), merged where they overlap, and summed. GENIE labels a submitted region 'exon' when it overlaps an exon, and keeps it whole, so the size is the panel's targeted exonic territory, a little larger than its coding size. May be left out: no size is then worked out, and the fallback is descriptive only.
+    # Form: a mapping. Only when source.adapter is genie_bpc.
+    # No default. Optional: fill it in, or delete this choice if it is never needed.
+    # Example:
+    #   value:
+    #     from: genomic_information
+    #     feature_types:
+    #     - exon
+    #     include_in_panel: only_marked
+    panel_sizes:
+      value: null
+      made_by: null
+      source: null
 
 cohort:
   # Who is analyzed, in the order the flow diagram counts them. Each rule has an id, a label and the conditions it needs. Every structural check (has_entry_test, entry_time_known, outcome_recorded, entry_before_follow_up_end, genotype_assignable) must appear once.

@@ -3,7 +3,7 @@
 import pytest
 
 from delayed_entry.__main__ import main
-from delayed_entry.settings import blank_template
+from delayed_entry.settings import SCHEMA, blank_template
 from helpers import CRC_SETTINGS, FIXTURE, ROOT
 
 IGNORE = {".git", ".venv", "venv", "__pycache__", ".pytest_cache", "build", "dist"}
@@ -32,7 +32,8 @@ def test_the_command_line_checks_settings(tmp_path, capsys):
     capsys.readouterr()
     with pytest.raises(SystemExit) as stop:
         main(["check-settings", str(tmp_path / "blank.yaml")])
-    assert stop.value.code == 1 and "59 problem(s)" in capsys.readouterr().out   # 58 choices and the optional one
+    # every choice in the blank template is blank, the optional ones included
+    assert stop.value.code == 1 and f"{len(SCHEMA)} problem(s)" in capsys.readouterr().out
 
 
 def test_the_command_line_locks_the_settings(tmp_path, capsys):

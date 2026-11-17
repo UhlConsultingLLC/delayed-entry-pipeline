@@ -494,13 +494,14 @@ name differences of wording or of what the general pipeline can describe; the sc
 | `the CDM has no ... table` / `has no column` (OMOP) | the mapping uses a table or column the database lacks | export it, or change the mapping |
 | `the attribution the source's terms require: warning` (a run check) | a part of the profile's `attribution` is blank, for GENIE BPC the acknowledgment until it is pasted in | paste it from the source's terms into the profile (for GENIE BPC, `src/delayed_entry/adapters/genie_bpc/profile.yml`), then run again before publishing |
 | `looks cloud-synced` | a data or work folder is in OneDrive, Dropbox or similar | move it to local disk |
-| `reading it isn't written yet` (GENIE BPC) | the release has a panel coverage or size file | not supported yet: raise it |
 | a `block` in the readiness report | that analysis can't run as planned | read its effect; change the settings or the data, or log a deviation |
 | `the locked plan doesn't match` / `CHANGED:` | a plan file, the settings, the defaults or an input changed since the lock | restore it, or lock a new version with a reason |
 | `the screen no longer gives the locked plan's decisions` | the run's screen differs from the locked one (other code or data) | find out why; a new plan version if it stands |
 | `the smallest-group rule, applied again, blocks` | after the checks that need outcomes, a group the settings mark `block` is short | a person decides what is done instead, and locks a new version with the reason |
 | `needs multiple imputation, and the settings don't say how` | more patients lack an adjustment variable than the settings' share allows, and `missing_data.imputation_model` is left out | add it (a new plan version if the plan is locked) |
 | `R step ... failed`, and its log says `An Application Control policy has blocked this file` | Windows blocked an R package's DLL (for example `lme4.dll`, which the mice engine needs) | use `engine: chained_equations` in the imputation model, which needs only R, nnet and MASS |
+| `a center's BED file` (GENIE BPC) | the genomic folder holds a .bed file, which isn't read | remove it; for panel sizes, place the main GENIE release's genomic_information.txt there and give `source.genie_bpc.panel_sizes` |
+| `... genomic_information file ..., but the genomic folder has none` | the settings give a panel-size rule and the file isn't there | add the file, or leave the choice out (no sizes: the fallback is descriptive only) |
 | `falls back to mutation burden and can't count it` (a screen block) | the fallback needs `results.variant_class` and one coding size above zero for each panel | fix the tables, or change the analysis's fallback in a new plan version |
 | `every year band is small` | the year bands can't be merged into two that are big enough | change the bands in a new plan version |
 | `R step ... failed` | R stopped; its log is in `<work folder>\run_plan_v<n>\` | read the log (it stays local) |
@@ -537,3 +538,4 @@ on keeps its notes there.
 | 2026-11-17 | SAS (.sas7bdat, .xpt) and Stata (.dta) files in the flat-file adapter (step 4): dates held as numbers (`days_from`, `seconds_from`), Stata value labels or codes (`value_labels`), and a file's text encoding (`encoding`). |
 | 2026-11-17 | MAF and annotated VCF (VEP CSQ, SnpEff ANN) files in the flat-file adapter (step 4): a VCF's two reading rules (`annotation: {pick, filters}`), the `hgvsp_short` transform, and file patterns with `source_file`. |
 | 2026-11-17 | The guided setup (step 1): the `setup` questionnaire and the spreadsheet form (`setup-sheet`, `setup-read`). |
+| 2026-11-17 | GENIE BPC panel sizes from a genomic_information file, by the optional settings choice `source.genie_bpc.panel_sizes`; the check after download judges the file against it; a center's BED file still stops the adapter; two messages in Part 5. |

@@ -19,7 +19,7 @@ import pandas as pd
 import yaml
 
 from delayed_entry.adapters import AdapterResult
-from delayed_entry.adapters.genie_bpc import raw
+from delayed_entry.adapters.genie_bpc import genomic_information, raw
 from delayed_entry.privacy import show
 from delayed_entry.profile import CapabilityProfile, profile_from_dict
 from delayed_entry.settings import Settings
@@ -30,7 +30,7 @@ STANDARD_SQL = HERE / "standard.sql"
 LABELS = HERE / "labels.yml"
 PROFILE = HERE / "profile.yml"
 RELEASES = HERE / "synapse_releases.yml"
-COVERAGE_FILES = ("genomic_information*", "*.bed")    # a panel coverage file or panel sizes
+SIZE_RULE = "source.genie_bpc.panel_sizes"      # the settings choice that works out panel sizes
 FIRST_ORDER_SQL = {"earliest_day": "t.days_to_entry_event ASC NULLS LAST",
                    "largest_panel": "n_genes DESC NULLS LAST",
                    "lowest_test_order": "t.test_order ASC NULLS LAST"}
@@ -59,10 +59,6 @@ def read_steps(sql_file: Path = STANDARD_SQL) -> list[tuple[str, str]]:
 def labels_table() -> list[tuple[str, str, str]]:
     spec = yaml.safe_load(LABELS.read_text(encoding="utf-8"))
     return [(test, label, reading) for test, mapping in spec.items() for label, reading in mapping.items()]
-
-
-def coverage_files(genomic_dir: Path) -> list[str]:
-    return sorted(p.name for pattern in COVERAGE_FILES for p in Path(genomic_dir).glob(pattern))
 
 
 def _frame(con, table: str, standard: str) -> pd.DataFrame:
@@ -146,14 +142,39 @@ def read(clinical_dir: str | Path, genomic_dir: str | Path | None, settings: Set
     """Read a GENIE BPC release into the standard tables."""
     cohort = settings.read("source.genie_bpc.cohort")
     genomic_dir = Path(genomic_dir or clinical_dir)
-    found = coverage_files(genomic_dir)
-    if found:
-        raise NotImplementedError(f"the genomic folder has a panel coverage or size file ({', '.join(found)}); "
-                                  "reading it isn't written yet, and it would change the capability profile")
+    beds = sorted(p.name for p in genomic_dir.glob("*.bed"))
+    if beds:
+        raise NotImplementedError(f"the genomic folder has a center's BED file ({', '.join(beds)}); reading one isn't "
+                                  "written. A genomic_information file can give panel sizes instead")
+    infos = genomic_information.find(genomic_dir)
+    rule = settings.read(SIZE_RULE) if settings.has(SIZE_RULE) else None
+    if len(infos) > 1:
+        raise ValueError(f"the genomic folder has more than one genomic_information file: {', '.join(p.name for p in infos)}")
+    if rule is not None and not infos:
+        raise ValueError(f"the settings say how to work out panel sizes from a genomic_information file ({SIZE_RULE}), "
+                         "but the genomic folder has none")
     prof = with_release(profile(), cohort)
     con, files = raw.load(cohort, clinical_dir, genomic_dir)
     tables, failures = tables_from_connection(con, settings, cohort, prof)
     min_count = max(settings.read("privacy.min_count"), prof.privacy_min_count or 0)
+    size_notes = []
+    if rule is not None:
+        info = genomic_information.read(infos[0])
+        bad = genomic_information.problems(info)
+        if bad:
+            raise ValueError(f"{infos[0].name}: {'; '.join(bad)}")
+        sizes, unmeasured = genomic_information.panel_sizes(info, rule)
+        tables = dataclasses.replace(tables, panel_sizes=sizes)
+        prof = dataclasses.replace(prof, panel_sizes="given", sources={
+            **prof.sources, "panel_sizes": f"worked out from {infos[0].name} by the settings' rule ({SIZE_RULE})"})
+        files = [*files, infos[0]]
+        used = set(tables.tests.loc[tables.tests["modality"] == "ngs", "panel_id"].dropna())
+        size_notes = [f"{infos[0].name}: panel sizes for {len(set(sizes['panel_id']) & used)} of the "
+                      f"{len(used)} panels the sequencing tests used; a test on a panel with no size has no burden",
+                      f"{infos[0].name}: {show(unmeasured, min_count)} regions of the listed feature types had a "
+                      "position that couldn't be measured: left out"]
+    elif infos:
+        size_notes = [f"{infos[0].name} is in the genomic folder but not read: the settings give no rule ({SIZE_RULE})"]
     no_cancer = raw.scalar(con, "SELECT count(*) FROM raw_patient WHERE record_id NOT IN (SELECT record_id FROM index_cancer)")
     unlinked = raw.scalar(con, "SELECT count(*) FROM raw_mutation WHERE Tumor_Sample_Barcode NOT IN "
                                "(SELECT test_id FROM std_tests_ngs)")
@@ -170,6 +191,7 @@ def read(clinical_dir: str | Path, genomic_dir: str | Path | None, settings: Set
              f"{show(undated, min_count)} MSI/MMR results have a withheld date: not known to come before the entry test"]
     notes += [f"{k}: {show(n, min_count)} values didn't convert to the field's type and were read as blank"
               for k, n in failures.items()]
+    notes += size_notes
     link = raw.run_checks(con)
     notes += [f"link check {k}: {show(n, min_count)} rows" for k, n in link.items() if n]
     con.close()

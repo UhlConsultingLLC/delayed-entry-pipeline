@@ -36,7 +36,7 @@ import pandas as pd
 import yaml
 
 from delayed_entry.adapters import genie_bpc
-from delayed_entry.adapters.genie_bpc import raw
+from delayed_entry.adapters.genie_bpc import genomic_information, raw
 from delayed_entry.cohort import drug_matches
 from delayed_entry.lock import settings_lock_matches
 from delayed_entry.privacy import check_not_cloud
@@ -195,7 +195,32 @@ def release_files(cohort: str, expected: dict) -> list[dict] | None:
     return yaml.safe_load(path.read_text(encoding="utf-8"))["files"] if path.exists() else None
 
 
-def check_files(clinical: Path, genomic: Path, cohort: str, expected: dict, rehearsal: bool) -> list[Check]:
+def check_genomic_information(genomic: Path, rule: dict | None) -> list[Check]:
+    """A center's BED file isn't read. A genomic_information file is read for panel sizes when the settings give the
+    rule (source.genie_bpc.panel_sizes): it must then be there, once, with the columns the rule reads."""
+    s = "B. The files themselves"
+    beds = sorted(p.name for p in genomic.glob("*.bed")) if genomic.is_dir() else []
+    infos = genomic_information.find(genomic) if genomic.is_dir() else []
+    out = [Check(s, "No center BED file (reading one isn't written; a genomic_information file can give panel sizes)",
+                 FAIL if beds else PASS, ", ".join(beds))]
+    name = "The genomic_information file, for panel sizes"
+    if len(infos) > 1:
+        out.append(Check(s, name, FAIL, f"more than one: {', '.join(p.name for p in infos)}"))
+    elif rule is None:
+        out.append(Check(s, name, REVIEW if infos else PASS,
+                         f"{infos[0].name} is there but not read: the settings give no rule (source.genie_bpc.panel_sizes)"
+                         if infos else "not needed: the settings work out no panel sizes"))
+    elif not infos:
+        out.append(Check(s, name, FAIL, "the settings say how to work out panel sizes from it "
+                                        "(source.genie_bpc.panel_sizes), but the genomic folder has none"))
+    else:
+        bad = genomic_information.problems(genomic_information.read(infos[0]))
+        out.append(Check(s, name, FAIL if bad else PASS, "; ".join(bad) or f"{infos[0].name}, read by the settings' rule"))
+    return out
+
+
+def check_files(clinical: Path, genomic: Path, cohort: str, expected: dict, rehearsal: bool,
+                size_rule: dict | None = None) -> list[Check]:
     s = "B. The files themselves"
     out = []
     needed = {name: folder_of(folder, clinical, genomic) for name, folder, _ in raw.raw_files(cohort).values()}
@@ -203,10 +228,7 @@ def check_files(clinical: Path, genomic: Path, cohort: str, expected: dict, rehe
     out.append(Check(s, "Every file the adapter reads is there", FAIL if missing else PASS, ", ".join(missing)))
     panels = sorted(genomic.glob(raw.PANEL_FILES)) if genomic.is_dir() else []
     out.append(Check(s, "The gene-panel files are there", PASS if panels else FAIL, f"{len(panels)} files"))
-    coverage = genie_bpc.coverage_files(genomic) if genomic.is_dir() else []
-    out.append(Check(s, "No panel coverage or size file (the adapter then reads panels gene by gene)",
-                     FAIL if coverage else PASS,
-                     f"reading {coverage} isn't written, and it would change the capability profile" if coverage else ""))
+    out += check_genomic_information(genomic, size_rule)
     if rehearsal:
         out.append(Check(s, "Size and checksum of each file match Synapse", SKIPPED, "rehearsal"))
         return out
@@ -608,7 +630,8 @@ def run_checks(clinical: Path, genomic: Path, work: Path, settings_path: Path, s
     show = Shower(settings.read("privacy.min_count"))
     labels = searched_labels(settings)
     checks = check_folders(clinical, genomic, work, rehearsal, settings_path, settings_lock)
-    checks += check_files(clinical, genomic, cohort, expected, rehearsal)
+    size_rule = settings.read("source.genie_bpc.panel_sizes") if settings.has("source.genie_bpc.panel_sizes") else None
+    checks += check_files(clinical, genomic, cohort, expected, rehearsal, size_rule)
     if not (clinical.is_dir() and genomic.is_dir()):
         return checks
     scratch = duckdb.connect()

@@ -310,8 +310,14 @@ tests/                    made-up data only; fixtures/ holds the CRC project's m
 
 ## Known limits
 
-- Panel coverage files (codon regions) and panel sizes are not read from GENIE BPC yet: the adapter stops
-  if it finds one, as the CRC project did. The flat-file adapter reads codon regions and panel sizes.
+- GENIE BPC releases hold no panel coverage or size file. The main GENIE releases hold `genomic_information.txt`
+  for the same panels. Placed in the genomic folder, the adapter reads it for panel sizes when the settings give the
+  rule (`source.genie_bpc.panel_sizes`): the panel's regions of the listed feature types, only those marked
+  `includeInPanel` or all, merged where they overlap, and summed. GENIE labels a submitted region "exon" when it
+  overlaps an exon and keeps it whole, so the size is the panel's targeted exonic territory, a little larger than
+  its coding size. Codon-level coverage isn't worked out from it: that needs a transcript annotation the release
+  doesn't hold, so GENIE BPC coverage stays gene by gene. A center's BED file isn't read, and the adapter stops if
+  it finds one. The flat-file adapter reads codon regions and panel sizes.
 - No panel file shows whether a panel detects a gene's fusions, so that comes from the settings
   (`genotype.coverage.fusion_panels`), with the panels' documentation as its source.
 - Excel files are read with the standard library (cached cell values, first row as header).
@@ -322,9 +328,8 @@ tests/                    made-up data only; fixtures/ holds the CRC project's m
 - SPSS (.sav) files aren't read: that needs the pyreadstat package, which isn't installed. The SAS .sas7bdat
   reading is pandas' own, and its test files can't be made without such a package, so only .xpt and Stata
   files are tested here, on made-up files a small writer in the tests makes (`tests/sas_xport.py`).
-- GENIE BPC gives no panel sizes (above), so with its releases a biomarker's fallback is descriptive only.
-  Mutation burden needs a source that gives them, such as a flat file, or an OMOP database with a panel sizes
-  file.
+- Without panel sizes, a biomarker's fallback is descriptive only. With GENIE BPC, sizes come from a
+  genomic_information file and the settings' rule (above). Flat files and OMOP take a panel sizes file.
 - OMOP has no standard home for genomic variants, so the OMOP adapter reads them from the extension table the
   mapping names, with its columns named there too. It has been tested on made-up data only: the made-up GENIE
   BPC fixture written as an OMOP database, which it reads back field for field and screens to the same

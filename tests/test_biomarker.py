@@ -314,9 +314,9 @@ def test_sizes_count_only_when_the_profile_says_the_source_gives_them():
     assert not panel_sizes_given(dataclasses.replace(blind, panel_sizes=None), bpc_profile(panel_sizes="given"))
 
 
-def test_a_coverage_or_size_file_stops_the_adapter(tmp_path):
+def test_a_centers_bed_file_stops_the_adapter(tmp_path):
     import shutil
     data = shutil.copytree(FIXTURE, tmp_path / "data")
-    (data / "genomic_information.txt").write_text("Chromosome\tStart_Position\n", encoding="utf-8")
-    with pytest.raises(NotImplementedError, match="genomic_information"):
+    (data / "DFCI-1.bed").write_text("1\t100\t200\n", encoding="utf-8")
+    with pytest.raises(NotImplementedError, match="BED file"):
         genie_bpc.read(data, None, S)

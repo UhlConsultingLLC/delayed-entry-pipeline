@@ -332,6 +332,18 @@ SCHEMA: list[Choice] = [
            "When the source withholds survival to hide an age over its limit: censor alive at that age, or leave "
            "the outcome blank (the patient then fails 'outcome_recorded').",
            "censor_at_age_limit or leave_blank", when=("source.adapter", "genie_bpc")),
+    Choice("source.genie_bpc.panel_sizes",
+           record({"from": enum("genomic_information"),
+                   "feature_types": list_of(enum("exon", "intron", "intergenic"), unique=True),
+                   "include_in_panel": enum("only_marked", "all")}),
+           "How each panel's size in megabases is worked out from a genomic_information file in the genomic folder, "
+           "for a biomarker's mutation-burden fallback: the panel's regions of the listed feature types (only those "
+           "marked includeInPanel, or all), merged where they overlap, and summed. GENIE labels a submitted region "
+           "'exon' when it overlaps an exon, and keeps it whole, so the size is the panel's targeted exonic territory, "
+           "a little larger than its coding size. May be left out: no size is then worked out, and the fallback is "
+           "descriptive only.",
+           "a mapping", when=("source.adapter", "genie_bpc"), optional=True,
+           example={"from": "genomic_information", "feature_types": ["exon"], "include_in_panel": "only_marked"}),
 
     Choice("cohort.rules", list_of(cohort_rule),
            "Who is analyzed, in the order the flow diagram counts them. Each rule has an id, a label and the "

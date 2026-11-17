@@ -1,6 +1,7 @@
 # The capability profile of GENIE BPC public releases: what the source can supply.
-# The adapter checks the genomic folder: a panel coverage file or panel sizes would change two items,
-# and reading them isn't written yet, so the adapter stops if it finds one.
+# The adapter checks the genomic folder. A center's BED file isn't read: the adapter stops if it finds one.
+# A genomic_information file (from a main GENIE release; BPC releases have none) is read for panel sizes
+# when the settings give the rule (source.genie_bpc.panel_sizes); panel_sizes then reads as given.
 
 entry_event: report
 panel_coverage: genes_only
@@ -26,7 +27,7 @@ known_quirks:
 sources:
   entry_event: "BPC data guide: dx_cpt_rep_days, days from diagnosis to the sequencing report"
   panel_coverage: "the release's gene-panel files list genes only; the CRC v2.0 release has no coverage file (CRC BPC provenance log, 2026-11-11)"
-  panel_sizes: "no genomic_information or BED file in the CRC v2.0 release (CRC BPC provenance log, design gate)"
+  panel_sizes: "no genomic_information or BED file in the CRC v2.0 or NSCLC v2.0 releases (CRC BPC provenance log, design gate; the NSCLC release list)"
   death_capture: "BPC data guide via the CRC BPC plan, section 3: death from curated records, the EHR, the National Death Index, tumor registries and other sources (hybrid_death_source)"
   time_format: "BPC gives intervals from birth or diagnosis, never dates"
   privacy_min_count: "as applied by the CRC BPC project (its DATA_POLICY.md and plan section 13); confirm against the current GENIE terms of access"
