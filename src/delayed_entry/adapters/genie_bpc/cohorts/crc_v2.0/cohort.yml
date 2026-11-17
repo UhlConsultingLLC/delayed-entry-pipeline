@@ -1,0 +1,13 @@
+# What is specific to GENIE BPC CRC v2.0-public, besides its files (raw_files.yml).
+
+# Columns carried into the patients table as extras, {extra name: SQL column of the index cancer (c.) or the
+# patient file (p.)}, kept as released.
+extra_patient_fields:
+  tumor_location: c.crc_type          # Left colon, Right colon, Rectal, Other (the curated BPC variable)
+  race_ethnicity: p.race_ethnicity    # descriptive only
+
+# Results read from the pathology reports: MSI and MMR (labels.yml says what each label reads as).
+pathology_results: [msi_mmr]
+
+# Files the study reads besides those in raw_files.yml.
+also_used: []

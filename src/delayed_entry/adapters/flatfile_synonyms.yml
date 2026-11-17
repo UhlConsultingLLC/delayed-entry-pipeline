@@ -1,0 +1,46 @@
+# Column names the mapping draft recognizes for each standard field. Names are compared in lower case
+# with everything but letters and digits removed, so "Patient ID", "patient_id" and "PATIENTID" match.
+# A match only drafts the mapping: a person confirms every field before the mapping can be used.
+
+patients:
+  patient_id: [patient_id, patientid, record_id, subject_id, person_id, pt_id, mrn_study_id]
+  vital_status: [vital_status, dead, died, death, os_status, os_event, event, status]
+  days_to_death_or_last_followup: [days_to_death_or_last_followup, os_days, os_time, survival_days, followup_days, time]
+  age_at_diagnosis: [age_at_diagnosis, age_dx, age, dx_age, age_at_dx]
+  sex: [sex, gender, naaccr_sex_code]
+  stage_at_diagnosis: [stage_at_diagnosis, stage, stage_dx, ajcc_stage, stage_group]
+  histology: [histology, histology_code, icdo3_histology, morphology]
+  primary_site_code: [primary_site_code, primary_site, site_code, icdo3_site, topography]
+  year_of_diagnosis: [year_of_diagnosis, dx_year, diagnosis_year, year_dx]
+  center: [center, site, institution, hospital, facility]
+tests:
+  patient_id: [patient_id, patientid, record_id, subject_id, person_id]
+  test_id: [test_id, sample_id, report_id, specimen_id, tumor_sample_barcode]
+  modality: [modality, test_type, assay_type]
+  entry_event: [entry_event, event_type]
+  days_to_entry_event: [days_to_entry_event, days_to_report, report_days, dx_report_days, days_to_test]
+  panel_id: [panel_id, panel, assay_id, seq_assay_id]
+  test_order: [test_order, test_number, sequence_number]
+  after_follow_up_end: [after_follow_up_end, report_after_last_contact]
+  linked_to_other_cancers: [linked_to_other_cancers]
+results:
+  test_id: [test_id, sample_id, report_id, tumor_sample_barcode]
+  kind: [kind, result_kind, alteration_type]
+  gene: [gene, hugo_symbol, gene_symbol]
+  variant: [variant, protein_change, hgvsp_short, hgvsp, amino_acid_change]
+  variant_class: [variant_class, variant_classification, consequence]
+  value: [value, result, reading]
+panels:
+  panel_id: [panel_id, panel, assay_id]
+  gene: [gene, hugo_symbol, gene_symbol]
+  codon_from: [codon_from, start_codon]
+  codon_to: [codon_to, end_codon]
+treatments:
+  patient_id: [patient_id, patientid, record_id, subject_id]
+  regimen: [regimen, drugs, regimen_drugs]
+  regimen_order: [regimen_order, regimen_number]
+  line: [line, line_of_therapy]
+  days_to_start: [days_to_start, start_days, dx_reg_start_int]
+panel_sizes:
+  panel_id: [panel_id, panel]
+  coding_megabases: [coding_megabases, coding_mb, size_mb]

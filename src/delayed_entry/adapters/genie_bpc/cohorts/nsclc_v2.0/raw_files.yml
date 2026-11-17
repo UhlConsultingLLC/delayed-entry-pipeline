@@ -1,0 +1,132 @@
+# GENIE BPC NSCLC v2.0-public: the raw tables, which file each one is read from, and a fixed type for
+# every column the adapter uses, so DuckDB never has to guess it. Other columns are read with DuckDB's own
+# guesses. Checked against the release's variable synopsis (syn30557312) on 2026-11-13. Differences from
+# CRC v2.0-public: no crc_type (NSCLC has no tumor-location variable); cigarette use at diagnosis
+# (ca_lung_cigarette) instead; 25 specimen columns per pathology report, not 45; and no MSI/MMR results.
+#
+# folder: "clinical" or "genomic" (the two Synapse downloads; made-up data may have both in one folder).
+# Times in days or months are DOUBLE: decimals are allowed, because whole days aren't confirmed in the files.
+
+raw_patient:
+  file: patient_level_dataset.csv
+  folder: clinical
+  types:
+    record_id: VARCHAR
+    institution: VARCHAR
+    redacted: VARCHAR          # "Yes"/"No": as text, or DuckDB would guess BOOLEAN
+    birth_year: INTEGER
+    naaccr_sex_code: VARCHAR
+    race_ethnicity: VARCHAR
+
+raw_cancer:
+  file: cancer_level_dataset_index.csv
+  folder: clinical
+  types:
+    record_id: VARCHAR
+    ca_seq: INTEGER
+    redcap_ca_index: VARCHAR
+    dob_ca_dx_days: DOUBLE
+    age_dx: DOUBLE
+    ca_d_site: VARCHAR
+    ca_hist_adeno_squamous: VARCHAR
+    stage_dx: VARCHAR
+    ca_lung_cigarette: VARCHAR
+    os_dx_status: INTEGER
+    tt_os_dx_days: DOUBLE
+
+raw_report:
+  file: cancer_panel_test_level_dataset.csv
+  folder: clinical
+  types:
+    record_id: VARCHAR
+    ca_seq: INTEGER
+    cpt_number: INTEGER
+    cpt_n_ca_seq: INTEGER
+    dob_cpt_report_days: DOUBLE
+    dx_cpt_rep_days: DOUBLE
+    dx_cpt_rep_mos: DOUBLE
+    cpt_report_post_death: INTEGER
+    cpt_report_post_last_alive: INTEGER
+    cpt_genie_sample_id: VARCHAR
+    sample_type: VARCHAR
+    cpt_seq_assay_id: VARCHAR
+    cpt_seq_date: VARCHAR      # the year of sequencing, stored as text
+
+raw_mutation:
+  file: data_mutations_extended.txt
+  folder: genomic
+  types:
+    Hugo_Symbol: VARCHAR
+    Variant_Classification: VARCHAR
+    HGVSp_Short: VARCHAR
+    Tumor_Sample_Barcode: VARCHAR
+
+# Fusions, in cBioPortal's fusion format: one row per gene in each fusion, so a fusion of two genes has a row
+# for each, with the fusion's description in Fusion. Only these three columns are read.
+raw_fusion:
+  file: data_fusions.txt
+  folder: genomic
+  types:
+    Hugo_Symbol: VARCHAR
+    Tumor_Sample_Barcode: VARCHAR
+    Fusion: VARCHAR
+
+# Cancers that aren't BPC Project cancers: used only to find other primaries of this cancer.
+raw_cancer_other:
+  file: cancer_level_dataset_non_index.csv
+  folder: clinical
+  types:
+    record_id: VARCHAR
+    ca_seq: INTEGER
+    redcap_ca_index: VARCHAR
+    ca_type: VARCHAR
+
+# One row per pathology report, with up to 25 specimens. The NSCLC reports record PD-L1, not MSI/MMR;
+# PD-L1 isn't read yet (it would add its columns here).
+raw_pathology:
+  file: pathology_report_level_dataset.csv
+  folder: clinical
+  types:
+    record_id: VARCHAR
+    path_proc_number: INTEGER
+    path_rep_number: INTEGER
+    path_ca_type1: VARCHAR
+    path_ca_type2: VARCHAR
+    path_ca_type3: VARCHAR
+    path_ca_type4: VARCHAR
+    path_ca_type5: VARCHAR
+    path_ca_type6: VARCHAR
+    path_ca_type7: VARCHAR
+    path_ca_type8: VARCHAR
+    path_ca_type9: VARCHAR
+    path_ca_type10: VARCHAR
+    path_ca_type11: VARCHAR
+    path_ca_type12: VARCHAR
+    path_ca_type13: VARCHAR
+    path_ca_type14: VARCHAR
+    path_ca_type15: VARCHAR
+    path_ca_type16: VARCHAR
+    path_ca_type17: VARCHAR
+    path_ca_type18: VARCHAR
+    path_ca_type19: VARCHAR
+    path_ca_type20: VARCHAR
+    path_ca_type21: VARCHAR
+    path_ca_type22: VARCHAR
+    path_ca_type23: VARCHAR
+    path_ca_type24: VARCHAR
+    path_ca_type25: VARCHAR
+
+# One row per drug regimen. Used for the treatment clock, and its drug names (regimen_drugs, the names of drugs
+# 1-5 joined, data guide) for the count of targeted drugs in the reference group.
+raw_regimen:
+  file: regimen_cancer_level_dataset.csv
+  folder: clinical
+  types:
+    record_id: VARCHAR
+    ca_seq: INTEGER
+    regimen_number_within_cancer: INTEGER
+    redcap_ca_index: VARCHAR
+    regimen_drugs: VARCHAR
+    dx_reg_start_int: DOUBLE
+    os_g_status: INTEGER
+    tt_os_g_days: DOUBLE

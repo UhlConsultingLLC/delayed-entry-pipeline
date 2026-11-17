@@ -1,0 +1,1501 @@
+cohort,record_id,institution,redacted,birth_year,naaccr_sex_code,race_ethnicity,n_cancers_index,n_cpt_pt,release_version
+CRC,GENIE-DFCI-S00005,DFCI,No,1983,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-DFCI-S00007,DFCI,No,1965,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00010,DFCI,No,1970,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00012,DFCI,No,1976,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00013,DFCI,No,1962,Female,Other,1,1,2.0-public
+CRC,GENIE-DFCI-S00014,DFCI,No,1949,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00015,DFCI,No,1970,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00016,DFCI,No,1984,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00017,DFCI,No,1965,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00019,DFCI,No,1945,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00023,DFCI,No,1949,Male,Unknown,1,2,2.0-public
+CRC,GENIE-DFCI-S00025,DFCI,No,1973,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00029,DFCI,No,1980,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00030,DFCI,Yes,,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00035,DFCI,No,1973,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00042,DFCI,No,1953,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00049,DFCI,No,1952,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00056,DFCI,No,1950,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00058,DFCI,No,1930,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00060,DFCI,No,1962,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00063,DFCI,No,1962,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00067,DFCI,No,1968,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00076,DFCI,No,1956,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00077,DFCI,No,1960,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00079,DFCI,No,1941,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00082,DFCI,No,1958,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00083,DFCI,No,1951,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00087,DFCI,No,1956,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00090,DFCI,No,1986,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00091,DFCI,No,1970,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00092,DFCI,No,1940,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00095,DFCI,No,1950,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00096,DFCI,No,1952,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00100,DFCI,No,1955,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00104,DFCI,No,1943,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00105,DFCI,No,1956,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00110,DFCI,No,1969,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00112,DFCI,No,1946,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S00118,DFCI,No,1951,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00120,DFCI,No,1961,Female,Unknown,1,1,2.0-public
+CRC,GENIE-DFCI-S00121,DFCI,No,1949,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00129,DFCI,No,1972,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00138,DFCI,No,1939,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00140,DFCI,No,1953,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00141,DFCI,No,1961,Male,Other,1,1,2.0-public
+CRC,GENIE-DFCI-S00147,DFCI,No,1949,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00148,DFCI,No,1975,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00156,DFCI,No,1945,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00159,DFCI,No,1967,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00160,DFCI,No,1964,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00163,DFCI,No,1934,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00166,DFCI,No,1979,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00170,DFCI,No,1963,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-DFCI-S00171,DFCI,No,1951,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00178,DFCI,No,1965,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00187,DFCI,No,1980,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00193,DFCI,No,1962,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00194,DFCI,No,1962,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00200,DFCI,No,1984,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00202,DFCI,No,1979,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00204,DFCI,No,1960,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-DFCI-S00205,DFCI,No,1935,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00211,DFCI,No,1955,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00213,DFCI,No,1964,Male,Unknown,1,1,2.0-public
+CRC,GENIE-DFCI-S00214,DFCI,No,1954,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00216,DFCI,No,1972,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00223,DFCI,No,1969,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00224,DFCI,No,1966,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00228,DFCI,No,1952,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00238,DFCI,No,1937,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00239,DFCI,No,1946,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00240,DFCI,No,1956,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00241,DFCI,No,1930,"Other intersex, disorders of sexual development/DSD",Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-DFCI-S00243,DFCI,No,1971,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00245,DFCI,No,1974,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00246,DFCI,No,1978,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00249,DFCI,No,1966,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00254,DFCI,No,1939,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00259,DFCI,No,1958,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00261,DFCI,No,1950,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00262,DFCI,No,1952,Female,Unknown,1,1,2.0-public
+CRC,GENIE-DFCI-S00267,DFCI,No,1956,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00270,DFCI,No,1954,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00271,DFCI,No,1937,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00272,DFCI,No,1943,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00277,DFCI,No,1958,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00278,DFCI,No,1966,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00284,DFCI,No,1960,Female,Unknown,1,1,2.0-public
+CRC,GENIE-DFCI-S00291,DFCI,No,1944,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00294,DFCI,No,1963,Male,Unknown,1,1,2.0-public
+CRC,GENIE-DFCI-S00296,DFCI,No,1965,Female,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-DFCI-S00297,DFCI,No,1963,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00300,DFCI,No,1964,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00303,DFCI,No,1934,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00305,DFCI,No,1947,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00310,DFCI,No,1972,Female,Other,1,1,2.0-public
+CRC,GENIE-DFCI-S00312,DFCI,No,1930,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00314,DFCI,No,1969,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00319,DFCI,No,1948,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00326,DFCI,No,1931,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00328,DFCI,No,1940,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-DFCI-S00329,DFCI,No,1972,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S00332,DFCI,No,1941,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00335,DFCI,No,1938,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00336,DFCI,No,1982,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00339,DFCI,No,1945,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00340,DFCI,No,1981,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00342,DFCI,No,1946,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00344,DFCI,No,1959,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00348,DFCI,No,1945,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00351,DFCI,No,1963,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00352,DFCI,No,1956,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S00354,DFCI,No,1936,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00356,DFCI,No,1971,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00360,DFCI,No,1952,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00365,DFCI,No,1971,Male,Other,1,1,2.0-public
+CRC,GENIE-DFCI-S00369,DFCI,No,1956,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00372,DFCI,No,1952,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00374,DFCI,No,1951,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00377,DFCI,No,1934,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00381,DFCI,No,1943,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00385,DFCI,No,1972,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00387,DFCI,No,1959,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00388,DFCI,No,1972,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00391,DFCI,No,1956,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00394,DFCI,No,1959,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00400,DFCI,No,1958,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00401,DFCI,No,1954,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00402,DFCI,No,1960,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00403,DFCI,No,1939,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00405,DFCI,No,1936,Female,Other,1,1,2.0-public
+CRC,GENIE-DFCI-S00406,DFCI,No,1978,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00408,DFCI,No,1964,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00417,DFCI,No,1952,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S00418,DFCI,No,1945,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00420,DFCI,No,1939,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00423,DFCI,No,1947,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00426,DFCI,No,1944,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00432,DFCI,No,1948,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S00434,DFCI,No,1941,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00436,DFCI,No,1949,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00441,DFCI,No,1956,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00444,DFCI,No,1964,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00445,DFCI,No,1941,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00447,DFCI,No,1942,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00450,DFCI,No,1971,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00451,DFCI,No,1954,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00452,DFCI,No,1961,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-DFCI-S00468,DFCI,No,1933,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00469,DFCI,No,1963,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00470,DFCI,No,1966,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00472,DFCI,No,1957,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00474,DFCI,No,1947,Female,Unknown,1,1,2.0-public
+CRC,GENIE-DFCI-S00476,DFCI,No,1980,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00478,DFCI,No,1953,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S00480,DFCI,No,1971,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00481,DFCI,No,1945,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00482,DFCI,No,1964,Female,Unknown,1,1,2.0-public
+CRC,GENIE-DFCI-S00485,DFCI,No,1941,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00486,DFCI,No,1964,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00488,DFCI,No,1984,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S00496,DFCI,No,1949,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00502,DFCI,No,1949,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00504,DFCI,No,1963,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00505,DFCI,No,1955,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00509,DFCI,No,1954,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00511,DFCI,No,1969,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00520,DFCI,No,1953,Male,Other,1,1,2.0-public
+CRC,GENIE-DFCI-S00525,DFCI,No,1967,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00527,DFCI,No,1956,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00536,DFCI,No,1961,Female,Non-Hispanic Black,1,2,2.0-public
+CRC,GENIE-DFCI-S00538,DFCI,No,1960,Female,Hispanic/Latinx,1,2,2.0-public
+CRC,GENIE-DFCI-S00540,DFCI,No,1976,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00541,DFCI,No,1943,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S00544,DFCI,No,1951,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00548,DFCI,No,1960,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00554,DFCI,No,1947,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00557,DFCI,No,1954,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00559,DFCI,No,1959,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00561,DFCI,No,1983,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00562,DFCI,No,1949,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00565,DFCI,No,1941,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00567,DFCI,No,1971,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00569,DFCI,No,1953,Female,Unknown,1,1,2.0-public
+CRC,GENIE-DFCI-S00571,DFCI,No,1955,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00573,DFCI,No,1967,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00575,DFCI,No,1957,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00577,DFCI,No,1951,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00580,DFCI,No,1985,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00581,DFCI,No,1967,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00583,DFCI,No,1958,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00585,DFCI,No,1969,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00586,DFCI,No,1966,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S00588,DFCI,No,1972,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00589,DFCI,No,1962,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00595,DFCI,No,1952,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00596,DFCI,No,1952,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00599,DFCI,No,1948,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00606,DFCI,No,1957,Female,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-DFCI-S00607,DFCI,No,1972,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00608,DFCI,No,1967,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00609,DFCI,No,1969,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S00610,DFCI,No,1985,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00612,DFCI,No,1956,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00614,DFCI,No,1963,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00615,DFCI,No,1952,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-DFCI-S00616,DFCI,No,1970,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00619,DFCI,No,1933,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S00620,DFCI,No,1964,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00623,DFCI,No,1969,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00627,DFCI,No,1953,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00629,DFCI,No,1939,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00636,DFCI,No,1955,Male,Other,1,1,2.0-public
+CRC,GENIE-DFCI-S00640,DFCI,No,1962,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00641,DFCI,No,1994,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00643,DFCI,No,1966,Female,Unknown,1,2,2.0-public
+CRC,GENIE-DFCI-S00646,DFCI,No,1958,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00649,DFCI,No,1962,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00650,DFCI,No,1958,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00653,DFCI,No,1952,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00656,DFCI,No,1957,Female,Non-Hispanic Black,1,2,2.0-public
+CRC,GENIE-DFCI-S00658,DFCI,No,1953,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00659,DFCI,No,1981,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00660,DFCI,No,1969,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00661,DFCI,No,1953,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00662,DFCI,No,1959,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00663,DFCI,No,1960,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00670,DFCI,No,1947,Male,Unknown,1,1,2.0-public
+CRC,GENIE-DFCI-S00673,DFCI,No,1980,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00674,DFCI,No,1946,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00681,DFCI,Yes,,Female,Non-Hispanic Black,1,2,2.0-public
+CRC,GENIE-DFCI-S00688,DFCI,No,1945,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00693,DFCI,No,1957,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00694,DFCI,Yes,,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-DFCI-S00695,DFCI,No,1966,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00699,DFCI,No,1967,Male,Unknown,1,1,2.0-public
+CRC,GENIE-DFCI-S00700,DFCI,No,1945,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00702,DFCI,No,1934,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S00703,DFCI,No,1973,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00704,DFCI,No,1948,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00711,DFCI,No,1948,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00718,DFCI,No,1976,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00719,DFCI,No,1945,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00720,DFCI,No,1990,"Other intersex, disorders of sexual development/DSD",Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00722,DFCI,No,1933,Female,Unknown,1,1,2.0-public
+CRC,GENIE-DFCI-S00727,DFCI,No,1953,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00733,DFCI,No,1938,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00740,DFCI,No,1956,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00742,DFCI,No,1943,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00744,DFCI,No,1962,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00746,DFCI,No,1941,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00747,DFCI,No,1963,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S00749,DFCI,No,1951,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00750,DFCI,No,1974,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00751,DFCI,No,1966,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00754,DFCI,No,1944,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00760,DFCI,No,1955,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00761,DFCI,No,1976,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00762,DFCI,No,1949,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00766,DFCI,No,1958,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00770,DFCI,No,1962,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00777,DFCI,No,1974,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-DFCI-S00783,DFCI,No,1956,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00789,DFCI,No,1968,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00791,DFCI,No,1966,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00796,DFCI,No,1976,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00801,DFCI,No,1953,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00802,DFCI,No,1956,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00807,DFCI,No,1967,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00811,DFCI,No,1962,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00813,DFCI,No,1956,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-DFCI-S00814,DFCI,No,1934,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00815,DFCI,Yes,,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00817,DFCI,No,1976,Female,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-DFCI-S00820,DFCI,No,1953,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00822,DFCI,No,1934,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00823,DFCI,Yes,,Female,Non-Hispanic Black,1,2,2.0-public
+CRC,GENIE-DFCI-S00824,DFCI,No,1951,Male,Unknown,1,1,2.0-public
+CRC,GENIE-DFCI-S00825,DFCI,No,1952,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00826,DFCI,No,1943,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00829,DFCI,No,1953,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00830,DFCI,No,1953,Male,Non-Hispanic Black,1,2,2.0-public
+CRC,GENIE-DFCI-S00831,DFCI,No,1960,Male,Other,1,1,2.0-public
+CRC,GENIE-DFCI-S00832,DFCI,No,1951,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00839,DFCI,No,1952,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00840,DFCI,No,1979,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00841,DFCI,No,1957,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S00843,DFCI,No,1955,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00844,DFCI,No,1958,Female,Hispanic/Latinx,1,2,2.0-public
+CRC,GENIE-DFCI-S00845,DFCI,No,1943,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00846,DFCI,No,1969,Female,Hispanic/Latinx,1,2,2.0-public
+CRC,GENIE-DFCI-S00847,DFCI,Yes,,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00853,DFCI,No,1957,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00854,DFCI,Yes,,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00856,DFCI,No,1942,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00860,DFCI,No,1968,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S00861,DFCI,No,1948,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00869,DFCI,No,1995,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00871,DFCI,No,1961,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00872,DFCI,No,1949,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00874,DFCI,No,1970,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00876,DFCI,No,1960,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00879,DFCI,No,1961,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00880,DFCI,No,1965,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00881,DFCI,No,1948,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00882,DFCI,No,1966,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00883,DFCI,No,1941,Female,Unknown,1,1,2.0-public
+CRC,GENIE-DFCI-S00885,DFCI,No,1938,Male,Unknown,1,1,2.0-public
+CRC,GENIE-DFCI-S00890,DFCI,No,1959,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00898,DFCI,No,1965,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00900,DFCI,No,1978,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00906,DFCI,No,1945,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00907,DFCI,No,1983,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00909,DFCI,No,1952,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00910,DFCI,No,1940,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00913,DFCI,No,1945,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00917,DFCI,No,1969,Male,Other,1,1,2.0-public
+CRC,GENIE-DFCI-S00919,DFCI,No,1957,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00921,DFCI,No,1978,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00923,DFCI,No,1955,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00926,DFCI,No,1944,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00929,DFCI,No,1962,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00935,DFCI,No,1971,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00937,DFCI,No,1957,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00939,DFCI,No,1981,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00942,DFCI,No,1954,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00944,DFCI,No,1974,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00945,DFCI,No,1948,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S00948,DFCI,No,1932,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S00952,DFCI,No,1956,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00955,DFCI,No,1950,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00961,DFCI,No,1949,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00971,DFCI,No,1958,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S00979,DFCI,No,1965,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S00981,DFCI,No,1949,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00983,DFCI,No,1974,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00986,DFCI,No,1950,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00988,DFCI,No,1942,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00989,DFCI,No,1965,Male,Other,1,1,2.0-public
+CRC,GENIE-DFCI-S00992,DFCI,No,1961,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00994,DFCI,No,1930,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00995,DFCI,No,1956,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S00996,DFCI,No,1951,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01002,DFCI,No,1966,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S01008,DFCI,No,1953,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S01010,DFCI,No,1932,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01011,DFCI,No,1962,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S01013,DFCI,No,1961,Male,Unknown,1,1,2.0-public
+CRC,GENIE-DFCI-S01015,DFCI,No,1975,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-DFCI-S01017,DFCI,No,1959,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01021,DFCI,No,1957,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S01022,DFCI,No,1966,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01024,DFCI,No,1955,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01026,DFCI,No,1940,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S01028,DFCI,No,1948,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01032,DFCI,No,1967,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-DFCI-S01033,DFCI,No,1950,Male,Non-Hispanic Black,1,2,2.0-public
+CRC,GENIE-DFCI-S01034,DFCI,No,1960,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01039,DFCI,No,1967,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01044,DFCI,No,1962,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S01045,DFCI,No,1974,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01047,DFCI,No,1964,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01050,DFCI,No,1958,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S01052,DFCI,Yes,,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01055,DFCI,No,1944,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01057,DFCI,No,1956,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01061,DFCI,No,1971,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01066,DFCI,No,1956,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01068,DFCI,No,1960,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S01070,DFCI,No,1997,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01071,DFCI,Yes,,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S01072,DFCI,No,1969,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01074,DFCI,No,1956,Female,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-DFCI-S01081,DFCI,No,1950,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01085,DFCI,No,1980,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S01089,DFCI,No,1977,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01091,DFCI,No,1961,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S01092,DFCI,No,1956,Female,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-DFCI-S01094,DFCI,No,1961,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01099,DFCI,No,1957,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01107,DFCI,No,1991,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S01115,DFCI,No,1969,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01117,DFCI,No,1958,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01120,DFCI,No,1952,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01121,DFCI,No,1948,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S01123,DFCI,No,1944,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01125,DFCI,No,1989,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S01134,DFCI,No,1963,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01137,DFCI,No,1949,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S01138,DFCI,No,1950,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-DFCI-S01144,DFCI,No,1958,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01147,DFCI,No,1981,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01166,DFCI,No,1957,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S01167,DFCI,No,1965,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01168,DFCI,No,1956,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-DFCI-S01169,DFCI,No,1964,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S01171,DFCI,No,1941,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01173,DFCI,No,1960,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01175,DFCI,No,1951,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01178,DFCI,No,1974,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S01181,DFCI,No,1967,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S01183,DFCI,No,1964,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01186,DFCI,No,1957,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01188,DFCI,No,1944,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01193,DFCI,No,1928,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01194,DFCI,No,1957,Male,Unknown,1,1,2.0-public
+CRC,GENIE-DFCI-S01198,DFCI,No,1953,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01201,DFCI,No,1964,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01209,DFCI,No,1949,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01214,DFCI,No,1954,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S01218,DFCI,No,1964,Male,Other,1,1,2.0-public
+CRC,GENIE-DFCI-S01219,DFCI,Yes,,Female,Unknown,1,1,2.0-public
+CRC,GENIE-DFCI-S01223,DFCI,No,1956,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S01224,DFCI,No,1951,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01229,DFCI,No,1941,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S01231,DFCI,No,1946,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01233,DFCI,No,1963,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-DFCI-S01235,DFCI,No,1959,Male,Other,1,1,2.0-public
+CRC,GENIE-DFCI-S01236,DFCI,No,1944,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01238,DFCI,No,1974,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01241,DFCI,No,1959,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01242,DFCI,No,1964,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01244,DFCI,No,1942,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01245,DFCI,No,1980,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S01246,DFCI,No,1969,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S01247,DFCI,No,1961,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01248,DFCI,No,1960,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S01250,DFCI,No,1961,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01252,DFCI,No,1966,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-DFCI-S01253,DFCI,No,1961,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01255,DFCI,No,1943,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01256,DFCI,No,1955,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S01258,DFCI,No,1969,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S01264,DFCI,No,1965,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01266,DFCI,No,1950,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01267,DFCI,No,1971,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-DFCI-S01269,DFCI,No,1937,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01271,DFCI,No,1947,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-DFCI-S01272,DFCI,No,1936,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01274,DFCI,No,1986,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01276,DFCI,No,1960,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S01277,DFCI,No,1932,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01279,DFCI,No,1975,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01281,DFCI,No,1960,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S01282,DFCI,No,1953,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S01284,DFCI,No,1954,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01285,DFCI,No,1969,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01287,DFCI,No,1949,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01292,DFCI,No,1974,Male,Non-Hispanic Black,1,2,2.0-public
+CRC,GENIE-DFCI-S01299,DFCI,No,1962,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01304,DFCI,No,1962,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S01306,DFCI,No,1944,Male,Unknown,1,1,2.0-public
+CRC,GENIE-DFCI-S01307,DFCI,No,1950,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S01308,DFCI,No,1962,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01310,DFCI,No,1958,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01311,DFCI,No,1941,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01316,DFCI,No,1943,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-DFCI-S01318,DFCI,No,1948,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01320,DFCI,No,1966,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S01323,DFCI,No,1971,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01326,DFCI,No,1958,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01332,DFCI,No,1968,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01335,DFCI,No,1955,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S01337,DFCI,No,1960,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-DFCI-S01338,DFCI,No,1962,Male,Unknown,1,1,2.0-public
+CRC,GENIE-DFCI-S01339,DFCI,No,1950,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S01340,DFCI,No,1966,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S01341,DFCI,No,1963,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01344,DFCI,No,1934,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01346,DFCI,No,1960,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S01348,DFCI,No,1979,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01349,DFCI,No,1963,Female,Unknown,1,1,2.0-public
+CRC,GENIE-DFCI-S01351,DFCI,No,1966,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01353,DFCI,No,1961,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01355,DFCI,No,1961,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01357,DFCI,No,1960,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01359,DFCI,No,1958,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S01361,DFCI,No,1947,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S01364,DFCI,No,1965,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S01366,DFCI,No,1966,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01367,DFCI,No,1940,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01369,DFCI,No,1961,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01370,DFCI,No,1949,Male,Other,1,1,2.0-public
+CRC,GENIE-DFCI-S01371,DFCI,No,1972,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S01373,DFCI,No,1949,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S01375,DFCI,No,1940,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01379,DFCI,No,1941,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S01381,DFCI,No,1963,Male,Unknown,1,2,2.0-public
+CRC,GENIE-DFCI-S01386,DFCI,No,1965,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01390,DFCI,No,1969,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01392,DFCI,No,1933,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S01393,DFCI,No,1981,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S01396,DFCI,No,1938,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S01398,DFCI,No,1943,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01401,DFCI,No,1949,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S01402,DFCI,No,1944,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01403,DFCI,No,1943,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01406,DFCI,No,1932,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01407,DFCI,No,1969,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01408,DFCI,No,1941,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S01411,DFCI,No,1962,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01413,DFCI,No,1937,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01415,DFCI,No,1947,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01417,DFCI,No,1956,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01423,DFCI,No,1967,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01433,DFCI,No,1947,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S01436,DFCI,No,1953,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S01439,DFCI,No,1980,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01440,DFCI,No,1960,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S01441,DFCI,No,1949,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01442,DFCI,No,1936,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01444,DFCI,No,1951,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S01455,DFCI,No,1972,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01456,DFCI,No,1942,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01458,DFCI,No,1968,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01460,DFCI,No,1954,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-DFCI-S01461,DFCI,No,1956,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S01462,DFCI,No,1958,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01469,DFCI,No,1975,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01471,DFCI,No,1946,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01473,DFCI,No,1955,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01477,DFCI,No,1959,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01479,DFCI,No,1941,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01484,DFCI,No,1953,"Other intersex, disorders of sexual development/DSD",Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01485,DFCI,No,1956,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-DFCI-S01486,DFCI,No,1966,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-DFCI-S01489,DFCI,No,1975,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-DFCI-S01497,DFCI,No,1954,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00004,MSK,No,1949,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00006,MSK,No,1949,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00008,MSK,No,1956,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00011,MSK,No,1952,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00018,MSK,No,1985,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00020,MSK,No,1945,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-MSK-S00021,MSK,No,1943,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00022,MSK,No,1941,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00028,MSK,No,1963,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00031,MSK,No,1950,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S00033,MSK,No,1956,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00034,MSK,No,1969,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00036,MSK,No,1964,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00038,MSK,No,1963,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00039,MSK,No,1954,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00040,MSK,No,1981,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00041,MSK,No,1964,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00044,MSK,No,1933,Female,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S00046,MSK,No,1937,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00047,MSK,No,1942,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00048,MSK,No,1971,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S00051,MSK,No,1958,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00052,MSK,No,1940,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00053,MSK,No,1983,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00055,MSK,No,1964,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00057,MSK,No,1950,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00059,MSK,No,1948,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00061,MSK,No,1959,Female,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S00064,MSK,No,1954,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00066,MSK,Yes,,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00068,MSK,No,1949,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00069,MSK,No,1953,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00070,MSK,No,1959,Male,Other,1,1,2.0-public
+CRC,GENIE-MSK-S00071,MSK,No,1967,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00072,MSK,No,1948,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00073,MSK,No,1947,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00075,MSK,No,1958,Male,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S00078,MSK,No,1952,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00080,MSK,No,1969,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00081,MSK,No,1966,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00084,MSK,No,1961,Female,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S00085,MSK,No,1961,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00086,MSK,No,1975,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00093,MSK,No,1967,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00094,MSK,No,1971,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00097,MSK,No,1948,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00098,MSK,No,1967,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00099,MSK,No,1953,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00101,MSK,No,1953,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00103,MSK,No,1964,Female,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S00107,MSK,No,1941,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00113,MSK,No,1950,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00114,MSK,No,1949,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00116,MSK,No,1954,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00117,MSK,No,1969,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00119,MSK,No,1968,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00124,MSK,No,1961,Female,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S00127,MSK,No,1942,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00128,MSK,No,1952,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00130,MSK,No,1950,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00132,MSK,No,1958,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00134,MSK,No,1969,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00136,MSK,No,1966,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00137,MSK,No,1961,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00142,MSK,No,1952,Male,Other,1,1,2.0-public
+CRC,GENIE-MSK-S00143,MSK,No,1974,Female,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S00146,MSK,No,1953,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00149,MSK,No,1959,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00151,MSK,No,1965,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00152,MSK,No,1947,Male,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S00153,MSK,Yes,,Male,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S00155,MSK,No,1950,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00158,MSK,No,1952,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00161,MSK,No,1948,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00162,MSK,No,1959,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00164,MSK,No,1974,Female,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S00168,MSK,No,1960,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00169,MSK,No,1941,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00173,MSK,No,1960,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00175,MSK,No,1976,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00176,MSK,No,1967,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00177,MSK,No,1950,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00179,MSK,No,1961,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00180,MSK,No,1955,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00181,MSK,No,1936,Female,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S00183,MSK,No,1968,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00184,MSK,No,1953,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00185,MSK,No,1959,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00186,MSK,No,1969,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00188,MSK,No,1969,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S00189,MSK,No,1943,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00190,MSK,No,1952,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S00191,MSK,No,1944,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00192,MSK,No,1955,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00195,MSK,No,1953,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00198,MSK,No,1943,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00199,MSK,No,1991,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00201,MSK,No,1949,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00203,MSK,No,1947,Female,Other,1,1,2.0-public
+CRC,GENIE-MSK-S00206,MSK,No,1952,Female,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S00208,MSK,No,1964,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00209,MSK,No,1969,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00210,MSK,No,1956,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00212,MSK,No,1954,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00218,MSK,No,1954,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00219,MSK,No,1946,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00220,MSK,No,1943,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00222,MSK,No,1965,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S00225,MSK,No,1977,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00226,MSK,No,1953,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00227,MSK,No,1951,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00229,MSK,No,1952,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00230,MSK,No,1980,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00233,MSK,No,1947,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00234,MSK,No,1975,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00235,MSK,No,1962,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00236,MSK,No,1948,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00237,MSK,No,1977,Female,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S00242,MSK,No,1960,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S00244,MSK,No,1935,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00247,MSK,No,1945,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00248,MSK,No,1952,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00252,MSK,No,1978,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00253,MSK,No,1952,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00255,MSK,No,1962,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00256,MSK,No,1950,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00257,MSK,No,1948,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00258,MSK,No,1944,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00260,MSK,No,1968,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00263,MSK,No,1953,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00264,MSK,No,1965,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00265,MSK,No,1964,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00266,MSK,No,1932,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00268,MSK,No,1962,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00274,MSK,No,1950,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00279,MSK,No,1937,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00281,MSK,No,1955,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00283,MSK,No,1942,Female,Non-Hispanic Black,1,2,2.0-public
+CRC,GENIE-MSK-S00285,MSK,No,1967,Female,Other,1,1,2.0-public
+CRC,GENIE-MSK-S00287,MSK,No,1943,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00289,MSK,No,1955,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00290,MSK,No,1940,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00292,MSK,No,1969,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00293,MSK,No,1930,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00295,MSK,No,1968,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00298,MSK,No,1958,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00299,MSK,No,1941,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00301,MSK,No,1961,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00304,MSK,No,1961,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00306,MSK,No,1954,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00307,MSK,No,1973,Female,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S00308,MSK,No,1949,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00309,MSK,No,1956,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00311,MSK,No,1970,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S00313,MSK,No,1971,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-MSK-S00315,MSK,No,1959,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00316,MSK,No,1963,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00317,MSK,No,1964,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00318,MSK,No,1967,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00320,MSK,No,1958,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00321,MSK,No,1948,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00322,MSK,No,1942,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00324,MSK,No,1955,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00325,MSK,No,1965,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00327,MSK,No,1947,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00331,MSK,No,1976,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00333,MSK,No,1934,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00334,MSK,No,1960,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00338,MSK,No,1970,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00343,MSK,No,1937,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00345,MSK,No,1946,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00347,MSK,No,1934,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00350,MSK,No,1996,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00353,MSK,No,1960,Male,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S00355,MSK,No,1958,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00357,MSK,No,1973,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00358,MSK,No,1978,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00361,MSK,No,1958,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00363,MSK,No,1972,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00364,MSK,No,1939,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00367,MSK,No,1944,Male,Non-Hispanic Black,1,2,2.0-public
+CRC,GENIE-MSK-S00368,MSK,No,1975,Male,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S00370,MSK,No,1962,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S00371,MSK,No,1949,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00373,MSK,No,1961,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00376,MSK,No,1952,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00380,MSK,No,1942,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00382,MSK,No,1939,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00383,MSK,No,1977,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00384,MSK,No,1951,Female,Other,1,2,2.0-public
+CRC,GENIE-MSK-S00386,MSK,No,1950,Female,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S00389,MSK,No,1954,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00390,MSK,No,1951,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00393,MSK,No,1944,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00396,MSK,No,1952,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00398,MSK,No,1970,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00399,MSK,No,1942,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00404,MSK,No,1957,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00407,MSK,No,1943,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00409,MSK,No,1952,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00410,MSK,No,1939,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00411,MSK,No,1960,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00412,MSK,No,1976,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00415,MSK,No,1962,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00419,MSK,No,1952,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00421,MSK,No,1974,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00422,MSK,No,1961,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00424,MSK,No,1952,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00425,MSK,No,1944,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00428,MSK,Yes,,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00431,MSK,No,1966,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00433,MSK,No,1932,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00437,MSK,No,1962,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00438,MSK,No,1981,Male,Other,1,2,2.0-public
+CRC,GENIE-MSK-S00439,MSK,No,1977,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-MSK-S00440,MSK,No,1944,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00442,MSK,No,1964,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00449,MSK,No,1955,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00453,MSK,No,1932,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00454,MSK,No,1939,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00455,MSK,No,1961,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00456,MSK,No,1944,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00457,MSK,No,1955,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00458,MSK,No,1940,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00459,MSK,No,1965,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00460,MSK,No,1964,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00462,MSK,No,1954,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00463,MSK,No,1958,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00465,MSK,No,1955,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00466,MSK,No,1951,Female,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S00471,MSK,No,1940,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S00473,MSK,No,1959,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00477,MSK,No,1971,Male,Other,1,1,2.0-public
+CRC,GENIE-MSK-S00487,MSK,No,1962,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00489,MSK,No,1948,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00490,MSK,No,1966,Male,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S00491,MSK,No,1954,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00492,MSK,No,1943,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00493,MSK,No,1978,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00494,MSK,No,1971,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00495,MSK,No,1947,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00497,MSK,No,1951,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00498,MSK,Yes,,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00499,MSK,No,1951,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00500,MSK,No,1973,Male,Hispanic/Latinx,1,2,2.0-public
+CRC,GENIE-MSK-S00501,MSK,No,1974,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00503,MSK,No,1947,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00506,MSK,No,1967,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00507,MSK,No,1945,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00510,MSK,No,1963,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S00512,MSK,No,1962,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00513,MSK,No,1958,Female,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S00514,MSK,No,1972,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00515,MSK,No,1946,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00516,MSK,No,1956,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00517,MSK,No,1974,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00518,MSK,No,1933,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00519,MSK,No,1959,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00521,MSK,No,1965,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00523,MSK,No,1963,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00524,MSK,No,1963,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00526,MSK,No,1955,Male,Non-Hispanic Black,1,2,2.0-public
+CRC,GENIE-MSK-S00528,MSK,No,1943,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00529,MSK,No,1955,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00530,MSK,No,1978,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00533,MSK,No,1933,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00535,MSK,No,1951,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00537,MSK,No,1936,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00539,MSK,No,1941,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00542,MSK,No,1960,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S00543,MSK,No,1953,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00546,MSK,No,1963,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00547,MSK,No,1941,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00549,MSK,No,1969,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00550,MSK,No,1952,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00551,MSK,No,1938,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00553,MSK,No,1986,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00555,MSK,No,1955,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00558,MSK,No,1969,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00560,MSK,No,1952,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00564,MSK,No,1970,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00566,MSK,No,1946,Male,Unknown,1,2,2.0-public
+CRC,GENIE-MSK-S00568,MSK,No,1942,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00570,MSK,No,1974,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00572,MSK,No,1964,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00576,MSK,No,1947,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00582,MSK,No,1973,Male,Other,1,1,2.0-public
+CRC,GENIE-MSK-S00587,MSK,No,1963,Male,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S00590,MSK,No,1974,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00591,MSK,No,1978,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00592,MSK,No,1967,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00593,MSK,No,1971,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00594,MSK,No,1930,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00597,MSK,No,1957,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00598,MSK,No,1983,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00600,MSK,No,1935,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00602,MSK,No,1957,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00605,MSK,No,1952,Male,Other,1,1,2.0-public
+CRC,GENIE-MSK-S00611,MSK,No,1973,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00613,MSK,No,1949,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00617,MSK,No,1936,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00621,MSK,No,1979,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00622,MSK,No,1954,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00624,MSK,No,1967,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00625,MSK,No,1960,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00626,MSK,No,1962,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00628,MSK,No,1972,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00631,MSK,No,1946,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00632,MSK,No,1948,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00635,MSK,No,1953,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00638,MSK,No,1982,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00639,MSK,No,1943,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00644,MSK,No,1973,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00647,MSK,No,1963,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00648,MSK,No,1950,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00651,MSK,No,1929,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00652,MSK,No,1954,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-MSK-S00654,MSK,No,1957,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00657,MSK,No,1935,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00664,MSK,No,1955,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00665,MSK,No,1961,Male,Other,1,1,2.0-public
+CRC,GENIE-MSK-S00669,MSK,No,1966,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00672,MSK,No,1948,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00675,MSK,No,1948,Male,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S00677,MSK,No,1941,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00679,MSK,No,1960,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00682,MSK,No,1946,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00683,MSK,No,1963,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00684,MSK,No,1965,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00685,MSK,No,1969,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00689,MSK,No,1955,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00690,MSK,No,1946,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00691,MSK,Yes,,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00692,MSK,No,1961,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00698,MSK,No,1965,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00701,MSK,No,1965,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00705,MSK,No,1957,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00706,MSK,No,1961,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00708,MSK,No,1978,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00710,MSK,No,1970,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00713,MSK,No,1950,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00716,MSK,No,1952,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00721,MSK,No,1942,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00724,MSK,No,1964,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00728,MSK,No,1958,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00729,MSK,No,1950,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00730,MSK,No,1936,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00731,MSK,No,1962,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00732,MSK,No,1963,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-MSK-S00734,MSK,No,1962,Male,Non-Hispanic Black,1,2,2.0-public
+CRC,GENIE-MSK-S00736,MSK,No,1959,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00737,MSK,No,1959,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00738,MSK,No,1968,Male,Non-Hispanic Black,1,2,2.0-public
+CRC,GENIE-MSK-S00739,MSK,No,1960,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00743,MSK,No,1964,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00745,MSK,No,1937,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00748,MSK,No,1963,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00752,MSK,No,1956,Male,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S00753,MSK,No,1967,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00755,MSK,No,1967,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00756,MSK,No,1951,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00757,MSK,No,1952,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00758,MSK,No,1950,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00759,MSK,No,1983,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00763,MSK,No,1948,Female,Unknown,1,2,2.0-public
+CRC,GENIE-MSK-S00765,MSK,No,1967,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00767,MSK,No,1969,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00769,MSK,No,1955,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00771,MSK,No,1953,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00772,MSK,No,1944,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00774,MSK,No,1946,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00776,MSK,No,1982,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00778,MSK,Yes,,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00781,MSK,No,1953,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00782,MSK,No,1963,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00784,MSK,No,1960,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00788,MSK,No,1959,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-MSK-S00792,MSK,No,1952,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00793,MSK,No,1973,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00795,MSK,No,1944,Male,Other,1,2,2.0-public
+CRC,GENIE-MSK-S00797,MSK,No,1988,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00798,MSK,No,1968,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00799,MSK,No,1944,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00800,MSK,No,1947,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00806,MSK,No,1954,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00809,MSK,No,1971,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00812,MSK,No,1951,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00816,MSK,No,1979,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00819,MSK,No,1956,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00821,MSK,No,1970,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00827,MSK,No,1950,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00828,MSK,No,1970,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00833,MSK,No,1946,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00834,MSK,No,1943,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S00836,MSK,No,1932,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00837,MSK,No,1945,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00842,MSK,No,1973,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00849,MSK,No,1933,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00850,MSK,No,1931,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00852,MSK,No,1964,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00855,MSK,No,1958,Male,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S00857,MSK,No,1946,Male,Hispanic/Latinx,1,2,2.0-public
+CRC,GENIE-MSK-S00858,MSK,No,1942,Male,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S00859,MSK,No,1971,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00862,MSK,No,1938,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00863,MSK,No,1962,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00864,MSK,No,1950,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-MSK-S00865,MSK,No,1978,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00867,MSK,No,1960,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00868,MSK,No,1950,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00870,MSK,No,1972,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00873,MSK,No,1982,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00877,MSK,No,1970,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00884,MSK,No,1936,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00886,MSK,No,1961,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00888,MSK,No,1963,Female,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S00891,MSK,No,1963,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00892,MSK,No,1951,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00894,MSK,No,1955,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00895,MSK,No,1938,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00896,MSK,No,1942,Female,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S00901,MSK,No,1952,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00902,MSK,No,1958,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00903,MSK,No,1967,Female,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S00904,MSK,No,1951,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00908,MSK,No,1971,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00912,MSK,No,1940,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00914,MSK,No,1947,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00915,MSK,No,1945,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00920,MSK,No,1963,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00922,MSK,No,1933,Female,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S00925,MSK,No,1962,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00928,MSK,No,1941,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00930,MSK,No,1955,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00932,MSK,No,1944,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00933,MSK,No,1949,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00934,MSK,No,1965,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00936,MSK,No,1945,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00940,MSK,No,1957,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00941,MSK,No,1956,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00943,MSK,No,1958,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00946,MSK,No,1949,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00950,MSK,No,1938,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00953,MSK,No,1944,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-MSK-S00956,MSK,No,1960,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00957,MSK,No,1978,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00958,MSK,No,1976,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00960,MSK,No,1948,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00962,MSK,No,1952,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00964,MSK,No,1951,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00965,MSK,No,1931,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00968,MSK,No,1975,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00969,MSK,Yes,,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00970,MSK,No,1961,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00972,MSK,No,1951,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00973,MSK,No,1935,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S00974,MSK,No,1939,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00975,MSK,No,1963,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00976,MSK,No,1968,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00978,MSK,Yes,,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S00980,MSK,No,1945,Female,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S00982,MSK,No,1945,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00985,MSK,No,1945,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00987,MSK,No,1952,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00990,MSK,No,1959,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S00991,MSK,No,1962,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S00993,MSK,No,1985,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00997,MSK,No,1937,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00998,MSK,No,1945,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S00999,MSK,No,1959,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01000,MSK,No,1980,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01001,MSK,No,1955,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01003,MSK,No,1963,Female,Other,1,1,2.0-public
+CRC,GENIE-MSK-S01004,MSK,No,1979,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01005,MSK,No,1965,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S01012,MSK,No,1976,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01016,MSK,No,1992,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S01018,MSK,No,1950,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S01019,MSK,No,1944,Male,Non-Hispanic Black,1,2,2.0-public
+CRC,GENIE-MSK-S01020,MSK,No,1978,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S01029,MSK,Yes,,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S01031,MSK,Yes,,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01035,MSK,No,1967,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01036,MSK,No,1968,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S01038,MSK,No,1974,Female,Other,1,1,2.0-public
+CRC,GENIE-MSK-S01041,MSK,No,1972,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01042,MSK,No,1972,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S01043,MSK,No,1951,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01046,MSK,Yes,,Female,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S01048,MSK,No,1931,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01049,MSK,No,1942,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01053,MSK,No,1964,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01054,MSK,No,1963,Female,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S01056,MSK,No,1959,Female,Non-Hispanic Black,1,2,2.0-public
+CRC,GENIE-MSK-S01058,MSK,No,1975,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01062,MSK,No,1976,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01064,MSK,No,1954,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01065,MSK,No,1947,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S01067,MSK,No,1953,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01069,MSK,No,1975,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01073,MSK,No,1965,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S01075,MSK,No,1977,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S01077,MSK,No,1979,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S01079,MSK,No,1939,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01083,MSK,No,1956,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01084,MSK,No,1974,Male,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S01086,MSK,No,1963,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01087,MSK,No,1957,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01088,MSK,No,1942,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S01095,MSK,No,1948,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S01096,MSK,No,1955,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01098,MSK,No,1945,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S01100,MSK,No,1953,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01101,MSK,No,1966,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S01102,MSK,No,1966,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01103,MSK,No,1949,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01105,MSK,No,1968,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01106,MSK,No,1951,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01108,MSK,No,1951,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01109,MSK,No,1961,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01111,MSK,No,1970,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01112,MSK,No,1962,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01113,MSK,Yes,,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S01114,MSK,No,1960,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S01119,MSK,No,1962,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S01122,MSK,No,1946,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S01127,MSK,No,1947,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01128,MSK,No,1957,Female,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S01129,MSK,No,1961,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01130,MSK,No,1968,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01131,MSK,No,1957,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01132,MSK,No,1967,"Other intersex, disorders of sexual development/DSD",Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S01135,MSK,No,1967,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S01136,MSK,No,1977,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S01139,MSK,No,1952,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01140,MSK,No,1960,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01142,MSK,No,1949,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01145,MSK,No,1950,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01146,MSK,No,1947,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01149,MSK,No,1948,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01151,MSK,No,1953,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01152,MSK,No,1937,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S01153,MSK,No,1963,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01154,MSK,No,1932,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01155,MSK,No,1954,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-MSK-S01156,MSK,No,1927,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S01157,MSK,No,1957,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01158,MSK,No,1940,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01161,MSK,No,1949,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S01162,MSK,No,1949,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S01163,MSK,No,1961,Female,Hispanic/Latinx,1,2,2.0-public
+CRC,GENIE-MSK-S01164,MSK,No,1960,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01165,MSK,No,1949,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01172,MSK,No,1950,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01174,MSK,No,1963,"Other intersex, disorders of sexual development/DSD",Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01176,MSK,No,1978,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01180,MSK,No,1976,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01182,MSK,No,1957,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01184,MSK,No,1965,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S01185,MSK,No,1941,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01189,MSK,No,1976,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01190,MSK,No,1956,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01192,MSK,No,1944,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S01195,MSK,No,1971,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01196,MSK,No,1967,Female,Other,1,1,2.0-public
+CRC,GENIE-MSK-S01200,MSK,No,1954,Female,Unknown,1,2,2.0-public
+CRC,GENIE-MSK-S01202,MSK,No,1957,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01203,MSK,No,1936,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S01204,MSK,No,1933,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S01205,MSK,No,1960,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S01206,MSK,No,1944,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01207,MSK,Yes,,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S01208,MSK,No,1968,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01211,MSK,No,1937,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01212,MSK,No,1955,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01213,MSK,No,1954,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S01215,MSK,No,1951,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S01217,MSK,No,1955,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01222,MSK,No,1971,Female,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S01225,MSK,No,1950,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01227,MSK,No,1975,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01228,MSK,No,1951,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S01232,MSK,No,1963,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01234,MSK,No,1952,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S01239,MSK,No,1959,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01240,MSK,No,1943,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01243,MSK,No,1963,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01249,MSK,No,1945,Female,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S01251,MSK,No,1941,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S01254,MSK,No,1971,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01259,MSK,No,1963,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01260,MSK,No,1952,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01261,MSK,No,1963,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S01263,MSK,No,1981,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01265,MSK,No,1967,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-MSK-S01268,MSK,No,1963,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01273,MSK,No,1951,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01275,MSK,No,1947,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01280,MSK,No,1940,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01288,MSK,No,1954,"Other intersex, disorders of sexual development/DSD",Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01289,MSK,No,1972,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01290,MSK,No,1933,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01291,MSK,No,1961,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S01293,MSK,No,1957,Male,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S01294,MSK,No,1937,Female,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S01295,MSK,No,1978,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01297,MSK,No,1941,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01298,MSK,No,1958,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01300,MSK,No,1962,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01301,MSK,No,1970,Male,Unknown,1,2,2.0-public
+CRC,GENIE-MSK-S01302,MSK,No,1956,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01312,MSK,No,1970,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01313,MSK,No,1939,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01315,MSK,No,1993,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01319,MSK,No,1944,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01321,MSK,No,1951,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01324,MSK,No,1976,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01328,MSK,No,1952,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01329,MSK,No,1947,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01330,MSK,No,1965,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01333,MSK,No,1939,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01334,MSK,No,1955,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-MSK-S01336,MSK,No,1954,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01342,MSK,No,1952,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01343,MSK,No,1969,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S01345,MSK,No,1979,Female,Non-Hispanic Black,1,2,2.0-public
+CRC,GENIE-MSK-S01347,MSK,No,1976,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01350,MSK,No,1962,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01356,MSK,No,1968,Male,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S01358,MSK,No,1964,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01360,MSK,No,1970,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S01362,MSK,No,1965,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01365,MSK,No,1939,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S01368,MSK,No,1980,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01374,MSK,No,1939,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01376,MSK,No,1970,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01377,MSK,No,1949,Female,Unknown,1,1,2.0-public
+CRC,GENIE-MSK-S01378,MSK,No,1963,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01380,MSK,No,1963,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01382,MSK,No,1945,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01383,MSK,No,1946,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S01384,MSK,No,1975,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01385,MSK,No,1943,Female,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S01387,MSK,No,1951,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S01388,MSK,No,1964,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01389,MSK,No,1978,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01391,MSK,No,1967,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S01394,MSK,No,1959,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01395,MSK,No,1972,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01399,MSK,No,1949,Female,Non-Hispanic Black,1,2,2.0-public
+CRC,GENIE-MSK-S01400,MSK,No,1956,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S01404,MSK,No,1974,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01405,MSK,No,1958,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01409,MSK,No,1951,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01410,MSK,No,1937,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S01424,MSK,No,1976,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S01428,MSK,No,1969,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01429,MSK,No,1976,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01434,MSK,No,1937,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01435,MSK,No,1949,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01437,MSK,No,1960,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01438,MSK,No,1942,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01443,MSK,No,1955,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01445,MSK,No,1967,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01448,MSK,No,1960,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01450,MSK,No,1960,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S01451,MSK,No,1944,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01453,MSK,No,1967,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01454,MSK,No,1947,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01457,MSK,No,1948,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S01464,MSK,No,1967,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01465,MSK,No,1944,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01466,MSK,No,1945,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S01467,MSK,No,1977,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S01470,MSK,No,1960,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01472,MSK,No,1948,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S01474,MSK,No,1959,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01475,MSK,Yes,,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01478,MSK,No,1965,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-MSK-S01480,MSK,No,1965,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01481,MSK,No,1962,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01483,MSK,No,1964,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-MSK-S01487,MSK,No,1964,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01488,MSK,No,1948,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S01490,MSK,No,1940,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-MSK-S01491,MSK,No,1952,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01493,MSK,No,1967,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-MSK-S01495,MSK,No,1959,Female,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-MSK-S01496,MSK,No,1956,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01498,MSK,No,1947,Male,Other,1,1,2.0-public
+CRC,GENIE-MSK-S01499,MSK,No,1936,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-MSK-S01500,MSK,No,1934,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00001,VICC,No,1953,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-VICC-S00002,VICC,No,1965,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-VICC-S00003,VICC,No,1947,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00009,VICC,No,1949,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00024,VICC,No,1940,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00026,VICC,No,1985,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-VICC-S00027,VICC,No,1954,Male,Other,1,2,2.0-public
+CRC,GENIE-VICC-S00032,VICC,No,1970,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-VICC-S00037,VICC,No,1963,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00043,VICC,No,1968,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00045,VICC,No,1958,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-VICC-S00050,VICC,No,1931,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00054,VICC,No,1959,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00062,VICC,No,1977,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00065,VICC,No,1976,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00074,VICC,No,1945,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00088,VICC,No,1979,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-VICC-S00089,VICC,No,1953,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-VICC-S00102,VICC,No,1976,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00106,VICC,No,1948,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00108,VICC,No,1938,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00109,VICC,No,1967,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00111,VICC,No,1938,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00115,VICC,Yes,,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00122,VICC,No,1971,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00123,VICC,No,1952,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00125,VICC,No,1968,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00126,VICC,No,1955,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00131,VICC,No,1951,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00133,VICC,No,1961,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00135,VICC,No,1962,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00139,VICC,No,1948,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00144,VICC,No,1963,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00145,VICC,No,1948,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00150,VICC,No,1955,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00154,VICC,No,1974,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00157,VICC,No,1967,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00165,VICC,No,1944,Male,Unknown,1,2,2.0-public
+CRC,GENIE-VICC-S00167,VICC,No,1964,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00172,VICC,No,1957,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00174,VICC,No,1967,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00182,VICC,No,1968,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00196,VICC,No,1964,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00197,VICC,No,1956,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00207,VICC,No,1950,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-VICC-S00215,VICC,No,1948,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00217,VICC,No,1964,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00221,VICC,No,1961,Male,Unknown,1,1,2.0-public
+CRC,GENIE-VICC-S00231,VICC,No,1940,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00232,VICC,No,1973,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00250,VICC,No,1968,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00251,VICC,No,1949,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00269,VICC,No,1951,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00273,VICC,No,1949,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00275,VICC,No,1950,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00276,VICC,No,1979,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-VICC-S00280,VICC,No,1943,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00282,VICC,No,1970,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00286,VICC,No,1957,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00288,VICC,No,1961,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00302,VICC,No,1957,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00323,VICC,No,1942,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00330,VICC,No,1962,Female,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-VICC-S00337,VICC,No,1950,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00341,VICC,No,1957,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-VICC-S00346,VICC,No,1946,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00349,VICC,No,1950,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00359,VICC,No,1966,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00362,VICC,No,1970,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-VICC-S00366,VICC,No,1941,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00375,VICC,No,1941,Female,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-VICC-S00378,VICC,No,1963,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00379,VICC,No,1963,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00392,VICC,No,1963,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00395,VICC,No,1970,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00397,VICC,No,1949,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00413,VICC,No,1947,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00414,VICC,No,1944,Female,Unknown,1,1,2.0-public
+CRC,GENIE-VICC-S00416,VICC,No,1934,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00427,VICC,No,1962,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00429,VICC,No,1965,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00430,VICC,No,1977,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00435,VICC,No,1956,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00443,VICC,No,1960,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00446,VICC,No,1962,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00448,VICC,No,1951,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00461,VICC,No,1977,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00464,VICC,No,1985,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00467,VICC,No,1950,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-VICC-S00475,VICC,No,1966,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00479,VICC,No,1962,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00483,VICC,No,1972,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-VICC-S00484,VICC,No,1954,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00508,VICC,No,1963,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00522,VICC,No,1959,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00531,VICC,No,1958,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00532,VICC,No,1956,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00534,VICC,No,1951,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00545,VICC,No,1946,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-VICC-S00552,VICC,No,1976,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00556,VICC,No,1962,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-VICC-S00563,VICC,No,1963,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00574,VICC,No,1985,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00578,VICC,No,1965,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-VICC-S00579,VICC,No,1965,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-VICC-S00584,VICC,No,1955,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00601,VICC,No,1940,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00603,VICC,No,1963,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-VICC-S00604,VICC,No,1964,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00618,VICC,No,1953,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00630,VICC,No,1976,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00633,VICC,No,1944,Male,Other,1,1,2.0-public
+CRC,GENIE-VICC-S00634,VICC,No,1975,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-VICC-S00637,VICC,No,1966,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00642,VICC,No,1962,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00645,VICC,No,1979,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-VICC-S00655,VICC,No,1968,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00666,VICC,No,1951,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00667,VICC,No,1957,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00668,VICC,No,1945,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-VICC-S00671,VICC,No,1970,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00676,VICC,No,1954,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-VICC-S00678,VICC,No,1942,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00680,VICC,No,1964,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-VICC-S00686,VICC,No,1947,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00687,VICC,No,1963,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00696,VICC,No,1946,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-VICC-S00697,VICC,No,1956,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-VICC-S00707,VICC,No,1964,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00709,VICC,No,1966,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-VICC-S00712,VICC,No,1940,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00714,VICC,No,1963,Male,Unknown,1,2,2.0-public
+CRC,GENIE-VICC-S00715,VICC,No,1950,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00717,VICC,No,1982,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00723,VICC,No,1958,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00725,VICC,No,1949,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00726,VICC,No,1943,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00735,VICC,No,1945,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-VICC-S00741,VICC,No,1995,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00764,VICC,No,1950,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-VICC-S00768,VICC,No,1956,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00773,VICC,No,1933,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00775,VICC,No,1949,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00779,VICC,No,1961,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00780,VICC,No,1956,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00785,VICC,No,1963,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00786,VICC,No,1955,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00787,VICC,No,1962,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00790,VICC,No,1961,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-VICC-S00794,VICC,No,1948,Female,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-VICC-S00803,VICC,No,1955,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00804,VICC,No,1964,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00805,VICC,No,1967,Male,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-VICC-S00808,VICC,No,1951,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00810,VICC,No,1963,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00818,VICC,No,1953,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00835,VICC,No,1961,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00838,VICC,No,1956,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-VICC-S00848,VICC,No,1943,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00851,VICC,No,1969,Male,Non-Hispanic Black,1,2,2.0-public
+CRC,GENIE-VICC-S00866,VICC,No,1944,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00875,VICC,No,1982,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00878,VICC,No,1966,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00887,VICC,No,1958,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00889,VICC,No,1970,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-VICC-S00893,VICC,No,1963,Female,Other,1,1,2.0-public
+CRC,GENIE-VICC-S00897,VICC,No,1939,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00899,VICC,No,1958,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00905,VICC,No,1970,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00911,VICC,No,1960,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-VICC-S00916,VICC,No,1956,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-VICC-S00918,VICC,No,1940,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00924,VICC,No,1953,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00927,VICC,No,1950,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00931,VICC,No,1960,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00938,VICC,No,1949,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00947,VICC,No,1947,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00949,VICC,No,1955,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00951,VICC,No,1969,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00954,VICC,No,1967,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00959,VICC,No,1953,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00963,VICC,No,1981,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S00966,VICC,No,1951,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00967,VICC,No,1948,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S00977,VICC,No,1958,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-VICC-S00984,VICC,No,1935,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01006,VICC,No,1953,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01007,VICC,No,1971,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01009,VICC,No,1983,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-VICC-S01014,VICC,No,1942,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01023,VICC,No,1950,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01025,VICC,No,1974,Female,Unknown,1,1,2.0-public
+CRC,GENIE-VICC-S01027,VICC,No,1946,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S01030,VICC,No,1959,Female,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-VICC-S01037,VICC,No,1955,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01040,VICC,No,1984,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S01051,VICC,No,1932,Female,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-VICC-S01059,VICC,No,1941,Male,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S01060,VICC,No,1959,Female,Hispanic/Latinx,1,1,2.0-public
+CRC,GENIE-VICC-S01063,VICC,No,1948,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01076,VICC,No,1962,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-VICC-S01078,VICC,No,1961,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01080,VICC,No,1953,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01082,VICC,No,1953,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01090,VICC,No,1941,Female,Other,1,1,2.0-public
+CRC,GENIE-VICC-S01093,VICC,No,1954,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01097,VICC,No,1968,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01104,VICC,No,1946,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S01110,VICC,No,1952,Female,Unknown,1,1,2.0-public
+CRC,GENIE-VICC-S01116,VICC,No,1964,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01118,VICC,No,1973,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01124,VICC,No,1967,Male,Non-Hispanic Black,1,2,2.0-public
+CRC,GENIE-VICC-S01126,VICC,No,1976,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01133,VICC,No,1966,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01141,VICC,No,1969,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01143,VICC,No,1952,Female,Non-Hispanic White,1,2,2.0-public
+CRC,GENIE-VICC-S01148,VICC,No,1961,Male,Unknown,1,1,2.0-public
+CRC,GENIE-VICC-S01150,VICC,No,1956,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01159,VICC,No,1967,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,1,2.0-public
+CRC,GENIE-VICC-S01160,VICC,No,1955,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01170,VICC,No,1930,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01177,VICC,No,1970,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01179,VICC,No,1965,Male,"AAAPI (Asian, Asian American, and Pacific Islander)",1,2,2.0-public
+CRC,GENIE-VICC-S01187,VICC,No,1951,Male,Other,1,1,2.0-public
+CRC,GENIE-VICC-S01191,VICC,No,1971,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01197,VICC,No,1959,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01199,VICC,No,1963,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01210,VICC,No,1950,Female,Non-Hispanic Black,1,2,2.0-public
+CRC,GENIE-VICC-S01216,VICC,No,1968,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01220,VICC,No,1946,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01221,VICC,No,1948,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01226,VICC,No,1945,Female,Non-Hispanic Black,1,2,2.0-public
+CRC,GENIE-VICC-S01230,VICC,No,1946,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01237,VICC,No,1983,Female,Hispanic/Latinx,1,2,2.0-public
+CRC,GENIE-VICC-S01257,VICC,No,1972,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01262,VICC,No,1937,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01270,VICC,Yes,,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01278,VICC,No,1955,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01283,VICC,No,1947,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01286,VICC,No,1947,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01296,VICC,No,1980,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01303,VICC,No,1953,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01305,VICC,No,1957,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01309,VICC,No,1964,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01314,VICC,No,1958,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01317,VICC,No,1969,Male,Non-Hispanic Black,1,2,2.0-public
+CRC,GENIE-VICC-S01322,VICC,No,1948,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01325,VICC,No,1957,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01327,VICC,No,1951,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01331,VICC,No,1956,Male,Unknown,1,1,2.0-public
+CRC,GENIE-VICC-S01352,VICC,No,1961,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01354,VICC,No,1943,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01363,VICC,No,1969,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01372,VICC,No,1952,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01397,VICC,No,1937,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01412,VICC,No,1953,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01414,VICC,No,1985,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01416,VICC,No,1954,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01418,VICC,No,1957,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-VICC-S01419,VICC,No,1957,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01420,VICC,No,1941,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01421,VICC,No,1956,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-VICC-S01422,VICC,No,1963,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01425,VICC,No,1957,Female,Non-Hispanic Black,1,2,2.0-public
+CRC,GENIE-VICC-S01426,VICC,No,1942,Male,Unknown,1,1,2.0-public
+CRC,GENIE-VICC-S01427,VICC,No,1939,Male,Unknown,1,1,2.0-public
+CRC,GENIE-VICC-S01430,VICC,No,1964,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01431,VICC,No,1961,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01432,VICC,No,1974,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01446,VICC,No,1936,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01447,VICC,No,1967,Male,Non-Hispanic Black,1,1,2.0-public
+CRC,GENIE-VICC-S01449,VICC,No,1953,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01452,VICC,No,1961,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01459,VICC,No,1945,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01463,VICC,No,1950,Male,Unknown,1,2,2.0-public
+CRC,GENIE-VICC-S01468,VICC,No,1956,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01476,VICC,No,1973,Male,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01482,VICC,No,1949,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01492,VICC,No,1942,Female,Non-Hispanic White,1,1,2.0-public
+CRC,GENIE-VICC-S01494,VICC,No,1957,Male,Non-Hispanic White,1,1,2.0-public

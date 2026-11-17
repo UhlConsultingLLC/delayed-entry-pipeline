@@ -1,0 +1,557 @@
+# Settings template. Every choice must be filled in: value, made_by (who made the choice) and
+# source (the source behind it). A blank, a missing choice or an unknown key stops the tool and
+# names the line. Where a choice has a default, writing `value: default` uses it; the locked plan
+# lists every default used and its source. Choices marked 'no default' must be filled in.
+
+settings_format: 1
+
+study:
+  # A short name for the study.
+  # Form: text.
+  # No default: fill this in.
+  name:
+    value: null
+    made_by: null
+    source: null
+  # The cancer and the population, in words.
+  # Form: text.
+  # No default: fill this in.
+  cancer:
+    value: null
+    made_by: null
+    source: null
+  # Where the plan is registered, or 'not registered'.
+  # Form: text.
+  # No default: fill this in.
+  registered_plan:
+    value: null
+    made_by: null
+    source: null
+
+source:
+  # Which adapter reads the data.
+  # Form: genie_bpc, flat_file or omop.
+  # No default: fill this in.
+  adapter:
+    value: null
+    made_by: null
+    source: null
+  genie_bpc:
+    # Which GENIE BPC cohort and release, for example crc_v2.0.
+    # Form: text. Only when source.adapter is genie_bpc.
+    # No default: fill this in.
+    cohort:
+      value: null
+      made_by: null
+      source: null
+    # The source's labels for this cancer: which pathology specimens and which other primaries are of this kind.
+    # Form: a list of labels. Only when source.adapter is genie_bpc.
+    # No default: fill this in.
+    # Example:
+    #   value:
+    #   - Prostate Cancer
+    cancer_type_labels:
+      value: null
+      made_by: null
+      source: null
+    # A regular expression for this cancer's ICD-O-3 site codes (checked after download).
+    # Form: a regular expression. Only when source.adapter is genie_bpc.
+    # No default: fill this in.
+    cancer_site_pattern:
+      value: null
+      made_by: null
+      source: null
+    # When the source withholds survival to hide an age over its limit: censor alive at that age, or leave the outcome blank (the patient then fails 'outcome_recorded').
+    # Form: censor_at_age_limit or leave_blank. Only when source.adapter is genie_bpc.
+    # No default: fill this in.
+    withheld_survival:
+      value: null
+      made_by: null
+      source: null
+
+cohort:
+  # Who is analyzed, in the order the flow diagram counts them. Each rule has an id, a label and the conditions it needs. Every structural check (has_entry_test, entry_time_known, outcome_recorded, entry_before_follow_up_end, genotype_assignable) must appear once.
+  # Form: a list of rules.
+  # No default: fill this in.
+  # Example:
+  #   value:
+  #   - id: adults
+  #     label: Adults at diagnosis
+  #     all_of:
+  #     - field: age_at_diagnosis
+  #       op: ge
+  #       value: 18
+  #       missing: fail
+  #   - id: has_test
+  #     label: Has a sequencing test
+  #     all_of:
+  #     - check: has_entry_test
+  rules:
+    value: null
+    made_by: null
+    source: null
+
+entry:
+  # The event where the corrected clock starts.
+  # Form: report or sample_collection or order.
+  # No default: fill this in.
+  event:
+    value: null
+    made_by: null
+    source: null
+  # Events that may stand in when the source lacks the entry event; using one is a deviation. An empty list means none may.
+  # Form: a list, possibly empty.
+  # No default: fill this in.
+  acceptable_substitutes:
+    value: null
+    made_by: null
+    source: null
+  # Which kinds of test can be the entry test (the tests table's modality), for example ngs.
+  # Form: a list.
+  # No default: fill this in.
+  modalities:
+    value: null
+    made_by: null
+    source: null
+  # How the first test is chosen: the order of tie-breaks. A test whose time is withheld always ranks last.
+  # Form: a list from: earliest_day, largest_panel, lowest_test_order.
+  # Default: [earliest_day, largest_panel, lowest_test_order] (source: CRC BPC plan, section 4 (NGS sample used))
+  first_test_order:
+    value: null
+    made_by: null
+    source: null
+  # What happens when the entry event comes before diagnosis.
+  # Form: enter_at_day_0 or exclude.
+  # Default: enter_at_day_0 (source: CRC BPC plan, section 4 (delayed entry))
+  before_diagnosis:
+    value: null
+    made_by: null
+    source: null
+
+genotype:
+  # Which test's results define the groups.
+  # Form: entry_test.
+  # No default: fill this in.
+  results_from:
+    value: null
+    made_by: null
+    source: null
+  # Whether spaces around a variant's text are ignored when matching it.
+  # Form: trimmed or exact.
+  # Default: trimmed (source: CRC BPC plan, section 4a; spaces around a protein change carry no meaning)
+  variant_text:
+    value: null
+    made_by: null
+    source: null
+  # The groups, in order of precedence: a patient matching two goes to the first. The last is the group of everyone else ('none_of_the_above: true').
+  # Form: a list of groups.
+  # No default: fill this in.
+  # Example:
+  #   value:
+  #   - name: Mutant
+  #     any_of:
+  #     - kind: mutation
+  #       genes:
+  #       - GENE1
+  #       codons:
+  #       - 12
+  #   - name: No listed variant
+  #     none_of_the_above: true
+  groups:
+    value: null
+    made_by: null
+    source: null
+  # The reference group for every comparison.
+  # Form: a group's name.
+  # No default: fill this in.
+  reference:
+    value: null
+    made_by: null
+    source: null
+  # Groups that are described, never compared, whatever their size: for example a group gathering several rare drivers. The reference can't be one. An empty list means every group is compared when it is large enough.
+  # Form: a list of groups' names, possibly empty.
+  # No default: fill this in.
+  # Example:
+  #   value:
+  #   - Rare drivers
+  described_only:
+    value: null
+    made_by: null
+    source: null
+  coverage:
+    # What a panel must read for a patient's group to be trusted: each gene, with its codons or 'whole_gene'.
+    # Form: gene: list of codons.
+    # No default: fill this in.
+    # Example:
+    #   value:
+    #     GENE1:
+    #     - 12
+    #     - 13
+    required:
+      value: null
+      made_by: null
+      source: null
+    # Whether the coverage rule applies to every group or only to the reference (wild type).
+    # Form: all_groups or reference_only.
+    # No default: fill this in.
+    applies_to:
+      value: null
+      made_by: null
+      source: null
+    # When the panels list genes but not the codons they read, or a group counts a required gene's fusions and fusion_panels names no panels for it: accept a listed gene as covering its codons (or as detecting its fusions), or treat it as a deviation.
+    # Form: accept_gene_level or deviation.
+    # No default: fill this in.
+    when_only_genes_listed:
+      value: null
+      made_by: null
+      source: null
+    # For a required gene whose fusions a group counts: the panels that detect its fusions, from the panels' documentation. A gene list shows that a panel reads a gene, not that it detects the gene's fusions, so for a gene named here a panel covers it only if it is on this list. An empty mapping names none.
+    # Form: gene: list of panels; possibly empty.
+    # No default: fill this in.
+    # Example:
+    #   value:
+    #     GENE2:
+    #     - PANEL-A
+    #     - PANEL-B
+    fusion_panels:
+      value: null
+      made_by: null
+      source: null
+  # Drugs aimed at a driver, listed by the driver they target, as the source names them. The screen counts, masked, the reference group's patients who received one at any time: a sign of a driver the first test didn't find. It only counts; nobody changes group. An empty mapping means no such count.
+  # Form: driver: list of drugs; possibly empty.
+  # No default: fill this in.
+  # Example:
+  #   value:
+  #     GENE2 fusion:
+  #     - Drug A
+  #     - Drug B
+  reference_drugs:
+    value: null
+    made_by: null
+    source: null
+
+time:
+  # Days in a year (a month is a twelfth of it).
+  # Form: a number.
+  # Default: 365.25 (source: the Julian year, as in the CRC BPC plan, section 4 (a month is a twelfth of it))
+  days_per_year:
+    value: null
+    made_by: null
+    source: null
+  # The horizon for months alive (RMST).
+  # Form: years.
+  # No default: fill this in.
+  horizon_years:
+    value: null
+    made_by: null
+    source: null
+
+summary:
+  # The fixed times for survival estimates.
+  # Form: a list of years.
+  # No default: fill this in.
+  survival_at_years:
+    value: null
+    made_by: null
+    source: null
+  # A median, or a limit of its interval, after this is reported as not reached.
+  # Form: years.
+  # No default: fill this in.
+  median_limit_years:
+    value: null
+    made_by: null
+    source: null
+
+materiality:
+  # The bar for a difference in RMST.
+  # Form: months.
+  # No default: fill this in.
+  rmst_months:
+    value: null
+    made_by: null
+    source: null
+  # The bar for a difference in median.
+  # Form: months.
+  # No default: fill this in.
+  median_months:
+    value: null
+    made_by: null
+    source: null
+  # The bar for |HR naive / HR corrected - 1|.
+  # Form: a share, for example 0.10.
+  # No default: fill this in.
+  hr_ratio_change:
+    value: null
+    made_by: null
+    source: null
+  # The bar for the change in a between-group RMST difference.
+  # Form: months.
+  # No default: fill this in.
+  rmst_gap_change_months:
+    value: null
+    made_by: null
+    source: null
+
+labels:
+  # When a result is labeled clearly material.
+  # Form: estimate_and_whole_interval.
+  # Default: estimate_and_whole_interval (source: CRC BPC plan, section 11)
+  clearly_material:
+    value: null
+    made_by: null
+    source: null
+  # When a result is labeled material.
+  # Form: estimate_only.
+  # Default: estimate_only (source: CRC BPC plan, section 11)
+  material:
+    value: null
+    made_by: null
+    source: null
+
+smallest_group:
+  # The smallest group compared: a smaller one is described, not compared.
+  # Form: patients.
+  # Default: 30 (source: CRC BPC plan, section 5 (D1))
+  patients:
+    value: null
+    made_by: null
+    source: null
+  # For each genotype group, what happens if it is short: 'describe' it, or 'block' the analysis (a person then decides, and logs a deviation).
+  # Form: group: describe or block.
+  # No default: fill this in.
+  # Example:
+  #   value:
+  #     Mutant: block
+  #     No listed variant: block
+  if_short:
+    value: null
+    made_by: null
+    source: null
+
+biomarker:
+  # Above this share of Unknown, a biomarker analysis uses its fallback.
+  # Form: a share, for example 0.30.
+  # Default: 0.3 (source: CRC BPC plan, section 4b)
+  unknown_max_share:
+    value: null
+    made_by: null
+    source: null
+
+survival_after_entry:
+  # The survival-after-sequencing check: deaths within this many days of the entry event.
+  # Form: days.
+  # No default: fill this in.
+  window_days:
+    value: null
+    made_by: null
+    source: null
+  # Fewer deaths than this means the source in effect required survival after the entry event.
+  # Form: deaths.
+  # No default: fill this in.
+  min_deaths:
+    value: null
+    made_by: null
+    source: null
+  # What happens then: entry moves later by the window, or a warning only.
+  # Form: move_entry_by_window or warn_only.
+  # No default: fill this in.
+  if_fewer:
+    value: null
+    made_by: null
+    source: null
+
+stability:
+  # The corrected risk set a curve needs before it is trusted (the t* rule).
+  # Form: patients.
+  # Default: 20 (source: CRC BPC plan, section 6 (stability rule))
+  risk_set:
+    value: null
+    made_by: null
+    source: null
+
+uncertainty:
+  # Bootstrap resamples.
+  # Form: a whole number.
+  # Default: 1000 (source: CRC BPC plan, section 6)
+  bootstrap_resamples:
+    value: null
+    made_by: null
+    source: null
+  # The random seed for the resamples.
+  # Form: a whole number.
+  # No default: fill this in.
+  seed:
+    value: null
+    made_by: null
+    source: null
+  # The interval's coverage.
+  # Form: for example 0.95.
+  # Default: 0.95 (source: CRC BPC plan, section 6; conventional 95% intervals)
+  interval_level:
+    value: null
+    made_by: null
+    source: null
+  # When a resample can't give a value (a median not reached): no interval, and the count is reported.
+  # Form: no_interval.
+  # Default: no_interval (source: CRC BPC plan, section 6)
+  when_a_resample_has_no_value:
+    value: null
+    made_by: null
+    source: null
+
+adjustment:
+  # The adjustment variables (patients-table fields, or extras the adapter supplies) and their form. A categorical variable may list the levels it keeps ('keep': any other value is missing), name its reference level ('reference': otherwise the first level), and merge the source's values into new levels ('merge': each new level with the values it takes in; a value in no group is missing, and 'keep' then names new levels).
+  # Form: a list.
+  # No default: fill this in.
+  # Example:
+  #   value:
+  #   - field: age_at_diagnosis
+  #     form: spline
+  #     knots_at_percentiles:
+  #     - 10
+  #     - 50
+  #     - 90
+  #   - field: smoking
+  #     form: categorical
+  #     reference: Never
+  #     merge:
+  #       Never:
+  #       - Never
+  #       Former:
+  #       - Former, quit over a year ago
+  #       Current:
+  #       - Current
+  #       - Former, quit within a year
+  variables:
+    value: null
+    made_by: null
+    source: null
+  # Bands for year of diagnosis, if it is used in bands.
+  # Form: a list of bands, possibly empty.
+  # No default: fill this in.
+  year_bands:
+    value: null
+    made_by: null
+    source: null
+  # A smaller year band is merged before modeling.
+  # Form: patients.
+  # No default: fill this in.
+  band_min_patients:
+    value: null
+    made_by: null
+    source: null
+
+missing_data:
+  # Complete-case analysis if at most this share has a missing covariate; otherwise multiple imputation.
+  # Form: a share.
+  # Default: 0.05 (source: CRC BPC plan, section 9)
+  complete_case_max_share:
+    value: null
+    made_by: null
+    source: null
+  # Imputations, when imputing.
+  # Form: a whole number.
+  # Default: 20 (source: CRC BPC plan, section 9)
+  imputations:
+    value: null
+    made_by: null
+    source: null
+  # How multiple imputation is done, when the complete-case rule calls for it (adjustment variables only; the group and the times are never imputed), by chained equations: the engine (the pipeline's own, in R and nnet, or the mice package); the outcome terms the imputation model holds besides the adjustment variables (the event indicator, the Nelson-Aalen cumulative hazard on the corrected or the naive clock, the entry or exit time); whether it holds the group; the method for each form of variable (pmm: predictive mean matching; norm: Bayesian linear regression; logreg: logistic, two levels only; polyreg: multinomial; polr: ordered, in the bands' order); the donors predictive mean matching draws from; and the iterations. Hazard ratios are pooled by Rubin's rules; for bootstrap intervals, each resample is imputed once; point estimates are averages across the imputations. The random seed is uncertainty.seed. May be left out if imputation is never needed: a run that needs it then stops.
+  # Form: a mapping.
+  # No default. Optional: fill it in, or delete this choice if it is never needed.
+  # Example:
+  #   value:
+  #     engine: chained_equations
+  #     outcome_terms:
+  #     - event
+  #     - cumulative_hazard_corrected
+  #     - entry_time
+  #     include_group: true
+  #     methods:
+  #       linear: pmm
+  #       spline: pmm
+  #       categorical: polyreg
+  #       bands: polyreg
+  #     pmm_donors: 5
+  #     iterations: 5
+  #     pooling: rubins_rules
+  #     bootstrap: impute_each_resample_once
+  #     point_estimates: average_across_imputations
+  imputation_model:
+    value: null
+    made_by: null
+    source: null
+
+weighting:
+  # The traits used for weighting.
+  # Form: same_as_adjustment.
+  # Default: same_as_adjustment (source: CRC BPC plan, section 6 (pass 3b))
+  variables:
+    value: null
+    made_by: null
+    source: null
+  # Weights are trimmed at these percentiles.
+  # Form: two percentiles.
+  # Default: [1, 99] (source: CRC BPC plan, section 6 (pass 3b))
+  trim_percentiles:
+    value: null
+    made_by: null
+    source: null
+  # Balance target: absolute standardized mean differences below this.
+  # Form: a number.
+  # Default: 0.1 (source: CRC BPC plan, section 6 (pass 3b))
+  balance_target_smd:
+    value: null
+    made_by: null
+    source: null
+
+ph_check:
+  # Proportional-hazards check: below this p, hazard ratios are split.
+  # Form: a p-value.
+  # Default: 0.01 (source: CRC BPC plan, section 8 (SA5))
+  p_threshold:
+    value: null
+    made_by: null
+    source: null
+  # Where hazard ratios are split.
+  # Form: months.
+  # Default: 12 (source: CRC BPC plan, section 8 (SA5))
+  split_months:
+    value: null
+    made_by: null
+    source: null
+
+assumption_check:
+  # Estimators of the conditional Kendall's tau for the delayed-entry assumption.
+  # Form: a list.
+  # Default: [MB] (source: CRC BPC plan, section 8 (SA6): Martin and Betensky 2005)
+  estimators:
+    value: null
+    made_by: null
+    source: null
+
+# The secondary and sensitivity analyses, each switched on or off, with its parameters.
+# Form: a list.
+# No default: fill this in.
+# Example:
+#   value:
+#   - id: SA1
+#     label: Short waits only
+#     run: true
+#     kind: subset
+#     keep:
+#       within_months: 6
+#     if_short: describe
+analyses:
+  value: null
+  made_by: null
+  source: null
+
+privacy:
+  # The smallest count shown. It can be raised, never set below the data-use agreement's.
+  # Form: a whole number.
+  # No default: fill this in.
+  min_count:
+    value: null
+    made_by: null
+    source: null

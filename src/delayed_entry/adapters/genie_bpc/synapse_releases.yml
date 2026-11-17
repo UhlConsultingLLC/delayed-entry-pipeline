@@ -1,0 +1,21 @@
+# GENIE BPC public releases on Synapse: the folder each part of a release is in. Read by
+# scripts/download_synapse.py. A part marked patient_data is downloaded only once the study's settings
+# for that release are locked (the settings name the release in source.genie_bpc.cohort).
+#
+# Checked 2026-11-13 against Synapse's own records of where each file sits (project "GENIE Biopharma
+# Collaborative Public", syn27056172 > Data Releases), and against the genieBPC package's release list
+# (version 2.2.0), whose file IDs match the files the CRC BPC study downloaded.
+
+crc_v2.0:
+  release: syn30991637            # CRC > 2.0-public
+  parts:
+    documentation: {folder: syn30991666, patient_data: false}
+    clinical: {folder: syn39802567, patient_data: true}
+    genomic: {folder: syn39802595, patient_data: true}
+
+nsclc_v2.0:
+  release: syn27056697            # NSCLC > 2.0-public, released 2022-05
+  parts:
+    documentation: {folder: syn29288688, patient_data: false}   # data guide, variable synopsis, cBioPortal crosswalk
+    clinical: {folder: syn30358089, patient_data: true}
+    genomic: {folder: syn30358098, patient_data: true}          # the cBioPortal files: mutations, fusions, panels

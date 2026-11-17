@@ -1,0 +1,30 @@
+__pycache__/
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Office lock files, left while a document is open
+~$*
+
+# Notes for one machine (folders, R library, where data and locked plans live): never published
+docs/local/
+RELEASE_AUDIT.md
+
+# Row-level data and run folders never belong here; these catch a misplaced one
+delayed_entry_work/
+delayed_entry_outputs/
+run_plan_v*/
+plan_v*/
+settings_lock/
+
+# Kept private for now. The working to-do list stays private. The NSCLC review documents and provenance log
+# are published once the NSCLC settings are reviewed and locked. Delete a line to publish its file.
+docs/NEXT_STEPS.md
+docs/provenance/
+docs/nsclc_review_dry_run.md
+docs/nsclc_reviewer_packet.md
+docs/nsclc_reviewer_packet.docx
+docs/nsclc_settings_review.md

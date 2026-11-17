@@ -1,0 +1,1590 @@
+cohort,record_id,institution,ca_seq,regimen_number,regimen_number_within_cancer,redcap_ca_index,drugs_num,regimen_drugs,dx_reg_start_int,os_g_status,tt_os_g_days,release_version
+CRC,GENIE-DFCI-S00010,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",128,1,1032,2.0-public
+CRC,GENIE-DFCI-S00010,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",268,1,892,2.0-public
+CRC,GENIE-DFCI-S00010,DFCI,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",679,1,481,2.0-public
+CRC,GENIE-DFCI-S00012,DFCI,0,1,1,Yes,1,Capecitabine,18,0,490,2.0-public
+CRC,GENIE-DFCI-S00012,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",261,0,247,2.0-public
+CRC,GENIE-DFCI-S00013,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",29,1,1437,2.0-public
+CRC,GENIE-DFCI-S00013,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",213,1,1253,2.0-public
+CRC,GENIE-DFCI-S00013,DFCI,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",724,1,742,2.0-public
+CRC,GENIE-DFCI-S00015,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",30,1,167,2.0-public
+CRC,GENIE-DFCI-S00016,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",17,0,569,2.0-public
+CRC,GENIE-DFCI-S00016,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",180,0,406,2.0-public
+CRC,GENIE-DFCI-S00025,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",48,0,668,2.0-public
+CRC,GENIE-DFCI-S00030,DFCI,0,1,1,Yes,1,Capecitabine,16,,,2.0-public
+CRC,GENIE-DFCI-S00035,DFCI,1,1,1,Yes,2,"Capecitabine, Oxaliplatin",37,0,1674,2.0-public
+CRC,GENIE-DFCI-S00049,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",69,0,1264,2.0-public
+CRC,GENIE-DFCI-S00060,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",85,1,1827,2.0-public
+CRC,GENIE-DFCI-S00067,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",54,0,334,2.0-public
+CRC,GENIE-DFCI-S00076,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",42,0,172,2.0-public
+CRC,GENIE-DFCI-S00076,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",196,0,18,2.0-public
+CRC,GENIE-DFCI-S00077,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",71,0,1153,2.0-public
+CRC,GENIE-DFCI-S00077,DFCI,0,2,2,Yes,1,Capecitabine,229,0,995,2.0-public
+CRC,GENIE-DFCI-S00087,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",36,1,1419,2.0-public
+CRC,GENIE-DFCI-S00087,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",484,1,971,2.0-public
+CRC,GENIE-DFCI-S00087,DFCI,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",1066,1,389,2.0-public
+CRC,GENIE-DFCI-S00090,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",45,1,528,2.0-public
+CRC,GENIE-DFCI-S00090,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",159,1,414,2.0-public
+CRC,GENIE-DFCI-S00090,DFCI,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",269,1,304,2.0-public
+CRC,GENIE-DFCI-S00090,DFCI,0,4,4,Yes,1,Capecitabine,427,1,146,2.0-public
+CRC,GENIE-DFCI-S00095,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",12,1,294,2.0-public
+CRC,GENIE-DFCI-S00095,DFCI,0,2,2,Yes,1,Capecitabine,181,1,125,2.0-public
+CRC,GENIE-DFCI-S00096,DFCI,0,1,1,Yes,1,Capecitabine,45,1,454,2.0-public
+CRC,GENIE-DFCI-S00100,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",92,0,776,2.0-public
+CRC,GENIE-DFCI-S00104,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",66,0,663,2.0-public
+CRC,GENIE-DFCI-S00104,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",181,0,548,2.0-public
+CRC,GENIE-DFCI-S00105,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",31,1,842,2.0-public
+CRC,GENIE-DFCI-S00105,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",294,1,579,2.0-public
+CRC,GENIE-DFCI-S00110,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",22,1,630,2.0-public
+CRC,GENIE-DFCI-S00110,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",378,1,274,2.0-public
+CRC,GENIE-DFCI-S00118,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",17,1,628,2.0-public
+CRC,GENIE-DFCI-S00121,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",140,1,411,2.0-public
+CRC,GENIE-DFCI-S00121,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",530,1,21,2.0-public
+CRC,GENIE-DFCI-S00141,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",180,1,360,2.0-public
+CRC,GENIE-DFCI-S00141,DFCI,0,2,2,Yes,1,Capecitabine,382,1,158,2.0-public
+CRC,GENIE-DFCI-S00141,DFCI,0,3,3,Yes,1,Capecitabine,489,1,51,2.0-public
+CRC,GENIE-DFCI-S00148,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",101,1,1328,2.0-public
+CRC,GENIE-DFCI-S00156,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",19,0,173,2.0-public
+CRC,GENIE-DFCI-S00159,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",89,0,583,2.0-public
+CRC,GENIE-DFCI-S00159,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",257,0,415,2.0-public
+CRC,GENIE-DFCI-S00159,DFCI,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",469,0,203,2.0-public
+CRC,GENIE-DFCI-S00163,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",10,0,938,2.0-public
+CRC,GENIE-DFCI-S00163,DFCI,0,2,2,Yes,1,Investigational Drug,459,0,489,2.0-public
+CRC,GENIE-DFCI-S00163,DFCI,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",614,0,334,2.0-public
+CRC,GENIE-DFCI-S00166,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",44,1,626,2.0-public
+CRC,GENIE-DFCI-S00166,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",142,1,528,2.0-public
+CRC,GENIE-DFCI-S00170,DFCI,0,1,1,Yes,1,Capecitabine,60,1,1352,2.0-public
+CRC,GENIE-DFCI-S00170,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",362,1,1050,2.0-public
+CRC,GENIE-DFCI-S00178,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",74,1,1158,2.0-public
+CRC,GENIE-DFCI-S00178,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",190,1,1042,2.0-public
+CRC,GENIE-DFCI-S00187,DFCI,0,1,1,Yes,1,Capecitabine,-9,1,1227,2.0-public
+CRC,GENIE-DFCI-S00187,DFCI,0,2,2,Yes,1,Capecitabine,249,1,969,2.0-public
+CRC,GENIE-DFCI-S00194,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",38,1,356,2.0-public
+CRC,GENIE-DFCI-S00194,DFCI,0,2,2,Yes,1,Investigational Drug,274,1,120,2.0-public
+CRC,GENIE-DFCI-S00200,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",108,0,1253,2.0-public
+CRC,GENIE-DFCI-S00202,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",16,1,993,2.0-public
+CRC,GENIE-DFCI-S00202,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",384,1,625,2.0-public
+CRC,GENIE-DFCI-S00214,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",15,0,154,2.0-public
+CRC,GENIE-DFCI-S00216,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",51,0,1675,2.0-public
+CRC,GENIE-DFCI-S00239,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",37,1,151,2.0-public
+CRC,GENIE-DFCI-S00240,DFCI,0,1,1,Yes,1,Capecitabine,17,1,424,2.0-public
+CRC,GENIE-DFCI-S00241,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",38,0,435,2.0-public
+CRC,GENIE-DFCI-S00243,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",54,0,1388,2.0-public
+CRC,GENIE-DFCI-S00246,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",21,1,1182,2.0-public
+CRC,GENIE-DFCI-S00246,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",177,1,1026,2.0-public
+CRC,GENIE-DFCI-S00254,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",114,0,1278,2.0-public
+CRC,GENIE-DFCI-S00254,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",473,0,919,2.0-public
+CRC,GENIE-DFCI-S00254,DFCI,0,3,3,Yes,1,Investigational Drug,676,0,716,2.0-public
+CRC,GENIE-DFCI-S00259,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",12,1,1409,2.0-public
+CRC,GENIE-DFCI-S00259,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",375,1,1046,2.0-public
+CRC,GENIE-DFCI-S00261,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",32,1,1923,2.0-public
+CRC,GENIE-DFCI-S00261,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",248,1,1707,2.0-public
+CRC,GENIE-DFCI-S00267,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",20,1,322,2.0-public
+CRC,GENIE-DFCI-S00270,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",39,0,1343,2.0-public
+CRC,GENIE-DFCI-S00272,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",43,0,2910,2.0-public
+CRC,GENIE-DFCI-S00272,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",252,0,2701,2.0-public
+CRC,GENIE-DFCI-S00277,DFCI,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",21,0,808,2.0-public
+CRC,GENIE-DFCI-S00277,DFCI,1,2,2,Yes,1,Investigational Drug,683,0,146,2.0-public
+CRC,GENIE-DFCI-S00277,DFCI,1,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",826,0,3,2.0-public
+CRC,GENIE-DFCI-S00278,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",42,1,1101,2.0-public
+CRC,GENIE-DFCI-S00284,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",11,0,186,2.0-public
+CRC,GENIE-DFCI-S00291,DFCI,0,1,1,Yes,1,Capecitabine,148,0,805,2.0-public
+CRC,GENIE-DFCI-S00300,DFCI,0,1,1,Yes,1,Capecitabine,21,1,484,2.0-public
+CRC,GENIE-DFCI-S00300,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",181,1,324,2.0-public
+CRC,GENIE-DFCI-S00300,DFCI,0,3,3,Yes,1,Investigational Drug,445,1,60,2.0-public
+CRC,GENIE-DFCI-S00305,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",111,1,1908,2.0-public
+CRC,GENIE-DFCI-S00319,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",44,0,1191,2.0-public
+CRC,GENIE-DFCI-S00319,DFCI,0,2,2,Yes,1,Capecitabine,447,0,788,2.0-public
+CRC,GENIE-DFCI-S00319,DFCI,0,3,3,Yes,1,Investigational Drug,883,0,352,2.0-public
+CRC,GENIE-DFCI-S00328,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",31,0,795,2.0-public
+CRC,GENIE-DFCI-S00332,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",47,0,2501,2.0-public
+CRC,GENIE-DFCI-S00335,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",55,0,968,2.0-public
+CRC,GENIE-DFCI-S00339,DFCI,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",78,0,2727,2.0-public
+CRC,GENIE-DFCI-S00340,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",73,1,309,2.0-public
+CRC,GENIE-DFCI-S00340,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",336,1,46,2.0-public
+CRC,GENIE-DFCI-S00344,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",34,1,659,2.0-public
+CRC,GENIE-DFCI-S00344,DFCI,0,2,2,Yes,1,Investigational Drug,129,1,564,2.0-public
+CRC,GENIE-DFCI-S00344,DFCI,0,3,3,Yes,1,Capecitabine,287,1,406,2.0-public
+CRC,GENIE-DFCI-S00352,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",25,0,1640,2.0-public
+CRC,GENIE-DFCI-S00352,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",147,0,1518,2.0-public
+CRC,GENIE-DFCI-S00360,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",41,1,150,2.0-public
+CRC,GENIE-DFCI-S00365,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",16,0,1567,2.0-public
+CRC,GENIE-DFCI-S00365,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",128,0,1455,2.0-public
+CRC,GENIE-DFCI-S00365,DFCI,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",405,0,1178,2.0-public
+CRC,GENIE-DFCI-S00365,DFCI,0,4,4,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",528,0,1055,2.0-public
+CRC,GENIE-DFCI-S00369,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",19,1,109,2.0-public
+CRC,GENIE-DFCI-S00372,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",16,1,541,2.0-public
+CRC,GENIE-DFCI-S00372,DFCI,0,2,2,Yes,1,Investigational Drug,166,1,391,2.0-public
+CRC,GENIE-DFCI-S00374,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",59,0,2661,2.0-public
+CRC,GENIE-DFCI-S00394,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",17,1,1310,2.0-public
+CRC,GENIE-DFCI-S00394,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",298,1,1029,2.0-public
+CRC,GENIE-DFCI-S00403,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",31,0,2299,2.0-public
+CRC,GENIE-DFCI-S00405,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",49,0,1432,2.0-public
+CRC,GENIE-DFCI-S00406,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",76,1,1245,2.0-public
+CRC,GENIE-DFCI-S00406,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",242,1,1079,2.0-public
+CRC,GENIE-DFCI-S00417,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",42,0,1540,2.0-public
+CRC,GENIE-DFCI-S00417,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",454,0,1128,2.0-public
+CRC,GENIE-DFCI-S00418,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",19,0,704,2.0-public
+CRC,GENIE-DFCI-S00418,DFCI,0,2,2,Yes,1,Capecitabine,338,0,385,2.0-public
+CRC,GENIE-DFCI-S00418,DFCI,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",558,0,165,2.0-public
+CRC,GENIE-DFCI-S00436,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",129,1,381,2.0-public
+CRC,GENIE-DFCI-S00436,DFCI,0,2,2,Yes,1,Capecitabine,265,1,245,2.0-public
+CRC,GENIE-DFCI-S00444,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",73,1,389,2.0-public
+CRC,GENIE-DFCI-S00445,DFCI,0,1,1,Yes,1,Capecitabine,49,1,1029,2.0-public
+CRC,GENIE-DFCI-S00445,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",144,1,934,2.0-public
+CRC,GENIE-DFCI-S00445,DFCI,0,3,3,Yes,1,Capecitabine,517,1,561,2.0-public
+CRC,GENIE-DFCI-S00447,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",45,1,525,2.0-public
+CRC,GENIE-DFCI-S00450,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",43,1,279,2.0-public
+CRC,GENIE-DFCI-S00451,DFCI,1,1,1,Yes,2,"Capecitabine, Oxaliplatin",12,1,877,2.0-public
+CRC,GENIE-DFCI-S00451,DFCI,1,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",250,1,639,2.0-public
+CRC,GENIE-DFCI-S00468,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",78,0,2460,2.0-public
+CRC,GENIE-DFCI-S00469,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",22,0,1480,2.0-public
+CRC,GENIE-DFCI-S00469,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",245,0,1257,2.0-public
+CRC,GENIE-DFCI-S00472,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",52,0,2117,2.0-public
+CRC,GENIE-DFCI-S00476,DFCI,0,1,1,Yes,1,Capecitabine,12,0,2330,2.0-public
+CRC,GENIE-DFCI-S00476,DFCI,0,2,2,Yes,1,Capecitabine,183,0,2159,2.0-public
+CRC,GENIE-DFCI-S00476,DFCI,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",314,0,2028,2.0-public
+CRC,GENIE-DFCI-S00478,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",136,0,1390,2.0-public
+CRC,GENIE-DFCI-S00480,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",63,0,2679,2.0-public
+CRC,GENIE-DFCI-S00480,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",367,0,2375,2.0-public
+CRC,GENIE-DFCI-S00480,DFCI,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",457,0,2285,2.0-public
+CRC,GENIE-DFCI-S00481,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",25,0,448,2.0-public
+CRC,GENIE-DFCI-S00481,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",231,0,242,2.0-public
+CRC,GENIE-DFCI-S00482,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",32,0,1496,2.0-public
+CRC,GENIE-DFCI-S00482,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",287,0,1241,2.0-public
+CRC,GENIE-DFCI-S00482,DFCI,0,3,3,Yes,1,Investigational Drug,544,0,984,2.0-public
+CRC,GENIE-DFCI-S00486,DFCI,0,1,1,Yes,1,Capecitabine,13,1,1570,2.0-public
+CRC,GENIE-DFCI-S00486,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",171,1,1412,2.0-public
+CRC,GENIE-DFCI-S00486,DFCI,0,3,3,Yes,1,Capecitabine,283,1,1300,2.0-public
+CRC,GENIE-DFCI-S00486,DFCI,0,4,4,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",430,1,1153,2.0-public
+CRC,GENIE-DFCI-S00486,DFCI,0,5,5,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",752,1,831,2.0-public
+CRC,GENIE-DFCI-S00496,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",87,0,664,2.0-public
+CRC,GENIE-DFCI-S00502,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",92,1,1107,2.0-public
+CRC,GENIE-DFCI-S00505,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",36,0,2424,2.0-public
+CRC,GENIE-DFCI-S00509,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",21,0,241,2.0-public
+CRC,GENIE-DFCI-S00520,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",67,0,2279,2.0-public
+CRC,GENIE-DFCI-S00527,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",76,1,318,2.0-public
+CRC,GENIE-DFCI-S00527,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",223,1,171,2.0-public
+CRC,GENIE-DFCI-S00536,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",43,0,1689,2.0-public
+CRC,GENIE-DFCI-S00541,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",67,0,1956,2.0-public
+CRC,GENIE-DFCI-S00544,DFCI,0,1,1,Yes,1,Capecitabine,32,0,380,2.0-public
+CRC,GENIE-DFCI-S00544,DFCI,0,2,2,Yes,1,Capecitabine,211,0,201,2.0-public
+CRC,GENIE-DFCI-S00554,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",11,1,1118,2.0-public
+CRC,GENIE-DFCI-S00554,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",103,1,1026,2.0-public
+CRC,GENIE-DFCI-S00554,DFCI,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",344,1,785,2.0-public
+CRC,GENIE-DFCI-S00557,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",35,0,3036,2.0-public
+CRC,GENIE-DFCI-S00559,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",48,0,1266,2.0-public
+CRC,GENIE-DFCI-S00559,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",198,0,1116,2.0-public
+CRC,GENIE-DFCI-S00565,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",21,1,474,2.0-public
+CRC,GENIE-DFCI-S00565,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",235,1,260,2.0-public
+CRC,GENIE-DFCI-S00567,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",77,1,1819,2.0-public
+CRC,GENIE-DFCI-S00569,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",89,1,801,2.0-public
+CRC,GENIE-DFCI-S00569,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",259,1,631,2.0-public
+CRC,GENIE-DFCI-S00569,DFCI,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",399,1,491,2.0-public
+CRC,GENIE-DFCI-S00569,DFCI,0,4,4,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",570,1,320,2.0-public
+CRC,GENIE-DFCI-S00571,DFCI,1,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",31,0,808,2.0-public
+CRC,GENIE-DFCI-S00571,DFCI,1,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",272,0,567,2.0-public
+CRC,GENIE-DFCI-S00573,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",15,1,480,2.0-public
+CRC,GENIE-DFCI-S00577,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",60,1,147,2.0-public
+CRC,GENIE-DFCI-S00580,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",16,0,924,2.0-public
+CRC,GENIE-DFCI-S00580,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",191,0,749,2.0-public
+CRC,GENIE-DFCI-S00581,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",23,1,985,2.0-public
+CRC,GENIE-DFCI-S00583,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",43,0,877,2.0-public
+CRC,GENIE-DFCI-S00585,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",30,0,1264,2.0-public
+CRC,GENIE-DFCI-S00585,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",195,0,1099,2.0-public
+CRC,GENIE-DFCI-S00586,DFCI,0,1,1,Yes,1,Capecitabine,-26,1,1026,2.0-public
+CRC,GENIE-DFCI-S00586,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",262,1,738,2.0-public
+CRC,GENIE-DFCI-S00588,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",31,1,963,2.0-public
+CRC,GENIE-DFCI-S00588,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",221,1,773,2.0-public
+CRC,GENIE-DFCI-S00588,DFCI,0,3,3,Yes,1,Capecitabine,438,1,556,2.0-public
+CRC,GENIE-DFCI-S00589,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",43,1,207,2.0-public
+CRC,GENIE-DFCI-S00589,DFCI,0,2,2,Yes,1,Capecitabine,137,1,113,2.0-public
+CRC,GENIE-DFCI-S00595,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",98,1,104,2.0-public
+CRC,GENIE-DFCI-S00596,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",48,1,10,2.0-public
+CRC,GENIE-DFCI-S00607,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",43,1,173,2.0-public
+CRC,GENIE-DFCI-S00607,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",168,1,48,2.0-public
+CRC,GENIE-DFCI-S00608,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",40,0,1358,2.0-public
+CRC,GENIE-DFCI-S00609,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",106,0,1886,2.0-public
+CRC,GENIE-DFCI-S00610,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",11,1,1603,2.0-public
+CRC,GENIE-DFCI-S00614,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",12,1,552,2.0-public
+CRC,GENIE-DFCI-S00615,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",73,0,1841,2.0-public
+CRC,GENIE-DFCI-S00616,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",17,0,1885,2.0-public
+CRC,GENIE-DFCI-S00623,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",43,1,78,2.0-public
+CRC,GENIE-DFCI-S00629,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",31,1,719,2.0-public
+CRC,GENIE-DFCI-S00629,DFCI,0,2,2,Yes,1,Capecitabine,225,1,525,2.0-public
+CRC,GENIE-DFCI-S00629,DFCI,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",372,1,378,2.0-public
+CRC,GENIE-DFCI-S00636,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",42,1,1600,2.0-public
+CRC,GENIE-DFCI-S00636,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",248,1,1394,2.0-public
+CRC,GENIE-DFCI-S00641,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",49,0,613,2.0-public
+CRC,GENIE-DFCI-S00641,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",221,0,441,2.0-public
+CRC,GENIE-DFCI-S00643,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",43,0,353,2.0-public
+CRC,GENIE-DFCI-S00643,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",241,0,155,2.0-public
+CRC,GENIE-DFCI-S00646,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",24,1,637,2.0-public
+CRC,GENIE-DFCI-S00646,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",365,1,296,2.0-public
+CRC,GENIE-DFCI-S00646,DFCI,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",460,1,201,2.0-public
+CRC,GENIE-DFCI-S00650,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",45,1,148,2.0-public
+CRC,GENIE-DFCI-S00653,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",17,1,707,2.0-public
+CRC,GENIE-DFCI-S00653,DFCI,0,2,2,Yes,1,Capecitabine,274,1,450,2.0-public
+CRC,GENIE-DFCI-S00653,DFCI,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",434,1,290,2.0-public
+CRC,GENIE-DFCI-S00658,DFCI,0,1,1,Yes,1,Capecitabine,74,1,566,2.0-public
+CRC,GENIE-DFCI-S00659,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",14,1,863,2.0-public
+CRC,GENIE-DFCI-S00659,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",109,1,768,2.0-public
+CRC,GENIE-DFCI-S00659,DFCI,0,3,3,Yes,1,Investigational Drug,293,1,584,2.0-public
+CRC,GENIE-DFCI-S00659,DFCI,0,4,4,Yes,2,"Cetuximab, Irinotecan Hydrochloride",433,1,444,2.0-public
+CRC,GENIE-DFCI-S00663,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",16,1,1198,2.0-public
+CRC,GENIE-DFCI-S00670,DFCI,0,1,1,Yes,1,Capecitabine,37,0,1941,2.0-public
+CRC,GENIE-DFCI-S00681,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",80,,,2.0-public
+CRC,GENIE-DFCI-S00681,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",644,,,2.0-public
+CRC,GENIE-DFCI-S00688,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",55,0,1478,2.0-public
+CRC,GENIE-DFCI-S00688,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",238,0,1295,2.0-public
+CRC,GENIE-DFCI-S00693,DFCI,0,1,1,Yes,1,Capecitabine,13,1,346,2.0-public
+CRC,GENIE-DFCI-S00693,DFCI,0,2,2,Yes,1,Capecitabine,141,1,218,2.0-public
+CRC,GENIE-DFCI-S00693,DFCI,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",300,1,59,2.0-public
+CRC,GENIE-DFCI-S00694,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",65,,,2.0-public
+CRC,GENIE-DFCI-S00694,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",404,,,2.0-public
+CRC,GENIE-DFCI-S00699,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",-8,1,699,2.0-public
+CRC,GENIE-DFCI-S00700,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",71,0,1947,2.0-public
+CRC,GENIE-DFCI-S00703,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",55,1,1841,2.0-public
+CRC,GENIE-DFCI-S00703,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",224,1,1672,2.0-public
+CRC,GENIE-DFCI-S00703,DFCI,0,3,3,Yes,1,Capecitabine,561,1,1335,2.0-public
+CRC,GENIE-DFCI-S00711,DFCI,0,1,1,Yes,1,Capecitabine,59,0,1654,2.0-public
+CRC,GENIE-DFCI-S00711,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",347,0,1366,2.0-public
+CRC,GENIE-DFCI-S00711,DFCI,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",896,0,817,2.0-public
+CRC,GENIE-DFCI-S00727,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",23,1,564,2.0-public
+CRC,GENIE-DFCI-S00740,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",49,1,996,2.0-public
+CRC,GENIE-DFCI-S00740,DFCI,0,2,2,Yes,1,Investigational Drug,346,1,699,2.0-public
+CRC,GENIE-DFCI-S00740,DFCI,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",589,1,456,2.0-public
+CRC,GENIE-DFCI-S00742,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",28,1,1168,2.0-public
+CRC,GENIE-DFCI-S00742,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",285,1,911,2.0-public
+CRC,GENIE-DFCI-S00742,DFCI,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",394,1,802,2.0-public
+CRC,GENIE-DFCI-S00744,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",35,0,1872,2.0-public
+CRC,GENIE-DFCI-S00746,DFCI,0,1,1,Yes,1,Capecitabine,71,1,944,2.0-public
+CRC,GENIE-DFCI-S00746,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",472,1,543,2.0-public
+CRC,GENIE-DFCI-S00747,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",108,0,715,2.0-public
+CRC,GENIE-DFCI-S00749,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",24,0,1069,2.0-public
+CRC,GENIE-DFCI-S00749,DFCI,0,2,2,Yes,1,Capecitabine,336,0,757,2.0-public
+CRC,GENIE-DFCI-S00750,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",90,0,2158,2.0-public
+CRC,GENIE-DFCI-S00750,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",267,0,1981,2.0-public
+CRC,GENIE-DFCI-S00761,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",12,1,873,2.0-public
+CRC,GENIE-DFCI-S00761,DFCI,0,2,2,Yes,1,Capecitabine,270,1,615,2.0-public
+CRC,GENIE-DFCI-S00766,DFCI,0,1,1,Yes,1,Capecitabine,-2,1,1919,2.0-public
+CRC,GENIE-DFCI-S00770,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",32,0,710,2.0-public
+CRC,GENIE-DFCI-S00777,DFCI,1,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",59,0,2691,2.0-public
+CRC,GENIE-DFCI-S00777,DFCI,1,2,2,Yes,1,Capecitabine,791,0,1959,2.0-public
+CRC,GENIE-DFCI-S00791,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",24,1,1047,2.0-public
+CRC,GENIE-DFCI-S00791,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",147,1,924,2.0-public
+CRC,GENIE-DFCI-S00796,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",43,0,1172,2.0-public
+CRC,GENIE-DFCI-S00796,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",358,0,857,2.0-public
+CRC,GENIE-DFCI-S00796,DFCI,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",693,0,522,2.0-public
+CRC,GENIE-DFCI-S00801,DFCI,0,1,1,Yes,1,Capecitabine,10,0,2354,2.0-public
+CRC,GENIE-DFCI-S00801,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",115,0,2249,2.0-public
+CRC,GENIE-DFCI-S00801,DFCI,0,3,3,Yes,1,Investigational Drug,606,0,1758,2.0-public
+CRC,GENIE-DFCI-S00802,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",95,0,2206,2.0-public
+CRC,GENIE-DFCI-S00802,DFCI,0,2,2,Yes,1,Capecitabine,249,0,2052,2.0-public
+CRC,GENIE-DFCI-S00811,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",34,0,1330,2.0-public
+CRC,GENIE-DFCI-S00811,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",133,0,1231,2.0-public
+CRC,GENIE-DFCI-S00811,DFCI,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",297,0,1067,2.0-public
+CRC,GENIE-DFCI-S00813,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",63,1,215,2.0-public
+CRC,GENIE-DFCI-S00813,DFCI,0,2,2,Yes,1,Capecitabine,230,1,48,2.0-public
+CRC,GENIE-DFCI-S00814,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",29,1,864,2.0-public
+CRC,GENIE-DFCI-S00815,DFCI,1,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",97,,,2.0-public
+CRC,GENIE-DFCI-S00817,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",29,1,1628,2.0-public
+CRC,GENIE-DFCI-S00820,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",147,1,206,2.0-public
+CRC,GENIE-DFCI-S00820,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",303,1,50,2.0-public
+CRC,GENIE-DFCI-S00822,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",27,0,1305,2.0-public
+CRC,GENIE-DFCI-S00825,DFCI,0,1,1,Yes,1,Capecitabine,38,0,2772,2.0-public
+CRC,GENIE-DFCI-S00826,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",35,1,1513,2.0-public
+CRC,GENIE-DFCI-S00826,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",327,1,1221,2.0-public
+CRC,GENIE-DFCI-S00832,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",17,1,804,2.0-public
+CRC,GENIE-DFCI-S00832,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",363,1,458,2.0-public
+CRC,GENIE-DFCI-S00839,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",11,1,1175,2.0-public
+CRC,GENIE-DFCI-S00840,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",33,1,362,2.0-public
+CRC,GENIE-DFCI-S00841,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",41,1,961,2.0-public
+CRC,GENIE-DFCI-S00843,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",28,1,770,2.0-public
+CRC,GENIE-DFCI-S00844,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",60,0,1698,2.0-public
+CRC,GENIE-DFCI-S00845,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",56,0,1257,2.0-public
+CRC,GENIE-DFCI-S00845,DFCI,0,2,2,Yes,1,Investigational Drug,383,0,930,2.0-public
+CRC,GENIE-DFCI-S00846,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",38,1,1465,2.0-public
+CRC,GENIE-DFCI-S00846,DFCI,0,2,2,Yes,1,Investigational Drug,209,1,1294,2.0-public
+CRC,GENIE-DFCI-S00853,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",13,1,1011,2.0-public
+CRC,GENIE-DFCI-S00853,DFCI,0,2,2,Yes,1,Investigational Drug,153,1,871,2.0-public
+CRC,GENIE-DFCI-S00854,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",44,,,2.0-public
+CRC,GENIE-DFCI-S00854,DFCI,0,2,2,Yes,1,Capecitabine,298,,,2.0-public
+CRC,GENIE-DFCI-S00856,DFCI,0,1,1,Yes,1,Capecitabine,75,0,1054,2.0-public
+CRC,GENIE-DFCI-S00856,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",269,0,860,2.0-public
+CRC,GENIE-DFCI-S00861,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",24,1,398,2.0-public
+CRC,GENIE-DFCI-S00861,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",339,1,83,2.0-public
+CRC,GENIE-DFCI-S00869,DFCI,0,1,1,Yes,1,Capecitabine,23,1,666,2.0-public
+CRC,GENIE-DFCI-S00869,DFCI,0,2,2,Yes,1,Investigational Drug,471,1,218,2.0-public
+CRC,GENIE-DFCI-S00869,DFCI,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",576,1,113,2.0-public
+CRC,GENIE-DFCI-S00871,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",30,1,408,2.0-public
+CRC,GENIE-DFCI-S00872,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",76,1,230,2.0-public
+CRC,GENIE-DFCI-S00872,DFCI,0,2,2,Yes,1,Capecitabine,180,1,126,2.0-public
+CRC,GENIE-DFCI-S00879,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",33,0,1958,2.0-public
+CRC,GENIE-DFCI-S00881,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",40,0,1648,2.0-public
+CRC,GENIE-DFCI-S00882,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",-23,1,701,2.0-public
+CRC,GENIE-DFCI-S00882,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",116,1,562,2.0-public
+CRC,GENIE-DFCI-S00885,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",85,1,531,2.0-public
+CRC,GENIE-DFCI-S00900,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",55,0,1210,2.0-public
+CRC,GENIE-DFCI-S00900,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",392,0,873,2.0-public
+CRC,GENIE-DFCI-S00900,DFCI,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",530,0,735,2.0-public
+CRC,GENIE-DFCI-S00909,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",44,1,938,2.0-public
+CRC,GENIE-DFCI-S00909,DFCI,0,2,2,Yes,1,Capecitabine,306,1,676,2.0-public
+CRC,GENIE-DFCI-S00910,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",42,1,943,2.0-public
+CRC,GENIE-DFCI-S00917,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",77,0,1564,2.0-public
+CRC,GENIE-DFCI-S00919,DFCI,0,1,1,Yes,1,Capecitabine,98,1,1850,2.0-public
+CRC,GENIE-DFCI-S00919,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",192,1,1756,2.0-public
+CRC,GENIE-DFCI-S00921,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",15,1,787,2.0-public
+CRC,GENIE-DFCI-S00923,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",14,1,782,2.0-public
+CRC,GENIE-DFCI-S00923,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",131,1,665,2.0-public
+CRC,GENIE-DFCI-S00926,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",21,1,849,2.0-public
+CRC,GENIE-DFCI-S00929,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",57,1,847,2.0-public
+CRC,GENIE-DFCI-S00935,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",11,0,532,2.0-public
+CRC,GENIE-DFCI-S00937,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",38,1,846,2.0-public
+CRC,GENIE-DFCI-S00937,DFCI,0,2,2,Yes,1,Capecitabine,404,1,480,2.0-public
+CRC,GENIE-DFCI-S00942,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",156,0,1129,2.0-public
+CRC,GENIE-DFCI-S00942,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",247,0,1038,2.0-public
+CRC,GENIE-DFCI-S00944,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",61,1,452,2.0-public
+CRC,GENIE-DFCI-S00944,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",227,1,286,2.0-public
+CRC,GENIE-DFCI-S00945,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",13,1,655,2.0-public
+CRC,GENIE-DFCI-S00948,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",118,0,506,2.0-public
+CRC,GENIE-DFCI-S00948,DFCI,0,2,2,Yes,1,Capecitabine,226,0,398,2.0-public
+CRC,GENIE-DFCI-S00955,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",32,1,1415,2.0-public
+CRC,GENIE-DFCI-S00961,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",37,0,3700,2.0-public
+CRC,GENIE-DFCI-S00971,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",39,1,372,2.0-public
+CRC,GENIE-DFCI-S00979,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",24,1,992,2.0-public
+CRC,GENIE-DFCI-S00983,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",29,1,921,2.0-public
+CRC,GENIE-DFCI-S00983,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",192,1,758,2.0-public
+CRC,GENIE-DFCI-S00986,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",22,0,1562,2.0-public
+CRC,GENIE-DFCI-S00986,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",286,0,1298,2.0-public
+CRC,GENIE-DFCI-S00986,DFCI,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",449,0,1135,2.0-public
+CRC,GENIE-DFCI-S00994,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",41,1,259,2.0-public
+CRC,GENIE-DFCI-S01010,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",61,0,2352,2.0-public
+CRC,GENIE-DFCI-S01010,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",405,0,2008,2.0-public
+CRC,GENIE-DFCI-S01013,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",62,0,1260,2.0-public
+CRC,GENIE-DFCI-S01015,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",50,1,1104,2.0-public
+CRC,GENIE-DFCI-S01017,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",37,1,739,2.0-public
+CRC,GENIE-DFCI-S01017,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",192,1,584,2.0-public
+CRC,GENIE-DFCI-S01026,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",41,1,395,2.0-public
+CRC,GENIE-DFCI-S01026,DFCI,0,2,2,Yes,1,Investigational Drug,196,1,240,2.0-public
+CRC,GENIE-DFCI-S01032,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",42,0,1842,2.0-public
+CRC,GENIE-DFCI-S01039,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",21,1,329,2.0-public
+CRC,GENIE-DFCI-S01039,DFCI,0,2,2,Yes,1,Investigational Drug,150,1,200,2.0-public
+CRC,GENIE-DFCI-S01044,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",28,0,635,2.0-public
+CRC,GENIE-DFCI-S01044,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",546,0,117,2.0-public
+CRC,GENIE-DFCI-S01045,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",59,0,733,2.0-public
+CRC,GENIE-DFCI-S01055,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",14,1,467,2.0-public
+CRC,GENIE-DFCI-S01057,DFCI,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",113,1,199,2.0-public
+CRC,GENIE-DFCI-S01072,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",120,0,1591,2.0-public
+CRC,GENIE-DFCI-S01074,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",48,0,546,2.0-public
+CRC,GENIE-DFCI-S01085,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",18,0,2114,2.0-public
+CRC,GENIE-DFCI-S01089,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",14,1,1339,2.0-public
+CRC,GENIE-DFCI-S01091,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",69,0,617,2.0-public
+CRC,GENIE-DFCI-S01091,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",167,0,519,2.0-public
+CRC,GENIE-DFCI-S01092,DFCI,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",44,1,1223,2.0-public
+CRC,GENIE-DFCI-S01092,DFCI,1,2,2,Yes,1,Investigational Drug,157,1,1110,2.0-public
+CRC,GENIE-DFCI-S01107,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",29,1,1133,2.0-public
+CRC,GENIE-DFCI-S01117,DFCI,0,1,1,Yes,1,Capecitabine,33,0,1378,2.0-public
+CRC,GENIE-DFCI-S01120,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",113,0,1428,2.0-public
+CRC,GENIE-DFCI-S01120,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",484,0,1057,2.0-public
+CRC,GENIE-DFCI-S01121,DFCI,0,1,1,Yes,1,Capecitabine,20,1,1283,2.0-public
+CRC,GENIE-DFCI-S01123,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",72,0,2190,2.0-public
+CRC,GENIE-DFCI-S01123,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",367,0,1895,2.0-public
+CRC,GENIE-DFCI-S01125,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",14,0,1425,2.0-public
+CRC,GENIE-DFCI-S01125,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",253,0,1186,2.0-public
+CRC,GENIE-DFCI-S01134,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",21,0,635,2.0-public
+CRC,GENIE-DFCI-S01134,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",211,0,445,2.0-public
+CRC,GENIE-DFCI-S01134,DFCI,0,3,3,Yes,1,Capecitabine,627,0,29,2.0-public
+CRC,GENIE-DFCI-S01137,DFCI,1,1,1,Yes,2,"Capecitabine, Oxaliplatin",12,0,48,2.0-public
+CRC,GENIE-DFCI-S01147,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",43,1,730,2.0-public
+CRC,GENIE-DFCI-S01166,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",14,1,603,2.0-public
+CRC,GENIE-DFCI-S01169,DFCI,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",75,1,482,2.0-public
+CRC,GENIE-DFCI-S01169,DFCI,1,2,2,Yes,1,Investigational Drug,318,1,239,2.0-public
+CRC,GENIE-DFCI-S01171,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",18,1,683,2.0-public
+CRC,GENIE-DFCI-S01175,DFCI,0,1,1,Yes,1,Capecitabine,67,0,224,2.0-public
+CRC,GENIE-DFCI-S01175,DFCI,0,2,2,Yes,1,Investigational Drug,214,0,77,2.0-public
+CRC,GENIE-DFCI-S01181,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",29,0,1719,2.0-public
+CRC,GENIE-DFCI-S01193,DFCI,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",34,1,1065,2.0-public
+CRC,GENIE-DFCI-S01193,DFCI,1,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",611,1,488,2.0-public
+CRC,GENIE-DFCI-S01193,DFCI,1,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",762,1,337,2.0-public
+CRC,GENIE-DFCI-S01193,DFCI,1,4,4,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",1055,1,44,2.0-public
+CRC,GENIE-DFCI-S01194,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",57,1,1331,2.0-public
+CRC,GENIE-DFCI-S01194,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",170,1,1218,2.0-public
+CRC,GENIE-DFCI-S01194,DFCI,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",474,1,914,2.0-public
+CRC,GENIE-DFCI-S01194,DFCI,0,4,4,Yes,2,"Cetuximab, Irinotecan Hydrochloride",746,1,642,2.0-public
+CRC,GENIE-DFCI-S01218,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",53,0,1159,2.0-public
+CRC,GENIE-DFCI-S01224,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",17,1,657,2.0-public
+CRC,GENIE-DFCI-S01233,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",53,0,2767,2.0-public
+CRC,GENIE-DFCI-S01233,DFCI,0,2,2,Yes,1,Investigational Drug,455,0,2365,2.0-public
+CRC,GENIE-DFCI-S01241,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",57,1,631,2.0-public
+CRC,GENIE-DFCI-S01242,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",38,1,527,2.0-public
+CRC,GENIE-DFCI-S01242,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",288,1,277,2.0-public
+CRC,GENIE-DFCI-S01242,DFCI,0,3,3,Yes,1,Capecitabine,393,1,172,2.0-public
+CRC,GENIE-DFCI-S01244,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",45,0,2744,2.0-public
+CRC,GENIE-DFCI-S01245,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",85,1,1197,2.0-public
+CRC,GENIE-DFCI-S01246,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",48,1,1064,2.0-public
+CRC,GENIE-DFCI-S01246,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",325,1,787,2.0-public
+CRC,GENIE-DFCI-S01246,DFCI,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",435,1,677,2.0-public
+CRC,GENIE-DFCI-S01246,DFCI,0,4,4,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",1075,1,37,2.0-public
+CRC,GENIE-DFCI-S01247,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",17,0,1344,2.0-public
+CRC,GENIE-DFCI-S01247,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",206,0,1155,2.0-public
+CRC,GENIE-DFCI-S01250,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",24,0,1516,2.0-public
+CRC,GENIE-DFCI-S01250,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",213,0,1327,2.0-public
+CRC,GENIE-DFCI-S01252,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",15,1,858,2.0-public
+CRC,GENIE-DFCI-S01252,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",162,1,711,2.0-public
+CRC,GENIE-DFCI-S01253,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",25,1,2064,2.0-public
+CRC,GENIE-DFCI-S01253,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",140,1,1949,2.0-public
+CRC,GENIE-DFCI-S01269,DFCI,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",41,1,2297,2.0-public
+CRC,GENIE-DFCI-S01271,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",88,0,2569,2.0-public
+CRC,GENIE-DFCI-S01274,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",30,1,689,2.0-public
+CRC,GENIE-DFCI-S01274,DFCI,0,2,2,Yes,1,Capecitabine,401,1,318,2.0-public
+CRC,GENIE-DFCI-S01276,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",27,1,246,2.0-public
+CRC,GENIE-DFCI-S01276,DFCI,0,2,2,Yes,1,Capecitabine,231,1,42,2.0-public
+CRC,GENIE-DFCI-S01277,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",146,1,1016,2.0-public
+CRC,GENIE-DFCI-S01282,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",51,1,680,2.0-public
+CRC,GENIE-DFCI-S01282,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",307,1,424,2.0-public
+CRC,GENIE-DFCI-S01285,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",54,1,1003,2.0-public
+CRC,GENIE-DFCI-S01287,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",12,0,277,2.0-public
+CRC,GENIE-DFCI-S01287,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",243,0,46,2.0-public
+CRC,GENIE-DFCI-S01299,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",115,1,286,2.0-public
+CRC,GENIE-DFCI-S01299,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",352,1,49,2.0-public
+CRC,GENIE-DFCI-S01304,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",12,1,495,2.0-public
+CRC,GENIE-DFCI-S01307,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",115,0,738,2.0-public
+CRC,GENIE-DFCI-S01316,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",58,1,838,2.0-public
+CRC,GENIE-DFCI-S01320,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",70,0,1198,2.0-public
+CRC,GENIE-DFCI-S01320,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",356,0,912,2.0-public
+CRC,GENIE-DFCI-S01320,DFCI,0,3,3,Yes,1,Capecitabine,517,0,751,2.0-public
+CRC,GENIE-DFCI-S01323,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",13,1,550,2.0-public
+CRC,GENIE-DFCI-S01339,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",-10,0,2225,2.0-public
+CRC,GENIE-DFCI-S01340,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",29,1,72,2.0-public
+CRC,GENIE-DFCI-S01341,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",70,0,1322,2.0-public
+CRC,GENIE-DFCI-S01341,DFCI,0,2,2,Yes,1,Investigational Drug,542,0,850,2.0-public
+CRC,GENIE-DFCI-S01346,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",24,1,336,2.0-public
+CRC,GENIE-DFCI-S01351,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",47,0,2825,2.0-public
+CRC,GENIE-DFCI-S01355,DFCI,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",75,0,1569,2.0-public
+CRC,GENIE-DFCI-S01355,DFCI,1,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",433,0,1211,2.0-public
+CRC,GENIE-DFCI-S01359,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",56,0,2157,2.0-public
+CRC,GENIE-DFCI-S01361,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",63,1,975,2.0-public
+CRC,GENIE-DFCI-S01361,DFCI,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",212,1,826,2.0-public
+CRC,GENIE-DFCI-S01361,DFCI,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",344,1,694,2.0-public
+CRC,GENIE-DFCI-S01370,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",219,0,2955,2.0-public
+CRC,GENIE-DFCI-S01379,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",38,0,2997,2.0-public
+CRC,GENIE-DFCI-S01381,DFCI,1,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",26,1,1200,2.0-public
+CRC,GENIE-DFCI-S01381,DFCI,1,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",436,1,790,2.0-public
+CRC,GENIE-DFCI-S01386,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",26,1,1014,2.0-public
+CRC,GENIE-DFCI-S01386,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",184,1,856,2.0-public
+CRC,GENIE-DFCI-S01386,DFCI,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",306,1,734,2.0-public
+CRC,GENIE-DFCI-S01386,DFCI,0,4,4,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",543,1,497,2.0-public
+CRC,GENIE-DFCI-S01386,DFCI,0,5,5,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",697,1,343,2.0-public
+CRC,GENIE-DFCI-S01390,DFCI,0,1,1,Yes,1,Capecitabine,32,0,1508,2.0-public
+CRC,GENIE-DFCI-S01390,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",144,0,1396,2.0-public
+CRC,GENIE-DFCI-S01390,DFCI,0,3,3,Yes,1,Capecitabine,380,0,1160,2.0-public
+CRC,GENIE-DFCI-S01396,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",41,0,1310,2.0-public
+CRC,GENIE-DFCI-S01401,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",44,0,2864,2.0-public
+CRC,GENIE-DFCI-S01402,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",16,0,623,2.0-public
+CRC,GENIE-DFCI-S01402,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",135,0,504,2.0-public
+CRC,GENIE-DFCI-S01402,DFCI,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",318,0,321,2.0-public
+CRC,GENIE-DFCI-S01403,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",27,1,961,2.0-public
+CRC,GENIE-DFCI-S01411,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",12,1,911,2.0-public
+CRC,GENIE-DFCI-S01411,DFCI,0,2,2,Yes,1,Investigational Drug,227,1,696,2.0-public
+CRC,GENIE-DFCI-S01413,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",33,0,1317,2.0-public
+CRC,GENIE-DFCI-S01433,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",49,1,1506,2.0-public
+CRC,GENIE-DFCI-S01433,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",202,1,1353,2.0-public
+CRC,GENIE-DFCI-S01433,DFCI,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",387,1,1168,2.0-public
+CRC,GENIE-DFCI-S01439,DFCI,0,1,1,Yes,1,Capecitabine,34,1,1061,2.0-public
+CRC,GENIE-DFCI-S01456,DFCI,0,1,1,Yes,1,Capecitabine,-8,0,1638,2.0-public
+CRC,GENIE-DFCI-S01458,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",13,1,299,2.0-public
+CRC,GENIE-DFCI-S01461,DFCI,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",10,1,1204,2.0-public
+CRC,GENIE-DFCI-S01461,DFCI,1,2,2,Yes,1,Investigational Drug,217,1,997,2.0-public
+CRC,GENIE-DFCI-S01462,DFCI,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",65,1,67,2.0-public
+CRC,GENIE-DFCI-S01471,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",72,0,2625,2.0-public
+CRC,GENIE-DFCI-S01473,DFCI,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",53,0,1947,2.0-public
+CRC,GENIE-DFCI-S01473,DFCI,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",155,0,1845,2.0-public
+CRC,GENIE-DFCI-S01479,DFCI,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",75,1,843,2.0-public
+CRC,GENIE-DFCI-S01485,DFCI,1,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",68,1,1582,2.0-public
+CRC,GENIE-DFCI-S01485,DFCI,1,2,2,Yes,1,Capecitabine,172,1,1478,2.0-public
+CRC,GENIE-DFCI-S01489,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",75,0,1852,2.0-public
+CRC,GENIE-DFCI-S01489,DFCI,0,2,2,Yes,1,Capecitabine,191,0,1736,2.0-public
+CRC,GENIE-DFCI-S01489,DFCI,0,3,3,Yes,1,Capecitabine,553,0,1374,2.0-public
+CRC,GENIE-DFCI-S01489,DFCI,0,4,4,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",677,0,1250,2.0-public
+CRC,GENIE-DFCI-S01497,DFCI,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",33,1,959,2.0-public
+CRC,GENIE-DFCI-S01497,DFCI,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",232,1,760,2.0-public
+CRC,GENIE-DFCI-S01497,DFCI,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",436,1,556,2.0-public
+CRC,GENIE-MSK-S00004,MSK,0,1,1,Yes,1,Capecitabine,120,1,102,2.0-public
+CRC,GENIE-MSK-S00006,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",28,0,431,2.0-public
+CRC,GENIE-MSK-S00006,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",169,0,290,2.0-public
+CRC,GENIE-MSK-S00006,MSK,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",282,0,177,2.0-public
+CRC,GENIE-MSK-S00006,MSK,0,4,4,Yes,2,"Cetuximab, Irinotecan Hydrochloride",379,0,80,2.0-public
+CRC,GENIE-MSK-S00011,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",50,1,641,2.0-public
+CRC,GENIE-MSK-S00011,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",220,1,471,2.0-public
+CRC,GENIE-MSK-S00011,MSK,0,3,3,Yes,1,Capecitabine,321,1,370,2.0-public
+CRC,GENIE-MSK-S00011,MSK,0,4,4,Yes,2,"Cetuximab, Irinotecan Hydrochloride",484,1,207,2.0-public
+CRC,GENIE-MSK-S00011,MSK,0,5,5,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",633,1,58,2.0-public
+CRC,GENIE-MSK-S00018,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",38,0,2179,2.0-public
+CRC,GENIE-MSK-S00018,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",284,0,1933,2.0-public
+CRC,GENIE-MSK-S00018,MSK,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",375,0,1842,2.0-public
+CRC,GENIE-MSK-S00018,MSK,0,4,4,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",559,0,1658,2.0-public
+CRC,GENIE-MSK-S00018,MSK,0,5,5,Yes,1,Investigational Drug,660,0,1557,2.0-public
+CRC,GENIE-MSK-S00020,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",124,1,573,2.0-public
+CRC,GENIE-MSK-S00020,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",398,1,299,2.0-public
+CRC,GENIE-MSK-S00021,MSK,0,1,1,Yes,1,Capecitabine,13,1,421,2.0-public
+CRC,GENIE-MSK-S00021,MSK,0,2,2,Yes,1,Investigational Drug,151,1,283,2.0-public
+CRC,GENIE-MSK-S00021,MSK,0,3,3,Yes,1,Investigational Drug,249,1,185,2.0-public
+CRC,GENIE-MSK-S00033,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",34,1,733,2.0-public
+CRC,GENIE-MSK-S00034,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",60,0,978,2.0-public
+CRC,GENIE-MSK-S00036,MSK,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",84,0,1620,2.0-public
+CRC,GENIE-MSK-S00038,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",98,0,3262,2.0-public
+CRC,GENIE-MSK-S00039,MSK,0,1,1,Yes,1,Capecitabine,88,1,370,2.0-public
+CRC,GENIE-MSK-S00039,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",205,1,253,2.0-public
+CRC,GENIE-MSK-S00040,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",54,0,151,2.0-public
+CRC,GENIE-MSK-S00041,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",15,1,1149,2.0-public
+CRC,GENIE-MSK-S00041,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",517,1,647,2.0-public
+CRC,GENIE-MSK-S00046,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",81,1,332,2.0-public
+CRC,GENIE-MSK-S00046,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",263,1,150,2.0-public
+CRC,GENIE-MSK-S00047,MSK,0,1,1,Yes,1,Capecitabine,16,1,472,2.0-public
+CRC,GENIE-MSK-S00047,MSK,0,2,2,Yes,1,Capecitabine,212,1,276,2.0-public
+CRC,GENIE-MSK-S00047,MSK,0,3,3,Yes,1,Capecitabine,458,1,30,2.0-public
+CRC,GENIE-MSK-S00052,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",26,1,1220,2.0-public
+CRC,GENIE-MSK-S00052,MSK,0,2,2,Yes,1,Capecitabine,235,1,1011,2.0-public
+CRC,GENIE-MSK-S00052,MSK,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",418,1,828,2.0-public
+CRC,GENIE-MSK-S00052,MSK,0,4,4,Yes,1,Investigational Drug,519,1,727,2.0-public
+CRC,GENIE-MSK-S00053,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",17,1,348,2.0-public
+CRC,GENIE-MSK-S00057,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",19,0,1173,2.0-public
+CRC,GENIE-MSK-S00057,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",349,0,843,2.0-public
+CRC,GENIE-MSK-S00057,MSK,0,3,3,Yes,1,Capecitabine,788,0,404,2.0-public
+CRC,GENIE-MSK-S00057,MSK,0,4,4,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",1168,0,24,2.0-public
+CRC,GENIE-MSK-S00061,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",19,0,1909,2.0-public
+CRC,GENIE-MSK-S00061,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",158,0,1770,2.0-public
+CRC,GENIE-MSK-S00068,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",113,0,519,2.0-public
+CRC,GENIE-MSK-S00068,MSK,0,2,2,Yes,1,Capecitabine,338,0,294,2.0-public
+CRC,GENIE-MSK-S00071,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",33,0,679,2.0-public
+CRC,GENIE-MSK-S00071,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",228,0,484,2.0-public
+CRC,GENIE-MSK-S00072,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",54,0,2235,2.0-public
+CRC,GENIE-MSK-S00073,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",51,0,1173,2.0-public
+CRC,GENIE-MSK-S00075,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",20,1,635,2.0-public
+CRC,GENIE-MSK-S00075,MSK,0,2,2,Yes,1,Capecitabine,157,1,498,2.0-public
+CRC,GENIE-MSK-S00080,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",45,0,1866,2.0-public
+CRC,GENIE-MSK-S00080,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",144,0,1767,2.0-public
+CRC,GENIE-MSK-S00081,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",61,0,1294,2.0-public
+CRC,GENIE-MSK-S00081,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",174,0,1181,2.0-public
+CRC,GENIE-MSK-S00081,MSK,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",292,0,1063,2.0-public
+CRC,GENIE-MSK-S00086,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",23,1,731,2.0-public
+CRC,GENIE-MSK-S00093,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",13,0,546,2.0-public
+CRC,GENIE-MSK-S00093,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",161,0,398,2.0-public
+CRC,GENIE-MSK-S00094,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",19,1,81,2.0-public
+CRC,GENIE-MSK-S00113,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",57,1,1785,2.0-public
+CRC,GENIE-MSK-S00114,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",12,1,803,2.0-public
+CRC,GENIE-MSK-S00114,MSK,0,2,2,Yes,1,Capecitabine,667,1,148,2.0-public
+CRC,GENIE-MSK-S00116,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",13,1,565,2.0-public
+CRC,GENIE-MSK-S00116,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",208,1,370,2.0-public
+CRC,GENIE-MSK-S00117,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",63,1,558,2.0-public
+CRC,GENIE-MSK-S00117,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",153,1,468,2.0-public
+CRC,GENIE-MSK-S00117,MSK,0,3,3,Yes,1,Capecitabine,390,1,231,2.0-public
+CRC,GENIE-MSK-S00117,MSK,0,4,4,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",616,1,5,2.0-public
+CRC,GENIE-MSK-S00119,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",26,1,716,2.0-public
+CRC,GENIE-MSK-S00119,MSK,0,2,2,Yes,1,Capecitabine,390,1,352,2.0-public
+CRC,GENIE-MSK-S00119,MSK,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",679,1,63,2.0-public
+CRC,GENIE-MSK-S00127,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",20,1,417,2.0-public
+CRC,GENIE-MSK-S00127,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",110,1,327,2.0-public
+CRC,GENIE-MSK-S00132,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",36,0,2002,2.0-public
+CRC,GENIE-MSK-S00134,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",78,1,381,2.0-public
+CRC,GENIE-MSK-S00134,MSK,0,2,2,Yes,1,Capecitabine,182,1,277,2.0-public
+CRC,GENIE-MSK-S00136,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",30,1,611,2.0-public
+CRC,GENIE-MSK-S00136,MSK,0,2,2,Yes,1,Capecitabine,475,1,166,2.0-public
+CRC,GENIE-MSK-S00137,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",12,1,954,2.0-public
+CRC,GENIE-MSK-S00142,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",39,1,602,2.0-public
+CRC,GENIE-MSK-S00142,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",448,1,193,2.0-public
+CRC,GENIE-MSK-S00143,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",40,1,330,2.0-public
+CRC,GENIE-MSK-S00143,MSK,0,2,2,Yes,1,Capecitabine,347,1,23,2.0-public
+CRC,GENIE-MSK-S00146,MSK,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",42,0,2032,2.0-public
+CRC,GENIE-MSK-S00146,MSK,1,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",206,0,1868,2.0-public
+CRC,GENIE-MSK-S00149,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",26,1,481,2.0-public
+CRC,GENIE-MSK-S00149,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",130,1,377,2.0-public
+CRC,GENIE-MSK-S00151,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",71,1,673,2.0-public
+CRC,GENIE-MSK-S00151,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",181,1,563,2.0-public
+CRC,GENIE-MSK-S00152,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",39,1,504,2.0-public
+CRC,GENIE-MSK-S00153,MSK,0,1,1,Yes,1,Capecitabine,62,,,2.0-public
+CRC,GENIE-MSK-S00155,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",71,0,2236,2.0-public
+CRC,GENIE-MSK-S00155,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",163,0,2144,2.0-public
+CRC,GENIE-MSK-S00158,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",14,1,1568,2.0-public
+CRC,GENIE-MSK-S00158,MSK,0,2,2,Yes,1,Capecitabine,157,1,1425,2.0-public
+CRC,GENIE-MSK-S00161,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",43,1,1094,2.0-public
+CRC,GENIE-MSK-S00161,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",286,1,851,2.0-public
+CRC,GENIE-MSK-S00161,MSK,0,3,3,Yes,1,Capecitabine,591,1,546,2.0-public
+CRC,GENIE-MSK-S00162,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",168,0,1593,2.0-public
+CRC,GENIE-MSK-S00164,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",30,0,268,2.0-public
+CRC,GENIE-MSK-S00173,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",54,0,1321,2.0-public
+CRC,GENIE-MSK-S00176,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",17,1,456,2.0-public
+CRC,GENIE-MSK-S00176,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",268,1,205,2.0-public
+CRC,GENIE-MSK-S00180,MSK,1,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",41,0,2269,2.0-public
+CRC,GENIE-MSK-S00181,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",17,1,318,2.0-public
+CRC,GENIE-MSK-S00184,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",12,0,1753,2.0-public
+CRC,GENIE-MSK-S00185,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",79,1,115,2.0-public
+CRC,GENIE-MSK-S00189,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",67,1,2382,2.0-public
+CRC,GENIE-MSK-S00189,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",248,1,2201,2.0-public
+CRC,GENIE-MSK-S00190,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",28,0,1615,2.0-public
+CRC,GENIE-MSK-S00190,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",122,0,1521,2.0-public
+CRC,GENIE-MSK-S00191,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",108,1,1456,2.0-public
+CRC,GENIE-MSK-S00195,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",35,0,1286,2.0-public
+CRC,GENIE-MSK-S00199,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",49,1,1621,2.0-public
+CRC,GENIE-MSK-S00199,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",395,1,1275,2.0-public
+CRC,GENIE-MSK-S00201,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",101,0,1787,2.0-public
+CRC,GENIE-MSK-S00209,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",13,1,881,2.0-public
+CRC,GENIE-MSK-S00209,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",739,1,155,2.0-public
+CRC,GENIE-MSK-S00212,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",62,1,1447,2.0-public
+CRC,GENIE-MSK-S00218,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",20,1,1309,2.0-public
+CRC,GENIE-MSK-S00218,MSK,0,2,2,Yes,1,Investigational Drug,219,1,1110,2.0-public
+CRC,GENIE-MSK-S00218,MSK,0,3,3,Yes,1,Capecitabine,600,1,729,2.0-public
+CRC,GENIE-MSK-S00222,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",71,0,1620,2.0-public
+CRC,GENIE-MSK-S00222,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",211,0,1480,2.0-public
+CRC,GENIE-MSK-S00225,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",27,1,973,2.0-public
+CRC,GENIE-MSK-S00227,MSK,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",73,1,880,2.0-public
+CRC,GENIE-MSK-S00227,MSK,1,2,2,Yes,1,Investigational Drug,269,1,684,2.0-public
+CRC,GENIE-MSK-S00227,MSK,1,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",409,1,544,2.0-public
+CRC,GENIE-MSK-S00227,MSK,1,4,4,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",553,1,400,2.0-public
+CRC,GENIE-MSK-S00227,MSK,1,5,5,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",687,1,266,2.0-public
+CRC,GENIE-MSK-S00230,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",55,0,747,2.0-public
+CRC,GENIE-MSK-S00236,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",18,0,1403,2.0-public
+CRC,GENIE-MSK-S00236,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",308,0,1113,2.0-public
+CRC,GENIE-MSK-S00242,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",88,0,3050,2.0-public
+CRC,GENIE-MSK-S00244,MSK,0,1,1,Yes,1,Capecitabine,36,0,3478,2.0-public
+CRC,GENIE-MSK-S00244,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",339,0,3175,2.0-public
+CRC,GENIE-MSK-S00247,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",55,1,460,2.0-public
+CRC,GENIE-MSK-S00247,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",507,1,8,2.0-public
+CRC,GENIE-MSK-S00252,MSK,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",15,1,1126,2.0-public
+CRC,GENIE-MSK-S00253,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",35,1,1443,2.0-public
+CRC,GENIE-MSK-S00253,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",133,1,1345,2.0-public
+CRC,GENIE-MSK-S00255,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",17,1,513,2.0-public
+CRC,GENIE-MSK-S00255,MSK,0,2,2,Yes,1,Capecitabine,172,1,358,2.0-public
+CRC,GENIE-MSK-S00256,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",15,0,1072,2.0-public
+CRC,GENIE-MSK-S00257,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",84,0,1664,2.0-public
+CRC,GENIE-MSK-S00257,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",402,0,1346,2.0-public
+CRC,GENIE-MSK-S00258,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",78,0,2206,2.0-public
+CRC,GENIE-MSK-S00260,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",71,1,1060,2.0-public
+CRC,GENIE-MSK-S00260,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",253,1,878,2.0-public
+CRC,GENIE-MSK-S00266,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",32,1,593,2.0-public
+CRC,GENIE-MSK-S00266,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",165,1,460,2.0-public
+CRC,GENIE-MSK-S00268,MSK,0,1,1,Yes,1,Capecitabine,23,0,1462,2.0-public
+CRC,GENIE-MSK-S00268,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",185,0,1300,2.0-public
+CRC,GENIE-MSK-S00279,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",51,1,1648,2.0-public
+CRC,GENIE-MSK-S00279,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",194,1,1505,2.0-public
+CRC,GENIE-MSK-S00279,MSK,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",519,1,1180,2.0-public
+CRC,GENIE-MSK-S00279,MSK,0,4,4,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",704,1,995,2.0-public
+CRC,GENIE-MSK-S00287,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",12,0,69,2.0-public
+CRC,GENIE-MSK-S00290,MSK,0,1,1,Yes,1,Capecitabine,76,0,2007,2.0-public
+CRC,GENIE-MSK-S00290,MSK,0,2,2,Yes,1,Investigational Drug,181,0,1902,2.0-public
+CRC,GENIE-MSK-S00290,MSK,0,3,3,Yes,1,Capecitabine,316,0,1767,2.0-public
+CRC,GENIE-MSK-S00292,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",48,1,697,2.0-public
+CRC,GENIE-MSK-S00292,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",660,1,85,2.0-public
+CRC,GENIE-MSK-S00293,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",16,0,101,2.0-public
+CRC,GENIE-MSK-S00295,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",56,1,498,2.0-public
+CRC,GENIE-MSK-S00295,MSK,0,2,2,Yes,1,Investigational Drug,371,1,183,2.0-public
+CRC,GENIE-MSK-S00295,MSK,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",495,1,59,2.0-public
+CRC,GENIE-MSK-S00298,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",64,1,1664,2.0-public
+CRC,GENIE-MSK-S00298,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",203,1,1525,2.0-public
+CRC,GENIE-MSK-S00298,MSK,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",564,1,1164,2.0-public
+CRC,GENIE-MSK-S00299,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",30,1,942,2.0-public
+CRC,GENIE-MSK-S00299,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",253,1,719,2.0-public
+CRC,GENIE-MSK-S00299,MSK,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",517,1,455,2.0-public
+CRC,GENIE-MSK-S00301,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",21,1,591,2.0-public
+CRC,GENIE-MSK-S00301,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",227,1,385,2.0-public
+CRC,GENIE-MSK-S00301,MSK,0,3,3,Yes,1,Capecitabine,430,1,182,2.0-public
+CRC,GENIE-MSK-S00301,MSK,0,4,4,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",524,1,88,2.0-public
+CRC,GENIE-MSK-S00306,MSK,1,1,1,Yes,2,"Capecitabine, Oxaliplatin",37,0,99,2.0-public
+CRC,GENIE-MSK-S00306,MSK,1,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",129,0,7,2.0-public
+CRC,GENIE-MSK-S00307,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",22,0,2047,2.0-public
+CRC,GENIE-MSK-S00307,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",117,0,1952,2.0-public
+CRC,GENIE-MSK-S00308,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",221,0,1875,2.0-public
+CRC,GENIE-MSK-S00309,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",12,0,398,2.0-public
+CRC,GENIE-MSK-S00309,MSK,0,2,2,Yes,1,Capecitabine,249,0,161,2.0-public
+CRC,GENIE-MSK-S00313,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",48,0,1246,2.0-public
+CRC,GENIE-MSK-S00315,MSK,1,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",81,1,2590,2.0-public
+CRC,GENIE-MSK-S00315,MSK,1,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",176,1,2495,2.0-public
+CRC,GENIE-MSK-S00316,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",13,1,267,2.0-public
+CRC,GENIE-MSK-S00316,MSK,0,2,2,Yes,1,Capecitabine,142,1,138,2.0-public
+CRC,GENIE-MSK-S00321,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",16,1,351,2.0-public
+CRC,GENIE-MSK-S00321,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",308,1,59,2.0-public
+CRC,GENIE-MSK-S00324,MSK,0,1,1,Yes,1,Capecitabine,30,1,604,2.0-public
+CRC,GENIE-MSK-S00324,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",192,1,442,2.0-public
+CRC,GENIE-MSK-S00325,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",39,1,889,2.0-public
+CRC,GENIE-MSK-S00327,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",43,0,773,2.0-public
+CRC,GENIE-MSK-S00327,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",210,0,606,2.0-public
+CRC,GENIE-MSK-S00327,MSK,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",700,0,116,2.0-public
+CRC,GENIE-MSK-S00331,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",48,0,1177,2.0-public
+CRC,GENIE-MSK-S00333,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",19,1,1594,2.0-public
+CRC,GENIE-MSK-S00333,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",305,1,1308,2.0-public
+CRC,GENIE-MSK-S00333,MSK,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",787,1,826,2.0-public
+CRC,GENIE-MSK-S00334,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",39,1,482,2.0-public
+CRC,GENIE-MSK-S00338,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",14,0,1557,2.0-public
+CRC,GENIE-MSK-S00338,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",385,0,1186,2.0-public
+CRC,GENIE-MSK-S00338,MSK,0,3,3,Yes,1,Capecitabine,494,0,1077,2.0-public
+CRC,GENIE-MSK-S00345,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",35,0,2339,2.0-public
+CRC,GENIE-MSK-S00347,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",144,1,2416,2.0-public
+CRC,GENIE-MSK-S00350,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",122,1,429,2.0-public
+CRC,GENIE-MSK-S00350,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",503,1,48,2.0-public
+CRC,GENIE-MSK-S00357,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",96,1,180,2.0-public
+CRC,GENIE-MSK-S00358,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",23,0,1083,2.0-public
+CRC,GENIE-MSK-S00361,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",38,0,1210,2.0-public
+CRC,GENIE-MSK-S00363,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",216,0,1940,2.0-public
+CRC,GENIE-MSK-S00363,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",342,0,1814,2.0-public
+CRC,GENIE-MSK-S00367,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",35,1,897,2.0-public
+CRC,GENIE-MSK-S00370,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",59,1,167,2.0-public
+CRC,GENIE-MSK-S00371,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",62,0,1318,2.0-public
+CRC,GENIE-MSK-S00373,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",52,1,532,2.0-public
+CRC,GENIE-MSK-S00373,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",157,1,427,2.0-public
+CRC,GENIE-MSK-S00383,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",13,1,239,2.0-public
+CRC,GENIE-MSK-S00384,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",80,1,1152,2.0-public
+CRC,GENIE-MSK-S00386,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",38,0,1443,2.0-public
+CRC,GENIE-MSK-S00393,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",68,0,301,2.0-public
+CRC,GENIE-MSK-S00393,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",242,0,127,2.0-public
+CRC,GENIE-MSK-S00404,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",35,1,1417,2.0-public
+CRC,GENIE-MSK-S00404,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",137,1,1315,2.0-public
+CRC,GENIE-MSK-S00404,MSK,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",263,1,1189,2.0-public
+CRC,GENIE-MSK-S00404,MSK,0,4,4,Yes,2,"Cetuximab, Irinotecan Hydrochloride",363,1,1089,2.0-public
+CRC,GENIE-MSK-S00404,MSK,0,5,5,Yes,2,"Cetuximab, Irinotecan Hydrochloride",592,1,860,2.0-public
+CRC,GENIE-MSK-S00407,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",11,1,1060,2.0-public
+CRC,GENIE-MSK-S00407,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",237,1,834,2.0-public
+CRC,GENIE-MSK-S00407,MSK,0,3,3,Yes,1,Investigational Drug,718,1,353,2.0-public
+CRC,GENIE-MSK-S00409,MSK,0,1,1,Yes,1,Capecitabine,15,1,708,2.0-public
+CRC,GENIE-MSK-S00409,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",350,1,373,2.0-public
+CRC,GENIE-MSK-S00415,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",56,0,2104,2.0-public
+CRC,GENIE-MSK-S00421,MSK,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",11,1,993,2.0-public
+CRC,GENIE-MSK-S00421,MSK,1,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",106,1,898,2.0-public
+CRC,GENIE-MSK-S00421,MSK,1,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",294,1,710,2.0-public
+CRC,GENIE-MSK-S00424,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",27,0,1313,2.0-public
+CRC,GENIE-MSK-S00425,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",42,1,3259,2.0-public
+CRC,GENIE-MSK-S00431,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",135,1,1057,2.0-public
+CRC,GENIE-MSK-S00431,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",263,1,929,2.0-public
+CRC,GENIE-MSK-S00431,MSK,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",454,1,738,2.0-public
+CRC,GENIE-MSK-S00431,MSK,0,4,4,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",682,1,510,2.0-public
+CRC,GENIE-MSK-S00431,MSK,0,5,5,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",781,1,411,2.0-public
+CRC,GENIE-MSK-S00437,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",132,0,3435,2.0-public
+CRC,GENIE-MSK-S00439,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",59,0,2017,2.0-public
+CRC,GENIE-MSK-S00439,MSK,0,2,2,Yes,1,Investigational Drug,743,0,1333,2.0-public
+CRC,GENIE-MSK-S00440,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",57,0,2879,2.0-public
+CRC,GENIE-MSK-S00442,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",11,0,1404,2.0-public
+CRC,GENIE-MSK-S00449,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",22,1,712,2.0-public
+CRC,GENIE-MSK-S00454,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",57,1,937,2.0-public
+CRC,GENIE-MSK-S00456,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",44,0,1948,2.0-public
+CRC,GENIE-MSK-S00457,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",24,0,1995,2.0-public
+CRC,GENIE-MSK-S00458,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",79,0,2023,2.0-public
+CRC,GENIE-MSK-S00459,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",-16,1,278,2.0-public
+CRC,GENIE-MSK-S00459,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",136,1,126,2.0-public
+CRC,GENIE-MSK-S00460,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",74,1,421,2.0-public
+CRC,GENIE-MSK-S00460,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",246,1,249,2.0-public
+CRC,GENIE-MSK-S00462,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",13,1,337,2.0-public
+CRC,GENIE-MSK-S00462,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",341,1,9,2.0-public
+CRC,GENIE-MSK-S00463,MSK,0,1,1,Yes,1,Capecitabine,38,1,1146,2.0-public
+CRC,GENIE-MSK-S00465,MSK,0,1,1,Yes,1,Capecitabine,35,0,2320,2.0-public
+CRC,GENIE-MSK-S00466,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",94,0,218,2.0-public
+CRC,GENIE-MSK-S00471,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",24,1,189,2.0-public
+CRC,GENIE-MSK-S00473,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",44,1,937,2.0-public
+CRC,GENIE-MSK-S00477,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",56,0,989,2.0-public
+CRC,GENIE-MSK-S00477,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",258,0,787,2.0-public
+CRC,GENIE-MSK-S00477,MSK,0,3,3,Yes,1,Capecitabine,449,0,596,2.0-public
+CRC,GENIE-MSK-S00477,MSK,0,4,4,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",714,0,331,2.0-public
+CRC,GENIE-MSK-S00487,MSK,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",21,0,673,2.0-public
+CRC,GENIE-MSK-S00487,MSK,1,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",339,0,355,2.0-public
+CRC,GENIE-MSK-S00489,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",51,1,671,2.0-public
+CRC,GENIE-MSK-S00491,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",53,0,2427,2.0-public
+CRC,GENIE-MSK-S00491,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",224,0,2256,2.0-public
+CRC,GENIE-MSK-S00493,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",31,0,2415,2.0-public
+CRC,GENIE-MSK-S00493,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",204,0,2242,2.0-public
+CRC,GENIE-MSK-S00498,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",59,,,2.0-public
+CRC,GENIE-MSK-S00499,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",46,1,578,2.0-public
+CRC,GENIE-MSK-S00499,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",318,1,306,2.0-public
+CRC,GENIE-MSK-S00501,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",38,1,1327,2.0-public
+CRC,GENIE-MSK-S00501,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",159,1,1206,2.0-public
+CRC,GENIE-MSK-S00501,MSK,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",470,1,895,2.0-public
+CRC,GENIE-MSK-S00503,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",45,1,1199,2.0-public
+CRC,GENIE-MSK-S00503,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",264,1,980,2.0-public
+CRC,GENIE-MSK-S00503,MSK,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",398,1,846,2.0-public
+CRC,GENIE-MSK-S00507,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",36,1,332,2.0-public
+CRC,GENIE-MSK-S00512,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",55,1,395,2.0-public
+CRC,GENIE-MSK-S00512,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",150,1,300,2.0-public
+CRC,GENIE-MSK-S00512,MSK,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",313,1,137,2.0-public
+CRC,GENIE-MSK-S00513,MSK,0,1,1,Yes,1,Capecitabine,125,0,1231,2.0-public
+CRC,GENIE-MSK-S00513,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",357,0,999,2.0-public
+CRC,GENIE-MSK-S00513,MSK,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",594,0,762,2.0-public
+CRC,GENIE-MSK-S00514,MSK,0,1,1,Yes,1,Capecitabine,39,1,716,2.0-public
+CRC,GENIE-MSK-S00514,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",307,1,448,2.0-public
+CRC,GENIE-MSK-S00514,MSK,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",605,1,150,2.0-public
+CRC,GENIE-MSK-S00515,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",76,1,586,2.0-public
+CRC,GENIE-MSK-S00515,MSK,0,2,2,Yes,1,Investigational Drug,306,1,356,2.0-public
+CRC,GENIE-MSK-S00516,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",127,0,2479,2.0-public
+CRC,GENIE-MSK-S00517,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",79,0,1185,2.0-public
+CRC,GENIE-MSK-S00517,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",264,0,1000,2.0-public
+CRC,GENIE-MSK-S00517,MSK,0,3,3,Yes,1,Capecitabine,508,0,756,2.0-public
+CRC,GENIE-MSK-S00517,MSK,0,4,4,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",938,0,326,2.0-public
+CRC,GENIE-MSK-S00518,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",39,0,996,2.0-public
+CRC,GENIE-MSK-S00519,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",32,0,717,2.0-public
+CRC,GENIE-MSK-S00519,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",200,0,549,2.0-public
+CRC,GENIE-MSK-S00524,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",42,1,1034,2.0-public
+CRC,GENIE-MSK-S00524,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",194,1,882,2.0-public
+CRC,GENIE-MSK-S00524,MSK,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",430,1,646,2.0-public
+CRC,GENIE-MSK-S00528,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",35,1,90,2.0-public
+CRC,GENIE-MSK-S00529,MSK,0,1,1,Yes,1,Capecitabine,29,1,545,2.0-public
+CRC,GENIE-MSK-S00529,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",485,1,89,2.0-public
+CRC,GENIE-MSK-S00530,MSK,0,1,1,Yes,1,Capecitabine,45,1,271,2.0-public
+CRC,GENIE-MSK-S00530,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",286,1,30,2.0-public
+CRC,GENIE-MSK-S00533,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",16,0,1660,2.0-public
+CRC,GENIE-MSK-S00533,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",231,0,1445,2.0-public
+CRC,GENIE-MSK-S00535,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",97,0,1800,2.0-public
+CRC,GENIE-MSK-S00539,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",58,1,1208,2.0-public
+CRC,GENIE-MSK-S00542,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",52,0,2043,2.0-public
+CRC,GENIE-MSK-S00542,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",164,0,1931,2.0-public
+CRC,GENIE-MSK-S00542,MSK,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",340,0,1755,2.0-public
+CRC,GENIE-MSK-S00542,MSK,0,4,4,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",466,0,1629,2.0-public
+CRC,GENIE-MSK-S00543,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",98,0,1029,2.0-public
+CRC,GENIE-MSK-S00543,MSK,0,2,2,Yes,1,Capecitabine,591,0,536,2.0-public
+CRC,GENIE-MSK-S00543,MSK,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",805,0,322,2.0-public
+CRC,GENIE-MSK-S00547,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",49,0,1942,2.0-public
+CRC,GENIE-MSK-S00549,MSK,0,1,1,Yes,1,Capecitabine,32,0,1801,2.0-public
+CRC,GENIE-MSK-S00549,MSK,0,2,2,Yes,1,Investigational Drug,185,0,1648,2.0-public
+CRC,GENIE-MSK-S00549,MSK,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",694,0,1139,2.0-public
+CRC,GENIE-MSK-S00550,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",37,1,100,2.0-public
+CRC,GENIE-MSK-S00553,MSK,1,1,1,Yes,2,"Capecitabine, Oxaliplatin",63,1,1079,2.0-public
+CRC,GENIE-MSK-S00558,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",15,1,632,2.0-public
+CRC,GENIE-MSK-S00558,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",187,1,460,2.0-public
+CRC,GENIE-MSK-S00558,MSK,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",378,1,269,2.0-public
+CRC,GENIE-MSK-S00566,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",80,0,1078,2.0-public
+CRC,GENIE-MSK-S00566,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",202,0,956,2.0-public
+CRC,GENIE-MSK-S00570,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",83,1,872,2.0-public
+CRC,GENIE-MSK-S00576,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",14,1,614,2.0-public
+CRC,GENIE-MSK-S00576,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",115,1,513,2.0-public
+CRC,GENIE-MSK-S00590,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",45,0,719,2.0-public
+CRC,GENIE-MSK-S00590,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",265,0,499,2.0-public
+CRC,GENIE-MSK-S00590,MSK,0,3,3,Yes,1,Capecitabine,459,0,305,2.0-public
+CRC,GENIE-MSK-S00591,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",39,0,2221,2.0-public
+CRC,GENIE-MSK-S00591,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",310,0,1950,2.0-public
+CRC,GENIE-MSK-S00593,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",142,1,1433,2.0-public
+CRC,GENIE-MSK-S00598,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",61,0,2301,2.0-public
+CRC,GENIE-MSK-S00598,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",269,0,2093,2.0-public
+CRC,GENIE-MSK-S00602,MSK,1,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",97,1,817,2.0-public
+CRC,GENIE-MSK-S00605,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",35,0,789,2.0-public
+CRC,GENIE-MSK-S00605,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",211,0,613,2.0-public
+CRC,GENIE-MSK-S00611,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",32,1,176,2.0-public
+CRC,GENIE-MSK-S00613,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",16,0,200,2.0-public
+CRC,GENIE-MSK-S00613,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",156,0,60,2.0-public
+CRC,GENIE-MSK-S00621,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",21,1,1281,2.0-public
+CRC,GENIE-MSK-S00622,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",36,0,1344,2.0-public
+CRC,GENIE-MSK-S00622,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",542,0,838,2.0-public
+CRC,GENIE-MSK-S00625,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",62,1,384,2.0-public
+CRC,GENIE-MSK-S00625,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",234,1,212,2.0-public
+CRC,GENIE-MSK-S00626,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",96,1,1315,2.0-public
+CRC,GENIE-MSK-S00626,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",251,1,1160,2.0-public
+CRC,GENIE-MSK-S00626,MSK,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",467,1,944,2.0-public
+CRC,GENIE-MSK-S00628,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",41,0,289,2.0-public
+CRC,GENIE-MSK-S00631,MSK,0,1,1,Yes,1,Capecitabine,59,1,60,2.0-public
+CRC,GENIE-MSK-S00632,MSK,0,1,1,Yes,1,Capecitabine,24,1,848,2.0-public
+CRC,GENIE-MSK-S00632,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",184,1,688,2.0-public
+CRC,GENIE-MSK-S00632,MSK,0,3,3,Yes,1,Capecitabine,431,1,441,2.0-public
+CRC,GENIE-MSK-S00638,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",28,0,1300,2.0-public
+CRC,GENIE-MSK-S00644,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",17,1,413,2.0-public
+CRC,GENIE-MSK-S00651,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",55,1,230,2.0-public
+CRC,GENIE-MSK-S00657,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",120,1,1774,2.0-public
+CRC,GENIE-MSK-S00657,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",240,1,1654,2.0-public
+CRC,GENIE-MSK-S00664,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",62,1,2618,2.0-public
+CRC,GENIE-MSK-S00665,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",21,0,257,2.0-public
+CRC,GENIE-MSK-S00665,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",128,0,150,2.0-public
+CRC,GENIE-MSK-S00669,MSK,0,1,1,Yes,1,Capecitabine,86,0,1914,2.0-public
+CRC,GENIE-MSK-S00672,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",19,1,170,2.0-public
+CRC,GENIE-MSK-S00675,MSK,0,1,1,Yes,1,Capecitabine,48,1,145,2.0-public
+CRC,GENIE-MSK-S00675,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",139,1,54,2.0-public
+CRC,GENIE-MSK-S00677,MSK,1,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",132,1,1628,2.0-public
+CRC,GENIE-MSK-S00677,MSK,1,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",572,1,1188,2.0-public
+CRC,GENIE-MSK-S00677,MSK,1,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",742,1,1018,2.0-public
+CRC,GENIE-MSK-S00679,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",-3,1,1619,2.0-public
+CRC,GENIE-MSK-S00679,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",98,1,1518,2.0-public
+CRC,GENIE-MSK-S00679,MSK,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",465,1,1151,2.0-public
+CRC,GENIE-MSK-S00679,MSK,0,4,4,Yes,1,Capecitabine,714,1,902,2.0-public
+CRC,GENIE-MSK-S00685,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",25,0,1440,2.0-public
+CRC,GENIE-MSK-S00685,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",149,0,1316,2.0-public
+CRC,GENIE-MSK-S00690,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",48,0,1482,2.0-public
+CRC,GENIE-MSK-S00691,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",207,,,2.0-public
+CRC,GENIE-MSK-S00692,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",22,1,990,2.0-public
+CRC,GENIE-MSK-S00692,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",253,1,759,2.0-public
+CRC,GENIE-MSK-S00698,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",45,0,1476,2.0-public
+CRC,GENIE-MSK-S00706,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",16,1,801,2.0-public
+CRC,GENIE-MSK-S00710,MSK,0,1,1,Yes,1,Capecitabine,168,1,1085,2.0-public
+CRC,GENIE-MSK-S00728,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",17,1,783,2.0-public
+CRC,GENIE-MSK-S00728,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",185,1,615,2.0-public
+CRC,GENIE-MSK-S00728,MSK,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",354,1,446,2.0-public
+CRC,GENIE-MSK-S00729,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",13,1,848,2.0-public
+CRC,GENIE-MSK-S00729,MSK,0,2,2,Yes,1,Capecitabine,175,1,686,2.0-public
+CRC,GENIE-MSK-S00729,MSK,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",296,1,565,2.0-public
+CRC,GENIE-MSK-S00730,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",33,1,1075,2.0-public
+CRC,GENIE-MSK-S00730,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",166,1,942,2.0-public
+CRC,GENIE-MSK-S00731,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",33,1,770,2.0-public
+CRC,GENIE-MSK-S00732,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",16,1,287,2.0-public
+CRC,GENIE-MSK-S00732,MSK,0,2,2,Yes,1,Capecitabine,127,1,176,2.0-public
+CRC,GENIE-MSK-S00736,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",39,1,402,2.0-public
+CRC,GENIE-MSK-S00736,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",299,1,142,2.0-public
+CRC,GENIE-MSK-S00738,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",13,1,1113,2.0-public
+CRC,GENIE-MSK-S00738,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",143,1,983,2.0-public
+CRC,GENIE-MSK-S00738,MSK,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",814,1,312,2.0-public
+CRC,GENIE-MSK-S00748,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",36,0,1519,2.0-public
+CRC,GENIE-MSK-S00752,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",90,1,770,2.0-public
+CRC,GENIE-MSK-S00752,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",195,1,665,2.0-public
+CRC,GENIE-MSK-S00752,MSK,0,3,3,Yes,1,Investigational Drug,466,1,394,2.0-public
+CRC,GENIE-MSK-S00755,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",216,0,3596,2.0-public
+CRC,GENIE-MSK-S00755,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",340,0,3472,2.0-public
+CRC,GENIE-MSK-S00758,MSK,1,1,1,Yes,1,Capecitabine,17,0,695,2.0-public
+CRC,GENIE-MSK-S00758,MSK,1,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",247,0,465,2.0-public
+CRC,GENIE-MSK-S00758,MSK,1,3,3,Yes,1,Capecitabine,439,0,273,2.0-public
+CRC,GENIE-MSK-S00763,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",33,1,613,2.0-public
+CRC,GENIE-MSK-S00765,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",42,1,966,2.0-public
+CRC,GENIE-MSK-S00765,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",327,1,681,2.0-public
+CRC,GENIE-MSK-S00765,MSK,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",704,1,304,2.0-public
+CRC,GENIE-MSK-S00765,MSK,0,4,4,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",926,1,82,2.0-public
+CRC,GENIE-MSK-S00769,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",34,0,455,2.0-public
+CRC,GENIE-MSK-S00772,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",115,0,2204,2.0-public
+CRC,GENIE-MSK-S00772,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",375,0,1944,2.0-public
+CRC,GENIE-MSK-S00782,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",14,0,999,2.0-public
+CRC,GENIE-MSK-S00782,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",265,0,748,2.0-public
+CRC,GENIE-MSK-S00782,MSK,0,3,3,Yes,1,Capecitabine,489,0,524,2.0-public
+CRC,GENIE-MSK-S00795,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",78,0,3615,2.0-public
+CRC,GENIE-MSK-S00800,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",53,1,465,2.0-public
+CRC,GENIE-MSK-S00800,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",504,1,14,2.0-public
+CRC,GENIE-MSK-S00806,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",29,0,1012,2.0-public
+CRC,GENIE-MSK-S00806,MSK,0,2,2,Yes,1,Investigational Drug,196,0,845,2.0-public
+CRC,GENIE-MSK-S00812,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",36,0,518,2.0-public
+CRC,GENIE-MSK-S00812,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",187,0,367,2.0-public
+CRC,GENIE-MSK-S00812,MSK,0,3,3,Yes,1,Capecitabine,393,0,161,2.0-public
+CRC,GENIE-MSK-S00821,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",11,0,1040,2.0-public
+CRC,GENIE-MSK-S00821,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",129,0,922,2.0-public
+CRC,GENIE-MSK-S00828,MSK,1,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",116,0,1196,2.0-public
+CRC,GENIE-MSK-S00828,MSK,1,2,2,Yes,1,Capecitabine,210,0,1102,2.0-public
+CRC,GENIE-MSK-S00828,MSK,1,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",484,0,828,2.0-public
+CRC,GENIE-MSK-S00828,MSK,1,4,4,Yes,1,Investigational Drug,627,0,685,2.0-public
+CRC,GENIE-MSK-S00833,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",42,1,265,2.0-public
+CRC,GENIE-MSK-S00833,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",261,1,46,2.0-public
+CRC,GENIE-MSK-S00834,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",55,0,840,2.0-public
+CRC,GENIE-MSK-S00836,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",21,0,1725,2.0-public
+CRC,GENIE-MSK-S00837,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",37,0,304,2.0-public
+CRC,GENIE-MSK-S00842,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",29,0,236,2.0-public
+CRC,GENIE-MSK-S00855,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",126,1,507,2.0-public
+CRC,GENIE-MSK-S00855,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",283,1,350,2.0-public
+CRC,GENIE-MSK-S00857,MSK,1,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",11,1,1449,2.0-public
+CRC,GENIE-MSK-S00857,MSK,1,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",236,1,1224,2.0-public
+CRC,GENIE-MSK-S00857,MSK,1,3,3,Yes,1,Capecitabine,402,1,1058,2.0-public
+CRC,GENIE-MSK-S00858,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",55,1,440,2.0-public
+CRC,GENIE-MSK-S00858,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",155,1,340,2.0-public
+CRC,GENIE-MSK-S00862,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",29,0,274,2.0-public
+CRC,GENIE-MSK-S00862,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",134,0,169,2.0-public
+CRC,GENIE-MSK-S00863,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",35,1,936,2.0-public
+CRC,GENIE-MSK-S00864,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",55,0,1904,2.0-public
+CRC,GENIE-MSK-S00865,MSK,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",141,0,1546,2.0-public
+CRC,GENIE-MSK-S00867,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",40,0,1863,2.0-public
+CRC,GENIE-MSK-S00868,MSK,0,1,1,Yes,1,Capecitabine,33,1,1984,2.0-public
+CRC,GENIE-MSK-S00870,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",18,0,1396,2.0-public
+CRC,GENIE-MSK-S00870,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",121,0,1293,2.0-public
+CRC,GENIE-MSK-S00873,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",35,0,412,2.0-public
+CRC,GENIE-MSK-S00886,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",35,0,990,2.0-public
+CRC,GENIE-MSK-S00891,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",38,1,1101,2.0-public
+CRC,GENIE-MSK-S00892,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",15,0,494,2.0-public
+CRC,GENIE-MSK-S00894,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",43,0,1541,2.0-public
+CRC,GENIE-MSK-S00894,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",165,0,1419,2.0-public
+CRC,GENIE-MSK-S00895,MSK,0,1,1,Yes,1,Capecitabine,21,0,2243,2.0-public
+CRC,GENIE-MSK-S00895,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",257,0,2007,2.0-public
+CRC,GENIE-MSK-S00895,MSK,0,3,3,Yes,1,Capecitabine,818,0,1446,2.0-public
+CRC,GENIE-MSK-S00901,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",21,1,987,2.0-public
+CRC,GENIE-MSK-S00901,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",288,1,720,2.0-public
+CRC,GENIE-MSK-S00902,MSK,0,1,1,Yes,1,Capecitabine,37,0,1212,2.0-public
+CRC,GENIE-MSK-S00902,MSK,0,2,2,Yes,1,Capecitabine,135,0,1114,2.0-public
+CRC,GENIE-MSK-S00902,MSK,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",273,0,976,2.0-public
+CRC,GENIE-MSK-S00904,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",18,1,1960,2.0-public
+CRC,GENIE-MSK-S00904,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",200,1,1778,2.0-public
+CRC,GENIE-MSK-S00904,MSK,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",294,1,1684,2.0-public
+CRC,GENIE-MSK-S00908,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",25,0,1550,2.0-public
+CRC,GENIE-MSK-S00908,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",200,0,1375,2.0-public
+CRC,GENIE-MSK-S00915,MSK,0,1,1,Yes,1,Capecitabine,19,1,672,2.0-public
+CRC,GENIE-MSK-S00915,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",295,1,396,2.0-public
+CRC,GENIE-MSK-S00915,MSK,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",394,1,297,2.0-public
+CRC,GENIE-MSK-S00920,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",59,0,2529,2.0-public
+CRC,GENIE-MSK-S00920,MSK,0,2,2,Yes,1,Capecitabine,172,0,2416,2.0-public
+CRC,GENIE-MSK-S00925,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",-30,0,1236,2.0-public
+CRC,GENIE-MSK-S00925,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",470,0,736,2.0-public
+CRC,GENIE-MSK-S00925,MSK,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",843,0,363,2.0-public
+CRC,GENIE-MSK-S00928,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",61,1,1826,2.0-public
+CRC,GENIE-MSK-S00940,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",18,1,1452,2.0-public
+CRC,GENIE-MSK-S00940,MSK,0,2,2,Yes,1,Capecitabine,260,1,1210,2.0-public
+CRC,GENIE-MSK-S00941,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",26,0,2139,2.0-public
+CRC,GENIE-MSK-S00941,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",415,0,1750,2.0-public
+CRC,GENIE-MSK-S00943,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",137,1,4,2.0-public
+CRC,GENIE-MSK-S00946,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",28,1,400,2.0-public
+CRC,GENIE-MSK-S00946,MSK,0,2,2,Yes,1,Capecitabine,194,1,234,2.0-public
+CRC,GENIE-MSK-S00953,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",115,1,577,2.0-public
+CRC,GENIE-MSK-S00953,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",214,1,478,2.0-public
+CRC,GENIE-MSK-S00953,MSK,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",521,1,171,2.0-public
+CRC,GENIE-MSK-S00956,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",57,0,708,2.0-public
+CRC,GENIE-MSK-S00956,MSK,0,2,2,Yes,1,Capecitabine,361,0,404,2.0-public
+CRC,GENIE-MSK-S00964,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",36,0,1165,2.0-public
+CRC,GENIE-MSK-S00965,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",35,1,861,2.0-public
+CRC,GENIE-MSK-S00970,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",65,1,622,2.0-public
+CRC,GENIE-MSK-S00970,MSK,0,2,2,Yes,1,Capecitabine,219,1,468,2.0-public
+CRC,GENIE-MSK-S00978,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",29,,,2.0-public
+CRC,GENIE-MSK-S00978,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",197,,,2.0-public
+CRC,GENIE-MSK-S00980,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",10,1,112,2.0-public
+CRC,GENIE-MSK-S00982,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",48,1,1400,2.0-public
+CRC,GENIE-MSK-S00991,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",14,0,447,2.0-public
+CRC,GENIE-MSK-S00997,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",45,0,2361,2.0-public
+CRC,GENIE-MSK-S00999,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",17,1,849,2.0-public
+CRC,GENIE-MSK-S01001,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",12,1,245,2.0-public
+CRC,GENIE-MSK-S01003,MSK,0,1,1,Yes,1,Capecitabine,21,1,430,2.0-public
+CRC,GENIE-MSK-S01003,MSK,0,2,2,Yes,1,Investigational Drug,249,1,202,2.0-public
+CRC,GENIE-MSK-S01003,MSK,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",434,1,17,2.0-public
+CRC,GENIE-MSK-S01004,MSK,0,1,1,Yes,1,Capecitabine,65,0,865,2.0-public
+CRC,GENIE-MSK-S01005,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",15,0,2078,2.0-public
+CRC,GENIE-MSK-S01005,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",132,0,1961,2.0-public
+CRC,GENIE-MSK-S01005,MSK,0,3,3,Yes,1,Capecitabine,392,0,1701,2.0-public
+CRC,GENIE-MSK-S01005,MSK,0,4,4,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",804,0,1289,2.0-public
+CRC,GENIE-MSK-S01012,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",47,1,321,2.0-public
+CRC,GENIE-MSK-S01012,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",361,1,7,2.0-public
+CRC,GENIE-MSK-S01016,MSK,1,1,1,Yes,2,"Capecitabine, Oxaliplatin",71,0,1999,2.0-public
+CRC,GENIE-MSK-S01018,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",63,1,929,2.0-public
+CRC,GENIE-MSK-S01018,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",265,1,727,2.0-public
+CRC,GENIE-MSK-S01018,MSK,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",448,1,544,2.0-public
+CRC,GENIE-MSK-S01029,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",42,,,2.0-public
+CRC,GENIE-MSK-S01029,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",152,,,2.0-public
+CRC,GENIE-MSK-S01031,MSK,0,1,1,Yes,1,Capecitabine,45,,,2.0-public
+CRC,GENIE-MSK-S01031,MSK,0,2,2,Yes,1,Capecitabine,196,,,2.0-public
+CRC,GENIE-MSK-S01035,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",111,0,2807,2.0-public
+CRC,GENIE-MSK-S01035,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",742,0,2176,2.0-public
+CRC,GENIE-MSK-S01035,MSK,0,3,3,Yes,1,Capecitabine,964,0,1954,2.0-public
+CRC,GENIE-MSK-S01036,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",12,1,903,2.0-public
+CRC,GENIE-MSK-S01036,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",259,1,656,2.0-public
+CRC,GENIE-MSK-S01042,MSK,0,1,1,Yes,1,Capecitabine,58,1,1335,2.0-public
+CRC,GENIE-MSK-S01042,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",190,1,1203,2.0-public
+CRC,GENIE-MSK-S01043,MSK,1,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",13,1,1296,2.0-public
+CRC,GENIE-MSK-S01043,MSK,1,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",139,1,1170,2.0-public
+CRC,GENIE-MSK-S01043,MSK,1,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",263,1,1046,2.0-public
+CRC,GENIE-MSK-S01046,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",85,,,2.0-public
+CRC,GENIE-MSK-S01046,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",762,,,2.0-public
+CRC,GENIE-MSK-S01048,MSK,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",80,0,2401,2.0-public
+CRC,GENIE-MSK-S01049,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",41,1,4294,2.0-public
+CRC,GENIE-MSK-S01053,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",27,0,330,2.0-public
+CRC,GENIE-MSK-S01058,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",40,0,90,2.0-public
+CRC,GENIE-MSK-S01062,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",19,0,1933,2.0-public
+CRC,GENIE-MSK-S01064,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",48,1,988,2.0-public
+CRC,GENIE-MSK-S01064,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",239,1,797,2.0-public
+CRC,GENIE-MSK-S01064,MSK,0,3,3,Yes,1,Capecitabine,378,1,658,2.0-public
+CRC,GENIE-MSK-S01064,MSK,0,4,4,Yes,2,"Cetuximab, Irinotecan Hydrochloride",541,1,495,2.0-public
+CRC,GENIE-MSK-S01067,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",36,0,3760,2.0-public
+CRC,GENIE-MSK-S01067,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",272,0,3524,2.0-public
+CRC,GENIE-MSK-S01073,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",18,1,137,2.0-public
+CRC,GENIE-MSK-S01079,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",48,0,130,2.0-public
+CRC,GENIE-MSK-S01086,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",30,1,1287,2.0-public
+CRC,GENIE-MSK-S01086,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",146,1,1171,2.0-public
+CRC,GENIE-MSK-S01087,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",64,0,3067,2.0-public
+CRC,GENIE-MSK-S01087,MSK,0,2,2,Yes,1,Investigational Drug,224,0,2907,2.0-public
+CRC,GENIE-MSK-S01095,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",105,1,1084,2.0-public
+CRC,GENIE-MSK-S01096,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",21,1,349,2.0-public
+CRC,GENIE-MSK-S01098,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",29,1,1042,2.0-public
+CRC,GENIE-MSK-S01098,MSK,0,2,2,Yes,1,Investigational Drug,663,1,408,2.0-public
+CRC,GENIE-MSK-S01098,MSK,0,3,3,Yes,1,Investigational Drug,792,1,279,2.0-public
+CRC,GENIE-MSK-S01098,MSK,0,4,4,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",1047,1,24,2.0-public
+CRC,GENIE-MSK-S01108,MSK,1,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",-20,1,250,2.0-public
+CRC,GENIE-MSK-S01109,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",40,1,312,2.0-public
+CRC,GENIE-MSK-S01111,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",14,0,182,2.0-public
+CRC,GENIE-MSK-S01127,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",54,0,341,2.0-public
+CRC,GENIE-MSK-S01127,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",147,0,248,2.0-public
+CRC,GENIE-MSK-S01127,MSK,0,3,3,Yes,1,Capecitabine,275,0,120,2.0-public
+CRC,GENIE-MSK-S01128,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",38,0,983,2.0-public
+CRC,GENIE-MSK-S01128,MSK,0,2,2,Yes,1,Capecitabine,160,0,861,2.0-public
+CRC,GENIE-MSK-S01129,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",42,1,725,2.0-public
+CRC,GENIE-MSK-S01129,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",168,1,599,2.0-public
+CRC,GENIE-MSK-S01129,MSK,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",375,1,392,2.0-public
+CRC,GENIE-MSK-S01129,MSK,0,4,4,Yes,1,Capecitabine,508,1,259,2.0-public
+CRC,GENIE-MSK-S01129,MSK,0,5,5,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",706,1,61,2.0-public
+CRC,GENIE-MSK-S01135,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",10,1,57,2.0-public
+CRC,GENIE-MSK-S01136,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",22,1,702,2.0-public
+CRC,GENIE-MSK-S01136,MSK,0,2,2,Yes,1,Capecitabine,417,1,307,2.0-public
+CRC,GENIE-MSK-S01136,MSK,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",564,1,160,2.0-public
+CRC,GENIE-MSK-S01139,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",44,0,989,2.0-public
+CRC,GENIE-MSK-S01142,MSK,0,1,1,Yes,1,Capecitabine,18,1,284,2.0-public
+CRC,GENIE-MSK-S01142,MSK,0,2,2,Yes,1,Capecitabine,112,1,190,2.0-public
+CRC,GENIE-MSK-S01145,MSK,0,1,1,Yes,1,Capecitabine,94,0,84,2.0-public
+CRC,GENIE-MSK-S01146,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",34,1,403,2.0-public
+CRC,GENIE-MSK-S01146,MSK,0,2,2,Yes,1,Capecitabine,278,1,159,2.0-public
+CRC,GENIE-MSK-S01149,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",58,0,1291,2.0-public
+CRC,GENIE-MSK-S01149,MSK,0,2,2,Yes,1,Capecitabine,364,0,985,2.0-public
+CRC,GENIE-MSK-S01152,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",-19,0,1297,2.0-public
+CRC,GENIE-MSK-S01152,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",107,0,1171,2.0-public
+CRC,GENIE-MSK-S01152,MSK,0,3,3,Yes,1,Investigational Drug,247,0,1031,2.0-public
+CRC,GENIE-MSK-S01156,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",19,1,896,2.0-public
+CRC,GENIE-MSK-S01157,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",136,0,2790,2.0-public
+CRC,GENIE-MSK-S01158,MSK,0,1,1,Yes,1,Capecitabine,10,1,608,2.0-public
+CRC,GENIE-MSK-S01162,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",165,0,1083,2.0-public
+CRC,GENIE-MSK-S01165,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",12,0,214,2.0-public
+CRC,GENIE-MSK-S01165,MSK,0,2,2,Yes,1,Capecitabine,146,0,80,2.0-public
+CRC,GENIE-MSK-S01182,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",31,1,141,2.0-public
+CRC,GENIE-MSK-S01184,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",-21,0,1342,2.0-public
+CRC,GENIE-MSK-S01185,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",42,1,615,2.0-public
+CRC,GENIE-MSK-S01185,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",196,1,461,2.0-public
+CRC,GENIE-MSK-S01185,MSK,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",355,1,302,2.0-public
+CRC,GENIE-MSK-S01185,MSK,0,4,4,Yes,1,Capecitabine,539,1,118,2.0-public
+CRC,GENIE-MSK-S01200,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",22,1,746,2.0-public
+CRC,GENIE-MSK-S01202,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",-22,1,418,2.0-public
+CRC,GENIE-MSK-S01202,MSK,0,2,2,Yes,1,Investigational Drug,284,1,112,2.0-public
+CRC,GENIE-MSK-S01205,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",32,1,451,2.0-public
+CRC,GENIE-MSK-S01207,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",11,,,2.0-public
+CRC,GENIE-MSK-S01208,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",23,1,682,2.0-public
+CRC,GENIE-MSK-S01208,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",236,1,469,2.0-public
+CRC,GENIE-MSK-S01208,MSK,0,3,3,Yes,1,Investigational Drug,414,1,291,2.0-public
+CRC,GENIE-MSK-S01208,MSK,0,4,4,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",619,1,86,2.0-public
+CRC,GENIE-MSK-S01211,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",30,1,565,2.0-public
+CRC,GENIE-MSK-S01215,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",33,1,581,2.0-public
+CRC,GENIE-MSK-S01217,MSK,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",35,1,1632,2.0-public
+CRC,GENIE-MSK-S01222,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",28,1,440,2.0-public
+CRC,GENIE-MSK-S01222,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",325,1,143,2.0-public
+CRC,GENIE-MSK-S01225,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",83,0,1197,2.0-public
+CRC,GENIE-MSK-S01225,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",347,0,933,2.0-public
+CRC,GENIE-MSK-S01225,MSK,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",513,0,767,2.0-public
+CRC,GENIE-MSK-S01227,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",54,0,2325,2.0-public
+CRC,GENIE-MSK-S01227,MSK,0,2,2,Yes,1,Investigational Drug,199,0,2180,2.0-public
+CRC,GENIE-MSK-S01227,MSK,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",1092,0,1287,2.0-public
+CRC,GENIE-MSK-S01228,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",33,0,2338,2.0-public
+CRC,GENIE-MSK-S01234,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",-20,1,431,2.0-public
+CRC,GENIE-MSK-S01234,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",220,1,191,2.0-public
+CRC,GENIE-MSK-S01239,MSK,0,1,1,Yes,1,Capecitabine,38,0,456,2.0-public
+CRC,GENIE-MSK-S01239,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",453,0,41,2.0-public
+CRC,GENIE-MSK-S01240,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",34,1,1747,2.0-public
+CRC,GENIE-MSK-S01243,MSK,1,1,1,Yes,2,"Capecitabine, Oxaliplatin",-4,1,1033,2.0-public
+CRC,GENIE-MSK-S01243,MSK,1,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",106,1,923,2.0-public
+CRC,GENIE-MSK-S01243,MSK,1,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",542,1,487,2.0-public
+CRC,GENIE-MSK-S01251,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",16,1,958,2.0-public
+CRC,GENIE-MSK-S01251,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",814,1,160,2.0-public
+CRC,GENIE-MSK-S01254,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",33,0,1643,2.0-public
+CRC,GENIE-MSK-S01259,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",103,0,1368,2.0-public
+CRC,GENIE-MSK-S01259,MSK,0,2,2,Yes,1,Capecitabine,217,0,1254,2.0-public
+CRC,GENIE-MSK-S01259,MSK,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",382,0,1089,2.0-public
+CRC,GENIE-MSK-S01260,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",131,1,1565,2.0-public
+CRC,GENIE-MSK-S01261,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",38,0,1085,2.0-public
+CRC,GENIE-MSK-S01268,MSK,0,1,1,Yes,1,Capecitabine,-9,1,751,2.0-public
+CRC,GENIE-MSK-S01268,MSK,0,2,2,Yes,1,Investigational Drug,130,1,612,2.0-public
+CRC,GENIE-MSK-S01268,MSK,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",705,1,37,2.0-public
+CRC,GENIE-MSK-S01273,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",52,1,1105,2.0-public
+CRC,GENIE-MSK-S01275,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",122,1,417,2.0-public
+CRC,GENIE-MSK-S01275,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",290,1,249,2.0-public
+CRC,GENIE-MSK-S01280,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",48,0,1599,2.0-public
+CRC,GENIE-MSK-S01280,MSK,0,2,2,Yes,1,Investigational Drug,224,0,1423,2.0-public
+CRC,GENIE-MSK-S01289,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",31,1,1030,2.0-public
+CRC,GENIE-MSK-S01289,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",294,1,767,2.0-public
+CRC,GENIE-MSK-S01289,MSK,0,3,3,Yes,1,Investigational Drug,524,1,537,2.0-public
+CRC,GENIE-MSK-S01289,MSK,0,4,4,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",842,1,219,2.0-public
+CRC,GENIE-MSK-S01290,MSK,0,1,1,Yes,1,Capecitabine,56,0,2034,2.0-public
+CRC,GENIE-MSK-S01291,MSK,0,1,1,Yes,1,Capecitabine,12,1,1540,2.0-public
+CRC,GENIE-MSK-S01291,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",160,1,1392,2.0-public
+CRC,GENIE-MSK-S01293,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",166,0,2069,2.0-public
+CRC,GENIE-MSK-S01293,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",324,0,1911,2.0-public
+CRC,GENIE-MSK-S01293,MSK,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",550,0,1685,2.0-public
+CRC,GENIE-MSK-S01294,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",32,1,629,2.0-public
+CRC,GENIE-MSK-S01294,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",127,1,534,2.0-public
+CRC,GENIE-MSK-S01301,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",110,1,725,2.0-public
+CRC,GENIE-MSK-S01301,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",324,1,511,2.0-public
+CRC,GENIE-MSK-S01302,MSK,0,1,1,Yes,1,Capecitabine,43,1,1460,2.0-public
+CRC,GENIE-MSK-S01302,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",318,1,1185,2.0-public
+CRC,GENIE-MSK-S01302,MSK,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",712,1,791,2.0-public
+CRC,GENIE-MSK-S01312,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",73,0,1914,2.0-public
+CRC,GENIE-MSK-S01313,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",23,1,974,2.0-public
+CRC,GENIE-MSK-S01313,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",208,1,789,2.0-public
+CRC,GENIE-MSK-S01313,MSK,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",306,1,691,2.0-public
+CRC,GENIE-MSK-S01315,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",30,1,190,2.0-public
+CRC,GENIE-MSK-S01324,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",13,1,474,2.0-public
+CRC,GENIE-MSK-S01324,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",194,1,293,2.0-public
+CRC,GENIE-MSK-S01324,MSK,0,3,3,Yes,1,Investigational Drug,401,1,86,2.0-public
+CRC,GENIE-MSK-S01330,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",40,0,149,2.0-public
+CRC,GENIE-MSK-S01333,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",38,1,727,2.0-public
+CRC,GENIE-MSK-S01334,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",58,1,1865,2.0-public
+CRC,GENIE-MSK-S01334,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",272,1,1651,2.0-public
+CRC,GENIE-MSK-S01334,MSK,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",370,1,1553,2.0-public
+CRC,GENIE-MSK-S01343,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",138,0,3528,2.0-public
+CRC,GENIE-MSK-S01345,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",17,1,713,2.0-public
+CRC,GENIE-MSK-S01345,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",189,1,541,2.0-public
+CRC,GENIE-MSK-S01345,MSK,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",289,1,441,2.0-public
+CRC,GENIE-MSK-S01347,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",52,0,690,2.0-public
+CRC,GENIE-MSK-S01347,MSK,0,2,2,Yes,1,Investigational Drug,233,0,509,2.0-public
+CRC,GENIE-MSK-S01347,MSK,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",383,0,359,2.0-public
+CRC,GENIE-MSK-S01358,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",125,0,2944,2.0-public
+CRC,GENIE-MSK-S01362,MSK,0,1,1,Yes,1,Capecitabine,31,1,1299,2.0-public
+CRC,GENIE-MSK-S01362,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",186,1,1144,2.0-public
+CRC,GENIE-MSK-S01368,MSK,1,1,1,Yes,1,Capecitabine,19,0,1376,2.0-public
+CRC,GENIE-MSK-S01368,MSK,1,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",205,0,1190,2.0-public
+CRC,GENIE-MSK-S01374,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",25,0,1629,2.0-public
+CRC,GENIE-MSK-S01377,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",140,0,1347,2.0-public
+CRC,GENIE-MSK-S01378,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",52,1,1416,2.0-public
+CRC,GENIE-MSK-S01380,MSK,0,1,1,Yes,1,Capecitabine,20,1,618,2.0-public
+CRC,GENIE-MSK-S01380,MSK,0,2,2,Yes,1,Capecitabine,300,1,338,2.0-public
+CRC,GENIE-MSK-S01382,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",36,1,239,2.0-public
+CRC,GENIE-MSK-S01383,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",32,0,1927,2.0-public
+CRC,GENIE-MSK-S01384,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",97,1,73,2.0-public
+CRC,GENIE-MSK-S01389,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",30,1,327,2.0-public
+CRC,GENIE-MSK-S01389,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",190,1,167,2.0-public
+CRC,GENIE-MSK-S01391,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",14,1,1966,2.0-public
+CRC,GENIE-MSK-S01391,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",369,1,1611,2.0-public
+CRC,GENIE-MSK-S01394,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",53,1,167,2.0-public
+CRC,GENIE-MSK-S01400,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",26,0,1823,2.0-public
+CRC,GENIE-MSK-S01400,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",212,0,1637,2.0-public
+CRC,GENIE-MSK-S01400,MSK,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",302,0,1547,2.0-public
+CRC,GENIE-MSK-S01400,MSK,0,4,4,Yes,1,Investigational Drug,442,0,1407,2.0-public
+CRC,GENIE-MSK-S01409,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",28,1,923,2.0-public
+CRC,GENIE-MSK-S01429,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",47,1,749,2.0-public
+CRC,GENIE-MSK-S01429,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",339,1,457,2.0-public
+CRC,GENIE-MSK-S01435,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",51,0,2684,2.0-public
+CRC,GENIE-MSK-S01438,MSK,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",32,1,414,2.0-public
+CRC,GENIE-MSK-S01438,MSK,1,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",352,1,94,2.0-public
+CRC,GENIE-MSK-S01443,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",31,1,786,2.0-public
+CRC,GENIE-MSK-S01445,MSK,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",21,0,2032,2.0-public
+CRC,GENIE-MSK-S01448,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",19,1,608,2.0-public
+CRC,GENIE-MSK-S01448,MSK,0,2,2,Yes,1,Capecitabine,153,1,474,2.0-public
+CRC,GENIE-MSK-S01450,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",34,0,1960,2.0-public
+CRC,GENIE-MSK-S01451,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",42,1,1101,2.0-public
+CRC,GENIE-MSK-S01453,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",38,1,1298,2.0-public
+CRC,GENIE-MSK-S01457,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",51,0,1882,2.0-public
+CRC,GENIE-MSK-S01464,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",17,0,1175,2.0-public
+CRC,GENIE-MSK-S01464,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",191,0,1001,2.0-public
+CRC,GENIE-MSK-S01466,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",39,0,1121,2.0-public
+CRC,GENIE-MSK-S01466,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",203,0,957,2.0-public
+CRC,GENIE-MSK-S01466,MSK,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",354,0,806,2.0-public
+CRC,GENIE-MSK-S01467,MSK,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",55,1,710,2.0-public
+CRC,GENIE-MSK-S01470,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",77,1,272,2.0-public
+CRC,GENIE-MSK-S01472,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",55,0,290,2.0-public
+CRC,GENIE-MSK-S01480,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",54,1,1115,2.0-public
+CRC,GENIE-MSK-S01480,MSK,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",530,1,639,2.0-public
+CRC,GENIE-MSK-S01481,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",15,1,847,2.0-public
+CRC,GENIE-MSK-S01483,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",69,0,2825,2.0-public
+CRC,GENIE-MSK-S01490,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",14,1,1089,2.0-public
+CRC,GENIE-MSK-S01491,MSK,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",58,1,852,2.0-public
+CRC,GENIE-MSK-S01493,MSK,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",41,1,710,2.0-public
+CRC,GENIE-MSK-S01493,MSK,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",153,1,598,2.0-public
+CRC,GENIE-MSK-S01495,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",77,1,2380,2.0-public
+CRC,GENIE-MSK-S01495,MSK,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",901,1,1556,2.0-public
+CRC,GENIE-MSK-S01499,MSK,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",11,1,418,2.0-public
+CRC,GENIE-VICC-S00002,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",89,0,1515,2.0-public
+CRC,GENIE-VICC-S00003,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",21,1,609,2.0-public
+CRC,GENIE-VICC-S00009,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",16,0,1794,2.0-public
+CRC,GENIE-VICC-S00009,VICC,0,2,2,Yes,1,Capecitabine,269,0,1541,2.0-public
+CRC,GENIE-VICC-S00024,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",32,0,1526,2.0-public
+CRC,GENIE-VICC-S00026,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",16,1,178,2.0-public
+CRC,GENIE-VICC-S00027,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",17,1,436,2.0-public
+CRC,GENIE-VICC-S00027,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",422,1,31,2.0-public
+CRC,GENIE-VICC-S00032,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",41,0,1164,2.0-public
+CRC,GENIE-VICC-S00032,VICC,0,2,2,Yes,1,Capecitabine,195,0,1010,2.0-public
+CRC,GENIE-VICC-S00032,VICC,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",377,0,828,2.0-public
+CRC,GENIE-VICC-S00037,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",17,1,840,2.0-public
+CRC,GENIE-VICC-S00043,VICC,0,1,1,Yes,1,Capecitabine,74,0,1024,2.0-public
+CRC,GENIE-VICC-S00088,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",46,1,1107,2.0-public
+CRC,GENIE-VICC-S00088,VICC,0,2,2,Yes,1,Investigational Drug,224,1,929,2.0-public
+CRC,GENIE-VICC-S00102,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",12,1,753,2.0-public
+CRC,GENIE-VICC-S00102,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",302,1,463,2.0-public
+CRC,GENIE-VICC-S00106,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",32,1,563,2.0-public
+CRC,GENIE-VICC-S00108,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",80,1,375,2.0-public
+CRC,GENIE-VICC-S00109,VICC,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",52,0,179,2.0-public
+CRC,GENIE-VICC-S00115,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",14,,,2.0-public
+CRC,GENIE-VICC-S00125,VICC,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",16,0,562,2.0-public
+CRC,GENIE-VICC-S00125,VICC,1,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",255,0,323,2.0-public
+CRC,GENIE-VICC-S00125,VICC,1,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",460,0,118,2.0-public
+CRC,GENIE-VICC-S00125,VICC,1,4,4,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",572,0,6,2.0-public
+CRC,GENIE-VICC-S00133,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",62,0,1092,2.0-public
+CRC,GENIE-VICC-S00133,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",197,0,957,2.0-public
+CRC,GENIE-VICC-S00133,VICC,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",423,0,731,2.0-public
+CRC,GENIE-VICC-S00135,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",96,0,1574,2.0-public
+CRC,GENIE-VICC-S00145,VICC,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",18,1,847,2.0-public
+CRC,GENIE-VICC-S00145,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",214,1,651,2.0-public
+CRC,GENIE-VICC-S00145,VICC,0,3,3,Yes,1,Investigational Drug,334,1,531,2.0-public
+CRC,GENIE-VICC-S00165,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",21,1,567,2.0-public
+CRC,GENIE-VICC-S00165,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",459,1,129,2.0-public
+CRC,GENIE-VICC-S00174,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",40,0,901,2.0-public
+CRC,GENIE-VICC-S00174,VICC,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",132,0,809,2.0-public
+CRC,GENIE-VICC-S00174,VICC,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",281,0,660,2.0-public
+CRC,GENIE-VICC-S00174,VICC,0,4,4,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",463,0,478,2.0-public
+CRC,GENIE-VICC-S00174,VICC,0,5,5,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",592,0,349,2.0-public
+CRC,GENIE-VICC-S00182,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",33,1,1246,2.0-public
+CRC,GENIE-VICC-S00196,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",24,0,361,2.0-public
+CRC,GENIE-VICC-S00197,VICC,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",22,1,185,2.0-public
+CRC,GENIE-VICC-S00207,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",120,0,2223,2.0-public
+CRC,GENIE-VICC-S00217,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",72,1,677,2.0-public
+CRC,GENIE-VICC-S00217,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",284,1,465,2.0-public
+CRC,GENIE-VICC-S00231,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",21,1,539,2.0-public
+CRC,GENIE-VICC-S00232,VICC,1,1,1,Yes,1,Capecitabine,37,0,1640,2.0-public
+CRC,GENIE-VICC-S00232,VICC,1,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",525,0,1152,2.0-public
+CRC,GENIE-VICC-S00251,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",32,1,989,2.0-public
+CRC,GENIE-VICC-S00251,VICC,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",373,1,648,2.0-public
+CRC,GENIE-VICC-S00269,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",-14,1,634,2.0-public
+CRC,GENIE-VICC-S00269,VICC,0,2,2,Yes,1,Capecitabine,142,1,478,2.0-public
+CRC,GENIE-VICC-S00273,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",13,1,323,2.0-public
+CRC,GENIE-VICC-S00273,VICC,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",190,1,146,2.0-public
+CRC,GENIE-VICC-S00276,VICC,0,1,1,Yes,1,Capecitabine,41,1,2263,2.0-public
+CRC,GENIE-VICC-S00276,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",139,1,2165,2.0-public
+CRC,GENIE-VICC-S00282,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",65,0,1667,2.0-public
+CRC,GENIE-VICC-S00286,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",280,0,2047,2.0-public
+CRC,GENIE-VICC-S00286,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",627,0,1700,2.0-public
+CRC,GENIE-VICC-S00288,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",24,0,1674,2.0-public
+CRC,GENIE-VICC-S00302,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",41,1,634,2.0-public
+CRC,GENIE-VICC-S00323,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",68,0,2309,2.0-public
+CRC,GENIE-VICC-S00341,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",123,0,3898,2.0-public
+CRC,GENIE-VICC-S00341,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",320,0,3701,2.0-public
+CRC,GENIE-VICC-S00346,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",13,0,560,2.0-public
+CRC,GENIE-VICC-S00346,VICC,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",325,0,248,2.0-public
+CRC,GENIE-VICC-S00346,VICC,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",432,0,141,2.0-public
+CRC,GENIE-VICC-S00349,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",53,1,141,2.0-public
+CRC,GENIE-VICC-S00359,VICC,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",206,0,1084,2.0-public
+CRC,GENIE-VICC-S00375,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",140,0,133,2.0-public
+CRC,GENIE-VICC-S00375,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",255,0,18,2.0-public
+CRC,GENIE-VICC-S00378,VICC,1,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",12,1,575,2.0-public
+CRC,GENIE-VICC-S00378,VICC,1,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",351,1,236,2.0-public
+CRC,GENIE-VICC-S00379,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",70,0,2470,2.0-public
+CRC,GENIE-VICC-S00395,VICC,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",55,0,1558,2.0-public
+CRC,GENIE-VICC-S00397,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",51,1,1266,2.0-public
+CRC,GENIE-VICC-S00413,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",-17,1,314,2.0-public
+CRC,GENIE-VICC-S00414,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",54,0,2157,2.0-public
+CRC,GENIE-VICC-S00414,VICC,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",225,0,1986,2.0-public
+CRC,GENIE-VICC-S00414,VICC,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",359,0,1852,2.0-public
+CRC,GENIE-VICC-S00416,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",10,1,590,2.0-public
+CRC,GENIE-VICC-S00416,VICC,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",179,1,421,2.0-public
+CRC,GENIE-VICC-S00427,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",29,1,167,2.0-public
+CRC,GENIE-VICC-S00429,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",42,1,416,2.0-public
+CRC,GENIE-VICC-S00429,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",295,1,163,2.0-public
+CRC,GENIE-VICC-S00429,VICC,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",419,1,39,2.0-public
+CRC,GENIE-VICC-S00430,VICC,1,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",11,1,635,2.0-public
+CRC,GENIE-VICC-S00430,VICC,1,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",613,1,33,2.0-public
+CRC,GENIE-VICC-S00443,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",113,1,100,2.0-public
+CRC,GENIE-VICC-S00446,VICC,1,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",50,0,2191,2.0-public
+CRC,GENIE-VICC-S00461,VICC,1,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",29,1,1249,2.0-public
+CRC,GENIE-VICC-S00461,VICC,1,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",463,1,815,2.0-public
+CRC,GENIE-VICC-S00464,VICC,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",60,0,122,2.0-public
+CRC,GENIE-VICC-S00475,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",29,0,540,2.0-public
+CRC,GENIE-VICC-S00484,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",27,0,2008,2.0-public
+CRC,GENIE-VICC-S00484,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",169,0,1866,2.0-public
+CRC,GENIE-VICC-S00484,VICC,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",290,0,1745,2.0-public
+CRC,GENIE-VICC-S00508,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",40,0,1353,2.0-public
+CRC,GENIE-VICC-S00522,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",20,1,592,2.0-public
+CRC,GENIE-VICC-S00522,VICC,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",439,1,173,2.0-public
+CRC,GENIE-VICC-S00531,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",27,0,72,2.0-public
+CRC,GENIE-VICC-S00532,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",25,1,739,2.0-public
+CRC,GENIE-VICC-S00545,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",31,0,1305,2.0-public
+CRC,GENIE-VICC-S00545,VICC,0,2,2,Yes,1,Capecitabine,302,0,1034,2.0-public
+CRC,GENIE-VICC-S00545,VICC,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",489,0,847,2.0-public
+CRC,GENIE-VICC-S00545,VICC,0,4,4,Yes,2,"Cetuximab, Irinotecan Hydrochloride",627,0,709,2.0-public
+CRC,GENIE-VICC-S00545,VICC,0,5,5,Yes,2,"Cetuximab, Irinotecan Hydrochloride",866,0,470,2.0-public
+CRC,GENIE-VICC-S00552,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",61,0,73,2.0-public
+CRC,GENIE-VICC-S00556,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",31,1,919,2.0-public
+CRC,GENIE-VICC-S00556,VICC,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",201,1,749,2.0-public
+CRC,GENIE-VICC-S00556,VICC,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",345,1,605,2.0-public
+CRC,GENIE-VICC-S00563,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",56,1,270,2.0-public
+CRC,GENIE-VICC-S00563,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",160,1,166,2.0-public
+CRC,GENIE-VICC-S00574,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",24,1,1023,2.0-public
+CRC,GENIE-VICC-S00574,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",249,1,798,2.0-public
+CRC,GENIE-VICC-S00578,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",14,1,522,2.0-public
+CRC,GENIE-VICC-S00579,VICC,0,1,1,Yes,1,Capecitabine,55,0,426,2.0-public
+CRC,GENIE-VICC-S00603,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",18,0,132,2.0-public
+CRC,GENIE-VICC-S00603,VICC,0,2,2,Yes,1,Capecitabine,118,0,32,2.0-public
+CRC,GENIE-VICC-S00604,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",22,1,246,2.0-public
+CRC,GENIE-VICC-S00604,VICC,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",237,1,31,2.0-public
+CRC,GENIE-VICC-S00618,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",39,0,3241,2.0-public
+CRC,GENIE-VICC-S00630,VICC,1,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",12,1,426,2.0-public
+CRC,GENIE-VICC-S00630,VICC,1,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",136,1,302,2.0-public
+CRC,GENIE-VICC-S00630,VICC,1,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",320,1,118,2.0-public
+CRC,GENIE-VICC-S00633,VICC,0,1,1,Yes,1,Capecitabine,26,1,1567,2.0-public
+CRC,GENIE-VICC-S00633,VICC,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",177,1,1416,2.0-public
+CRC,GENIE-VICC-S00633,VICC,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",403,1,1190,2.0-public
+CRC,GENIE-VICC-S00634,VICC,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",32,0,1103,2.0-public
+CRC,GENIE-VICC-S00637,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",14,0,805,2.0-public
+CRC,GENIE-VICC-S00637,VICC,0,2,2,Yes,1,Investigational Drug,459,0,360,2.0-public
+CRC,GENIE-VICC-S00637,VICC,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",579,0,240,2.0-public
+CRC,GENIE-VICC-S00645,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",17,1,671,2.0-public
+CRC,GENIE-VICC-S00655,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",63,0,477,2.0-public
+CRC,GENIE-VICC-S00655,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",318,0,222,2.0-public
+CRC,GENIE-VICC-S00655,VICC,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",437,0,103,2.0-public
+CRC,GENIE-VICC-S00666,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",39,1,130,2.0-public
+CRC,GENIE-VICC-S00667,VICC,1,1,1,Yes,2,"Capecitabine, Oxaliplatin",111,0,2402,2.0-public
+CRC,GENIE-VICC-S00668,VICC,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",95,0,2398,2.0-public
+CRC,GENIE-VICC-S00676,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",252,0,1911,2.0-public
+CRC,GENIE-VICC-S00678,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",23,1,136,2.0-public
+CRC,GENIE-VICC-S00686,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",15,0,2170,2.0-public
+CRC,GENIE-VICC-S00686,VICC,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",477,0,1708,2.0-public
+CRC,GENIE-VICC-S00686,VICC,0,3,3,Yes,1,Investigational Drug,621,0,1564,2.0-public
+CRC,GENIE-VICC-S00686,VICC,0,4,4,Yes,2,"Cetuximab, Irinotecan Hydrochloride",1025,0,1160,2.0-public
+CRC,GENIE-VICC-S00687,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",77,0,2921,2.0-public
+CRC,GENIE-VICC-S00696,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",27,1,456,2.0-public
+CRC,GENIE-VICC-S00697,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",44,1,279,2.0-public
+CRC,GENIE-VICC-S00707,VICC,0,1,1,Yes,1,Capecitabine,97,1,655,2.0-public
+CRC,GENIE-VICC-S00707,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",249,1,503,2.0-public
+CRC,GENIE-VICC-S00712,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",64,1,972,2.0-public
+CRC,GENIE-VICC-S00712,VICC,0,2,2,Yes,1,Capecitabine,179,1,857,2.0-public
+CRC,GENIE-VICC-S00714,VICC,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",55,0,1005,2.0-public
+CRC,GENIE-VICC-S00715,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",-4,0,1655,2.0-public
+CRC,GENIE-VICC-S00725,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",35,1,605,2.0-public
+CRC,GENIE-VICC-S00725,VICC,0,2,2,Yes,1,Capecitabine,280,1,360,2.0-public
+CRC,GENIE-VICC-S00726,VICC,0,1,1,Yes,1,Capecitabine,18,0,678,2.0-public
+CRC,GENIE-VICC-S00741,VICC,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",93,0,1642,2.0-public
+CRC,GENIE-VICC-S00764,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",68,0,1126,2.0-public
+CRC,GENIE-VICC-S00764,VICC,0,2,2,Yes,1,Capecitabine,211,0,983,2.0-public
+CRC,GENIE-VICC-S00764,VICC,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",308,0,886,2.0-public
+CRC,GENIE-VICC-S00775,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",125,0,1940,2.0-public
+CRC,GENIE-VICC-S00780,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",81,0,794,2.0-public
+CRC,GENIE-VICC-S00787,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",26,1,1074,2.0-public
+CRC,GENIE-VICC-S00787,VICC,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",474,1,626,2.0-public
+CRC,GENIE-VICC-S00794,VICC,1,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",66,0,681,2.0-public
+CRC,GENIE-VICC-S00794,VICC,1,2,2,Yes,1,Capecitabine,565,0,182,2.0-public
+CRC,GENIE-VICC-S00803,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",19,1,663,2.0-public
+CRC,GENIE-VICC-S00804,VICC,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",73,1,451,2.0-public
+CRC,GENIE-VICC-S00805,VICC,0,1,1,Yes,1,Capecitabine,37,1,106,2.0-public
+CRC,GENIE-VICC-S00808,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",47,1,85,2.0-public
+CRC,GENIE-VICC-S00810,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",26,1,1080,2.0-public
+CRC,GENIE-VICC-S00810,VICC,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",288,1,818,2.0-public
+CRC,GENIE-VICC-S00810,VICC,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",464,1,642,2.0-public
+CRC,GENIE-VICC-S00810,VICC,0,4,4,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",602,1,504,2.0-public
+CRC,GENIE-VICC-S00818,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",37,0,1502,2.0-public
+CRC,GENIE-VICC-S00835,VICC,1,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",35,0,1332,2.0-public
+CRC,GENIE-VICC-S00851,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",168,0,1883,2.0-public
+CRC,GENIE-VICC-S00851,VICC,0,2,2,Yes,1,Capecitabine,388,0,1663,2.0-public
+CRC,GENIE-VICC-S00866,VICC,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",24,1,768,2.0-public
+CRC,GENIE-VICC-S00875,VICC,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",61,0,1320,2.0-public
+CRC,GENIE-VICC-S00878,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",21,1,1555,2.0-public
+CRC,GENIE-VICC-S00878,VICC,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",139,1,1437,2.0-public
+CRC,GENIE-VICC-S00887,VICC,0,1,1,Yes,1,Capecitabine,50,1,1681,2.0-public
+CRC,GENIE-VICC-S00887,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",302,1,1429,2.0-public
+CRC,GENIE-VICC-S00887,VICC,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",526,1,1205,2.0-public
+CRC,GENIE-VICC-S00893,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",92,0,3348,2.0-public
+CRC,GENIE-VICC-S00897,VICC,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",38,1,1016,2.0-public
+CRC,GENIE-VICC-S00897,VICC,0,2,2,Yes,1,Capecitabine,189,1,865,2.0-public
+CRC,GENIE-VICC-S00899,VICC,0,1,1,Yes,1,Capecitabine,28,0,874,2.0-public
+CRC,GENIE-VICC-S00899,VICC,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",241,0,661,2.0-public
+CRC,GENIE-VICC-S00899,VICC,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",589,0,313,2.0-public
+CRC,GENIE-VICC-S00911,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",45,1,343,2.0-public
+CRC,GENIE-VICC-S00911,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",358,1,30,2.0-public
+CRC,GENIE-VICC-S00916,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",14,1,515,2.0-public
+CRC,GENIE-VICC-S00918,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",94,0,3812,2.0-public
+CRC,GENIE-VICC-S00924,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",48,0,3121,2.0-public
+CRC,GENIE-VICC-S00931,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",113,0,2422,2.0-public
+CRC,GENIE-VICC-S00938,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",69,1,186,2.0-public
+CRC,GENIE-VICC-S00947,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",19,0,1314,2.0-public
+CRC,GENIE-VICC-S00947,VICC,0,2,2,Yes,1,Investigational Drug,132,0,1201,2.0-public
+CRC,GENIE-VICC-S00949,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",52,0,1588,2.0-public
+CRC,GENIE-VICC-S00949,VICC,0,2,2,Yes,1,Investigational Drug,387,0,1253,2.0-public
+CRC,GENIE-VICC-S00949,VICC,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",546,0,1094,2.0-public
+CRC,GENIE-VICC-S00951,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",52,0,1497,2.0-public
+CRC,GENIE-VICC-S00951,VICC,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",254,0,1295,2.0-public
+CRC,GENIE-VICC-S00951,VICC,0,3,3,Yes,1,Investigational Drug,362,0,1187,2.0-public
+CRC,GENIE-VICC-S00951,VICC,0,4,4,Yes,2,"Cetuximab, Irinotecan Hydrochloride",482,0,1067,2.0-public
+CRC,GENIE-VICC-S00951,VICC,0,5,5,Yes,2,"Cetuximab, Irinotecan Hydrochloride",1006,0,543,2.0-public
+CRC,GENIE-VICC-S00954,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",26,1,657,2.0-public
+CRC,GENIE-VICC-S00954,VICC,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",341,1,342,2.0-public
+CRC,GENIE-VICC-S00959,VICC,0,1,1,Yes,1,Capecitabine,48,0,715,2.0-public
+CRC,GENIE-VICC-S00966,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",196,0,2764,2.0-public
+CRC,GENIE-VICC-S01007,VICC,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",12,1,765,2.0-public
+CRC,GENIE-VICC-S01007,VICC,0,2,2,Yes,1,Capecitabine,143,1,634,2.0-public
+CRC,GENIE-VICC-S01023,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",22,1,417,2.0-public
+CRC,GENIE-VICC-S01023,VICC,0,2,2,Yes,1,Capecitabine,200,1,239,2.0-public
+CRC,GENIE-VICC-S01023,VICC,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",310,1,129,2.0-public
+CRC,GENIE-VICC-S01025,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",25,1,267,2.0-public
+CRC,GENIE-VICC-S01025,VICC,0,2,2,Yes,1,Investigational Drug,235,1,57,2.0-public
+CRC,GENIE-VICC-S01030,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",115,1,715,2.0-public
+CRC,GENIE-VICC-S01030,VICC,0,2,2,Yes,1,Capecitabine,276,1,554,2.0-public
+CRC,GENIE-VICC-S01030,VICC,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",427,1,403,2.0-public
+CRC,GENIE-VICC-S01030,VICC,0,4,4,Yes,2,"Cetuximab, Irinotecan Hydrochloride",555,1,275,2.0-public
+CRC,GENIE-VICC-S01037,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",71,0,211,2.0-public
+CRC,GENIE-VICC-S01059,VICC,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",66,0,1970,2.0-public
+CRC,GENIE-VICC-S01063,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",96,1,839,2.0-public
+CRC,GENIE-VICC-S01063,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",255,1,680,2.0-public
+CRC,GENIE-VICC-S01076,VICC,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",146,0,1905,2.0-public
+CRC,GENIE-VICC-S01076,VICC,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",319,0,1732,2.0-public
+CRC,GENIE-VICC-S01078,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",22,0,892,2.0-public
+CRC,GENIE-VICC-S01078,VICC,0,2,2,Yes,1,Capecitabine,117,0,797,2.0-public
+CRC,GENIE-VICC-S01078,VICC,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",297,0,617,2.0-public
+CRC,GENIE-VICC-S01080,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",43,0,723,2.0-public
+CRC,GENIE-VICC-S01080,VICC,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",209,0,557,2.0-public
+CRC,GENIE-VICC-S01082,VICC,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",15,0,461,2.0-public
+CRC,GENIE-VICC-S01090,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",-27,0,1649,2.0-public
+CRC,GENIE-VICC-S01090,VICC,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",98,0,1524,2.0-public
+CRC,GENIE-VICC-S01093,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",54,1,728,2.0-public
+CRC,GENIE-VICC-S01097,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",60,1,211,2.0-public
+CRC,GENIE-VICC-S01097,VICC,0,2,2,Yes,1,Investigational Drug,244,1,27,2.0-public
+CRC,GENIE-VICC-S01110,VICC,0,1,1,Yes,1,Capecitabine,20,1,1039,2.0-public
+CRC,GENIE-VICC-S01110,VICC,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",119,1,940,2.0-public
+CRC,GENIE-VICC-S01110,VICC,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",216,1,843,2.0-public
+CRC,GENIE-VICC-S01118,VICC,1,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",26,0,2032,2.0-public
+CRC,GENIE-VICC-S01118,VICC,1,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",142,0,1916,2.0-public
+CRC,GENIE-VICC-S01124,VICC,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",53,0,997,2.0-public
+CRC,GENIE-VICC-S01126,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",40,1,185,2.0-public
+CRC,GENIE-VICC-S01133,VICC,0,1,1,Yes,1,Capecitabine,17,1,1773,2.0-public
+CRC,GENIE-VICC-S01133,VICC,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",177,1,1613,2.0-public
+CRC,GENIE-VICC-S01141,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",47,0,1927,2.0-public
+CRC,GENIE-VICC-S01148,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",51,0,697,2.0-public
+CRC,GENIE-VICC-S01148,VICC,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",397,0,351,2.0-public
+CRC,GENIE-VICC-S01148,VICC,0,3,3,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",522,0,226,2.0-public
+CRC,GENIE-VICC-S01150,VICC,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",28,1,1033,2.0-public
+CRC,GENIE-VICC-S01150,VICC,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",276,1,785,2.0-public
+CRC,GENIE-VICC-S01159,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",-25,1,446,2.0-public
+CRC,GENIE-VICC-S01159,VICC,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",153,1,268,2.0-public
+CRC,GENIE-VICC-S01160,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",39,1,684,2.0-public
+CRC,GENIE-VICC-S01170,VICC,0,1,1,Yes,1,Capecitabine,12,0,1711,2.0-public
+CRC,GENIE-VICC-S01170,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",357,0,1366,2.0-public
+CRC,GENIE-VICC-S01170,VICC,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",766,0,957,2.0-public
+CRC,GENIE-VICC-S01170,VICC,0,4,4,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",862,0,861,2.0-public
+CRC,GENIE-VICC-S01177,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",18,1,661,2.0-public
+CRC,GENIE-VICC-S01177,VICC,0,2,2,Yes,1,Investigational Drug,171,1,508,2.0-public
+CRC,GENIE-VICC-S01177,VICC,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",555,1,124,2.0-public
+CRC,GENIE-VICC-S01179,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",46,1,1079,2.0-public
+CRC,GENIE-VICC-S01187,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",39,0,1820,2.0-public
+CRC,GENIE-VICC-S01216,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",52,1,511,2.0-public
+CRC,GENIE-VICC-S01216,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",218,1,345,2.0-public
+CRC,GENIE-VICC-S01216,VICC,0,3,3,Yes,1,Capecitabine,351,1,212,2.0-public
+CRC,GENIE-VICC-S01220,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",103,1,1122,2.0-public
+CRC,GENIE-VICC-S01221,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",36,1,658,2.0-public
+CRC,GENIE-VICC-S01230,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",168,1,662,2.0-public
+CRC,GENIE-VICC-S01237,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",58,1,783,2.0-public
+CRC,GENIE-VICC-S01237,VICC,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",307,1,534,2.0-public
+CRC,GENIE-VICC-S01237,VICC,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",486,1,355,2.0-public
+CRC,GENIE-VICC-S01257,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",48,0,767,2.0-public
+CRC,GENIE-VICC-S01257,VICC,0,2,2,Yes,2,"Cetuximab, Irinotecan Hydrochloride",235,0,580,2.0-public
+CRC,GENIE-VICC-S01257,VICC,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",418,0,397,2.0-public
+CRC,GENIE-VICC-S01270,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",42,,,2.0-public
+CRC,GENIE-VICC-S01278,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",99,0,2199,2.0-public
+CRC,GENIE-VICC-S01278,VICC,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",323,0,1975,2.0-public
+CRC,GENIE-VICC-S01283,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",-20,0,423,2.0-public
+CRC,GENIE-VICC-S01286,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",61,0,3599,2.0-public
+CRC,GENIE-VICC-S01296,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",107,0,1060,2.0-public
+CRC,GENIE-VICC-S01303,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",27,1,348,2.0-public
+CRC,GENIE-VICC-S01314,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",42,0,1744,2.0-public
+CRC,GENIE-VICC-S01317,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",64,1,1276,2.0-public
+CRC,GENIE-VICC-S01317,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",158,1,1182,2.0-public
+CRC,GENIE-VICC-S01325,VICC,1,1,1,Yes,2,"Capecitabine, Oxaliplatin",13,0,310,2.0-public
+CRC,GENIE-VICC-S01352,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",14,0,2227,2.0-public
+CRC,GENIE-VICC-S01352,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",230,0,2011,2.0-public
+CRC,GENIE-VICC-S01354,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",14,1,229,2.0-public
+CRC,GENIE-VICC-S01354,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",126,1,117,2.0-public
+CRC,GENIE-VICC-S01363,VICC,0,1,1,Yes,1,Capecitabine,33,1,368,2.0-public
+CRC,GENIE-VICC-S01363,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",151,1,250,2.0-public
+CRC,GENIE-VICC-S01397,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",61,1,269,2.0-public
+CRC,GENIE-VICC-S01416,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",37,1,713,2.0-public
+CRC,GENIE-VICC-S01416,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",294,1,456,2.0-public
+CRC,GENIE-VICC-S01416,VICC,0,3,3,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",500,1,250,2.0-public
+CRC,GENIE-VICC-S01419,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",35,1,383,2.0-public
+CRC,GENIE-VICC-S01420,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",21,0,859,2.0-public
+CRC,GENIE-VICC-S01420,VICC,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",129,0,751,2.0-public
+CRC,GENIE-VICC-S01421,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",55,1,1490,2.0-public
+CRC,GENIE-VICC-S01421,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",206,1,1339,2.0-public
+CRC,GENIE-VICC-S01425,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",45,0,2742,2.0-public
+CRC,GENIE-VICC-S01426,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",36,0,980,2.0-public
+CRC,GENIE-VICC-S01426,VICC,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",131,0,885,2.0-public
+CRC,GENIE-VICC-S01427,VICC,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",16,0,514,2.0-public
+CRC,GENIE-VICC-S01427,VICC,0,2,2,Yes,1,Capecitabine,166,0,364,2.0-public
+CRC,GENIE-VICC-S01427,VICC,0,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",508,0,22,2.0-public
+CRC,GENIE-VICC-S01430,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",37,0,138,2.0-public
+CRC,GENIE-VICC-S01432,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",36,1,257,2.0-public
+CRC,GENIE-VICC-S01446,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",37,0,412,2.0-public
+CRC,GENIE-VICC-S01446,VICC,0,2,2,Yes,1,Investigational Drug,238,0,211,2.0-public
+CRC,GENIE-VICC-S01452,VICC,0,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",38,0,1710,2.0-public
+CRC,GENIE-VICC-S01452,VICC,0,2,2,Yes,4,"Bevacizumab, Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",193,0,1555,2.0-public
+CRC,GENIE-VICC-S01459,VICC,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",32,1,338,2.0-public
+CRC,GENIE-VICC-S01459,VICC,0,2,2,Yes,1,Investigational Drug,202,1,168,2.0-public
+CRC,GENIE-VICC-S01468,VICC,0,1,1,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",14,0,694,2.0-public
+CRC,GENIE-VICC-S01476,VICC,0,1,1,Yes,2,"Capecitabine, Oxaliplatin",116,1,321,2.0-public
+CRC,GENIE-VICC-S01476,VICC,0,2,2,Yes,3,"Fluorouracil, Irinotecan Hydrochloride, Leucovorin Calcium",426,1,11,2.0-public
+CRC,GENIE-VICC-S01482,VICC,0,1,1,Yes,4,"Bevacizumab, Fluorouracil, Leucovorin Calcium, Oxaliplatin",20,1,97,2.0-public
+CRC,GENIE-VICC-S01492,VICC,1,1,1,Yes,3,"Fluorouracil, Leucovorin Calcium, Oxaliplatin",58,1,1241,2.0-public
+CRC,GENIE-VICC-S01492,VICC,1,2,2,Yes,1,Capecitabine,171,1,1128,2.0-public
+CRC,GENIE-VICC-S01492,VICC,1,3,3,Yes,2,"Cetuximab, Irinotecan Hydrochloride",264,1,1035,2.0-public

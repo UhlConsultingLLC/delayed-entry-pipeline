@@ -1,0 +1,102 @@
+# What the NSCLC v2.0-public release should contain, for the check after downloading
+# (python -m delayed_entry.adapters.genie_bpc.check_download).
+#
+# files: every file in the two Synapse folders, with its size and MD5 checksum. They are kept in
+# release_files.yml, which scripts/synapse_release_list.py writes from Synapse's metadata, without
+# downloading any file; reading sizes and checksums needs an approved Synapse account.
+# The file names, Synapse IDs and versions were listed from Synapse's public API on 2026-11-13: 8 clinical
+# files and 48 genomic files, every one version 2 except meta_study.txt (version 3) and tmb.tsv (version 1).
+# values: the values the variable synopsis (syn30557312, version 2) lists for each coded column the rules
+# read. stops: true means a value not on the list stops the run.
+# checks: the limits of the data checks, as for CRC v2.0-public.
+
+checks:
+  min_call_link: 0.80
+  max_unit_mismatch: 0.01
+  report_months_tolerance: 0.5
+  age_years_tolerance: 1.5
+  report_days_tolerance: 1.5
+  age_range: [0, 120]
+  birth_year_range: [1900, 2010]
+
+folders:
+  clinical: syn30358089
+  genomic: syn30358098
+
+panels: ["DFCI-ONCOPANEL-1", "DFCI-ONCOPANEL-2", "DFCI-ONCOPANEL-3", "MSK-IMPACT341", "MSK-IMPACT410", "MSK-IMPACT468", "UHN-48-V1", "UHN-50-V2", "VICC-01-SOLIDTUMOR", "VICC-01-T5A", "VICC-01-T7"]
+
+files: release_files.yml
+
+values:
+  raw_patient:
+    institution:
+      stops: true
+      allowed: ["DFCI", "MSK", "UHN", "VICC"]
+    redacted:
+      stops: true
+      allowed: ["Yes", "No"]
+    naaccr_sex_code:
+      stops: false
+      allowed:
+        - "Male"
+        - "Female"
+        - "Other intersex, disorders of sexual development/DSD"
+        - "Transsexual NOS"
+        - "Transsexual natal male"
+        - "Transsexual natal female"
+    race_ethnicity:
+      stops: false
+      allowed:
+        - "AAAPI (Asian, Asian American, and Pacific Islander)"
+        - "Asian Indian or Pakistani NOS"
+        - "Hispanic/Latinx"
+        - "Non-Hispanic Black"
+        - "Non-Hispanic White"
+        - "Other"
+        - "Unknown"
+  raw_cancer:
+    redcap_ca_index:
+      stops: true
+      allowed: ["Yes"]
+    stage_dx:
+      stops: true
+      allowed: ["Stage 0", "Stage I", "Stage II", "Stage III", "Stage I-III NOS", "Stage IV"]
+    ca_hist_adeno_squamous:
+      stops: true
+      allowed: ["Adenocarcinoma", "Carcinoma", "Squamous cell", "Sarcoma", "Small cell carcinoma",
+                "Other histologies/mixed tumor"]
+    ca_lung_cigarette:
+      stops: true
+      allowed: ["Never used", "Current user", "Former user (quit <1 year)", "Former user (quit >1 year)",
+                "Former user (unknown time)", "Unknown"]
+    os_dx_status:
+      stops: true
+      allowed: ["1", "0"]
+  raw_report:
+    cpt_report_post_death:
+      stops: true
+      allowed: ["1", "0"]
+    cpt_report_post_last_alive:
+      stops: true
+      allowed: ["1", "0"]
+    sample_type:
+      stops: false
+      allowed:
+        - "Primary tumor"
+        - "Lymph node metastasis"
+        - "Distant organ metastasis"
+        - "Metastasis site unspecified"
+        - "Local recurrence"
+        - "Not otherwise specified"
+        - "Not applicable or hematologic malignancy"
+  raw_cancer_other:
+    redcap_ca_index:
+      stops: true
+      allowed: ["No"]
+  raw_regimen:
+    redcap_ca_index:
+      stops: true
+      allowed: ["Yes", "No"]
+    os_g_status:
+      stops: true
+      allowed: ["1", "0"]

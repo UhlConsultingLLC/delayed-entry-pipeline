@@ -1,0 +1,67 @@
+# Documented defaults. A settings file uses one only by writing `value: default` for that choice, and
+# the screen and the locked plan list every default used, with the source given here. Choices specific
+# to a study (cohort rules, groups, coverage, horizon, analyses, privacy minimum) have no default.
+#
+# "CRC BPC plan" is the registered statistical analysis plan v1.0 of the CRC BPC delayed-entry study
+# (osf.io/eyq6b). These defaults are its values for choices that are not specific to colorectal cancer.
+
+time.days_per_year:
+  value: 365.25
+  source: "the Julian year, as in the CRC BPC plan, section 4 (a month is a twelfth of it)"
+entry.first_test_order:
+  value: [earliest_day, largest_panel, lowest_test_order]
+  source: "CRC BPC plan, section 4 (NGS sample used)"
+entry.before_diagnosis:
+  value: enter_at_day_0
+  source: "CRC BPC plan, section 4 (delayed entry)"
+genotype.variant_text:
+  value: trimmed
+  source: "CRC BPC plan, section 4a; spaces around a protein change carry no meaning"
+labels.clearly_material:
+  value: estimate_and_whole_interval
+  source: "CRC BPC plan, section 11"
+labels.material:
+  value: estimate_only
+  source: "CRC BPC plan, section 11"
+smallest_group.patients:
+  value: 30
+  source: "CRC BPC plan, section 5 (D1)"
+biomarker.unknown_max_share:
+  value: 0.30
+  source: "CRC BPC plan, section 4b"
+stability.risk_set:
+  value: 20
+  source: "CRC BPC plan, section 6 (stability rule)"
+uncertainty.bootstrap_resamples:
+  value: 1000
+  source: "CRC BPC plan, section 6"
+uncertainty.interval_level:
+  value: 0.95
+  source: "CRC BPC plan, section 6; conventional 95% intervals"
+uncertainty.when_a_resample_has_no_value:
+  value: no_interval
+  source: "CRC BPC plan, section 6"
+missing_data.complete_case_max_share:
+  value: 0.05
+  source: "CRC BPC plan, section 9"
+missing_data.imputations:
+  value: 20
+  source: "CRC BPC plan, section 9"
+weighting.variables:
+  value: same_as_adjustment
+  source: "CRC BPC plan, section 6 (pass 3b)"
+weighting.trim_percentiles:
+  value: [1, 99]
+  source: "CRC BPC plan, section 6 (pass 3b)"
+weighting.balance_target_smd:
+  value: 0.1
+  source: "CRC BPC plan, section 6 (pass 3b)"
+ph_check.p_threshold:
+  value: 0.01
+  source: "CRC BPC plan, section 8 (SA5)"
+ph_check.split_months:
+  value: 12
+  source: "CRC BPC plan, section 8 (SA5)"
+assumption_check.estimators:
+  value: [MB]
+  source: "CRC BPC plan, section 8 (SA6): Martin and Betensky 2005"

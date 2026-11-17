@@ -1,0 +1,37 @@
+# Phase 1 acceptance: what the readiness screen must find on the real GENIE BPC CRC v2.0-public data with
+# the CRC settings. Taken from the CRC BPC project's provenance log, "the design gate (workplan step 5.3)",
+# 2026-11-11, and its rerun the same day (three items read). Labels only: no counts.
+
+decisions:
+  primary:
+    RAS-mutant vs Wild type: compare
+    BRAF V600E vs Wild type: compare
+  S1:                                   # "S1 is descriptive only" (section 4b and D1 for S1)
+    MSI-H/dMMR vs MSS/pMMR: descriptive only
+  SA8:                                  # "SA8 and SA9 are not run"
+    all comparisons: not run
+  SA9:
+    all comparisons: not run
+  S2:
+    RAS-mutant vs Wild type: compare
+    BRAF V600E vs Wild type: compare
+  SA1:                                  # "described, not compared, in S1, SA1 and SA7"
+    RAS-mutant vs Wild type: compare
+    BRAF V600E vs Wild type: descriptive only
+  SA3:
+    RAS-mutant vs Wild type: compare
+    BRAF V600E vs Wild type: compare
+  SA4:
+    RAS-mutant vs Wild type: compare
+    BRAF V600E vs Wild type: compare
+  SA7:
+    RAS-mutant vs Wild type: compare
+    BRAF V600E vs Wild type: descriptive only
+
+# Each reason the log gives, as (analysis, topic, words the finding must contain).
+reasons:
+  - {analysis: S1, topic: biomarker unknown, contains: "more than 30%"}
+  - {analysis: S1, topic: biomarker unknown, contains: "no panel sizes"}
+  - {analysis: S1, topic: smallest group, contains: "fewer than 30"}
+  - {analysis: SA1, topic: smallest group, contains: "BRAF V600E has fewer than 30"}
+  - {analysis: SA7, topic: smallest group, contains: "BRAF V600E has fewer than 30"}

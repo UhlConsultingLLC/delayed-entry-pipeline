@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "delayed-entry-pipeline"
+version = "0.2.0"
+description = "Survival by genotype with delayed entry, for any cancer and any data holder: read, screen, lock, run, gate and report"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = ["duckdb>=1.0", "numpy>=1.26", "pandas>=2.0", "pyyaml>=6.0"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+synapse = ["synapseclient>=4.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+delayed_entry = ["*.yml", "**/*.yml", "**/*.sql", "R/*.R"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "tests"]

@@ -1,0 +1,43 @@
+# The capability profile of GENIE BPC public releases: what the source can supply.
+# The adapter checks the genomic folder: a panel coverage file or panel sizes would change two items,
+# and reading them isn't written yet, so the adapter stops if it finds one.
+
+entry_event: report
+panel_coverage: genes_only
+panel_sizes: not_given
+death_capture: linked
+time_format: intervals
+privacy_min_count: 11
+histology_vocabulary: "BPC's broad registry category (ca_hist_adeno_squamous), not ICD-O-3 codes"
+age_top_code: 89
+privacy_other_limits:
+  - "aggregate results only, no redistribution, and the consortium paper and release version cited (GENIE terms of access)"
+known_quirks:
+  - name: "intervals that would reveal an age over 89 are withheld for redacted patients"
+    handling: "a withheld survival time is censored alive at age 89, or left blank, as the settings say; a withheld report time or age leaves entry unknown"
+  - name: "several sequencing reports per patient"
+    handling: "the first is chosen by the settings' tie-breaks; a withheld time ranks last"
+  - name: "a sequencing test can be linked to more than one cancer"
+    handling: "the index cancer's row is used; such a test is counted"
+  - name: "missing values written as the text NA"
+    handling: "read as missing, as genieBPC's reader does"
+  - name: "MSI and MMR results carry their own report dates, in days from birth"
+    handling: "converted to days from diagnosis of the index cancer; a withheld date stays blank"
+sources:
+  entry_event: "BPC data guide: dx_cpt_rep_days, days from diagnosis to the sequencing report"
+  panel_coverage: "the release's gene-panel files list genes only; the CRC v2.0 release has no coverage file (CRC BPC provenance log, 2026-11-11)"
+  panel_sizes: "no genomic_information or BED file in the CRC v2.0 release (CRC BPC provenance log, design gate)"
+  death_capture: "BPC data guide via the CRC BPC plan, section 3: death from curated records, the EHR, the National Death Index, tumor registries and other sources (hybrid_death_source)"
+  time_format: "BPC gives intervals from birth or diagnosis, never dates"
+  privacy_min_count: "as applied by the CRC BPC project (its DATA_POLICY.md and plan section 13); confirm against the current GENIE terms of access"
+  age_top_code: "BPC data guide via the CRC BPC plan, section 3 (privacy redaction)"
+  attribution: "AACR Project GENIE Terms of Use (Synapse syn50898929), read 2026-11-17"
+
+# What the GENIE terms of use require of work that uses or references the data: the consortium paper's citation,
+# the version of the dataset (the adapter fills it in from the settings' release and its Synapse ID), and the
+# acknowledgment the terms give, word for word (pasted from the terms of use on 2026-11-17). A run whose
+# attribution has a blank part warns, and its report says which part is missing.
+attribution:
+  citation: "AACR Project GENIE Consortium. AACR Project GENIE: Powering Precision Medicine Through an International Consortium. Cancer Discov. 2017;7(8):818-831."
+  version: null
+  acknowledgment: 'The authors would like to acknowledge the American Association for Cancer Research and its financial and material support in the development of the AACR Project GENIE registry, as well as members of the consortium for their commitment to data sharing. Interpretations are the responsibility of study authors.'

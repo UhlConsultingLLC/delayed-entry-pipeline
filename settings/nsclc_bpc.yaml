@@ -1,0 +1,457 @@
+# Settings for an NSCLC delayed-entry study on GENIE BPC NSCLC v2.0-public: DRAFT FOR REVIEW.
+#
+# Not reviewed and not locked. Every choice was drafted by the study author from the release's
+# documentation and published sources, and waits for a lung oncologist's review (design plan, question E).
+# Each entry's source says where it comes from; "carried from the CRC plan" marks a value taken over
+# from the registered CRC BPC study (osf.io/eyq6b) for want of a lung-specific source. The questions
+# for the reviewer, with the alternatives, are in docs/nsclc_settings_review.md.
+#
+# The clinical and genomic files are not downloaded until these settings are reviewed and locked.
+# Sources cited as "data guide" are the GENIE BPC NSCLC v2.0-public Analytic Data Guide v5
+# (Synapse syn30557304); "synopsis" is the release's variable synopsis (syn30557312).
+
+settings_format: 1
+
+study:
+  name:
+    value: "NSCLC BPC: sequencing delay and survival by driver genotype"
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: the design plan, section 4 (NSCLC as the second example)
+  cancer:
+    value: "non-small cell lung cancer, stage IV at diagnosis, sequenced at a BPC center"
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "data guide, Eligibility"
+  registered_plan:
+    value: "not registered"
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "not yet registered; to be registered after review, before the data are downloaded"
+
+source:
+  adapter:
+    value: genie_bpc
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "the design plan, section 13, phase 3"
+  genie_bpc:
+    cohort:
+      value: nsclc_v2.0
+      made_by: study author (draft, awaiting lung oncologist review)
+      source: "GENIE BPC NSCLC v2.0-public (Synapse syn27056697)"
+    cancer_type_labels:
+      value: ["Non Small Cell Lung Cancer", "Lung Cancer, NOS"]
+      made_by: study author (draft, awaiting lung oncologist review)
+      source: "synopsis: the lung labels of ca_type and path_ca_type1-path_ca_type45"
+      note: "REVIEW: whether 'Small Cell Lung Cancer' should also count as another primary of this cancer (review question 9)."
+    cancer_site_pattern:
+      value: '^C34'
+      made_by: study author (draft, awaiting lung oncologist review)
+      source: "ICD-O-3 topography C34, bronchus and lung"
+    withheld_survival:
+      value: censor_at_age_limit
+      made_by: study author (draft, awaiting lung oncologist review)
+      source: "carried from the CRC plan, section 3; the data guide says patients over 89 at any time are excluded from the cohort, so this should rarely apply"
+
+cohort:
+  rules:
+    value:
+      - id: stage_iv
+        label: Stage IV at diagnosis
+        all_of:
+          - {field: stage_at_diagnosis, op: in, values: ["Stage IV"], normalize: trim, missing: fail}
+      - id: histology
+        label: Not small cell or sarcoma
+        all_of:
+          - {field: histology, op: not_in, values: ["Small cell carcinoma", "Sarcoma"], normalize: trim, missing: pass}
+      - id: age_18
+        label: Age 18 or older at diagnosis
+        all_of:
+          - {field: age_at_diagnosis, op: ge, value: 18, missing: pass}
+      - id: has_report
+        label: Index cancer has a sequencing report
+        all_of:
+          - {check: has_entry_test}
+      - id: entry_known
+        label: "Entry time known: report time and age not withheld"
+        all_of:
+          - {check: entry_time_known}
+          - {field: age_at_diagnosis, op: known}
+      - id: exit_known
+        label: Survival time and status known
+        all_of:
+          - {check: outcome_recorded}
+      - id: entry_before_exit
+        label: First report back before follow-up ended
+        all_of:
+          - {check: entry_before_follow_up_end}
+      - id: genotype_assignable
+        label: "Genotype assignable: panel reads EGFR, KRAS and ALK"
+        all_of:
+          - {check: genotype_assignable}
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "data guide, Eligibility (NSCLC OncoTree diagnoses, stage I-IV); synopsis (stage_dx, ca_hist_adeno_squamous); structure carried from the CRC plan, section 4"
+    note: >-
+      REVIEW: the primary population keeps squamous NSCLC (review question 1). The histology rule only
+      guards against categories that are not NSCLC. There is no site rule: the data guide's BPC Project
+      cancers are all NSCLC.
+
+entry:
+  event:
+    value: report
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "data guide, Cancer Panel Test dataset: days from diagnosis to the sequencing report"
+  acceptable_substitutes:
+    value: []
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "the release gives report times, so no substitute is needed"
+  modalities:
+    value: [ngs]
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 4 (NGS sample used)"
+  first_test_order:
+    value: [earliest_day, largest_panel, lowest_test_order]
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 4 (NGS sample used)"
+  before_diagnosis:
+    value: enter_at_day_0
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 4 (delayed entry)"
+
+genotype:
+  results_from:
+    value: entry_test
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 4a (the first sample's calls)"
+  variant_text:
+    value: trimmed
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 4a"
+  groups:
+    value:
+      - name: EGFR common
+        any_of:
+          - kind: mutation
+            genes: [EGFR]
+            variant_classes: [In_Frame_Del]
+            codon_ranges: [[729, 761]]
+          - kind: mutation
+            genes: [EGFR]
+            variants: ["p.L858R"]
+      - name: ALK fusion
+        any_of:
+          - kind: fusion
+            genes: [ALK]
+      - name: KRAS G12C
+        any_of:
+          - kind: mutation
+            genes: [KRAS]
+            variants: ["p.G12C"]
+      - name: KRAS other
+        any_of:
+          - kind: mutation
+            genes: [KRAS]
+            variant_classes: [Missense_Mutation, In_Frame_Del, In_Frame_Ins]
+            codons: [12, 13, 61]
+            except_variants: ["p.G12C"]
+      - name: No listed driver
+        none_of_the_above: true
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: >-
+      The design plan, section 4 (EGFR exon 19 deletions and L858R, ALK fusions, KRAS G12C); CAP/IASLC/AMP
+      molecular testing guideline, Lindeman NI et al., J Thorac Oncol 2018;13:323-358; therapies tied to
+      each group: osimertinib (FLAURA, Soria JC et al., N Engl J Med 2018;378:113-125), alectinib (ALEX,
+      Peters S et al., N Engl J Med 2017;377:829-838), sotorasib (CodeBreaK 100, Skoulidis F et al.,
+      N Engl J Med 2021;384:2371-2381). EGFR exon 19 taken as codons 729-761 (transcript NM_005228).
+    note: >-
+      REVIEW: questions 2-5: which drivers form groups, the order of precedence, whether "KRAS other" is
+      its own group, and what stays in the reference. The exon 19 codon range and the variant classes are
+      to be checked against the transcript and the release's calls.
+  reference:
+    value: No listed driver
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 6 (the group without the listed variants is the reference)"
+  described_only:
+    value: []
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 5 (D1): every group is compared when it is large enough"
+    note: "REVIEW: question 13. A group gathering rare drivers (question 2) would be described only."
+  coverage:
+    required:
+      value:
+        EGFR: [729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747,
+               748, 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 858]
+        KRAS: [12, 13, 61]
+        ALK: whole_gene
+      made_by: study author (draft, awaiting lung oncologist review)
+      source: "the groups above; carried from the CRC plan, section 4a (every group needs a panel that covers its genes)"
+      note: "REVIEW: question 6. A panel listing ALK may still not detect ALK fusions, which need its introns tiled."
+    applies_to:
+      value: all_groups
+      made_by: study author (draft, awaiting lung oncologist review)
+      source: "carried from the CRC plan, section 4a"
+    when_only_genes_listed:
+      value: deviation
+      made_by: study author (draft, awaiting lung oncologist review)
+      source: "the release's gene-panel files list genes only; for fusions a listed gene doesn't show the panel detects them, so this is stated as a deviation rather than accepted"
+    fusion_panels:
+      value: {}
+      made_by: study author (draft, awaiting lung oncologist review)
+      source: "not yet settled: which of the release's panels detect ALK fusions is review question 6"
+      note: "REVIEW: question 6. While this names no panels, a panel that lists ALK counts as detecting ALK fusions, stated as a deviation."
+  reference_drugs:
+    value: {}
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "not in the draft: drivers found outside sequencing were raised after drafting (review dry run, item C1)"
+    note: "REVIEW: item C1. A list of drugs by driver would have the screen count the reference patients who received one."
+
+time:
+  days_per_year:
+    value: 365.25
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 4"
+  horizon_years:
+    value: 3
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 4"
+    note: "REVIEW: question 7. Stage IV NSCLC without a driver often has shorter survival; the driver groups longer."
+
+summary:
+  survival_at_years:
+    value: [1, 2, 3, 4, 5]
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 4"
+  median_limit_years:
+    value: 5
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 6"
+
+materiality:
+  rmst_months:
+    value: 2
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 11"
+    note: "REVIEW: question 8 (all four bars)."
+  median_months:
+    value: 3
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 11"
+  hr_ratio_change:
+    value: 0.10
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 11"
+  rmst_gap_change_months:
+    value: 2
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 11"
+
+labels:
+  clearly_material:
+    value: estimate_and_whole_interval
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 11"
+  material:
+    value: estimate_only
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 11"
+
+smallest_group:
+  patients:
+    value: 30
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 5 (D1)"
+  if_short:
+    value:
+      EGFR common: block
+      ALK fusion: describe
+      KRAS G12C: describe
+      KRAS other: describe
+      No listed driver: block
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "by analogy with the CRC plan, section 5 (D1): the largest driver group and the reference are needed for the main question; the smaller groups are described if short"
+
+biomarker:
+  unknown_max_share:
+    value: 0.30
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 4b; it applies once a biomarker analysis is added (PD-L1 is proposed: review question 10)"
+
+survival_after_entry:
+  window_days:
+    value: 730
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "data guide, Eligibility: a minimum of two years of possible follow-up after sequencing; check as in the CRC plan, section 5 (D2)"
+  min_deaths:
+    value: 11
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 5 (D2)"
+  if_fewer:
+    value: move_entry_by_window
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 5 (D2)"
+
+stability:
+  risk_set:
+    value: 20
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 6 (stability rule)"
+
+uncertainty:
+  bootstrap_resamples:
+    value: 1000
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 6"
+  seed:
+    value: 20261113
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "a fixed seed, set at drafting (the date); any fixed value serves"
+  interval_level:
+    value: 0.95
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 6"
+  when_a_resample_has_no_value:
+    value: no_interval
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 6"
+
+adjustment:
+  variables:
+    value:
+      - {field: age_at_diagnosis, form: spline, knots_at_percentiles: [10, 50, 90]}
+      - {field: sex, form: categorical, keep: [Male, Female]}
+      - {field: center, form: categorical, keep: [DFCI, MSK, UHN, VICC], reference: MSK}
+      - {field: smoking_at_diagnosis, form: categorical}
+      - {field: histology, form: categorical, keep: [Adenocarcinoma, Squamous cell, Carcinoma, Other histologies/mixed tumor]}
+      - {field: year_of_diagnosis, form: bands}
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 4c (age, sex, center, year); synopsis: the four NSCLC centers, ca_lung_cigarette (cigarette use at diagnosis) and ca_hist_adeno_squamous"
+    note: >-
+      REVIEW: question 11. Smoking (ca_lung_cigarette) and histology replace CRC's tumor location. The
+      adapter's NSCLC spec has to carry ca_lung_cigarette as smoking_at_diagnosis (phase 3); how to
+      group its six levels is open.
+  year_bands:
+    value:
+      - {label: "2013 or earlier", to: 2013}
+      - {label: "2014-2015", from: 2014, to: 2015}
+      - {label: "2016-2017", from: 2016, to: 2017}
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "data guide, Eligibility: sequencing reports from 2014 to 2017 (UHN 2014-2015); bands merged when small, as in the CRC plan, section 4c"
+  band_min_patients:
+    value: 30
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 4c"
+
+missing_data:
+  complete_case_max_share:
+    value: 0.05
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 9"
+  imputations:
+    value: 20
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 9"
+
+weighting:
+  variables:
+    value: same_as_adjustment
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 6 (pass 3b)"
+  trim_percentiles:
+    value: [1, 99]
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 6 (pass 3b)"
+  balance_target_smd:
+    value: 0.1
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 6 (pass 3b)"
+
+ph_check:
+  p_threshold:
+    value: 0.01
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 8 (SA5)"
+  split_months:
+    value: 12
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 8 (SA5)"
+
+assumption_check:
+  estimators:
+    value: [MB, IPW1, IPW2]
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "the CRC plan, section 8 (SA6), registered MB; IPW1 and IPW2 added here in advance, since in the CRC study they were added post hoc and showed when the estimators disagree (the design plan, section 8)"
+
+analyses:
+  value:
+    - id: S2
+      label: Survival from the start of first-line treatment
+      run: true
+      kind: treatment_clock
+      first_line: earliest_by_order_on_or_after_diagnosis
+      if_short: describe
+    - id: S3
+      label: Diagnosis-to-report delay
+      run: true
+      kind: descriptive_delay
+      by: [genotype, center, year_band]
+    - id: SA1
+      label: First report within 6 months of diagnosis
+      run: true
+      kind: subset
+      keep: {within_months: 6}
+      if_short: describe
+    - id: SA2
+      label: Adjusted model stratified by center
+      run: true
+      kind: adjusted_variant
+      stratify_by: center
+    - id: SA4
+      label: Reference group without ROS1 or RET fusions
+      run: true
+      kind: subset
+      keep:
+        exclude_from_group: No listed driver
+        if_result:
+          kind: fusion
+          genes: [ROS1, RET]
+      if_short: describe
+    - id: SA5
+      label: Proportional hazards check
+      run: true
+      kind: ph_check
+    - id: SA6
+      label: Quasi-independence check
+      run: true
+      kind: quasi_independence
+    - id: SA7
+      label: Adenocarcinoma only
+      run: true
+      kind: subset
+      keep: {field: histology, op: in, values: [Adenocarcinoma], normalize: trim, missing: fail}
+      if_short: describe
+    - id: SA10
+      label: Nonsquamous only
+      run: true
+      kind: subset
+      keep: {field: histology, op: not_in, values: ["Squamous cell"], normalize: trim, missing: pass}
+      if_short: describe
+    - id: SA11
+      label: Without UHN
+      run: true
+      kind: subset
+      keep: {field: center, op: not_in, values: [UHN], normalize: trim, missing: pass}
+      if_short: describe
+  made_by: study author (draft, awaiting lung oncologist review)
+  source: >-
+    Structure carried from the CRC plan, sections 7 and 8 (S2, S3, SA1, SA2, SA5, SA6, SA7). SA4 keeps
+    other targetable fusions out of the reference, as the CRC study's SA4 did for other BRAF variants;
+    SA10 restricts to the nonsquamous population, where broad molecular testing is routinely recommended
+    (NCCN NSCLC guidelines; the CAP/IASLC/AMP guideline targets tumors with an adenocarcinoma component,
+    Lindeman NI et al., J Thorac Oncol 2018). SA11 leaves out UHN, the one center outside the United States: its
+    sequencing window was shorter (data guide, Eligibility) and its deaths can't come from the US National
+    Death Index (synopsis, hybrid_death_source). The CRC study's S1, SA8 and SA9 concerned MSI/MMR, which the NSCLC
+    pathology data don't record; SA3 (co-mutants) is left out because the drivers rarely co-occur.
+  note: "REVIEW: questions 10 and 12 (a PD-L1 analysis; which sensitivity analyses to run)."
+
+privacy:
+  min_count:
+    value: 11
+    made_by: study author (draft, awaiting lung oncologist review)
+    source: "carried from the CRC plan, section 13; the GENIE terms of access"

@@ -1,0 +1,15 @@
+# What is specific to GENIE BPC NSCLC v2.0-public, besides its files (raw_files.yml).
+
+# Columns carried into the patients table as extras, {extra name: SQL column of the index cancer (c.) or the
+# patient file (p.)}, kept as released.
+extra_patient_fields:
+  smoking_at_diagnosis: c.ca_lung_cigarette     # cigarette use at diagnosis: six levels (variable synopsis)
+  race_ethnicity: p.race_ethnicity              # descriptive only
+
+# Results read from the pathology reports. NSCLC reports record PD-L1, not MSI/MMR; reading PD-L1 isn't
+# written yet.
+pathology_results: []
+
+# Files the study reads besides those in raw_files.yml: their size and checksum must match the release. The
+# fusion file is read now (raw_files.yml, raw_fusion), so nothing is listed here.
+also_used: []

@@ -1,0 +1,15 @@
+# GENIE BPC pathology result labels, word for word from the BPC variable synopsis, and the standard
+# reading each maps to. This is the source's vocabulary, not a clinical choice: which readings form
+# which group (for example whether MSI-L counts as stable) is set in the study's settings.
+# Copied from the CRC BPC project (sql/03_msi_mmr.sql). A label not listed here stops the adapter: what
+# it means has to be read in the data guide and added by hand, never guessed.
+
+MSI:
+  "MSI-H: HIGH": MSI-H
+  "MSS: STABLE": MSS
+  "MSI-L: LOW or instability in < 30% of microsatellite markers": MSI-L
+  "Indeterminate/Not stated": indeterminate
+MMR:
+  "Loss of nuclear expression of one or more MMR proteins; deficient mismatch repair": dMMR
+  "No loss of nuclear expression of MMR proteins: No evidence of deficient mismatch repair (low probability of MSI-H): proficient": pMMR
+  "Indeterminate/Not stated": indeterminate

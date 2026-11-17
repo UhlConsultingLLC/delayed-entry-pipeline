@@ -1,0 +1,111 @@
+cohort,record_id,institution,ca_seq,redcap_ca_index,ca_type,dob_ca_dx_days,release_version
+CRC,GENIE-DFCI-S00035,DFCI,2,No,Melanoma,15438,2.0-public
+CRC,GENIE-DFCI-S00058,DFCI,2,No,Colon Cancer,29506,2.0-public
+CRC,GENIE-DFCI-S00160,DFCI,2,No,Rectum and Rectosigmoid Cancer,19302,2.0-public
+CRC,GENIE-DFCI-S00271,DFCI,2,No,Colon Cancer,29038,2.0-public
+CRC,GENIE-DFCI-S00277,DFCI,2,No,Breast Cancer,21293,2.0-public
+CRC,GENIE-DFCI-S00339,DFCI,2,No,Prostate Cancer,26359,2.0-public
+CRC,GENIE-DFCI-S00400,DFCI,2,No,Melanoma,20885,2.0-public
+CRC,GENIE-DFCI-S00451,DFCI,2,No,Colon Cancer,22708,2.0-public
+CRC,GENIE-DFCI-S00571,DFCI,2,No,Bladder Cancer,22921,2.0-public
+CRC,GENIE-DFCI-S00606,DFCI,2,No,Prostate Cancer,21745,2.0-public
+CRC,GENIE-DFCI-S00612,DFCI,2,No,Prostate Cancer,22260,2.0-public
+CRC,GENIE-DFCI-S00661,DFCI,2,No,Breast Cancer,23655,2.0-public
+CRC,GENIE-DFCI-S00720,DFCI,2,No,Breast Cancer,10483,2.0-public
+CRC,GENIE-DFCI-S00777,DFCI,2,No,Bladder Cancer,14914,2.0-public
+CRC,GENIE-DFCI-S00815,DFCI,2,No,Rectum and Rectosigmoid Cancer,,2.0-public
+CRC,GENIE-DFCI-S00880,DFCI,2,No,Prostate Cancer,19684,2.0-public
+CRC,GENIE-DFCI-S00989,DFCI,2,No,Colon Cancer,18574,2.0-public
+CRC,GENIE-DFCI-S01057,DFCI,2,No,Prostate Cancer,22158,2.0-public
+CRC,GENIE-DFCI-S01092,DFCI,2,No,Melanoma,22299,2.0-public
+CRC,GENIE-DFCI-S01137,DFCI,2,No,Breast Cancer,24445,2.0-public
+CRC,GENIE-DFCI-S01169,DFCI,2,No,Uterus Cancer NOS,18739,2.0-public
+CRC,GENIE-DFCI-S01193,DFCI,2,No,Breast Cancer,32732,2.0-public
+CRC,GENIE-DFCI-S01235,DFCI,2,No,Colon Cancer,21110,2.0-public
+CRC,GENIE-DFCI-S01236,DFCI,2,No,Thyroid Cancer,27153,2.0-public
+CRC,GENIE-DFCI-S01269,DFCI,2,No,Prostate Cancer,28828,2.0-public
+CRC,GENIE-DFCI-S01281,DFCI,2,No,Prostate Cancer,21141,2.0-public
+CRC,GENIE-DFCI-S01292,DFCI,2,No,Melanoma,16265,2.0-public
+CRC,GENIE-DFCI-S01310,DFCI,2,No,Thyroid Cancer,20235,2.0-public
+CRC,GENIE-DFCI-S01338,DFCI,2,No,Prostate Cancer,18958,2.0-public
+CRC,GENIE-DFCI-S01355,DFCI,2,No,Melanoma,21441,2.0-public
+CRC,GENIE-DFCI-S01367,DFCI,2,No,Breast Cancer,26642,2.0-public
+CRC,GENIE-DFCI-S01381,DFCI,2,No,Breast Cancer,19580,2.0-public
+CRC,GENIE-DFCI-S01461,DFCI,2,No,Bladder Cancer,22625,2.0-public
+CRC,GENIE-DFCI-S01485,DFCI,2,No,Prostate Cancer,21712,2.0-public
+CRC,GENIE-MSK-S00031,MSK,2,No,Bladder Cancer,25370,2.0-public
+CRC,GENIE-MSK-S00036,MSK,2,No,Uterus Cancer NOS,19495,2.0-public
+CRC,GENIE-MSK-S00099,MSK,2,No,Bladder Cancer,24393,2.0-public
+CRC,GENIE-MSK-S00128,MSK,2,No,Uterus Cancer NOS,23349,2.0-public
+CRC,GENIE-MSK-S00130,MSK,2,No,Prostate Cancer,24806,2.0-public
+CRC,GENIE-MSK-S00146,MSK,2,No,Rectum and Rectosigmoid Cancer,24017,2.0-public
+CRC,GENIE-MSK-S00180,MSK,2,No,Melanoma,22454,2.0-public
+CRC,GENIE-MSK-S00188,MSK,2,No,Prostate Cancer,16511,2.0-public
+CRC,GENIE-MSK-S00227,MSK,2,No,Breast Cancer,23887,2.0-public
+CRC,GENIE-MSK-S00237,MSK,2,No,Rectum and Rectosigmoid Cancer,14854,2.0-public
+CRC,GENIE-MSK-S00252,MSK,2,No,Prostate Cancer,14840,2.0-public
+CRC,GENIE-MSK-S00264,MSK,2,No,Thyroid Cancer,18954,2.0-public
+CRC,GENIE-MSK-S00285,MSK,2,No,Prostate Cancer,16231,2.0-public
+CRC,GENIE-MSK-S00306,MSK,2,No,Rectum and Rectosigmoid Cancer,22881,2.0-public
+CRC,GENIE-MSK-S00315,MSK,2,No,Uterus Cancer NOS,19893,2.0-public
+CRC,GENIE-MSK-S00382,MSK,2,No,Breast Cancer,28893,2.0-public
+CRC,GENIE-MSK-S00421,MSK,2,No,Prostate Cancer,14608,2.0-public
+CRC,GENIE-MSK-S00455,MSK,2,No,Prostate Cancer,20428,2.0-public
+CRC,GENIE-MSK-S00487,MSK,2,No,Prostate Cancer,19260,2.0-public
+CRC,GENIE-MSK-S00551,MSK,2,No,Thyroid Cancer,28711,2.0-public
+CRC,GENIE-MSK-S00553,MSK,2,No,Prostate Cancer,11935,2.0-public
+CRC,GENIE-MSK-S00568,MSK,2,No,Prostate Cancer,27784,2.0-public
+CRC,GENIE-MSK-S00592,MSK,2,No,Breast Cancer,17262,2.0-public
+CRC,GENIE-MSK-S00602,MSK,2,No,Thyroid Cancer,20692,2.0-public
+CRC,GENIE-MSK-S00677,MSK,2,No,Breast Cancer,27212,2.0-public
+CRC,GENIE-MSK-S00683,MSK,2,No,Breast Cancer,19183,2.0-public
+CRC,GENIE-MSK-S00713,MSK,2,No,Breast Cancer,23261,2.0-public
+CRC,GENIE-MSK-S00758,MSK,2,No,Bladder Cancer,25096,2.0-public
+CRC,GENIE-MSK-S00771,MSK,2,No,Rectum and Rectosigmoid Cancer,23689,2.0-public
+CRC,GENIE-MSK-S00828,MSK,2,No,Thyroid Cancer,17347,2.0-public
+CRC,GENIE-MSK-S00857,MSK,2,No,Prostate Cancer,26305,2.0-public
+CRC,GENIE-MSK-S00865,MSK,2,No,Colon Cancer,14262,2.0-public
+CRC,GENIE-MSK-S00903,MSK,2,No,Melanoma,19162,2.0-public
+CRC,GENIE-MSK-S00934,MSK,2,No,Breast Cancer,18760,2.0-public
+CRC,GENIE-MSK-S00958,MSK,2,No,Breast Cancer,14543,2.0-public
+CRC,GENIE-MSK-S00973,MSK,2,No,Bladder Cancer,29410,2.0-public
+CRC,GENIE-MSK-S00976,MSK,2,No,Breast Cancer,18960,2.0-public
+CRC,GENIE-MSK-S00985,MSK,2,No,Prostate Cancer,25873,2.0-public
+CRC,GENIE-MSK-S01016,MSK,2,No,Breast Cancer,9677,2.0-public
+CRC,GENIE-MSK-S01043,MSK,2,No,Breast Cancer,24978,2.0-public
+CRC,GENIE-MSK-S01048,MSK,2,No,Rectum and Rectosigmoid Cancer,29340,2.0-public
+CRC,GENIE-MSK-S01056,MSK,2,No,Thyroid Cancer,20435,2.0-public
+CRC,GENIE-MSK-S01075,MSK,2,No,Bladder Cancer,14159,2.0-public
+CRC,GENIE-MSK-S01108,MSK,2,No,Prostate Cancer,24116,2.0-public
+CRC,GENIE-MSK-S01196,MSK,2,No,Uterus Cancer NOS,18700,2.0-public
+CRC,GENIE-MSK-S01212,MSK,2,No,Melanoma,22786,2.0-public
+CRC,GENIE-MSK-S01217,MSK,2,No,Prostate Cancer,22363,2.0-public
+CRC,GENIE-MSK-S01243,MSK,2,No,Prostate Cancer,19525,2.0-public
+CRC,GENIE-MSK-S01368,MSK,2,No,Colon Cancer,13990,2.0-public
+CRC,GENIE-MSK-S01428,MSK,2,No,Colon Cancer,18225,2.0-public
+CRC,GENIE-MSK-S01438,MSK,2,No,Uterus Cancer NOS,26642,2.0-public
+CRC,GENIE-MSK-S01465,MSK,2,No,Prostate Cancer,26255,2.0-public
+CRC,GENIE-MSK-S01467,MSK,2,No,Breast Cancer,14668,2.0-public
+CRC,GENIE-MSK-S01487,MSK,2,No,Colon Cancer,19460,2.0-public
+CRC,GENIE-VICC-S00125,VICC,2,No,Uterus Cancer NOS,17372,2.0-public
+CRC,GENIE-VICC-S00157,VICC,2,No,Uterus Cancer NOS,18388,2.0-public
+CRC,GENIE-VICC-S00232,VICC,2,No,Prostate Cancer,15983,2.0-public
+CRC,GENIE-VICC-S00362,VICC,2,No,Rectum and Rectosigmoid Cancer,17746,2.0-public
+CRC,GENIE-VICC-S00378,VICC,2,No,Breast Cancer,19915,2.0-public
+CRC,GENIE-VICC-S00430,VICC,2,No,Colon Cancer,14573,2.0-public
+CRC,GENIE-VICC-S00446,VICC,2,No,Prostate Cancer,19854,2.0-public
+CRC,GENIE-VICC-S00461,VICC,2,No,Prostate Cancer,14762,2.0-public
+CRC,GENIE-VICC-S00630,VICC,2,No,Prostate Cancer,15290,2.0-public
+CRC,GENIE-VICC-S00667,VICC,2,No,Breast Cancer,21116,2.0-public
+CRC,GENIE-VICC-S00714,VICC,2,No,Prostate Cancer,19561,2.0-public
+CRC,GENIE-VICC-S00741,VICC,2,No,Prostate Cancer,9086,2.0-public
+CRC,GENIE-VICC-S00768,VICC,2,No,Prostate Cancer,22970,2.0-public
+CRC,GENIE-VICC-S00794,VICC,2,No,Thyroid Cancer,24079,2.0-public
+CRC,GENIE-VICC-S00835,VICC,2,No,Prostate Cancer,20437,2.0-public
+CRC,GENIE-VICC-S00866,VICC,2,No,Breast Cancer,25783,2.0-public
+CRC,GENIE-VICC-S01014,VICC,2,No,Prostate Cancer,26983,2.0-public
+CRC,GENIE-VICC-S01059,VICC,2,No,Uterus Cancer NOS,27807,2.0-public
+CRC,GENIE-VICC-S01118,VICC,2,No,Rectum and Rectosigmoid Cancer,16256,2.0-public
+CRC,GENIE-VICC-S01325,VICC,2,No,Rectum and Rectosigmoid Cancer,21885,2.0-public
+CRC,GENIE-VICC-S01492,VICC,2,No,Bladder Cancer,27526,2.0-public
+CRC,GENIE-VICC-S01494,VICC,2,No,Melanoma,21569,2.0-public

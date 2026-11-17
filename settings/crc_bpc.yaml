@@ -1,0 +1,442 @@
+# Settings for the CRC BPC delayed-entry study: the registered plan's values.
+#
+# Plan: statistical analysis plan v1.0, registered at osf.io/eyq6b ("the plan" below). With these
+# settings and the GENIE BPC adapter, the pipeline is meant to reproduce that study: the readiness
+# screen its design checks, and (from phase 2) its published results.
+#
+# Every choice below was made by the study's author and registered before the data were downloaded,
+# except where a note says otherwise.
+
+settings_format: 1
+
+study:
+  name:
+    value: "CRC BPC: sequencing delay and survival by tumor genotype"
+    made_by: CRC BPC study author
+    source: the plan, title
+  cancer:
+    value: "colorectal cancer, stage IV at diagnosis, sequenced at a BPC center"
+    made_by: CRC BPC study author
+    source: the plan, sections 3 and 4
+  registered_plan:
+    value: "osf.io/eyq6b"
+    made_by: CRC BPC study author
+    source: OSF registration, 2026-11-11
+
+source:
+  adapter:
+    value: genie_bpc
+    made_by: CRC BPC study author
+    source: the plan, section 3
+  genie_bpc:
+    cohort:
+      value: crc_v2.0
+      made_by: CRC BPC study author
+      source: "the plan, section 3: GENIE BPC CRC v2.0-public"
+    cancer_type_labels:
+      value: ["Colon Cancer", "Colon/Rectum Cancer", "Rectum and Rectosigmoid Cancer"]
+      made_by: CRC BPC study author
+      source: "the plan, section 4b; labels from the BPC CRC v2.0-public variable synopsis"
+    cancer_site_pattern:
+      value: '^C(18\.[02-9]|19|20)'
+      made_by: CRC BPC study author
+      source: "ICD-O-3 colon (C18, less C18.1, the appendix), rectosigmoid (C19) and rectum (C20); the check added on 2026-11-11 (provenance log)"
+    withheld_survival:
+      value: censor_at_age_limit
+      made_by: CRC BPC study author
+      source: "the plan, section 3 (privacy redaction: censored at age 89)"
+
+cohort:
+  rules:
+    value:
+      - id: stage_iv
+        label: Stage IV at diagnosis
+        all_of:
+          - {field: stage_at_diagnosis, op: in, values: ["Stage IV"], normalize: trim, missing: fail}
+      - id: histology
+        label: Not squamous, small cell or sarcoma
+        all_of:
+          - {field: histology, op: not_in, values: ["Squamous cell", "Small cell carcinoma", "Sarcoma"],
+             normalize: trim, missing: pass}
+      - id: age_18
+        label: Age 18 or older at diagnosis
+        all_of:
+          - {field: age_at_diagnosis, op: ge, value: 18, missing: pass}
+      - id: not_appendix
+        label: Primary site not the appendix
+        all_of:
+          - {field: primary_site_code, op: not_starts_with_any, values: ["C181"], normalize: letters_digits_upper,
+             missing: pass}
+      - id: has_report
+        label: Index cancer has a sequencing report
+        all_of:
+          - {check: has_entry_test}
+      - id: entry_known
+        label: "Entry time known: report time and age not withheld"
+        all_of:
+          - {check: entry_time_known}
+          - {field: age_at_diagnosis, op: known}
+      - id: exit_known
+        label: Survival time and status known, or censored at age 89
+        all_of:
+          - {check: outcome_recorded}
+      - id: entry_before_exit
+        label: First report back before follow-up ended
+        all_of:
+          - {check: entry_before_follow_up_end}
+      - id: genotype_assignable
+        label: "Genotype assignable: panel reads KRAS, NRAS and BRAF"
+        all_of:
+          - {check: genotype_assignable}
+    made_by: CRC BPC study author
+    source: "the plan, section 4 (study design table and exclusions) and section 5 (D3: the order of the steps)"
+    note: >-
+      A missing stage fails the stage rule; a missing histology, age or site passes its own rule (the plan,
+      section 4). An age that is withheld is excluded at entry_known. Patients without a BPC Project cancer
+      are left out by the adapter, at the flow diagram's first step.
+
+entry:
+  event:
+    value: report
+    made_by: CRC BPC study author
+    source: "the plan, section 4 (delayed entry at the first NGS report)"
+  acceptable_substitutes:
+    value: []
+    made_by: CRC BPC study author
+    source: "the plan names no substitute for the report time"
+  modalities:
+    value: [ngs]
+    made_by: CRC BPC study author
+    source: "the plan, section 4 (NGS sample used)"
+  first_test_order:
+    value: [earliest_day, largest_panel, lowest_test_order]
+    made_by: CRC BPC study author
+    source: "the plan, section 4 (NGS sample used)"
+  before_diagnosis:
+    value: enter_at_day_0
+    made_by: CRC BPC study author
+    source: "the plan, section 4 (delayed entry)"
+
+genotype:
+  results_from:
+    value: entry_test
+    made_by: CRC BPC study author
+    source: "the plan, section 4a (the first NGS sample's calls)"
+  variant_text:
+    value: trimmed
+    made_by: CRC BPC study author
+    source: "the plan, section 4a; the registered code trims the protein change"
+  groups:
+    value:
+      - name: RAS-mutant
+        any_of:
+          - kind: mutation
+            genes: [KRAS, NRAS]
+            variant_classes: [Missense_Mutation, In_Frame_Del, In_Frame_Ins]
+            codons: [12, 13, 59, 61, 117, 146]
+      - name: BRAF V600E
+        any_of:
+          - kind: mutation
+            genes: [BRAF]
+            variants: ["p.V600E"]
+      - name: Wild type
+        none_of_the_above: true
+    made_by: CRC BPC study author
+    source: "the plan, section 4a (groups assigned in this order, so a co-mutant is RAS-mutant)"
+  reference:
+    value: Wild type
+    made_by: CRC BPC study author
+    source: "the plan, section 6"
+  described_only:
+    value: []
+    made_by: CRC BPC study author
+    source: "the plan, section 5 (D1): every group is compared when it is large enough"
+  coverage:
+    required:
+      value:
+        KRAS: [12, 13, 59, 61, 117, 146]
+        NRAS: [12, 13, 59, 61, 117, 146]
+        BRAF: [600]
+      made_by: CRC BPC study author
+      source: "the plan, section 4a (not assigned)"
+    applies_to:
+      value: all_groups
+      made_by: CRC BPC study author
+      source: "the plan, section 4a: every group, wild type included, needs a panel that covers KRAS, NRAS and BRAF"
+    when_only_genes_listed:
+      value: accept_gene_level
+      made_by: CRC BPC study author
+      source: "the plan, section 4a: at gene level from the gene-panel files when there is no coverage file"
+    fusion_panels:
+      value: {}
+      made_by: CRC BPC study author
+      source: "the plan, section 4a: the groups count mutations only, no fusions"
+  reference_drugs:
+    value: {}
+    made_by: CRC BPC study author
+    source: "the plan has no count of targeted drugs in the reference group"
+
+time:
+  days_per_year:
+    value: 365.25
+    made_by: CRC BPC study author
+    source: "the plan, section 4 (horizons)"
+  horizon_years:
+    value: 3
+    made_by: CRC BPC study author
+    source: "the plan, section 4 (RMST to 3 years)"
+
+summary:
+  survival_at_years:
+    value: [1, 2, 3, 4, 5]
+    made_by: CRC BPC study author
+    source: "the plan, section 4 (KM summaries to 5 years)"
+  median_limit_years:
+    value: 5
+    made_by: CRC BPC study author
+    source: "the plan, section 6 (a median past 5 years is not reached)"
+
+materiality:
+  rmst_months:
+    value: 2
+    made_by: CRC BPC study author
+    source: "the plan, section 11"
+  median_months:
+    value: 3
+    made_by: CRC BPC study author
+    source: "the plan, section 11"
+  hr_ratio_change:
+    value: 0.10
+    made_by: CRC BPC study author
+    source: "the plan, section 11"
+  rmst_gap_change_months:
+    value: 2
+    made_by: CRC BPC study author
+    source: "the plan, section 11"
+
+labels:
+  clearly_material:
+    value: estimate_and_whole_interval
+    made_by: CRC BPC study author
+    source: "the plan, section 11"
+  material:
+    value: estimate_only
+    made_by: CRC BPC study author
+    source: "the plan, section 11"
+
+smallest_group:
+  patients:
+    value: 30
+    made_by: CRC BPC study author
+    source: "the plan, section 5 (D1)"
+  if_short:
+    value:
+      RAS-mutant: block
+      BRAF V600E: describe
+      Wild type: block
+    made_by: CRC BPC study author
+    source: "the plan, section 5 (D1): a short BRAF V600E group is described; a short RAS-mutant or wild-type group stops the primary analysis"
+
+biomarker:
+  unknown_max_share:
+    value: 0.30
+    made_by: CRC BPC study author
+    source: "the plan, section 4b (fallback)"
+
+survival_after_entry:
+  window_days:
+    value: 730
+    made_by: CRC BPC study author
+    source: "the plan, section 5 (D2)"
+  min_deaths:
+    value: 11
+    made_by: CRC BPC study author
+    source: "the plan, section 5 (D2)"
+  if_fewer:
+    value: move_entry_by_window
+    made_by: CRC BPC study author
+    source: "the plan, section 5 (D2)"
+
+stability:
+  risk_set:
+    value: 20
+    made_by: CRC BPC study author
+    source: "the plan, section 6 (stability rule)"
+
+uncertainty:
+  bootstrap_resamples:
+    value: 1000
+    made_by: CRC BPC study author
+    source: "the plan, section 6"
+  seed:
+    value: 20261108
+    made_by: CRC BPC study author
+    source: "the registered code (R/bias.R)"
+  interval_level:
+    value: 0.95
+    made_by: CRC BPC study author
+    source: "the plan, section 6"
+  when_a_resample_has_no_value:
+    value: no_interval
+    made_by: CRC BPC study author
+    source: "the plan, section 6"
+
+adjustment:
+  variables:
+    value:
+      - {field: age_at_diagnosis, form: spline, knots_at_percentiles: [10, 50, 90]}
+      - {field: sex, form: categorical, keep: [Male, Female]}
+      - {field: center, form: categorical, keep: [DFCI, MSK, VICC], reference: MSK}
+      - {field: tumor_location, form: categorical, keep: [Left colon, Right colon, Rectal, Other]}
+      - {field: year_of_diagnosis, form: bands}
+    made_by: CRC BPC study author
+    source: "the plan, section 4c"
+  year_bands:
+    value:
+      - {label: "2012 or earlier", to: 2012}
+      - {label: "2013-2015", from: 2013, to: 2015}
+      - {label: "2016-2018", from: 2016, to: 2018}
+    made_by: CRC BPC study author
+    source: "the plan, section 4c"
+  band_min_patients:
+    value: 30
+    made_by: CRC BPC study author
+    source: "the plan, section 4c"
+
+missing_data:
+  complete_case_max_share:
+    value: 0.05
+    made_by: CRC BPC study author
+    source: "the plan, section 9"
+  imputations:
+    value: 20
+    made_by: CRC BPC study author
+    source: "the plan, section 9"
+
+weighting:
+  variables:
+    value: same_as_adjustment
+    made_by: CRC BPC study author
+    source: "the plan, section 6 (pass 3b)"
+  trim_percentiles:
+    value: [1, 99]
+    made_by: CRC BPC study author
+    source: "the plan, section 6 (pass 3b)"
+  balance_target_smd:
+    value: 0.1
+    made_by: CRC BPC study author
+    source: "the plan, section 6 (pass 3b)"
+
+ph_check:
+  p_threshold:
+    value: 0.01
+    made_by: CRC BPC study author
+    source: "the plan, section 8 (SA5)"
+  split_months:
+    value: 12
+    made_by: CRC BPC study author
+    source: "the plan, section 8 (SA5)"
+
+assumption_check:
+  estimators:
+    value: [MB]
+    made_by: CRC BPC study author
+    source: "the plan, section 8 (SA6)"
+    note: "The censoring-weighted IPW1 and IPW2 were added after the outputs were written (post hoc); the registered estimator is MB."
+
+analyses:
+  value:
+    - id: S1
+      label: MSI-H/dMMR vs MSS/pMMR
+      run: true
+      kind: biomarker
+      results_kind: msi_mmr
+      groups:
+        - {name: MSI-H/dMMR, values: [MSI-H, dMMR]}
+        - {name: MSS/pMMR, values: [MSS, MSI-L, pMMR]}
+      unknown_group: Unknown
+      reference: MSS/pMMR
+      timing: by_entry_test
+      exclude_if: [multiple_cohort_cancers, other_primary_same_cancer]
+      if_short: describe
+      fallback: {when_panel_sizes_given: mutation_burden, otherwise: descriptive_only}
+      mutation_burden:
+        threshold_per_megabase: 20
+        variant_classes: [Missense_Mutation, Nonsense_Mutation, Frame_Shift_Del, Frame_Shift_Ins, In_Frame_Del,
+                          In_Frame_Ins, Splice_Site, Nonstop_Mutation, Translation_Start_Site]
+      not_run_under_fallback: [SA8, SA9]
+    - id: S2
+      label: Survival from the start of first-line treatment
+      run: true
+      kind: treatment_clock
+      first_line: earliest_by_order_on_or_after_diagnosis
+      if_short: describe
+    - id: S3
+      label: Diagnosis-to-report delay
+      run: true
+      kind: descriptive_delay
+      by: [genotype, center, year_band]
+    - id: SA1
+      label: First report within 6 months of diagnosis
+      run: true
+      kind: subset
+      keep: {within_months: 6}
+      if_short: describe
+    - id: SA2
+      label: Adjusted model stratified by center
+      run: true
+      kind: adjusted_variant
+      stratify_by: center
+    - id: SA3
+      label: Co-mutants excluded
+      run: true
+      kind: subset
+      keep: {exclude_overlap: [RAS-mutant, BRAF V600E]}
+      if_short: describe
+    - id: SA4
+      label: Wild type without other BRAF exon 11 or 15 variants
+      run: true
+      kind: subset
+      keep:
+        exclude_from_group: Wild type
+        if_result:
+          kind: mutation
+          genes: [BRAF]
+          variant_classes: [Missense_Mutation, In_Frame_Del, In_Frame_Ins]
+          codon_ranges: [[439, 478], [581, 620]]
+          except_variants: ["p.V600E"]
+      if_short: describe
+    - id: SA5
+      label: Proportional hazards check
+      run: true
+      kind: ph_check
+    - id: SA6
+      label: Quasi-independence check
+      run: true
+      kind: quasi_independence
+    - id: SA7
+      label: Adenocarcinoma only
+      run: true
+      kind: subset
+      keep: {field: histology, op: in, values: [Adenocarcinoma], normalize: trim, missing: fail}
+      if_short: describe
+    - id: SA8
+      label: S1 without discordant results
+      run: true
+      kind: biomarker_variant
+      of: S1
+      drop_discordant: true
+    - id: SA9
+      label: S1 with every result, whatever its date
+      run: true
+      kind: biomarker_variant
+      of: S1
+      timing: any_time
+  made_by: CRC BPC study author
+  source: "the plan, sections 4b, 7 and 8 (SA4's exons on transcript NM_004333; SA1's 6 months is 182.6 days)"
+
+privacy:
+  min_count:
+    value: 11
+    made_by: CRC BPC study author
+    source: "the plan, section 13; the GENIE terms of access (counts below 11 suppressed)"

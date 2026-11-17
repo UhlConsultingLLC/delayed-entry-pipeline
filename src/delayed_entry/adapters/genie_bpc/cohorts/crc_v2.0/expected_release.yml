@@ -1,0 +1,228 @@
+# What the CRC v2.0-public release should contain, for the check after downloading
+# (python -m delayed_entry.adapters.genie_bpc.check_download). Copied from the CRC BPC project
+# (sql/00_expected_release.yml), with the check limits that project wrote into its code moved to `checks`.
+#
+# files: every file in the two Synapse folders, with the name, size and MD5 checksum Synapse reports. Read from
+# Synapse on 2026-11-09 as metadata only: no file was downloaded to write this list. used: true marks the files the
+# analysis reads; a difference in one of them stops the run, and a difference in any other is only reported.
+# values: the values the data documentation lists for each coded column the rules read, from the variable synopsis
+# (syn39433163, version 2). stops: true means a value not on the list stops the run.
+# checks: the limits of the data checks (not analysis choices): how much disagreement each check tolerates.
+
+checks:
+  min_call_link: 0.80          # share of report samples that should have at least one mutation call
+  max_unit_mismatch: 0.01      # share of rows allowed to disagree in the unit checks
+  report_months_tolerance: 0.5     # months: report months against report days / 30.4375
+  age_years_tolerance: 1.5         # years: age at diagnosis against days from birth / 365.25
+  report_days_tolerance: 1.5       # days: report day from birth against diagnosis day + report day
+  age_range: [0, 120]
+  birth_year_range: [1900, 2010]
+
+folders:
+  clinical: syn39802567
+  genomic: syn39802595
+
+panels: ["DFCI-ONCOPANEL-2", "DFCI-ONCOPANEL-3", "MSK-IMPACT341", "MSK-IMPACT410", "MSK-IMPACT468", "VICC-01-SOLIDTUMOR", "VICC-01-T5A", "VICC-01-T7"]
+
+files:
+  - {folder: clinical, name: "cancer_level_dataset_index.csv", id: syn39802574, version: 2, bytes: 1271785, md5: ad97b314604282c6adecb9a42d8bcc45, used: true}
+  - {folder: clinical, name: "cancer_level_dataset_non_index.csv", id: syn39802575, version: 2, bytes: 172074, md5: 1903e5f6ceebbe52914d6565c22c1420, used: true}
+  - {folder: clinical, name: "cancer_panel_test_level_dataset.csv", id: syn39802578, version: 2, bytes: 511420, md5: 431d8b6ec316c0b22bfb19b57856d2e7, used: true}
+  - {folder: clinical, name: "pathology_report_level_dataset.csv", id: syn39802586, version: 2, bytes: 5006317, md5: f5cd4e7c30b1229d3feb564ebe8d5453, used: true}
+  - {folder: clinical, name: "patient_level_dataset.csv", id: syn39802589, version: 2, bytes: 561130, md5: dbc75fd101a00e8220b7d4c681dd4779, used: true}
+  - {folder: clinical, name: "regimen_cancer_level_dataset.csv", id: syn39802591, version: 2, bytes: 7133629, md5: 722dd78feab23506336dff70ef9c2294, used: true}
+  - {folder: clinical, name: "imaging_level_dataset.csv", id: syn39802579, version: 2, bytes: 9030030, md5: 7c5a6ccac2c43a0a55ee2eda9fce7697, used: false}
+  - {folder: clinical, name: "med_onc_note_level_dataset.csv", id: syn39802583, version: 2, bytes: 6084631, md5: 663451e24d6139ba7663b5321200573f, used: false}
+  - {folder: clinical, name: "tm_level_dataset.csv", id: syn39802593, version: 2, bytes: 3226157, md5: 6ff20dcbcb763a0605835e0bdc114b53, used: false}
+  - {folder: genomic, name: "data_gene_panel_DFCI-ONCOPANEL-2.txt", id: syn39802612, version: 2, bytes: 1962, md5: 59d7ce66bebb83c5fc8d4ba430f692ff, used: true}
+  - {folder: genomic, name: "data_gene_panel_DFCI-ONCOPANEL-3.txt", id: syn39802613, version: 2, bytes: 2655, md5: f2295f705f3e626c0481cc5696cfed82, used: true}
+  - {folder: genomic, name: "data_gene_panel_MSK-IMPACT341.txt", id: syn39802614, version: 2, bytes: 2055, md5: 0bf17235ef197c01065054ead5503268, used: true}
+  - {folder: genomic, name: "data_gene_panel_MSK-IMPACT410.txt", id: syn39802618, version: 2, bytes: 2501, md5: 46eef4999580acc4aaa3ff25d16b4423, used: true}
+  - {folder: genomic, name: "data_gene_panel_MSK-IMPACT468.txt", id: syn39802619, version: 2, bytes: 2847, md5: 2cd65f22889a9e9f634b7a68798342f5, used: true}
+  - {folder: genomic, name: "data_gene_panel_VICC-01-SOLIDTUMOR.txt", id: syn39802620, version: 2, bytes: 261, md5: 76f0340d72b03e5a047b2c00e3d62546, used: true}
+  - {folder: genomic, name: "data_gene_panel_VICC-01-T5A.txt", id: syn39802623, version: 2, bytes: 1950, md5: a8b6c0bae1fe086c9bf1104c6f4019b6, used: true}
+  - {folder: genomic, name: "data_gene_panel_VICC-01-T7.txt", id: syn39802625, version: 2, bytes: 2566, md5: 0cd7a5f1161ad3325605ed0c4ec1c3a6, used: true}
+  - {folder: genomic, name: "data_mutations_extended.txt", id: syn39802627, version: 2, bytes: 7693610, md5: b2f9df739f14c454b3aeff6142ab7af8, used: true}
+  - {folder: genomic, name: "case_lists/cases_Colorectal_Cancer.txt", id: syn39802787, version: 2, bytes: 40451, md5: 5e0f63a95de7e438c27d63cc68db0f4f, used: false}
+  - {folder: genomic, name: "case_lists/cases_all.txt", id: syn39802790, version: 2, bytes: 40385, md5: 94cbeb83d0ca2894d2d2e6f026994271, used: false}
+  - {folder: genomic, name: "case_lists/cases_cna.txt", id: syn39802795, version: 2, bytes: 38859, md5: 7ab81668df46dd9fc32713325bc19b56, used: false}
+  - {folder: genomic, name: "case_lists/cases_cnaseq.txt", id: syn39802802, version: 2, bytes: 38888, md5: 8e9b2e148d408679144efd0de387c38a, used: false}
+  - {folder: genomic, name: "case_lists/cases_sequenced.txt", id: syn39802805, version: 2, bytes: 40406, md5: 6e4ab9469d51d9ec980352ee583e5dc0, used: false}
+  - {folder: genomic, name: "data_CNA.txt", id: syn39802596, version: 2, bytes: 3651731, md5: a16e1ce7d979d11452ded44a52168dc4, used: false}
+  - {folder: genomic, name: "data_clinical_patient.txt", id: syn39802598, version: 2, bytes: 247149, md5: c7b694fb7237421a2a4d239ec7a86048, used: false}
+  - {folder: genomic, name: "data_clinical_sample.txt", id: syn39802600, version: 2, bytes: 162940, md5: de5b59f2760606666d6eb06497f869e4, used: false}
+  - {folder: genomic, name: "data_clinical_supp_survival.txt", id: syn39802601, version: 2, bytes: 141309, md5: 18e1b615d7f64cff59a05630fcbd185c, used: false}
+  - {folder: genomic, name: "data_clinical_supp_survival_treatment.txt", id: syn39802602, version: 2, bytes: 457062, md5: 9a2bfca75ef2d66565534dd81cdf8c9c, used: false}
+  - {folder: genomic, name: "data_fusions.txt", id: syn39802604, version: 2, bytes: 30968, md5: af3afeeb782de22376a09471f9dd5e81, used: false}
+  - {folder: genomic, name: "data_gene_matrix.txt", id: syn39802608, version: 2, bytes: 85672, md5: 4b273fa3aaa0563459a793ed527ba217, used: false}
+  - {folder: genomic, name: "data_timeline_cancer_diagnosis.txt", id: syn39802628, version: 2, bytes: 190504, md5: 811e944f1f788f91babc0df63c99547f, used: false}
+  - {folder: genomic, name: "data_timeline_imaging.txt", id: syn39802632, version: 2, bytes: 3673957, md5: cf40b6d062fdf709577dfe0086986174, used: false}
+  - {folder: genomic, name: "data_timeline_labtest.txt", id: syn39802637, version: 2, bytes: 1294361, md5: 16fb73b46cf18fe505ba29eb090ed0e4, used: false}
+  - {folder: genomic, name: "data_timeline_medonc.txt", id: syn39802643, version: 2, bytes: 3985480, md5: 8ee7b2fdd60d9b91343ffbe5f2ceabb3, used: false}
+  - {folder: genomic, name: "data_timeline_pathology.txt", id: syn39802649, version: 2, bytes: 717180, md5: d0ca29fab6c14ba88b41be927779e843, used: false}
+  - {folder: genomic, name: "data_timeline_sample_acquisition.txt", id: syn39802652, version: 2, bytes: 115397, md5: 0fabff5e3f13eb0f44b432492acad369, used: false}
+  - {folder: genomic, name: "data_timeline_sequencing.txt", id: syn39802657, version: 2, bytes: 101192, md5: 2771c35a199d4cee54b6480c9f7b861e, used: false}
+  - {folder: genomic, name: "data_timeline_treatment.txt", id: syn39802659, version: 2, bytes: 1892562, md5: 71a14f8428f2542770afe0c6379ab248, used: false}
+  - {folder: genomic, name: "genie_crc_data_cna_hg19.seg", id: syn39802662, version: 2, bytes: 2275379, md5: fb6fcd39a27b2e388d99e98386e9045a, used: false}
+  - {folder: genomic, name: "genie_crc_meta_cna_hg19.seg", id: syn39802667, version: 2, bytes: 216, md5: 00005524fb9ed76351e125978259de62, used: false}
+  - {folder: genomic, name: "meta_CNA.txt", id: syn39802675, version: 2, bytes: 269, md5: 06b89a8b44ee02eece4626c19ff054dd, used: false}
+  - {folder: genomic, name: "meta_clinical_patient.txt", id: syn39802678, version: 2, bytes: 143, md5: 18d263336ec16ce8fcf099146d19c277, used: false}
+  - {folder: genomic, name: "meta_clinical_sample.txt", id: syn39802682, version: 2, bytes: 141, md5: d3be184578048213e815ab3f5cb9b46b, used: false}
+  - {folder: genomic, name: "meta_fusions.txt", id: syn39802685, version: 2, bytes: 226, md5: 3871e1395baae1b39910c51887c7b84b, used: false}
+  - {folder: genomic, name: "meta_gene_matrix.txt", id: syn39802692, version: 2, bytes: 146, md5: 62a648ff6529f17b31140fa438019c58, used: false}
+  - {folder: genomic, name: "meta_mutations_extended.txt", id: syn39802697, version: 2, bytes: 282, md5: 2e8557aeac88f6acc78ca8f30acbe0ab, used: false}
+  - {folder: genomic, name: "meta_study.txt", id: syn39802705, version: 2, bytes: 733, md5: 04bbefdfe22bae1d5d00102a7e06b664, used: false}
+  - {folder: genomic, name: "meta_timeline_cancer_diagnosis.txt", id: syn39802712, version: 2, bytes: 142, md5: e7c0a9c52a78786dca7b228ac94940b4, used: false}
+  - {folder: genomic, name: "meta_timeline_imaging.txt", id: syn39802722, version: 2, bytes: 133, md5: 864775b0a60f7df9b6b118e29bfbe864, used: false}
+  - {folder: genomic, name: "meta_timeline_labtest.txt", id: syn39802732, version: 2, bytes: 133, md5: 475cdcaa530ae00363510685bfaa471f, used: false}
+  - {folder: genomic, name: "meta_timeline_medonc.txt", id: syn39802736, version: 2, bytes: 132, md5: 7e0e9ca585735425973f41fe92c36ca7, used: false}
+  - {folder: genomic, name: "meta_timeline_pathology.txt", id: syn39802740, version: 2, bytes: 135, md5: bd1dd3cd4fcb56f17af6cae226dafe27, used: false}
+  - {folder: genomic, name: "meta_timeline_sample_acquisition.txt", id: syn39802750, version: 2, bytes: 144, md5: 0ae22a9d442303be4a7d81a6431dc267, used: false}
+  - {folder: genomic, name: "meta_timeline_sequencing.txt", id: syn39802757, version: 2, bytes: 136, md5: e76aeb371aee0204bfbb2f8d0e8e1c5a, used: false}
+  - {folder: genomic, name: "meta_timeline_treatment.txt", id: syn39802766, version: 2, bytes: 135, md5: 1811895bb935ec23640633309b0b9385, used: false}
+  - {folder: genomic, name: "tmb.tsv", id: syn74835130, version: 1, bytes: 76757, md5: 7914aeb40d3c97427c74ddef088463db, used: false}
+
+values:
+  raw_patient:
+    institution:
+      stops: true
+      allowed:
+        - "DFCI"
+        - "MSK"
+        - "VICC"
+    redacted:
+      stops: true
+      allowed:
+        - "Yes"
+        - "No"
+    naaccr_sex_code:
+      stops: false
+      allowed:
+        - "Male"
+        - "Female"
+        - "Other intersex, disorders of sexual development/DSD"
+        - "Transsexual NOS"
+        - "Transsexual natal male"
+        - "Transsexual natal female"
+    race_ethnicity:
+      stops: false
+      allowed:
+        - "AAAPI (Asian, Asian American, and Pacific Islander)"
+        - "Asian Indian or Pakistani NOS"
+        - "Hispanic/Latinx"
+        - "Non-Hispanic Black"
+        - "Non-Hispanic White"
+        - "Other"
+        - "Unknown"
+  raw_cancer:
+    redcap_ca_index:
+      stops: true
+      allowed:
+        - "Yes"
+    stage_dx:
+      stops: true
+      allowed:
+        - "Stage 0"
+        - "Stage I"
+        - "Stage II"
+        - "Stage III"
+        - "Stage I-III NOS"
+        - "Stage IV"
+    ca_hist_adeno_squamous:
+      stops: true
+      allowed:
+        - "Adenocarcinoma"
+        - "Carcinoma"
+        - "Squamous cell"
+        - "Sarcoma"
+        - "Small cell carcinoma"
+        - "Other histologies/mixed tumor"
+    crc_type:
+      stops: true
+      allowed:
+        - "Left colon"
+        - "Right colon"
+        - "Rectal"
+        - "Other"
+    os_dx_status:
+      stops: true
+      allowed:
+        - "1"
+        - "0"
+  raw_report:
+    cpt_report_post_death:
+      stops: true
+      allowed:
+        - "1"
+        - "0"
+    cpt_report_post_last_alive:
+      stops: true
+      allowed:
+        - "1"
+        - "0"
+    sample_type:
+      stops: false
+      allowed:
+        - "Primary tumor"
+        - "Lymph node metastasis"
+        - "Distant organ metastasis"
+        - "Metastasis site unspecified"
+        - "Local recurrence"
+        - "Not otherwise specified"
+        - "Not applicable or hematologic malignancy"
+  raw_cancer_other:
+    redcap_ca_index:
+      stops: true
+      allowed:
+        - "No"
+  raw_regimen:
+    redcap_ca_index:
+      stops: true
+      allowed:
+        - "Yes"
+        - "No"
+    os_g_status:
+      stops: true
+      allowed:
+        - "1"
+        - "0"
+  raw_pathology:
+    msi_result:
+      stops: true
+      allowed:
+        - "MSS: STABLE"
+        - "MSI-H: HIGH"
+        - "MSI-L: LOW or instability in < 30% of microsatellite markers"
+        - "Indeterminate/Not stated"
+    msi_result_2:
+      stops: true
+      allowed:
+        - "MSS: STABLE"
+        - "MSI-H: HIGH"
+        - "MSI-L: LOW or instability in < 30% of microsatellite markers"
+        - "Indeterminate/Not stated"
+    msi_result_3:
+      stops: true
+      allowed:
+        - "MSS: STABLE"
+        - "MSI-H: HIGH"
+        - "MSI-L: LOW or instability in < 30% of microsatellite markers"
+        - "Indeterminate/Not stated"
+    mmr_result:
+      stops: true
+      allowed:
+        - "No loss of nuclear expression of MMR proteins: No evidence of deficient mismatch repair (low probability of MSI-H): proficient"
+        - "Loss of nuclear expression of one or more MMR proteins; deficient mismatch repair"
+        - "Indeterminate/Not stated"
+    mmr_result_2:
+      stops: true
+      allowed:
+        - "No loss of nuclear expression of MMR proteins: No evidence of deficient mismatch repair (low probability of MSI-H): proficient"
+        - "Loss of nuclear expression of one or more MMR proteins; deficient mismatch repair"
+        - "Indeterminate/Not stated"
+    mmr_result_3:
+      stops: true
+      allowed:
+        - "No loss of nuclear expression of MMR proteins: No evidence of deficient mismatch repair (low probability of MSI-H): proficient"
+        - "Loss of nuclear expression of one or more MMR proteins; deficient mismatch repair"
+        - "Indeterminate/Not stated"
