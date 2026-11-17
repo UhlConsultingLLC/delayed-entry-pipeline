@@ -495,3 +495,4 @@ on keeps its notes there.
 | 2026-11-17 | The OMOP CDM adapter (step 4): a folder of table files or a DuckDB file, read through a confirmed mapping (`omop-template` writes a blank one); `source.adapter: omop`; `--mapping` at steps 5, 7 and 8; the made-up OMOP database in the tests (2.2); two messages in Part 5. |
 | 2026-11-17 | The attribution a source's terms require: an optional capability-profile item (`attribution`), printed in the run report (step 10), with a run check that warns while a part is blank; GENIE BPC's profile carries the consortium citation and the release read; one message in Part 5. |
 | 2026-11-17 | The repository guard test (2.2), and the tests' run on every push on GitHub. |
+| 2026-11-17 | The R tests run on GitHub too: a second job installs R and the packages in `.github/r-packages`. |

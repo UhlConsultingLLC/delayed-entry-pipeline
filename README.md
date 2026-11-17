@@ -321,8 +321,9 @@ capability profile (`src/delayed_entry/adapters/genie_bpc/profile.yml`).
 ## Security
 
 How to report a security problem, and what never to post in an issue or pull request (patient data, small
-counts, credentials), is in [SECURITY.md](SECURITY.md). The tests run on every push, on Windows with Python
-3.10 and 3.14 (`.github/workflows/tests.yml`; the tests that need R are skipped there), and a guard among them
+counts, credentials), is in [SECURITY.md](SECURITY.md). The tests run on every push, on Windows
+(`.github/workflows/tests.yml`): with Python 3.10 and 3.14, and once more with R and the packages in
+`.github/r-packages`, so the whole runs, the R unit checks and the mice engine run there too. A guard among them
 fails if a committed file looks like data, holds a local path or looks like a credential.
 
 ## License
