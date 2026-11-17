@@ -212,7 +212,8 @@ Each check ends `pass`, `FAIL`, `review` or `skipped`. Any `FAIL` stops the run;
 it in the run log. The report is written to the work folder; counts below the minimum show as "<minimum".
 Add `--rehearsal` to try it on made-up data.
 
-**Flat files: CSV/TSV, Excel (.xlsx) or Parquet (available).** Draft a mapping from the files' column names:
+**Flat files: CSV/TSV, Excel (.xlsx), Parquet, SAS (.sas7bdat, .xpt) or Stata (.dta) (available).** Draft a
+mapping from the files' column names:
 
 ```powershell
 python -m delayed_entry draft-mapping <work folder>\mapping.yaml patients=patients.csv tests=tests.xlsx#Tests results=results.parquet panels=panels.csv
@@ -221,10 +222,17 @@ python -m delayed_entry draft-mapping <work folder>\mapping.yaml patients=patien
 The draft is never used as it stands. A person must:
 1. check every drafted field, and give each one a column, a constant or `absent: true`;
 2. add any transform: `map` for coded values (quote words like `'Yes'`), `multiply` for units (months to
-   days), `days_since_diagnosis` for dates (with the patients file's `diagnosis_date`);
+   days), `days_since_diagnosis` for dates (with the patients file's `diagnosis_date`). A text date takes
+   `format`. A date held as a number, as SAS transport (.xpt) files hold every date, takes
+   `days_from: "1960-01-01"` (or `seconds_from` for a date and time). Dates that SAS (.sas7bdat), Stata or
+   Parquet store as dates need neither;
 3. fill in the capability profile: entry event, panel coverage, panel sizes, death capture, time format,
    the agreement's minimum count, the histology vocabulary, the age top code and known quirks;
 4. set `status: confirmed`, `confirmed_by` and `confirmed_on`.
+
+A file in the mapping's `files` can carry options:
+- **Stata:** `{path: ..., value_labels: false}` reads codes in place of value labels.
+- **SAS transport (.xpt):** add `encoding: ...` when the text isn't ISO-8859-1.
 
 Set the settings' `source.adapter` to `flat_file`.
 
@@ -496,3 +504,4 @@ on keeps its notes there.
 | 2026-11-17 | The attribution a source's terms require: an optional capability-profile item (`attribution`), printed in the run report (step 10), with a run check that warns while a part is blank; GENIE BPC's profile carries the consortium citation and the release read; one message in Part 5. |
 | 2026-11-17 | The repository guard test (2.2), and the tests' run on every push on GitHub. |
 | 2026-11-17 | The R tests run on GitHub too: a second job installs R and the packages in `.github/r-packages`. |
+| 2026-11-17 | SAS (.sas7bdat, .xpt) and Stata (.dta) files in the flat-file adapter (step 4): dates held as numbers (`days_from`, `seconds_from`), Stata value labels or codes (`value_labels`), and a file's text encoding (`encoding`). |

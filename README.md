@@ -18,8 +18,20 @@ unchanged: the code reused here was copied from it, never imported.
      Mutations are always read; fusions and regimen drug names are read where the cohort's raw file list
      names them (NSCLC does, CRC doesn't). `adapters.genie_bpc.check_download` is the check to run right
      after downloading a release.
-   - `adapters.flatfile`: CSV/TSV, Excel (.xlsx) and Parquet, through a mapping file. The tool drafts the
-     mapping from column names; a person must confirm it, and a draft is never used.
+   - `adapters.flatfile`: CSV/TSV, Excel (.xlsx), Parquet, SAS (.sas7bdat and .xpt transport files) and Stata
+     (.dta), through a mapping file. The tool drafts the mapping from column names; a person must confirm it,
+     and a draft is never used.
+     - **Dates:** a date stored as a date is read as it is (Parquet, Stata, and .sas7bdat columns with a SAS
+       date format). Text dates take a `format`. A date held as a number, as a .xpt file always holds it,
+       takes `days_from: "1960-01-01"` (or `seconds_from` for a date and time), the origin SAS and Stata
+       count from.
+     - **Stata value labels:** a coded value is read as its label, the text Stata shows, so a mapping's `map`
+       names readable values. `value_labels: false` on the file reads the codes instead, which is also the way
+       out when pandas refuses labels that aren't unique.
+     - **Text encoding:** a .sas7bdat file's text is decoded with the encoding it records. A .xpt file records
+       none and is read as ISO-8859-1, unless the file's `encoding` says otherwise.
+     - **Whole numbers:** SAS stores every number as a decimal, so a column whose numbers are all whole is
+       read as whole numbers. A numeric ID is then "1001", and still joins across files.
    - `adapters.omop`: an OMOP Common Data Model (version 5.4) database, either a folder with one file per
      CDM table (CSV, TSV or Parquet) or a DuckDB file, through a mapping a person confirms
      (`python -m delayed_entry omop-template` writes a blank one). OMOP codes everything with concepts, so the
@@ -275,6 +287,9 @@ tests/                    made-up data only; fixtures/ holds the CRC project's m
 - No panel file shows whether a panel detects a gene's fusions, so that comes from the settings
   (`genotype.coverage.fusion_panels`), with the panels' documentation as its source.
 - Excel files are read with the standard library (cached cell values, first row as header).
+- SPSS (.sav) files aren't read: that needs the pyreadstat package, which isn't installed. The SAS .sas7bdat
+  reading is pandas' own, and its test files can't be made without such a package, so only .xpt and Stata
+  files are tested here, on made-up files a small writer in the tests makes (`tests/sas_xport.py`).
 - GENIE BPC gives no panel sizes (above), so with its releases a biomarker's fallback is descriptive only.
   Mutation burden needs a source that gives them, such as a flat file, or an OMOP database with a panel sizes
   file.

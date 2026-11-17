@@ -8,7 +8,7 @@ from helpers import CRC_SETTINGS, FIXTURE, ROOT
 
 IGNORE = {".git", ".venv", "venv", "__pycache__", ".pytest_cache", "build", "dist"}
 DATA_SUFFIXES = {".csv", ".tsv", ".txt", ".parquet", ".rds", ".maf", ".seg", ".xlsx", ".sas7bdat", ".feather",
-                 ".h5ad", ".duckdb", ".vcf"}
+                 ".h5ad", ".duckdb", ".vcf", ".xpt", ".dta", ".sav"}
 TEXT_SUFFIXES = {".py", ".md", ".yml", ".yaml", ".sql", ".toml", ".txt", ".cfg"}
 
 

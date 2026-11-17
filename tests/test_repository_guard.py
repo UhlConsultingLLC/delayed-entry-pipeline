@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 FIXTURES = "tests/fixtures/"
 MAX_BYTES = 1_000_000
 DATA_SUFFIXES = {".csv", ".tsv", ".txt", ".parquet", ".xlsx", ".xls", ".duckdb", ".db", ".sqlite", ".feather",
-                 ".rds", ".rdata", ".sas7bdat", ".dta", ".sav", ".maf", ".vcf", ".bam", ".gz", ".zip", ".pdf", ".docx"}
+                 ".rds", ".rdata", ".sas7bdat", ".xpt", ".dta", ".sav", ".maf", ".vcf", ".bam", ".gz", ".zip", ".pdf", ".docx"}
 LOCAL_ONLY = ("RELEASE_AUDIT.md", "docs/local/")
 LOCAL_PATH = re.compile(r"\b[A-Za-z]:[\\/]+Users[\\/]+|(?<![\w.~])/(?:Users|home)/[A-Za-z0-9._-]+/")
 CREDENTIAL = re.compile("|".join([

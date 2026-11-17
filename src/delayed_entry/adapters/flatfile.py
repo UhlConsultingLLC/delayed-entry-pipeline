@@ -1,4 +1,5 @@
-"""The generic flat-file adapter: CSV/TSV, Excel (.xlsx) and Parquet files, read through a mapping file.
+"""The generic flat-file adapter: CSV/TSV, Excel (.xlsx), Parquet, SAS (.sas7bdat, .xpt) and Stata (.dta) files,
+read through a mapping file.
 
     from delayed_entry.adapters import flatfile
     flatfile.write_draft({"patients": "patients.csv", "tests": "tests.xlsx", ...}, "mapping.yaml")
@@ -14,6 +15,19 @@ Each standard field is mapped to one of:
                                       to days) or {days_since_diagnosis: {format: "%Y-%m-%d"}} for a date
     {constant: VALUE}                 the same value on every row (for example modality: ngs)
     {absent: true}                    the source doesn't have it
+
+A date is read as it is when the file stores it as a date (Parquet, Stata, and SAS's .sas7bdat for a column with a
+SAS date format); from text with `format`; or, where the file holds a number, with `days_from: "1960-01-01"` (or
+`seconds_from` for a date and time), which is how SAS and Stata count. A SAS transport file (.xpt) always holds
+dates as such numbers.
+
+A file is a path, or {path: ..., sheet: ...} for an Excel sheet. SAS and Stata files take two more options:
+    encoding: TEXT        how the file's text is encoded. A .sas7bdat file records its own (the default reads it);
+                          a .xpt file doesn't, and is read as ISO-8859-1 unless this says otherwise
+    value_labels: false   a Stata file's coded values as codes. By default each coded value is read as its label,
+                          the text Stata itself shows, so that a mapping's `map` names readable values
+SAS stores every number as a decimal, so a SAS or Stata column whose numbers are all whole is read as whole
+numbers: an ID such as 1001 is then the text "1001", not "1001.0".
 """
 from __future__ import annotations
 
@@ -35,8 +49,11 @@ from delayed_entry.tables import OPTIONAL_TABLES, TABLES, StandardTables, confor
 MAPPING_FORMAT = 1
 DRAFT, CONFIRMED = "draft", "confirmed"
 SYNONYMS = Path(__file__).with_name("flatfile_synonyms.yml")
-SUFFIXES = {".csv": "csv", ".tsv": "tsv", ".txt": "tsv", ".xlsx": "xlsx", ".parquet": "parquet"}
+SUFFIXES = {".csv": "csv", ".tsv": "tsv", ".txt": "tsv", ".xlsx": "xlsx", ".parquet": "parquet",
+            ".sas7bdat": "sas7bdat", ".xpt": "xport", ".dta": "stata"}
 ENTRY_KEYS = {"column", "constant", "absent", "transform"}
+FILE_OPTIONS = {"sheet", "encoding", "value_labels"}
+DATE_FORMS = ("format", "days_from", "seconds_from")
 
 
 class MappingError(ValueError):
@@ -53,19 +70,42 @@ class UnconfirmedMappingError(MappingError):
 def file_kind(path: Path) -> str:
     kind = SUFFIXES.get(path.suffix.lower())
     if kind is None:
-        raise MappingError(f"{path.name}: can't read this kind of file (CSV, TSV, .xlsx or Parquet)")
+        raise MappingError(f"{path.name}: can't read this kind of file (CSV, TSV, .xlsx, Parquet, SAS .sas7bdat or "
+                           ".xpt, or Stata .dta)")
     return kind
 
 
-def read_source(path: str | Path, sheet: str | None = None, missing_values=("",)) -> pd.DataFrame:
+def _typed(df: pd.DataFrame) -> pd.DataFrame:
+    """A SAS or Stata table made plain: labeled (categorical) columns as their values, and decimal columns whose
+    numbers are all whole as whole numbers."""
+    out = {}
+    for c in df.columns:
+        s = df[c]
+        if isinstance(s.dtype, pd.CategoricalDtype):
+            s = s.astype(object).where(s.notna(), None)
+        elif pd.api.types.is_float_dtype(s) and s.notna().any() and bool((s.dropna() % 1 == 0).all()):
+            s = s.astype("Int64")
+        out[c] = s
+    return pd.DataFrame(out, index=df.index)
+
+
+def read_source(path: str | Path, sheet: str | None = None, missing_values=("",), encoding: str | None = None,
+                value_labels: bool = True) -> pd.DataFrame:
     """A source file as a table. CSV and TSV values are read as text; the mapping converts them. Values
-    listed in missing_values become blank."""
+    listed in missing_values become blank. encoding and value_labels apply to SAS and Stata files (module notes)."""
     path = Path(path)
     kind = file_kind(path)
     if kind in ("csv", "tsv"):
         df = pd.read_csv(path, sep="," if kind == "csv" else "\t", dtype=str, keep_default_na=False, encoding="utf-8")
     elif kind == "xlsx":
         df = read_xlsx(path, sheet)
+    elif kind in ("sas7bdat", "xport"):
+        df = _typed(pd.read_sas(path, format=kind, encoding=encoding or ("infer" if kind == "sas7bdat" else "ISO-8859-1")))
+    elif kind == "stata":
+        try:
+            df = _typed(pd.read_stata(path, convert_categoricals=value_labels, convert_dates=True))
+        except ValueError as e:
+            raise MappingError(f"{path.name}: {e}. Give the file value_labels: false to read its codes instead") from e
     else:
         con = duckdb.connect()
         try:
@@ -73,7 +113,37 @@ def read_source(path: str | Path, sheet: str | None = None, missing_values=("",)
         finally:
             con.close()
     missing = set(missing_values)
-    return df.apply(lambda s: s.map(lambda v: pd.NA if isinstance(v, str) and v in missing else v)) if len(df) else df
+    if len(df):
+        df = df.copy()
+        for c in df.columns:       # only text can be a missing-value word; other columns keep their types
+            if df[c].dtype == object or pd.api.types.is_string_dtype(df[c]):
+                df[c] = df[c].map(lambda v: pd.NA if isinstance(v, str) and v in missing else v)
+    return df
+
+
+def to_dates(series: pd.Series, spec: dict) -> pd.Series:
+    """A column as dates: dates as they are; text read with spec's `format`; or a count of days (`days_from`) or of
+    seconds (`seconds_from`) after an origin date. A value that doesn't convert is blank."""
+    if spec.get("days_from") or spec.get("seconds_from"):
+        unit, origin = ("D", spec["days_from"]) if spec.get("days_from") else ("s", spec["seconds_from"])
+        return pd.Timestamp(str(origin)) + pd.to_timedelta(pd.to_numeric(series, errors="coerce"), unit=unit)
+    if pd.api.types.is_datetime64_any_dtype(series) or \
+            pd.api.types.infer_dtype(series, skipna=True) in ("datetime", "datetime64", "date"):
+        return pd.to_datetime(series, errors="coerce")
+    return pd.to_datetime(series, format=spec.get("format"), errors="coerce")
+
+
+def _date_form_problems(where: str, spec: dict) -> list[str]:
+    forms = [k for k in DATE_FORMS if spec.get(k) is not None]
+    if len(forms) > 1:
+        return [f"{where}: give one of format, days_from or seconds_from"]
+    for k in ("days_from", "seconds_from"):
+        if spec.get(k) is not None:
+            try:
+                pd.Timestamp(str(spec[k]))
+            except ValueError:
+                return [f"{where}: {k} must be a date, for example \"1960-01-01\""]
+    return []
 
 
 def _norm(name: str) -> str:
@@ -83,10 +153,16 @@ def _norm(name: str) -> str:
 # ---------------------------------------------------------------------------
 # The draft
 # ---------------------------------------------------------------------------
-def _file_entry(spec) -> tuple[str, str | None]:
+def _file_entry(spec) -> tuple[str, dict]:
+    """A file's path and its options (sheet, encoding, value_labels)."""
     if isinstance(spec, dict):
-        return spec["path"], spec.get("sheet")
-    return str(spec), None
+        return spec["path"], {k: v for k, v in spec.items() if k in FILE_OPTIONS}
+    return str(spec), {}
+
+
+def _read_entry(path: Path, opts: dict, missing_values=("",)) -> pd.DataFrame:
+    return read_source(path, opts.get("sheet"), missing_values, encoding=opts.get("encoding"),
+                       value_labels=opts.get("value_labels", True))
 
 
 def draft_mapping(files: dict[str, str | dict], base_dir: str | Path | None = None) -> str:
@@ -98,15 +174,18 @@ def draft_mapping(files: dict[str, str | dict], base_dir: str | Path | None = No
     out = ["# Draft mapping, made by matching column names. It is NOT used until a person has checked every",
            "# field and the profile, and set status: confirmed, confirmed_by and confirmed_on.",
            "# Each field: {column: NAME}, optionally with transform: {map: {...}} | {multiply: n} |",
-           "# {days_since_diagnosis: {format: ...}}; or {constant: VALUE}; or {absent: true}.",
+           "# {days_since_diagnosis: {format: ...}}; or {constant: VALUE}; or {absent: true}. A date held as a number",
+           "# (SAS .xpt files, and SAS or Stata dates read as numbers) takes {days_from: \"1960-01-01\"} or",
+           "# {seconds_from: ...} in place of format.",
            f"mapping_format: {MAPPING_FORMAT}", f"status: {DRAFT}", "confirmed_by: null", "confirmed_on: null",
            'missing_values: ["", "NA"]',
-           "# For dates: the patients file's diagnosis date, {column: NAME, format: \"%Y-%m-%d\"}, or null.",
+           "# For dates: the patients file's diagnosis date, {column: NAME, format: \"%Y-%m-%d\"} (or days_from or",
+           "# seconds_from), or null.",
            "diagnosis_date: null", "files:"]
     for t in TABLES:
         if t in files:
-            p, sheet = _file_entry(files[t])
-            out.append(f"  {t}: {{path: {q(p)}" + (f", sheet: {q(sheet)}" if sheet else "") + "}")
+            p, opts = _file_entry(files[t])
+            out.append(f"  {t}: {{path: {q(p)}" + "".join(f", {k}: {q(v)}" for k, v in opts.items()) + "}")
         else:
             out.append(f"  {t}: null" + ("    # optional table" if t in OPTIONAL_TABLES else "    # required: give its file"))
     out += ["# The capability profile: what this source can supply. Every item must be filled in.", "profile:"]
@@ -123,8 +202,8 @@ def draft_mapping(files: dict[str, str | dict], base_dir: str | Path | None = No
     for t in TABLES:
         if t not in files:
             continue
-        p, sheet = _file_entry(files[t])
-        cols = list(read_source(base / p, sheet).columns)
+        p, opts = _file_entry(files[t])
+        cols = list(_read_entry(base / p, opts).columns)
         by_norm = {_norm(c): c for c in cols}
         out.append(f"  {t}:")
         for f in table_fields(t):
@@ -168,12 +247,21 @@ def load_mapping(path: str | Path) -> dict:
         if t not in OPTIONAL_TABLES and not files.get(t):
             problems.append(f"files: the {t} table needs a file")
     for t, spec in files.items():
-        if spec and not (isinstance(spec, str) or (isinstance(spec, dict) and isinstance(spec.get("path"), str))):
-            problems.append(f"files.{t}: give a path, or {{path: ..., sheet: ...}}")
+        if spec and not (isinstance(spec, str) or (isinstance(spec, dict) and isinstance(spec.get("path"), str)
+                                                   and set(spec) <= {"path"} | FILE_OPTIONS)):
+            problems.append(f"files.{t}: give a path, or {{path: ..., sheet: ..., encoding: ..., value_labels: ...}}")
+        elif isinstance(spec, dict):
+            if "value_labels" in spec and not isinstance(spec["value_labels"], bool):
+                problems.append(f"files.{t}: value_labels must be true or false")
+            if "encoding" in spec and not (isinstance(spec["encoding"], str) and spec["encoding"].strip()):
+                problems.append(f"files.{t}: encoding must name an encoding, for example latin-1")
     dd = m.get("diagnosis_date")
     if dd is not None and not (isinstance(dd, dict) and isinstance(dd.get("column"), str)
-                               and isinstance(dd.get("format", ""), str) and set(dd) <= {"column", "format"}):
-        problems.append("diagnosis_date: give {column: NAME, format: \"%Y-%m-%d\"}")
+                               and isinstance(dd.get("format", ""), str) and set(dd) <= {"column", *DATE_FORMS}):
+        problems.append("diagnosis_date: give {column: NAME, format: \"%Y-%m-%d\"} (or days_from or seconds_from "
+                        "in place of format)")
+    elif dd is not None:
+        problems += _date_form_problems("diagnosis_date", dd)
     if dd is not None and not (isinstance((tables.get("patients") or {}).get("patient_id"), dict)
                                and tables["patients"]["patient_id"].get("column")):
         problems.append("diagnosis_date: the patients table's patient_id must be a column")
@@ -208,8 +296,11 @@ def load_mapping(path: str | Path) -> dict:
                 problems.append(f"{where}: multiply needs a number")
             if tr and "days_since_diagnosis" in tr:
                 arg = tr["days_since_diagnosis"]
-                if arg is not None and not (isinstance(arg, dict) and set(arg) <= {"format"}):
-                    problems.append(f"{where}: days_since_diagnosis takes {{format: ...}}")
+                if arg is not None and not (isinstance(arg, dict) and set(arg) <= set(DATE_FORMS)):
+                    problems.append(f"{where}: days_since_diagnosis takes {{format: ...}}, {{days_from: ...}} or "
+                                    "{seconds_from: ...}")
+                elif arg is not None:
+                    problems += _date_form_problems(f"{where}: days_since_diagnosis", arg)
                 if not m.get("diagnosis_date"):
                     problems.append(f"{where}: days_since_diagnosis needs diagnosis_date")
                 if t != "patients" and not (isinstance(fields.get("patient_id"), dict) and fields["patient_id"].get("column")):
@@ -237,8 +328,7 @@ def _apply(series: pd.Series, transform: dict | None, diag: pd.Series | None) ->
     elif kind == "multiply":
         out = pd.to_numeric(series, errors="coerce") * float(arg)
     else:
-        fmt = (arg or {}).get("format")
-        when = pd.to_datetime(series, format=fmt, errors="coerce")
+        when = to_dates(series, arg or {})
         out = (when - diag).dt.days.astype("Float64") if diag is not None else pd.Series(pd.NA, index=series.index)
     return out, int((filled & pd.Series(out).isna()).sum())
 
@@ -259,9 +349,9 @@ def read(mapping_path: str | Path, settings: Settings) -> AdapterResult:
     used: list[Path] = [mapping_path]
     for t, spec in (m.get("files") or {}).items():
         if spec:
-            p, sheet = _file_entry(spec)
+            p, opts = _file_entry(spec)
             path = (base / p) if not Path(p).is_absolute() else Path(p)
-            raw[t] = read_source(path, sheet, missing)
+            raw[t] = _read_entry(path, opts, missing)
             used.append(path)
     notes = []
     diag_by_patient = None
@@ -276,8 +366,7 @@ def read(mapping_path: str | Path, settings: Settings) -> AdapterResult:
         if dup:
             raise MappingError(f"{count(dup)} patient IDs appear more than once in the patients file, so their "
                                "diagnosis dates can't be told apart")
-        diag_by_patient = pd.Series(pd.to_datetime(pt[dd["column"]], format=dd.get("format"), errors="coerce").to_numpy(),
-                                    index=pt[pid_col].astype(str).to_numpy())
+        diag_by_patient = pd.Series(to_dates(pt[dd["column"]], dd).to_numpy(), index=pt[pid_col].astype(str).to_numpy())
     out: dict[str, pd.DataFrame | None] = {t: None for t in TABLES}
     for t, df in raw.items():
         spec = m["tables"][t]
