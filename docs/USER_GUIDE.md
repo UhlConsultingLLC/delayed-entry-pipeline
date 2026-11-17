@@ -212,8 +212,8 @@ Each check ends `pass`, `FAIL`, `review` or `skipped`. Any `FAIL` stops the run;
 it in the run log. The report is written to the work folder; counts below the minimum show as "<minimum".
 Add `--rehearsal` to try it on made-up data.
 
-**Flat files: CSV/TSV, Excel (.xlsx), Parquet, SAS (.sas7bdat, .xpt) or Stata (.dta) (available).** Draft a
-mapping from the files' column names:
+**Flat files: CSV/TSV, Excel (.xlsx), Parquet, SAS (.sas7bdat, .xpt), Stata (.dta), MAF or annotated VCF
+(available).** Draft a mapping from the files' column names:
 
 ```powershell
 python -m delayed_entry draft-mapping <work folder>\mapping.yaml patients=patients.csv tests=tests.xlsx#Tests results=results.parquet panels=panels.csv
@@ -233,6 +233,13 @@ The draft is never used as it stands. A person must:
 A file in the mapping's `files` can carry options:
 - **Stata:** `{path: ..., value_labels: false}` reads codes in place of value labels.
 - **SAS transport (.xpt):** add `encoding: ...` when the text isn't ISO-8859-1.
+- **A VCF must give its annotation's two reading rules:**
+  `{path: ..., annotation: {pick: canonical | first | all, filters: pass | all}}`, with `field: CSQ` or `ANN` if
+  the file has both. The draft writes them as `null` for a person to choose. The draft suggests SAMPLE, SYMBOL,
+  HGVSp and Consequence (VEP) for the results; give the protein change `transform: {hgvsp_short: true}`, and map
+  the consequences to variant classes with `map`.
+- **A path may be a pattern** (`vcf/*.vcf`) to read one file per sample. Map `test_id` to `source_file` when the
+  files carry no sample names of their own.
 
 Set the settings' `source.adapter` to `flat_file`.
 
@@ -505,3 +512,4 @@ on keeps its notes there.
 | 2026-11-17 | The repository guard test (2.2), and the tests' run on every push on GitHub. |
 | 2026-11-17 | The R tests run on GitHub too: a second job installs R and the packages in `.github/r-packages`. |
 | 2026-11-17 | SAS (.sas7bdat, .xpt) and Stata (.dta) files in the flat-file adapter (step 4): dates held as numbers (`days_from`, `seconds_from`), Stata value labels or codes (`value_labels`), and a file's text encoding (`encoding`). |
+| 2026-11-17 | MAF and annotated VCF (VEP CSQ, SnpEff ANN) files in the flat-file adapter (step 4): a VCF's two reading rules (`annotation: {pick, filters}`), the `hgvsp_short` transform, and file patterns with `source_file`. |

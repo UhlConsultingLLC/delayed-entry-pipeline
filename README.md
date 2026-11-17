@@ -18,9 +18,25 @@ unchanged: the code reused here was copied from it, never imported.
      Mutations are always read; fusions and regimen drug names are read where the cohort's raw file list
      names them (NSCLC does, CRC doesn't). `adapters.genie_bpc.check_download` is the check to run right
      after downloading a release.
-   - `adapters.flatfile`: CSV/TSV, Excel (.xlsx), Parquet, SAS (.sas7bdat and .xpt transport files) and Stata
-     (.dta), through a mapping file. The tool drafts the mapping from column names; a person must confirm it,
-     and a draft is never used.
+   - `adapters.flatfile`: CSV/TSV, Excel (.xlsx), Parquet, SAS (.sas7bdat and .xpt transport files), Stata
+     (.dta), MAF and annotated VCF (.vcf, .vcf.gz), through a mapping file. The tool drafts the mapping from
+     column names; a person must confirm it, and a draft is never used.
+     - **MAF:** read as a tab-separated table, after its `#version` comment lines. The drafted mapping matches
+       its standard columns (Tumor_Sample_Barcode, Hugo_Symbol, HGVSp_Short, Variant_Classification).
+     - **VCF:** a VCF holds protein changes only once VEP (its CSQ field) or SnpEff (ANN) has annotated it, so
+       the reader (`adapters.vcf`) reads that annotation. It makes one row per variant record, per sample that
+       carries it (by its genotype), per annotation kept, with the sample's name and each annotation subfield
+       as columns. Two reading rules come from the mapping, with no default:
+       - which annotations count: `canonical` (VEP's CANONICAL=YES), `first` (the allele's first listed) or
+         `all`;
+       - which records: `pass` (FILTER PASS or .) or `all`.
+
+       An annotation belongs to the allele it names. VEP's form of an allele, with a shared first base
+       removed and "-" for a deletion, counts too.
+     - **Long protein changes:** the `hgvsp_short` transform puts any protein change in short form, for
+       example VEP's `ENSP...:p.Gly12Asp` as `p.G12D`.
+     - **Several files:** a path may be a pattern such as `vcf/*.vcf`, to read one file per sample into one
+       table; its `source_file` column names each row's file.
      - **Dates:** a date stored as a date is read as it is (Parquet, Stata, and .sas7bdat columns with a SAS
        date format). Text dates take a `format`. A date held as a number, as a .xpt file always holds it,
        takes `days_from: "1960-01-01"` (or `seconds_from` for a date and time), the origin SAS and Stata
@@ -275,7 +291,7 @@ src/delayed_entry/
   gate.py                 the safety gate: the five privacy protections and the security scan
   reports.py              the results tables and the figure
   run_report.py           the run report
-  adapters/               genie_bpc (with check_download), flatfile, xlsx, omop
+  adapters/               genie_bpc (with check_download), flatfile, xlsx, vcf, hgvs, omop
 tests/                    made-up data only; fixtures/ holds the CRC project's made-up BPC files; R/ the R checks;
                           omop_fixture.py writes those files' tables as a made-up OMOP database
 ```
@@ -287,6 +303,10 @@ tests/                    made-up data only; fixtures/ holds the CRC project's m
 - No panel file shows whether a panel detects a gene's fusions, so that comes from the settings
   (`genotype.coverage.fusion_panels`), with the panels' documentation as its source.
 - Excel files are read with the standard library (cached cell values, first row as header).
+- A VCF's structural variants and copy-number records are read like any other record, but only an annotated
+  protein change places a patient in a mutation group. A combined consequence such as
+  `missense_variant&splice_region_variant` must be listed whole in a `map`. Fusions and copy numbers come from a
+  table the mapping names, not from a VCF.
 - SPSS (.sav) files aren't read: that needs the pyreadstat package, which isn't installed. The SAS .sas7bdat
   reading is pandas' own, and its test files can't be made without such a package, so only .xpt and Stata
   files are tested here, on made-up files a small writer in the tests makes (`tests/sas_xport.py`).

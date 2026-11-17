@@ -1,5 +1,5 @@
-"""The generic flat-file adapter: CSV/TSV, Excel (.xlsx), Parquet, SAS (.sas7bdat, .xpt) and Stata (.dta) files,
-read through a mapping file.
+"""The generic flat-file adapter: CSV/TSV, Excel (.xlsx), Parquet, SAS (.sas7bdat, .xpt), Stata (.dta), MAF and
+annotated VCF (.vcf, .vcf.gz) files, read through a mapping file.
 
     from delayed_entry.adapters import flatfile
     flatfile.write_draft({"patients": "patients.csv", "tests": "tests.xlsx", ...}, "mapping.yaml")
@@ -12,7 +12,9 @@ refuses a mapping whose status isn't "confirmed", that names no person, or that 
 Each standard field is mapped to one of:
     {column: NAME}                    a column, as it is
     {column: NAME, transform: ...}    a column, changed: {map: {from: to}}, {multiply: n} (for example months
-                                      to days) or {days_since_diagnosis: {format: "%Y-%m-%d"}} for a date
+                                      to days), {days_since_diagnosis: {format: "%Y-%m-%d"}} for a date, or
+                                      {hgvsp_short: true}: a protein change in HGVSp short form (p.Gly12Asp,
+                                      or VEP's ENSP...:p.Gly12Asp, read as p.G12D)
     {constant: VALUE}                 the same value on every row (for example modality: ngs)
     {absent: true}                    the source doesn't have it
 
@@ -28,6 +30,13 @@ A file is a path, or {path: ..., sheet: ...} for an Excel sheet. SAS and Stata f
                           the text Stata itself shows, so that a mapping's `map` names readable values
 SAS stores every number as a decimal, so a SAS or Stata column whose numbers are all whole is read as whole
 numbers: an ID such as 1001 is then the text "1001", not "1001.0".
+
+A MAF is read as a tab-separated table, after the comment lines (#version ...) before its header. A VCF is read
+by delayed_entry.adapters.vcf into one row per variant, sample and annotation, and needs one more option, the
+two reading rules for its annotation (no default):
+    annotation: {pick: canonical | first | all, filters: pass | all}   (and field: CSQ or ANN if it has both)
+A path may be a pattern, such as vcf/*.vcf, to read several files of one kind into one table; each row's
+source_file column then names its file, without the extension.
 """
 from __future__ import annotations
 
@@ -40,6 +49,8 @@ import pandas as pd
 import yaml
 
 from delayed_entry.adapters import AdapterResult
+from delayed_entry.adapters import vcf as vcf_reader
+from delayed_entry.adapters.hgvs import short_protein_change
 from delayed_entry.adapters.xlsx import read_xlsx
 from delayed_entry.privacy import show
 from delayed_entry.profile import ITEMS as PROFILE_ITEMS, profile_from_dict
@@ -50,10 +61,12 @@ MAPPING_FORMAT = 1
 DRAFT, CONFIRMED = "draft", "confirmed"
 SYNONYMS = Path(__file__).with_name("flatfile_synonyms.yml")
 SUFFIXES = {".csv": "csv", ".tsv": "tsv", ".txt": "tsv", ".xlsx": "xlsx", ".parquet": "parquet",
-            ".sas7bdat": "sas7bdat", ".xpt": "xport", ".dta": "stata"}
+            ".sas7bdat": "sas7bdat", ".xpt": "xport", ".dta": "stata", ".maf": "maf", ".vcf": "vcf"}
 ENTRY_KEYS = {"column", "constant", "absent", "transform"}
-FILE_OPTIONS = {"sheet", "encoding", "value_labels"}
+FILE_OPTIONS = {"sheet", "encoding", "value_labels", "annotation"}
 DATE_FORMS = ("format", "days_from", "seconds_from")
+TRANSFORMS = ("map", "multiply", "days_since_diagnosis", "hgvsp_short")
+PATTERN = re.compile(r"[*?\[]")
 
 
 class MappingError(ValueError):
@@ -68,11 +81,22 @@ class UnconfirmedMappingError(MappingError):
 # Reading the files
 # ---------------------------------------------------------------------------
 def file_kind(path: Path) -> str:
-    kind = SUFFIXES.get(path.suffix.lower())
+    kind = "vcf" if path.name.lower().endswith(".vcf.gz") else SUFFIXES.get(path.suffix.lower())
     if kind is None:
         raise MappingError(f"{path.name}: can't read this kind of file (CSV, TSV, .xlsx, Parquet, SAS .sas7bdat or "
-                           ".xpt, or Stata .dta)")
+                           ".xpt, Stata .dta, MAF, or VCF)")
     return kind
+
+
+def _comment_lines(path: Path) -> int:
+    """How many lines starting with # come before a MAF's header."""
+    n = 0
+    with open(path, encoding="utf-8") as fh:
+        for line in fh:
+            if not line.startswith("#"):
+                break
+            n += 1
+    return n
 
 
 def _typed(df: pd.DataFrame) -> pd.DataFrame:
@@ -90,13 +114,26 @@ def _typed(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def read_source(path: str | Path, sheet: str | None = None, missing_values=("",), encoding: str | None = None,
-                value_labels: bool = True) -> pd.DataFrame:
-    """A source file as a table. CSV and TSV values are read as text; the mapping converts them. Values
-    listed in missing_values become blank. encoding and value_labels apply to SAS and Stata files (module notes)."""
+                value_labels: bool = True, annotation: dict | None = None) -> pd.DataFrame:
+    """A source file as a table. CSV, TSV, MAF and VCF values are read as text; the mapping converts them. Values
+    listed in missing_values become blank. encoding and value_labels apply to SAS and Stata files, annotation to a
+    VCF (module notes)."""
     path = Path(path)
     kind = file_kind(path)
     if kind in ("csv", "tsv"):
         df = pd.read_csv(path, sep="," if kind == "csv" else "\t", dtype=str, keep_default_na=False, encoding="utf-8")
+    elif kind == "maf":
+        df = pd.read_csv(path, sep="\t", dtype=str, keep_default_na=False, encoding="utf-8",
+                         skiprows=_comment_lines(path))
+    elif kind == "vcf":
+        a = annotation or {}
+        if not a.get("pick") or not a.get("filters"):
+            raise MappingError(f"{path.name}: a VCF needs its annotation's reading rules: "
+                               "annotation: {pick: canonical | first | all, filters: pass | all}")
+        try:
+            df = vcf_reader.read_vcf(path, a["pick"], a["filters"], a.get("field"))
+        except vcf_reader.VcfError as e:
+            raise MappingError(str(e)) from e
     elif kind == "xlsx":
         df = read_xlsx(path, sheet)
     elif kind in ("sas7bdat", "xport"):
@@ -154,15 +191,44 @@ def _norm(name: str) -> str:
 # The draft
 # ---------------------------------------------------------------------------
 def _file_entry(spec) -> tuple[str, dict]:
-    """A file's path and its options (sheet, encoding, value_labels)."""
+    """A file's path and its options (sheet, encoding, value_labels, annotation)."""
     if isinstance(spec, dict):
         return spec["path"], {k: v for k, v in spec.items() if k in FILE_OPTIONS}
     return str(spec), {}
 
 
-def _read_entry(path: Path, opts: dict, missing_values=("",)) -> pd.DataFrame:
+def file_paths(p: str, base: Path) -> list[Path]:
+    """The file a path names, or every file a pattern (with *, ? or [) matches, in name order."""
+    path = Path(p) if Path(p).is_absolute() else base / p
+    if not PATTERN.search(p):
+        return [path]
+    found = sorted(f for f in Path(path.anchor).glob(str(path.relative_to(path.anchor))) if f.is_file())
+    if not found:
+        raise MappingError(f"no file matches {p}")
+    return found
+
+
+def _source_name(path: Path) -> str:
+    name = path.name
+    return vcf_reader.stem(path) if file_kind(path) == "vcf" else name[: -len(path.suffix)] if path.suffix else name
+
+
+def _read_entry(path: Path, opts: dict, missing_values=("",), drafting: bool = False) -> pd.DataFrame:
+    annotation = opts.get("annotation")
+    if drafting and annotation is None:                # a draft only needs the columns
+        annotation = {"pick": "all", "filters": "all"}
     return read_source(path, opts.get("sheet"), missing_values, encoding=opts.get("encoding"),
-                       value_labels=opts.get("value_labels", True))
+                       value_labels=opts.get("value_labels", True), annotation=annotation)
+
+
+def read_files(p: str, opts: dict, base: Path, missing_values=("",), drafting: bool = False) -> tuple[pd.DataFrame, list[Path]]:
+    """The table a file entry names, and the files read. A pattern's files are read into one table, with each row's
+    file named in source_file."""
+    paths = file_paths(p, base)
+    if not PATTERN.search(p):
+        return _read_entry(paths[0], opts, missing_values, drafting), paths
+    parts = [_read_entry(f, opts, missing_values, drafting).assign(source_file=_source_name(f)) for f in paths]
+    return pd.concat(parts, ignore_index=True), paths
 
 
 def draft_mapping(files: dict[str, str | dict], base_dir: str | Path | None = None) -> str:
@@ -174,9 +240,9 @@ def draft_mapping(files: dict[str, str | dict], base_dir: str | Path | None = No
     out = ["# Draft mapping, made by matching column names. It is NOT used until a person has checked every",
            "# field and the profile, and set status: confirmed, confirmed_by and confirmed_on.",
            "# Each field: {column: NAME}, optionally with transform: {map: {...}} | {multiply: n} |",
-           "# {days_since_diagnosis: {format: ...}}; or {constant: VALUE}; or {absent: true}. A date held as a number",
-           "# (SAS .xpt files, and SAS or Stata dates read as numbers) takes {days_from: \"1960-01-01\"} or",
-           "# {seconds_from: ...} in place of format.",
+           "# {days_since_diagnosis: {format: ...}} | {hgvsp_short: true}; or {constant: VALUE}; or {absent: true}.",
+           "# A date held as a number (SAS .xpt files, and SAS or Stata dates read as numbers) takes",
+           "# {days_from: \"1960-01-01\"} or {seconds_from: ...} in place of format.",
            f"mapping_format: {MAPPING_FORMAT}", f"status: {DRAFT}", "confirmed_by: null", "confirmed_on: null",
            'missing_values: ["", "NA"]',
            "# For dates: the patients file's diagnosis date, {column: NAME, format: \"%Y-%m-%d\"} (or days_from or",
@@ -185,7 +251,11 @@ def draft_mapping(files: dict[str, str | dict], base_dir: str | Path | None = No
     for t in TABLES:
         if t in files:
             p, opts = _file_entry(files[t])
-            out.append(f"  {t}: {{path: {q(p)}" + "".join(f", {k}: {q(v)}" for k, v in opts.items()) + "}")
+            vcf_rules = file_kind(Path(p)) == "vcf" and "annotation" not in opts
+            if vcf_rules:                 # the reading rules a person must choose: there is no default
+                opts = {**opts, "annotation": {"pick": None, "filters": None}}
+            out.append(f"  {t}: {{path: {q(p)}" + "".join(f", {k}: {q(v)}" for k, v in opts.items()) + "}"
+                       + ("    # pick: canonical / first / all; filters: pass / all" if vcf_rules else ""))
         else:
             out.append(f"  {t}: null" + ("    # optional table" if t in OPTIONAL_TABLES else "    # required: give its file"))
     out += ["# The capability profile: what this source can supply. Every item must be filled in.", "profile:"]
@@ -203,11 +273,13 @@ def draft_mapping(files: dict[str, str | dict], base_dir: str | Path | None = No
         if t not in files:
             continue
         p, opts = _file_entry(files[t])
-        cols = list(_read_entry(base / p, opts).columns)
+        cols = list(read_files(p, opts, base, drafting=True)[0].columns)
         by_norm = {_norm(c): c for c in cols}
         out.append(f"  {t}:")
+        from_vcf = t == "results" and file_kind(Path(p)) == "vcf"
         for f in table_fields(t):
-            names = [f.name] + synonyms.get(t, {}).get(f.name, [])
+            names = synonyms["vcf_results"].get(f.name, []) if from_vcf else \
+                [f.name] + synonyms.get(t, {}).get(f.name, [])
             hit = next((by_norm[_norm(n)] for n in names if _norm(n) in by_norm), None)
             if hit is not None:
                 out.append(f"    {f.name}: {{column: {q(hit)}}}    # drafted: matched the column name; check it")
@@ -225,6 +297,28 @@ def write_draft(files: dict[str, str | dict], out_path: str | Path) -> Path:
 # ---------------------------------------------------------------------------
 # The confirmed mapping
 # ---------------------------------------------------------------------------
+def _annotation_problems(where: str, p: str, a) -> list[str]:
+    """A VCF must give its annotation's reading rules; nothing else may give any."""
+    try:
+        is_vcf = file_kind(Path(p)) == "vcf"
+    except MappingError as e:
+        return [f"{where}: {e}"]
+    if not is_vcf:
+        return [f"{where}: annotation applies only to a VCF"] if a is not None else []
+    rules = f"annotation: {{pick: {' | '.join(vcf_reader.PICKS)}, filters: {' | '.join(vcf_reader.FILTERS)}}}"
+    if not isinstance(a, dict) or not set(a) <= {"pick", "filters", "field"}:
+        return [f"{where}: a VCF needs its annotation's reading rules, {rules} (and field: CSQ or ANN if it has both)"]
+    out = []
+    if a.get("pick") not in vcf_reader.PICKS:
+        out.append(f"{where}: annotation.pick must be one of {', '.join(vcf_reader.PICKS)} (no default: it is a "
+                   "reading rule the mapping's author chooses)")
+    if a.get("filters") not in vcf_reader.FILTERS:
+        out.append(f"{where}: annotation.filters must be one of {', '.join(vcf_reader.FILTERS)}")
+    if a.get("field") is not None and a["field"] not in vcf_reader.ANNOTATION_FIELDS:
+        out.append(f"{where}: annotation.field must be one of {', '.join(vcf_reader.ANNOTATION_FIELDS)}")
+    return out
+
+
 def load_mapping(path: str | Path) -> dict:
     """A confirmed, complete mapping. Raises UnconfirmedMappingError for a draft, MappingError otherwise."""
     path = Path(path)
@@ -249,12 +343,15 @@ def load_mapping(path: str | Path) -> dict:
     for t, spec in files.items():
         if spec and not (isinstance(spec, str) or (isinstance(spec, dict) and isinstance(spec.get("path"), str)
                                                    and set(spec) <= {"path"} | FILE_OPTIONS)):
-            problems.append(f"files.{t}: give a path, or {{path: ..., sheet: ..., encoding: ..., value_labels: ...}}")
-        elif isinstance(spec, dict):
-            if "value_labels" in spec and not isinstance(spec["value_labels"], bool):
+            problems.append(f"files.{t}: give a path, or {{path: ..., and the file's options: sheet, encoding, "
+                            "value_labels, annotation}}")
+        elif spec:
+            p, opts = _file_entry(spec)
+            if "value_labels" in opts and not isinstance(opts["value_labels"], bool):
                 problems.append(f"files.{t}: value_labels must be true or false")
-            if "encoding" in spec and not (isinstance(spec["encoding"], str) and spec["encoding"].strip()):
+            if "encoding" in opts and not (isinstance(opts["encoding"], str) and opts["encoding"].strip()):
                 problems.append(f"files.{t}: encoding must name an encoding, for example latin-1")
+            problems += _annotation_problems(f"files.{t}", p, opts.get("annotation"))
     dd = m.get("diagnosis_date")
     if dd is not None and not (isinstance(dd, dict) and isinstance(dd.get("column"), str)
                                and isinstance(dd.get("format", ""), str) and set(dd) <= {"column", *DATE_FORMS}):
@@ -282,10 +379,11 @@ def load_mapping(path: str | Path) -> dict:
                 problems.append(f"tables.{t}.{f.name}: the table can't be used without it")
             tr = e.get("transform")
             where = f"tables.{t}.{f.name}"
-            if tr is not None and not (isinstance(tr, dict) and len(tr) == 1
-                                       and next(iter(tr)) in ("map", "multiply", "days_since_diagnosis")):
-                problems.append(f"{where}: transform must be one of map, multiply, days_since_diagnosis")
+            if tr is not None and not (isinstance(tr, dict) and len(tr) == 1 and next(iter(tr)) in TRANSFORMS):
+                problems.append(f"{where}: transform must be one of {', '.join(TRANSFORMS)}")
                 continue
+            if tr and "hgvsp_short" in tr and tr["hgvsp_short"] is not True:
+                problems.append(f"{where}: hgvsp_short takes true")
             if tr and "map" in tr:
                 mp = tr["map"]
                 if not isinstance(mp, dict) or not mp:
@@ -327,6 +425,8 @@ def _apply(series: pd.Series, transform: dict | None, diag: pd.Series | None) ->
         out = series.map(lambda v: arg.get(v, arg.get(str(v), pd.NA)) if pd.notna(v) else pd.NA)
     elif kind == "multiply":
         out = pd.to_numeric(series, errors="coerce") * float(arg)
+    elif kind == "hgvsp_short":
+        out = series.map(short_protein_change)
     else:
         when = to_dates(series, arg or {})
         out = (when - diag).dt.days.astype("Float64") if diag is not None else pd.Series(pd.NA, index=series.index)
@@ -350,9 +450,8 @@ def read(mapping_path: str | Path, settings: Settings) -> AdapterResult:
     for t, spec in (m.get("files") or {}).items():
         if spec:
             p, opts = _file_entry(spec)
-            path = (base / p) if not Path(p).is_absolute() else Path(p)
-            raw[t] = _read_entry(path, opts, missing)
-            used.append(path)
+            raw[t], paths = read_files(p, opts, base, missing)
+            used += paths
     notes = []
     diag_by_patient = None
     dd = m.get("diagnosis_date")

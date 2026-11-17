@@ -24,11 +24,11 @@ tests:
   after_follow_up_end: [after_follow_up_end, report_after_last_contact]
   linked_to_other_cancers: [linked_to_other_cancers]
 results:
-  test_id: [test_id, sample_id, report_id, tumor_sample_barcode]
+  test_id: [test_id, sample_id, report_id, tumor_sample_barcode, sample]
   kind: [kind, result_kind, alteration_type]
-  gene: [gene, hugo_symbol, gene_symbol]
+  gene: [gene, hugo_symbol, gene_symbol, symbol, gene_name]
   variant: [variant, protein_change, hgvsp_short, hgvsp, amino_acid_change]
-  variant_class: [variant_class, variant_classification, consequence]
+  variant_class: [variant_class, variant_classification, consequence, annotation]
   value: [value, result, reading]
 panels:
   panel_id: [panel_id, panel, assay_id]
@@ -44,3 +44,10 @@ treatments:
 panel_sizes:
   panel_id: [panel_id, panel]
   coding_megabases: [coding_megabases, coding_mb, size_mb]
+# A VCF's results table (adapters/vcf.py), drafted from these names alone: in VEP's annotation "Gene" is the
+# Ensembl gene ID, so the generic names above would draft the wrong column.
+vcf_results:
+  test_id: [SAMPLE]
+  gene: [SYMBOL, Gene_Name]
+  variant: [HGVSp, HGVS.p]
+  variant_class: [Consequence, Annotation]

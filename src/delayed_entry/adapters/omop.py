@@ -36,6 +36,7 @@ import yaml
 
 from delayed_entry.adapters import AdapterResult
 from delayed_entry.adapters.flatfile import read_source as read_flat_file
+from delayed_entry.adapters.hgvs import AMINO_ACIDS, short_protein_change  # noqa: F401 (AMINO_ACIDS: the tests' fixture)
 from delayed_entry.privacy import show
 from delayed_entry.profile import ITEMS as PROFILE_ITEMS, profile_from_dict
 from delayed_entry.settings import Settings
@@ -69,10 +70,6 @@ VARIANT_KEYS = {"table": True, "test_link": True, "gene": True, "protein_change"
 READING_KINDS = tuple(k for k in RESULT_KINDS if k not in ("mutation", "fusion"))
 VALUE_COLUMNS = ("value_as_concept_id", "value_as_string", "value_as_number")
 DRUG_NAMES = ("drug_source_value", "concept_name")
-AMINO_ACIDS = {"Ala": "A", "Arg": "R", "Asn": "N", "Asp": "D", "Cys": "C", "Gln": "Q", "Glu": "E", "Gly": "G",
-               "His": "H", "Ile": "I", "Leu": "L", "Lys": "K", "Met": "M", "Phe": "F", "Pro": "P", "Ser": "S",
-               "Thr": "T", "Trp": "W", "Tyr": "Y", "Val": "V", "Sec": "U", "Pyl": "O", "Ter": "*", "Xaa": "X"}
-_THREE_LETTER = re.compile("|".join(AMINO_ACIDS))
 
 
 class MappingError(ValueError):
@@ -99,17 +96,6 @@ def _key(v):
 
 def _keys(s: pd.Series) -> pd.Series:
     return s.map(_key).astype("string")
-
-
-def short_protein_change(v):
-    """A protein change in HGVSp short form, as the standard tables hold it: p.Gly12Asp -> p.G12D,
-    NP_004976.2:p.(Arg1450Ter) -> p.R1450*. A change already in short form is left as it is."""
-    if v is None or pd.isna(v):
-        return pd.NA
-    s = str(v).strip().split(":")[-1]
-    if s.startswith("p.(") and s.endswith(")"):
-        s = "p." + s[3:-1]
-    return _THREE_LETTER.sub(lambda m: AMINO_ACIDS[m.group(0)], s) if s.startswith("p.") else s
 
 
 def _days(when: pd.Series, dx: pd.Series) -> pd.Series:
