@@ -107,7 +107,10 @@ patients written as a made-up OMOP database (`tests/omop_fixture.py`), and small
 - the run stops if the lock doesn't match, publishes nothing when the gate finds a problem, and takes every
   value R uses from the settings;
 - the cohort, first test, genotype groups and MSI/MMR status match the CRC BPC project's results on the
-  same made-up data.
+  same made-up data;
+- the repository holds no data file outside the made-up fixtures, no file over 1 MB, no local user folder's
+  path and nothing that looks like a credential (`tests/test_repository_guard.py`, which runs on every push
+  on GitHub too).
 
 A failing test prints its name and what differed. Don't go on to real data until every test passes.
 
@@ -491,3 +494,4 @@ on keeps its notes there.
 | 2026-11-17 | The settings check now refuses a biomarker analysis whose reference isn't one of its groups (before, that check never ran). |
 | 2026-11-17 | The OMOP CDM adapter (step 4): a folder of table files or a DuckDB file, read through a confirmed mapping (`omop-template` writes a blank one); `source.adapter: omop`; `--mapping` at steps 5, 7 and 8; the made-up OMOP database in the tests (2.2); two messages in Part 5. |
 | 2026-11-17 | The attribution a source's terms require: an optional capability-profile item (`attribution`), printed in the run report (step 10), with a run check that warns while a part is blank; GENIE BPC's profile carries the consortium citation and the release read; one message in Part 5. |
+| 2026-11-17 | The repository guard test (2.2), and the tests' run on every push on GitHub. |

@@ -318,6 +318,13 @@ acknowledgment the terms of use give:
 A run on GENIE BPC prints this attribution in its run report, with the release it read, from the GENIE BPC
 capability profile (`src/delayed_entry/adapters/genie_bpc/profile.yml`).
 
+## Security
+
+How to report a security problem, and what never to post in an issue or pull request (patient data, small
+counts, credentials), is in [SECURITY.md](SECURITY.md). The tests run on every push, on Windows with Python
+3.10 and 3.14 (`.github/workflows/tests.yml`; the tests that need R are skipped there), and a guard among them
+fails if a committed file looks like data, holds a local path or looks like a credential.
+
 ## License
 
 MIT: see [LICENSE](LICENSE).
