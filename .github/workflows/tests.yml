@@ -6,11 +6,12 @@ on:
   pull_request:
   workflow_dispatch:
 
-# Read-only: the run checks the code and changes nothing.
+# Read-only: the runs check the code and change nothing.
 permissions:
   contents: read
 
 jobs:
+  # The tests on each Python version. The tests that need R are skipped here; the next job runs them.
   tests:
     runs-on: windows-latest
     timeout-minutes: 30
@@ -28,5 +29,42 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install
         run: python -m pip install -e ".[test]"
-      - name: Test (made-up data only; the tests that need R are skipped, as R isn't set up here)
+      - name: Test (made-up data only; the tests that need R are skipped)
         run: python -m pytest -q -p no:cacheprovider
+
+  # Every test, the R ones included: the whole runs on the made-up data, the R unit checks and the mice engine.
+  tests-with-r:
+    runs-on: windows-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0  # v7.1.0
+        with:
+          python-version: "3.14"
+      - id: r
+        uses: r-lib/actions/setup-r@f9a764fea8d5c63df6ef9a5c7795bf7deb5d7e05  # v2.14.0
+        with:
+          r-version: release
+      - name: Cache the R packages
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9  # v6.1.0
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: r-${{ runner.os }}-${{ steps.r.outputs.installed-r-version }}-${{ hashFiles('.github/r-packages') }}
+      - name: Install the R packages (.github/r-packages)
+        shell: Rscript {0}
+        run: |
+          pkgs <- readLines(".github/r-packages")
+          pkgs <- pkgs[nzchar(trimws(pkgs))]
+          need <- setdiff(pkgs, rownames(installed.packages()))
+          if (length(need)) install.packages(need, repos = "https://cloud.r-project.org")
+          ok <- vapply(pkgs, requireNamespace, logical(1), quietly = TRUE)
+          if (!all(ok)) stop("R packages that don't load: ", paste(pkgs[!ok], collapse = ", "))
+          cat(sprintf("%s %s\n", pkgs, vapply(pkgs, function(p) as.character(packageVersion(p)), "")), sep = "")
+      - name: Install
+        run: python -m pip install -e ".[test]"
+      - name: Test, with R (a skipped test is listed with its reason)
+        env:
+          DELAYED_ENTRY_R: Rscript
+        run: python -m pytest -q -p no:cacheprovider -rs
