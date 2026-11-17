@@ -130,8 +130,11 @@ def test_the_patients_come_back_with_their_fields_and_outcomes(genie, read_back)
     assert set(read_back.tables.patients["patient_id"]) == set(g.index)
     for c in g.columns:
         a, b = g[c], o[c]
-        if c == "days_to_death_or_last_followup":        # dates are whole days
-            a = a.map(lambda v: math.floor(v) if pd.notna(v) else v)
+        if c == "days_to_death_or_last_followup":        # dates are whole days: compared as numbers, rounded down
+            a = pd.to_numeric(a).map(lambda v: float(math.floor(v)) if pd.notna(v) else v).astype("Float64")
+            b = pd.to_numeric(b).astype("Float64")
+            assert a.isna().equals(b.isna()) and (a[a.notna()] == b[b.notna()]).all(), c
+            continue
         if c == "year_of_diagnosis":                      # a date always has a year; compare where it was known
             a, b = a[a.notna()], b[a.notna()]
         assert (text(a) == text(b)).all(), c

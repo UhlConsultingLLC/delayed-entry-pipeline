@@ -14,7 +14,9 @@ TEXT_SUFFIXES = {".py", ".md", ".yml", ".yaml", ".sql", ".toml", ".txt", ".cfg"}
 
 def project_files():
     for p in ROOT.rglob("*"):
-        if p.is_file() and not (set(p.relative_to(ROOT).parts) & IGNORE) and not p.name.endswith(".egg-info"):
+        parts = p.relative_to(ROOT).parts
+        # an install's build folder (*.egg-info, made by pip install -e .) is not the project's own
+        if p.is_file() and not (set(parts) & IGNORE) and not any(x.endswith(".egg-info") for x in parts):
             yield p
 
 
