@@ -1,8 +1,12 @@
-# Keeps the actions the test workflow uses up to date. Python packages get security updates from the
-# repository's Dependabot security updates setting.
+# Keeps the actions the test workflow uses up to date, in one pull request a month at most: every action's update
+# is grouped together. Python packages get security updates from the repository's Dependabot security updates
+# setting.
 version: 2
 updates:
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]
