@@ -235,8 +235,8 @@ Each check ends `pass`, `FAIL`, `review` or `skipped`. Any `FAIL` stops the run;
 it in the run log. The report is written to the work folder; counts below the minimum show as "<minimum".
 Add `--rehearsal` to try it on made-up data.
 
-**Flat files: CSV/TSV, Excel (.xlsx), Parquet, SAS (.sas7bdat, .xpt), Stata (.dta), MAF or annotated VCF
-(available).** Draft a mapping from the files' column names:
+**Flat files: CSV/TSV, Excel (.xlsx), Parquet, SAS (.sas7bdat, .xpt), Stata (.dta), SPSS (.sav), MAF or
+annotated VCF (available).** SPSS files need the `spss` extra (`pip install "delayed-entry-pipeline[spss]"`). Draft a mapping from the files' column names:
 
 ```powershell
 python -m delayed_entry draft-mapping <work folder>\mapping.yaml patients=patients.csv tests=tests.xlsx#Tests results=results.parquet panels=panels.csv
@@ -254,7 +254,7 @@ The draft is never used as it stands. A person must:
 4. set `status: confirmed`, `confirmed_by` and `confirmed_on`.
 
 A file in the mapping's `files` can carry options:
-- **Stata:** `{path: ..., value_labels: false}` reads codes in place of value labels.
+- **Stata or SPSS:** `{path: ..., value_labels: false}` reads codes in place of value labels.
 - **SAS transport (.xpt):** add `encoding: ...` when the text isn't ISO-8859-1.
 - **A VCF must give its annotation's two reading rules:**
   `{path: ..., annotation: {pick: canonical | first | all, filters: pass | all}}`, with `field: CSQ` or `ANN` if
@@ -490,6 +490,7 @@ name differences of wording or of what the general pipeline can describe; the sc
 | `the key '...' appears twice` | a key is written twice in the settings | keep one |
 | `put it in quotes` | YAML read a word such as Yes or No as true or false | write `'Yes'` |
 | `... has not been confirmed` | the flat-file or OMOP mapping is still a draft | complete step 4 and confirm it |
+| `reading SPSS files needs the pyreadstat package` | pyreadstat isn't installed, or Windows' Smart App Control blocks it from loading | install the `spss` extra; where it is blocked, save the file as CSV or Stata (.dta) from SPSS instead |
 | `values the labels don't list` (OMOP) | a field's `labels` miss a value the database holds | list it, as what it reads as or as `null` for blank |
 | `the CDM has no ... table` / `has no column` (OMOP) | the mapping uses a table or column the database lacks | export it, or change the mapping |
 | `the attribution the source's terms require: warning` (a run check) | a part of the profile's `attribution` is blank, for GENIE BPC the acknowledgment until it is pasted in | paste it from the source's terms into the profile (for GENIE BPC, `src/delayed_entry/adapters/genie_bpc/profile.yml`), then run again before publishing |
@@ -538,4 +539,5 @@ on keeps its notes there.
 | 2026-11-17 | SAS (.sas7bdat, .xpt) and Stata (.dta) files in the flat-file adapter (step 4): dates held as numbers (`days_from`, `seconds_from`), Stata value labels or codes (`value_labels`), and a file's text encoding (`encoding`). |
 | 2026-11-17 | MAF and annotated VCF (VEP CSQ, SnpEff ANN) files in the flat-file adapter (step 4): a VCF's two reading rules (`annotation: {pick, filters}`), the `hgvsp_short` transform, and file patterns with `source_file`. |
 | 2026-11-17 | The guided setup (step 1): the `setup` questionnaire and the spreadsheet form (`setup-sheet`, `setup-read`). |
+| 2026-11-18 | SPSS (.sav) files in the flat-file adapter (step 4), with pyreadstat (the `spss` extra); `value_labels` applies to them too; one message in Part 5. |
 | 2026-11-17 | GENIE BPC panel sizes from a genomic_information file, by the optional settings choice `source.genie_bpc.panel_sizes`; the check after download judges the file against it; a center's BED file still stops the adapter; two messages in Part 5. |

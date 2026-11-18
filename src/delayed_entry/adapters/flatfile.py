@@ -1,5 +1,5 @@
-"""The generic flat-file adapter: CSV/TSV, Excel (.xlsx), Parquet, SAS (.sas7bdat, .xpt), Stata (.dta), MAF and
-annotated VCF (.vcf, .vcf.gz) files, read through a mapping file.
+"""The generic flat-file adapter: CSV/TSV, Excel (.xlsx), Parquet, SAS (.sas7bdat, .xpt), Stata (.dta), SPSS
+(.sav), MAF and annotated VCF (.vcf, .vcf.gz) files, read through a mapping file.
 
     from delayed_entry.adapters import flatfile
     flatfile.write_draft({"patients": "patients.csv", "tests": "tests.xlsx", ...}, "mapping.yaml")
@@ -23,11 +23,12 @@ SAS date format); from text with `format`; or, where the file holds a number, wi
 `seconds_from` for a date and time), which is how SAS and Stata count. A SAS transport file (.xpt) always holds
 dates as such numbers.
 
-A file is a path, or {path: ..., sheet: ...} for an Excel sheet. SAS and Stata files take two more options:
+A file is a path, or {path: ..., sheet: ...} for an Excel sheet. SAS, Stata and SPSS files take two more options:
     encoding: TEXT        how the file's text is encoded. A .sas7bdat file records its own (the default reads it);
                           a .xpt file doesn't, and is read as ISO-8859-1 unless this says otherwise
-    value_labels: false   a Stata file's coded values as codes. By default each coded value is read as its label,
-                          the text Stata itself shows, so that a mapping's `map` names readable values
+    value_labels: false   a Stata or SPSS file's coded values as codes. By default each coded value is read as its
+                          label, the text Stata or SPSS itself shows, so that a mapping's `map` names readable values.
+                          SPSS files are read with pyreadstat (the spss extra), which reads the file's encoding
 SAS stores every number as a decimal, so a SAS or Stata column whose numbers are all whole is read as whole
 numbers: an ID such as 1001 is then the text "1001", not "1001.0".
 
@@ -61,7 +62,8 @@ MAPPING_FORMAT = 1
 DRAFT, CONFIRMED = "draft", "confirmed"
 SYNONYMS = Path(__file__).with_name("flatfile_synonyms.yml")
 SUFFIXES = {".csv": "csv", ".tsv": "tsv", ".txt": "tsv", ".xlsx": "xlsx", ".parquet": "parquet",
-            ".sas7bdat": "sas7bdat", ".xpt": "xport", ".dta": "stata", ".maf": "maf", ".vcf": "vcf"}
+            ".sas7bdat": "sas7bdat", ".xpt": "xport", ".dta": "stata", ".sav": "spss", ".maf": "maf",
+            ".vcf": "vcf"}
 ENTRY_KEYS = {"column", "constant", "absent", "transform"}
 FILE_OPTIONS = {"sheet", "encoding", "value_labels", "annotation"}
 DATE_FORMS = ("format", "days_from", "seconds_from")
@@ -84,7 +86,7 @@ def file_kind(path: Path) -> str:
     kind = "vcf" if path.name.lower().endswith(".vcf.gz") else SUFFIXES.get(path.suffix.lower())
     if kind is None:
         raise MappingError(f"{path.name}: can't read this kind of file (CSV, TSV, .xlsx, Parquet, SAS .sas7bdat or "
-                           ".xpt, Stata .dta, MAF, or VCF)")
+                           ".xpt, Stata .dta, SPSS .sav, MAF, or VCF)")
     return kind
 
 
@@ -143,6 +145,8 @@ def read_source(path: str | Path, sheet: str | None = None, missing_values=("",)
             df = _typed(pd.read_stata(path, convert_categoricals=value_labels, convert_dates=True))
         except ValueError as e:
             raise MappingError(f"{path.name}: {e}. Give the file value_labels: false to read its codes instead") from e
+    elif kind == "spss":
+        df = _typed(_read_spss(path, encoding, value_labels))
     else:
         con = duckdb.connect()
         try:
@@ -155,6 +159,22 @@ def read_source(path: str | Path, sheet: str | None = None, missing_values=("",)
         for c in df.columns:       # only text can be a missing-value word; other columns keep their types
             if df[c].dtype == object or pd.api.types.is_string_dtype(df[c]):
                 df[c] = df[c].map(lambda v: pd.NA if isinstance(v, str) and v in missing else v)
+    return df
+
+
+def _read_spss(path: Path, encoding: str | None, value_labels: bool) -> pd.DataFrame:
+    """An SPSS file, with pyreadstat (the spss extra): value labels as labels unless value_labels is false, dates as
+    dates, and text in the file's own encoding unless `encoding` says otherwise."""
+    try:
+        import pyreadstat
+    except ImportError as e:          # not installed, or installed but blocked from loading
+        raise MappingError(f"{path.name}: reading SPSS files needs the pyreadstat package (pip install "
+                           f"\"delayed-entry-pipeline[spss]\"), and it can't be loaded here: {e}") from e
+    try:
+        df, _ = pyreadstat.read_sav(str(path), apply_value_formats=value_labels, formats_as_category=True,
+                                    dates_as_pandas_datetime=True, encoding=encoding)
+    except Exception as e:            # pyreadstat's own errors: an unreadable or damaged file
+        raise MappingError(f"{path.name}: can't be read as an SPSS file ({e})") from e
     return df
 
 

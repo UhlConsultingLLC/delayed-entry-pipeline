@@ -19,7 +19,7 @@ unchanged: the code reused here was copied from it, never imported.
      names them (NSCLC does, CRC doesn't). `adapters.genie_bpc.check_download` is the check to run right
      after downloading a release.
    - `adapters.flatfile`: CSV/TSV, Excel (.xlsx), Parquet, SAS (.sas7bdat and .xpt transport files), Stata
-     (.dta), MAF and annotated VCF (.vcf, .vcf.gz), through a mapping file. The tool drafts the mapping from
+     (.dta), SPSS (.sav), MAF and annotated VCF (.vcf, .vcf.gz), through a mapping file. The tool drafts the mapping from
      column names; a person must confirm it, and a draft is never used.
      - **MAF:** read as a tab-separated table, after its `#version` comment lines. The drafted mapping matches
        its standard columns (Tumor_Sample_Barcode, Hugo_Symbol, HGVSp_Short, Variant_Classification).
@@ -41,9 +41,11 @@ unchanged: the code reused here was copied from it, never imported.
        date format). Text dates take a `format`. A date held as a number, as a .xpt file always holds it,
        takes `days_from: "1960-01-01"` (or `seconds_from` for a date and time), the origin SAS and Stata
        count from.
-     - **Stata value labels:** a coded value is read as its label, the text Stata shows, so a mapping's `map`
-       names readable values. `value_labels: false` on the file reads the codes instead, which is also the way
-       out when pandas refuses labels that aren't unique.
+     - **Stata and SPSS value labels:** a coded value is read as its label, the text Stata or SPSS shows, so a
+       mapping's `map` names readable values. `value_labels: false` on the file reads the codes instead, which
+       is also the way out when pandas refuses Stata labels that aren't unique.
+     - **SPSS** files are read with pyreadstat, the `spss` extra (`pip install "delayed-entry-pipeline[spss]"`).
+       Dates come as dates, and text in the file's own encoding.
      - **Text encoding:** a .sas7bdat file's text is decoded with the encoding it records. A .xpt file records
        none and is read as ISO-8859-1, unless the file's `encoding` says otherwise.
      - **Whole numbers:** SAS stores every number as a decimal, so a column whose numbers are all whole is
@@ -325,9 +327,12 @@ tests/                    made-up data only; fixtures/ holds the CRC project's m
   protein change places a patient in a mutation group. A combined consequence such as
   `missense_variant&splice_region_variant` must be listed whole in a `map`. Fusions and copy numbers come from a
   table the mapping names, not from a VCF.
-- SPSS (.sav) files aren't read: that needs the pyreadstat package, which isn't installed. The SAS .sas7bdat
-  reading is pandas' own, and its test files can't be made without such a package, so only .xpt and Stata
-  files are tested here, on made-up files a small writer in the tests makes (`tests/sas_xport.py`).
+- SPSS (.sav) files need pyreadstat (the `spss` extra). On Windows with Smart App Control on, pyreadstat may
+  not load: a .sav file then gives an error naming it, and the SPSS tests are skipped. They run on GitHub's test
+  machines.
+- The SAS .sas7bdat reading is pandas' own, and no tool here can write a test file in that format, so it isn't
+  tested. The .xpt and Stata reading is, on made-up files: a small writer in the tests makes the .xpt files
+  (`tests/sas_xport.py`).
 - Without panel sizes, a biomarker's fallback is descriptive only. With GENIE BPC, sizes come from a
   genomic_information file and the settings' rule (above). Flat files and OMOP take a panel sizes file.
 - OMOP has no standard home for genomic variants, so the OMOP adapter reads them from the extension table the

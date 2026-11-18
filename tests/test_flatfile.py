@@ -183,7 +183,7 @@ def test_a_mapped_column_that_is_not_in_the_file_is_named(source):
 
 def test_an_unreadable_kind_of_file_is_refused(tmp_path):
     with pytest.raises(MappingError, match="can't read this kind of file"):
-        flatfile.read_source(tmp_path / "data.sav")
+        flatfile.read_source(tmp_path / "data.rds")
 
 
 def test_every_standard_table_appears_in_a_draft(source):

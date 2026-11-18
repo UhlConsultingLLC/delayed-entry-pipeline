@@ -28,7 +28,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install
-        run: python -m pip install -e ".[test]"
+        run: python -m pip install -e ".[test,spss]"
       - name: Test (made-up data only; the tests that need R are skipped)
         run: python -m pytest -q -p no:cacheprovider
 
@@ -63,7 +63,7 @@ jobs:
           if (!all(ok)) stop("R packages that don't load: ", paste(pkgs[!ok], collapse = ", "))
           cat(sprintf("%s %s\n", pkgs, vapply(pkgs, function(p) as.character(packageVersion(p)), "")), sep = "")
       - name: Install
-        run: python -m pip install -e ".[test]"
+        run: python -m pip install -e ".[test,spss]"
       - name: Test, with R (a skipped test is listed with its reason)
         env:
           DELAYED_ENTRY_R: Rscript
