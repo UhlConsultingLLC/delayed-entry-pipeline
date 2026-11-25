@@ -157,36 +157,79 @@ draw_category <- function(probs, levels, all_levels) {
   factor(levels[pick], levels = all_levels)
 }
 
-# Logistic regression for a two-level variable (mice's logreg): coefficients drawn from their approximate normal
-# posterior, then each missing case drawn from its probability.
+# The guard against perfect prediction (mice's augment, after White, Daniel and Royston, Comput Stat Data Anal
+# 2010): when a predictor separates a category (a group in which every observed value is one category, say), a
+# logistic or multinomial fit drives that category's probability to 1 there. Pseudo-records keep the fit finite:
+# for each predictor and each observed category, two records of that category with the predictor half a standard
+# deviation above and below its mean (kept within its observed range) and every other predictor at its mean.
+# Together they weigh as much as p + 1 patients, for p predictors. X is the design without its intercept, and the
+# means, standard deviations and ranges are over all its rows, as in mice. mice leaves them out when only one value
+# is missing; here they are always added.
+augment_records <- function(X, lv) {
+  p <- ncol(X)
+  k <- length(lv)
+  rows <- 2 * p * k
+  if (p == 0) return(list(X = X[0, , drop = FALSE], y = factor(character(0), levels = lv), w = numeric(0)))
+  at <- matrix(colMeans(X), nrow = rows, ncol = p, byrow = TRUE)
+  half <- apply(X, 2, stats::sd) / 2
+  for (j in seq_len(p)) {
+    r <- (j - 1) * 2 * k + seq_len(2 * k)
+    at[r, j] <- at[r, j] + rep(c(1, -1), k) * half[j]
+  }
+  at <- pmin(pmax(at, matrix(apply(X, 2, min), nrow = rows, ncol = p, byrow = TRUE)),
+             matrix(apply(X, 2, max), nrow = rows, ncol = p, byrow = TRUE))
+  colnames(at) <- colnames(X)
+  list(X = at, y = factor(rep(rep(lv, each = 2), p), levels = lv), w = rep((p + 1) / rows, rows))
+}
+
+# Logistic regression for a two-level variable (mice's logreg), fitted with the guard's records: coefficients drawn
+# from their approximate normal posterior, then each missing case drawn from its probability.
 draw_logreg <- function(y, X, miss) {
   seen <- droplevels(y[!miss])
   lv <- levels(seen)
   if (length(lv) == 1) return(factor(rep(lv, sum(miss)), levels = levels(y)))
   if (length(lv) > 2) stop("logreg is for a variable with two levels; use polyreg")
-  Xo <- X[!miss, , drop = FALSE]
-  fit <- suppressWarnings(stats::glm.fit(Xo, as.integer(seen == lv[2]), family = stats::binomial()))
+  aug <- augment_records(X[, -1, drop = FALSE], lv)
+  Xo <- rbind(X[!miss, , drop = FALSE], cbind(1, aug$X))
+  yo <- as.integer(c(as.character(seen), as.character(aug$y)) == lv[2])
+  fit <- suppressWarnings(stats::glm.fit(Xo, yo, weights = c(rep(1, length(seen)), aug$w),
+                                         family = stats::binomial()))
   b <- fit$coefficients
   b[is.na(b)] <- 0
-  w <- fit$fitted.values * (1 - fit$fitted.values)
-  info <- crossprod(Xo, Xo * w)
+  info <- crossprod(Xo, Xo * fit$weights)
   v <- solve(info + diag(RIDGE * pmax(diag(info), 1), nrow = ncol(Xo)))
   beta <- b + t(chol((v + t(v)) / 2)) %*% stats::rnorm(length(b))
   prob <- stats::plogis(as.vector(X[miss, , drop = FALSE] %*% beta))
   draw_category(cbind(1 - prob, prob), lv, levels(y))
 }
 
-# Multinomial regression (mice's polyreg, with nnet): each missing case drawn from its fitted probabilities.
+# Multinomial regression (mice's polyreg, with nnet), fitted with the guard's records: each missing case's
+# probabilities of the observed categories (a row each, in the order of `seen`'s levels). X is the design without
+# its intercept, over every row; with no predictors, the probabilities are the observed shares.
+polyreg_probs <- function(seen, X, miss) {
+  lv <- levels(seen)
+  if (ncol(X) == 0) {
+    return(matrix(as.vector(table(seen)) / length(seen), nrow = sum(miss), ncol = length(lv), byrow = TRUE))
+  }
+  colnames(X) <- paste0("x", seq_len(ncol(X)))           # plain names for the formula
+  aug <- augment_records(X, lv)
+  train <- data.frame(mi_y = factor(c(as.character(seen), as.character(aug$y)), levels = lv),
+                      rbind(X[!miss, , drop = FALSE], aug$X))
+  w <- c(rep(1, length(seen)), aug$w)
+  fit <- nnet::multinom(mi_y ~ ., data = train, weights = w, trace = FALSE,
+                        MaxNWts = (ncol(X) + 2) * (length(lv) + 1) * 2)
+  probs <- matrix(stats::predict(fit, newdata = as.data.frame(X[miss, , drop = FALSE]), type = "probs"),
+                  nrow = sum(miss))
+  if (length(lv) == 2) probs <- cbind(1 - probs, probs)
+  probs
+}
+
+# Each missing case drawn from its multinomial probabilities.
 draw_polyreg <- function(y, p, miss) {
   seen <- droplevels(y[!miss])
   lv <- levels(seen)
   if (length(lv) == 1) return(factor(rep(lv, sum(miss)), levels = levels(y)))
-  train <- data.frame(mi_y = seen, p[!miss, , drop = FALSE])
-  weights <- (ncol(design(p)) + 1) * (length(lv) + 1) * 2
-  fit <- nnet::multinom(mi_y ~ ., data = train, trace = FALSE, MaxNWts = weights)
-  probs <- stats::predict(fit, newdata = p[miss, , drop = FALSE], type = "probs")
-  if (length(lv) == 2) probs <- cbind(1 - probs, probs)
-  draw_category(probs, lv, levels(y))
+  draw_category(polyreg_probs(seen, design(p)[, -1, drop = FALSE], miss), lv, levels(y))
 }
 
 # Ordered logistic regression (mice's polr, with MASS), the levels in their listed order; multinomial if it fails,

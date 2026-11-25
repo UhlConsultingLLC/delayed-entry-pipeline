@@ -20,11 +20,11 @@ run_plan_v*/
 plan_v*/
 settings_lock/
 
-# Kept private for now. The working to-do list stays private. The NSCLC review documents and provenance log
-# are published once the NSCLC settings are reviewed and locked. Delete a line to publish its file.
+# Kept private for now. The working to-do list stays private. The NSCLC questions, the dry run and the provenance
+# log are published once the NSCLC settings are decided and locked. Delete a line to publish its file.
 docs/NEXT_STEPS.md
 docs/provenance/
 docs/nsclc_review_dry_run.md
-docs/nsclc_reviewer_packet.md
-docs/nsclc_reviewer_packet.docx
 docs/nsclc_settings_review.md
+# Superseded material, kept but never published (docs/archive/SUPERSEDED.md says what and why)
+docs/archive/

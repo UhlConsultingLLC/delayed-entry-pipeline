@@ -1,12 +1,15 @@
-# Settings for an NSCLC delayed-entry study on GENIE BPC NSCLC v2.0-public: DRAFT FOR REVIEW.
+# Settings for an NSCLC delayed-entry study on GENIE BPC NSCLC v2.0-public.
 #
-# Not reviewed and not locked. Every choice was drafted by the study author from the release's
-# documentation and published sources, and waits for a lung oncologist's review (design plan, question E).
-# Each entry's source says where it comes from; "carried from the CRC plan" marks a value taken over
-# from the registered CRC BPC study (osf.io/eyq6b) for want of a lung-specific source. The questions
-# for the reviewer, with the alternatives, are in docs/nsclc_settings_review.md.
+# Every choice is decided (the last on 2026-11-24). Every choice was drafted by the study author from the
+# release's documentation and published sources and decided by the study author, as the CRC BPC study's
+# author did. There is no clinical review (design plan, question E, reversed 2026-11-20): that is a stated
+# limitation of the study. Each entry's source says where it comes from; "carried from the CRC plan" marks a
+# value taken over from the registered CRC BPC study (osf.io/eyq6b) for want of a lung-specific source. The
+# questions, with the alternatives and the answers, are in docs/nsclc_settings_review.md.
 #
-# The clinical and genomic files are not downloaded until these settings are reviewed and locked.
+# This file and the questions document are registered on OSF, and this file is then locked, before the clinical
+# and genomic files are downloaded. The registration's link is in the provenance log
+# (docs/provenance/nsclc_bpc_v2.0.md), not here, so the registered file and the locked file are the same file.
 # Sources cited as "data guide" are the GENIE BPC NSCLC v2.0-public Analytic Data Guide v5
 # (Synapse syn30557304); "synopsis" is the release's variable synopsis (syn30557312).
 
@@ -15,40 +18,76 @@ settings_format: 1
 study:
   name:
     value: "NSCLC BPC: sequencing delay and survival by driver genotype"
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: the design plan, section 4 (NSCLC as the second example)
+    made_by: NSCLC study author
+    source: "confirmed 2026-11-24 (not a numbered question): the design plan, section 4 (NSCLC as the second example)"
   cancer:
-    value: "non-small cell lung cancer, stage IV at diagnosis, sequenced at a BPC center"
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "data guide, Eligibility"
+    value: >-
+      nonsquamous non-small cell lung cancer, stage IV at diagnosis, first sequenced at DFCI, MSK or VICC
+      (reports 2014-2017)
+    made_by: NSCLC study author
+    source: >-
+      Confirmed 2026-11-24 (not a numbered question), with the centers named: data guide, Eligibility (a sequencing
+      report at DFCI, MSK or VICC in 2014-2017, or at UHN in 2014-2015); question 1 (nonsquamous); question 6 (UHN's
+      hotspot panels leave no UHN patient assignable).
+    note: >-
+      Text only: no rule or query reads it. "Reports 2014-2017" reads the data guide's count of curated tests
+      (n_cpt_pt: tests "that met the eligibility criteria and were curated") as saying the panel test file holds
+      only reports in the window, an inference; an optional masked count after download checks it.
   registered_plan:
-    value: "not registered"
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "not yet registered; to be registered after review, before the data are downloaded"
+    value: >-
+      registered on OSF before the clinical and genomic files were downloaded; the registration's link is in
+      docs/provenance/nsclc_bpc_v2.0.md
+    made_by: NSCLC study author
+    source: >-
+      Decided 2026-11-24 (not a numbered question): this file and docs/nsclc_settings_review.md are registered as
+      they are locked, so the link, which exists only once they are registered, can't be in this file; it goes in
+      the provenance log (NEXT_STEPS step 7).
+    note: >-
+      Text only: the run report prints it as the registered plan. The provenance log's row gives the
+      registration's date and link, the pipeline version and this file's SHA-256, which must equal the settings
+      lock's.
 
 source:
   adapter:
     value: genie_bpc
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "the design plan, section 13, phase 3"
+    made_by: NSCLC study author
+    source: "confirmed 2026-11-24 (not a numbered question): the design plan, section 13, phase 3"
   genie_bpc:
     cohort:
       value: nsclc_v2.0
-      made_by: study author (draft, awaiting lung oncologist review)
-      source: "GENIE BPC NSCLC v2.0-public (Synapse syn27056697)"
+      made_by: NSCLC study author
+      source: "confirmed 2026-11-24 (not a numbered question): GENIE BPC NSCLC v2.0-public (Synapse syn27056697)"
     cancer_type_labels:
       value: ["Non Small Cell Lung Cancer", "Lung Cancer, NOS"]
-      made_by: study author (draft, awaiting lung oncologist review)
-      source: "synopsis: the lung labels of ca_type and path_ca_type1-path_ca_type45"
-      note: "REVIEW: whether 'Small Cell Lung Cancer' should also count as another primary of this cancer (review question 9)."
+      made_by: NSCLC study author
+      source: >-
+        Question 9, decided 2026-11-24 (option A): this cancer's own labels, the lung labels of ca_type and
+        path_ca_type1-path_ca_type25 (synopsis). No analysis that runs reads other_primary_same_cancer (PD-L1 is
+        out, question 10), and the NSCLC spec reads no pathology result, so the labels change no patient. The two
+        download checks that protect that flag, the site-code check and the near-spelling check, are skipped,
+        with the reason (built 2026-11-15).
+      note: >-
+        Small Cell Lung Cancer is not added: a separately recorded small cell lung cancer changes no patient's
+        group or result. If an analysis that leaves out other lung primaries is turned on, both checks run again
+        and question 9 reopens.
     cancer_site_pattern:
       value: '^C34'
-      made_by: study author (draft, awaiting lung oncologist review)
-      source: "ICD-O-3 topography C34, bronchus and lung"
+      made_by: NSCLC study author
+      source: "confirmed 2026-11-24 (not a numbered question): ICD-O-3 topography C34, bronchus and lung"
+      note: >-
+        Read only by the download check's site-code check of other lung primaries, which is skipped since
+        question 9 (decided 2026-11-24) while no analysis reads other_primary_same_cancer.
     withheld_survival:
       value: censor_at_age_limit
-      made_by: study author (draft, awaiting lung oncologist review)
-      source: "carried from the CRC plan, section 3; the data guide says patients over 89 at any time are excluded from the cohort, so this should rarely apply"
+      made_by: NSCLC study author
+      source: >-
+        Confirmed 2026-11-24 (not a numbered question): carried from the CRC plan, section 3 (a survival time withheld
+        for privacy is censored at age 89); data guide, the redacted field (an interval that would reveal an age over
+        89 is withheld).
+      note: >-
+        The data guide excludes patients over 89 at any time point (Data Privacy), so this should rarely apply;
+        the number censored this way is reported. If that exclusion is applied as written, old patients who
+        lived past 89 are missing from the release, a small selection on survival stated in the plan.
 
 cohort:
   rules:
@@ -58,9 +97,10 @@ cohort:
         all_of:
           - {field: stage_at_diagnosis, op: in, values: ["Stage IV"], normalize: trim, missing: fail}
       - id: histology
-        label: Not small cell or sarcoma
+        label: "Nonsquamous: adenocarcinoma, carcinoma, other or mixed (blank kept)"
         all_of:
-          - {field: histology, op: not_in, values: ["Small cell carcinoma", "Sarcoma"], normalize: trim, missing: pass}
+          - {field: histology, op: in, values: ["Adenocarcinoma", "Carcinoma", "Other histologies/mixed tumor"],
+             normalize: trim, missing: pass}
       - id: age_18
         label: Age 18 or older at diagnosis
         all_of:
@@ -86,44 +126,83 @@ cohort:
         label: "Genotype assignable: panel reads EGFR, KRAS and ALK"
         all_of:
           - {check: genotype_assignable}
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "data guide, Eligibility (NSCLC OncoTree diagnoses, stage I-IV); synopsis (stage_dx, ca_hist_adeno_squamous); structure carried from the CRC plan, section 4"
+    made_by: NSCLC study author
+    source: >-
+      Question 1, decided 2026-11-23 (option B): the primary population is nonsquamous, the population routinely
+      tested for EGFR and ALK in 2014-2017; the CAP/IASLC/AMP guideline targets tumors with an adenocarcinoma
+      component (Lindeman NI et al., J Thorac Oncol 2013;8:823-859, Recommendation 1.2). Carcinoma and Other
+      histologies/mixed tumor are kept because the release doesn't say which tumor codes they hold. Squamous
+      tumors are about 9-10% of BPC NSCLC (Choudhury NJ et al., Clin Cancer Res 2023, Table 1). Data guide,
+      Eligibility (NSCLC OncoTree diagnoses, stage I-IV); synopsis (stage_dx, ca_hist_adeno_squamous); structure
+      carried from the CRC plan, section 4.
+      The other rules, confirmed 2026-11-24 as drafted (not numbered questions): stage IV is stage_dx's "Stage IV",
+      one of the six values the synopsis lists (Stage 0, I, II, III, I-III NOS and IV; any other value stops the run),
+      and a blank fails; age 18 or older at diagnosis is the same as or stricter than BPC's own rule, 18 or older at
+      sequencing (data guide, Eligibility), its blank changes no one (entry_known needs a known age), and the patients
+      it removes are counted; the structural rules (a report, entry time known, survival known, the report back before
+      follow-up ended, the genotype assignable) come from the CRC plan, section 4, and D3 (section 5), through
+      dx_cpt_rep_days, cpt_report_post_death, cpt_report_post_last_alive, tt_os_dx_days and os_dx_status.
     note: >-
-      REVIEW: the primary population keeps squamous NSCLC (review question 1). The histology rule only
-      guards against categories that are not NSCLC. There is no site rule: the data guide's BPC Project
-      cancers are all NSCLC.
+      The population is Adenocarcinoma, Carcinoma or Other histologies/mixed tumor (adenosquamous presumably in
+      the last); Squamous cell, Small cell carcinoma and Sarcoma are left out. A blank histology passes and is
+      stated: it may include squamous tumors, and it is missing in the adjusted and weighted models (question
+      11). The rule is written as "in" so the download check confirms each label's spelling. The all-histology
+      view is not reported: a sensitivity analysis can only narrow the primary population; squamous tumors,
+      rarely tested and rarely carrying these drivers, would sit almost all in the reference group and move
+      every comparison in a way SA6 can't detect; and comparability with Brown et al. was already weakened by
+      question 6. There is no site rule: the data guide's BPC Project cancers are all NSCLC. The histology rule
+      is question 1's; the other rules were never numbered questions and were confirmed 2026-11-24 (the source).
 
 entry:
   event:
     value: report
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "data guide, Cancer Panel Test dataset: days from diagnosis to the sequencing report"
+    made_by: NSCLC study author
+    source: >-
+      Confirmed 2026-11-24 (not a numbered question): data guide, Cancer Panel Test dataset: days from diagnosis to
+      the sequencing report (dx_cpt_rep_days). BPC selected patients by the date of a sequencing report (data guide,
+      Eligibility), so entry at the first report matches how patients were selected, as in the CRC plan, section 4
+      (delayed entry at the first NGS report).
   acceptable_substitutes:
     value: []
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "the release gives report times, so no substitute is needed"
+    made_by: NSCLC study author
+    source: >-
+      Confirmed 2026-11-24 (not a numbered question): the release gives each curated test's report time, so no
+      substitute is needed; the order date (cpt_order_int) isn't given at every institution (data guide), and no other
+      test marks entry.
   modalities:
     value: [ngs]
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 4 (NGS sample used)"
+    made_by: NSCLC study author
+    source: >-
+      Confirmed 2026-11-24 (not a numbered question): carried from the CRC plan, section 4 (NGS sample used); the
+      Cancer Panel Test dataset holds the curated NGS tests (data guide).
   first_test_order:
     value: [earliest_day, largest_panel, lowest_test_order]
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 4 (NGS sample used)"
+    made_by: NSCLC study author
+    source: >-
+      Confirmed 2026-11-24 (not a numbered question): carried from the CRC plan, section 4 (NGS sample used). The
+      earliest report first, then the panel with the most genes, then the lowest cpt_number (the release numbers a
+      patient's curated tests by report date: data guide), then the test's id; a test whose time is withheld comes
+      last.
   before_diagnosis:
     value: enter_at_day_0
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 4 (delayed entry)"
+    made_by: NSCLC study author
+    source: >-
+      Confirmed 2026-11-24 (not a numbered question): carried from the CRC plan, section 4 (delayed entry): a report
+      dated before diagnosis (a negative delay) enters the patient at day 0, the diagnosis.
 
 genotype:
   results_from:
     value: entry_test
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 4a (the first sample's calls)"
+    made_by: NSCLC study author
+    source: >-
+      Confirmed 2026-11-24 (not a numbered question): carried from the CRC plan, section 4a (the first sample's
+      calls): a group is read from the entry test's calls only, so a later test can't move a patient.
   variant_text:
     value: trimmed
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 4a"
+    made_by: NSCLC study author
+    source: >-
+      Confirmed 2026-11-24 (not a numbered question): carried from the CRC plan, section 4a; spaces around a variant's
+      text are ignored when matching it, as the registered CRC code trimmed the protein change.
   groups:
     value:
       - name: EGFR common
@@ -139,40 +218,263 @@ genotype:
         any_of:
           - kind: fusion
             genes: [ALK]
-      - name: KRAS G12C
+            except_variants: ["ALK-intragenic", "ALK-INTRAGENIC"]
+      - name: KRAS mutant
         any_of:
           - kind: mutation
             genes: [KRAS]
             variants: ["p.G12C"]
-      - name: KRAS other
-        any_of:
           - kind: mutation
             genes: [KRAS]
             variant_classes: [Missense_Mutation, In_Frame_Del, In_Frame_Ins]
             codons: [12, 13, 61]
-            except_variants: ["p.G12C"]
-      - name: No listed driver
+      - name: Other recognized driver
+        any_of:
+          - kind: fusion
+            genes: [ROS1, RET]
+            except_variants: ["ROS1-intragenic", "ROS1-INTRAGENIC", "RET-intragenic", "RET-INTRAGENIC"]
+          - kind: mutation
+            genes: [BRAF]
+            variants: ["p.V600E"]
+          - kind: mutation
+            genes: [MET]
+            variant_classes: [Splice_Site]
+            codon_ranges: [[963, 1010]]
+          - kind: mutation
+            genes: [MET]
+            variant_classes: [Splice_Site]
+            variants: ["p.X1010_splice"]
+          - kind: mutation
+            genes: [MET]
+            variant_classes: [Missense_Mutation]
+            codons: [1010]
+            except_variants: ["p.D1010A", "p.D1010E", "p.D1010G", "p.D1010V"]
+          - kind: mutation
+            genes: [ERBB2]
+            variant_classes: [In_Frame_Ins]
+            codon_ranges: [[770, 831]]
+          - kind: mutation
+            genes: [ERBB2]
+            variant_classes: [Missense_Mutation]
+            codons: [310, 659, 660, 755, 769, 777, 842]
+            except_variants: ["p.S310A", "p.S310C", "p.S310P", "p.S310T",
+                              "p.V659A", "p.V659F", "p.V659G", "p.V659I", "p.V659L",
+                              "p.G660A", "p.G660C", "p.G660R", "p.G660S", "p.G660V",
+                              "p.L755F", "p.L755M", "p.L755V", "p.L755W",
+                              "p.D769A", "p.D769E", "p.D769G", "p.D769V",
+                              "p.V777A", "p.V777E", "p.V777G", "p.V777M",
+                              "p.V842A", "p.V842E", "p.V842G", "p.V842L"]
+          - kind: mutation
+            genes: [EGFR]
+            variant_classes: [Missense_Mutation]
+            codons: [709, 719, 768, 790, 858, 861]
+            except_variants: ["p.G719R", "p.G719V",
+                              "p.S768C", "p.S768G", "p.S768N", "p.S768R", "p.S768T",
+                              "p.T790A", "p.T790K", "p.T790P", "p.T790R", "p.T790S",
+                              "p.L858P", "p.L858Q", "p.L858R", "p.L858V",
+                              "p.L861M", "p.L861P", "p.L861V"]
+          - kind: mutation
+            genes: [EGFR]
+            variant_classes: [In_Frame_Ins]
+            codon_ranges: [[729, 761], [762, 823]]
+          - kind: mutation
+            genes: [EGFR]
+            variant_classes: [In_Frame_Del]
+            codon_ranges: [[709, 710]]
+      - name: No recognized driver
         none_of_the_above: true
-    made_by: study author (draft, awaiting lung oncologist review)
+    made_by: NSCLC study author
     source: >-
       The design plan, section 4 (EGFR exon 19 deletions and L858R, ALK fusions, KRAS G12C); CAP/IASLC/AMP
       molecular testing guideline, Lindeman NI et al., J Thorac Oncol 2018;13:323-358; therapies tied to
       each group: osimertinib (FLAURA, Soria JC et al., N Engl J Med 2018;378:113-125), alectinib (ALEX,
       Peters S et al., N Engl J Med 2017;377:829-838), sotorasib (CodeBreaK 100, Skoulidis F et al.,
       N Engl J Med 2021;384:2371-2381). EGFR exon 19 taken as codons 729-761 (transcript NM_005228).
+      Question 2, decided 2026-11-23 (option C, the guideline list): a further group, Other recognized driver, holds
+      the other genes Lindeman 2018 calls for: ROS1 for every patient with advanced lung adenocarcinoma (statement 1,
+      a strong recommendation), and BRAF, RET, ERBB2 and MET in larger testing panels (statements 3, 4, 5 and 7,
+      expert consensus); it lists NTRK only among emerging markers, with no statement (read in full in its
+      co-publication, Arch Pathol Lab Med 2018;142:321-346). ROS1: crizotinib (Shaw AT et al., N Engl J Med
+      2014;371:1963-1971). RET: selpercatinib (Drilon A et al., N Engl J Med 2020;383:813-824). BRAF V600E only, the
+      variant the NSCLC indication names: dabrafenib with trametinib (Planchard D et al., Lancet Oncol
+      2016;17:984-993). MET exon 14 skipping (Paik PK et al., Cancer Discov 2015;5:842-849; Frampton GM et al., Cancer
+      Discov 2015;5:850-859; Awad MM et al., J Clin Oncol 2016;34:721-730; Drilon A et al., Nat Med 2020;26:47-51).
+      ERBB2 exon 20 insertions (Arcila ME et al., Clin Cancer Res 2012;18:4910-4918; Mazieres J et al., J Clin Oncol
+      2013;31:1997-2003) and missense hotspots S310 (Greulich H et al., PNAS 2012;109:14476-14481), V659 and G660 (Ou
+      SI et al., J Thorac Oncol 2017;12:446-457; Pahuja KB et al., Cancer Cell 2018;34:792-806), D769, V777 and V842
+      (Bose R et al., Cancer Discov 2013;3:224-237, a breast cancer lab study; Robichaux JP et al., Cancer Cell
+      2019;36:444-457) and L755 (Robichaux 2019; Bose found that L755S causes drug resistance but doesn't transform
+      cells); the HER2 trials' enrolled variants (Li BT et al., J Clin Oncol 2018;36:2532-2537; Li BT et al., N Engl J
+      Med 2022;386:241-251). Read against the papers 2026-11-24: in full, Shaw 2014, Drilon 2020 (N Engl J Med),
+      Planchard 2016, Paik 2015, Drilon 2020 (Nat Med), Arcila 2012, Greulich 2012, Pahuja 2018, Bose 2013, Robichaux
+      2019, Li 2018 and Li 2022 with its supplement; as abstracts only, Frampton 2015, Awad 2016, Mazieres 2013 and Ou
+      2017, each cited only for what its abstract states. Exon codons from the NCBI RefSeq exon models (UCSC hg19):
+      MET exon 14 is c.2888-c.3028 on NM_000245 (codons 963-1010; codon 1010's first base is exon 14's last), ERBB2
+      exon 20 is c.2308-c.2493 on NM_004448 (codons 770-831).
+      Question 3, decided 2026-11-23 (option C): EGFR common stays as drafted, the FLAURA trial's population (exon 19
+      deletions and L858R), and Other recognized driver gains three EGFR rules. They follow the guideline's table of
+      the EGFR mutations that each make up at least 1% of EGFR mutations (Lindeman NI et al., J Thorac Oncol
+      2013;8(7):823-859, Table 12; read): E709 (K, A, G, V, D, Q), G719 (S, A, C, D), S768I, T790M, L858R, L858M,
+      L861Q and L861R, exon 19 deletions, and exon 19 and exon 20 insertions. The 2018 update reaffirms the 2013
+      statement that EGFR tests should detect every mutation reported in at least 1% of EGFR-mutated lung
+      adenocarcinomas (its methods supplement, Table 4b, statement 6.3); it doesn't reprint the 2013 table, so the
+      rules cite 2013 Table 12. The first EGFR rule takes EGFR missense calls (Missense_Mutation) at codons 709, 719,
+      768, 790, 858 and 861, except 19 single-base changes: 18 the table doesn't list, and L858R, which it lists but
+      EGFR common takes first. The second takes EGFR in-frame insertions (In_Frame_Ins) anywhere in exons 19 and 20
+      (codons 729-823), wider than the table's positions (exon 19 K739-I744, exon 20 S768-V774). The third takes EGFR
+      in-frame deletions (In_Frame_Del) that touch codon 709 or 710, for E709_T710delinsD (codons 709 and 710 replaced
+      by one aspartic acid). That variant goes beyond the table. Jordan EJ et al., Cancer Discov 2017 (read in full)
+      counted it with the variants that respond to EGFR drugs. In a Chinese sequencing cohort, 26 of 5,905 EGFR-mutant
+      patients (0.44%) had an E709-T710 deletion-insertion (Huang Y et al., Lung Cancer 2022;172:117-123), and the
+      variant transforms cells in the lab (Kobayashi Y et al., Clin Cancer Res 2015;21:5305-5313, which writes it
+      delE709_T710insD). None of the optional changes is taken, so de novo T790M (T790M without a common EGFR variant)
+      and L858M join Other recognized driver. Afatinib's first-line label widened to non-resistant EGFR mutations on
+      January 12, 2018 (Drugs@FDA, NDA 201292; the label names no variant; in its trials, LUX-Lung 2, 3 and 6, 75 of
+      600 patients given afatinib had uncommon EGFR mutations, de novo T790M and exon 20 insertions among them: Yang
+      JC-H et al., Lancet Oncol 2015;16:830-838). Huang 2022, Kobayashi 2015 and Yang 2015 were read as abstracts only
+      (2026-11-24); each statement cited here is in its abstract. EGFR exons on the NCBI RefSeq record of NM_005228.5:
+      exon 18 is codons 688-728, exon 19 is 729-761, exon 20 is 762-823 and exon 21 is 824-875 (exons 18-20 as in
+      Reita D et al., Cancers (Basel) 2021;13:4926).
+      Question 4, decided 2026-11-24 (option A): the draft order. A tumor whose first test matches two or more
+      groups goes to the first one listed: EGFR common, ALK fusion, KRAS mutant (question 5), then Other
+      recognized driver. EGFR and ALK come before KRAS because both had labeled first-line drugs through the
+      whole sequencing era, and KRAS had no drug until sotorasib (May 28, 2021): crizotinib for ALK-positive NSCLC
+      from August 26, 2011, erlotinib first-line from May 14, 2013, afatinib from July 12, 2013, and gefitinib
+      first-line from July 13, 2015 (Drugs@FDA labels). Neither the labels nor the evidence on which driver
+      dominates separates EGFR from ALK. EGFR comes first so that the rare tumors with both stay a small share
+      of EGFR common, not a larger share of the smaller ALK fusion group, and because an ALK fusion on a first
+      test taken after an EGFR drug can be acquired (Choudhury NJ et al., Clin Cancer Res 2023;29:3418-3428).
+      Two main groups rarely co-occur: 1 of 1,683 patients had two of EGFR, KRAS and ALK (Gainor JF et al.,
+      Clin Cancer Res 2013;19:4273-4281); in Kris MG et al., JAMA 2014;311:1998-2006 (supplement, eTable 5), 2
+      of the 27 tumors with drivers in two genes paired two of these groups, both EGFR with ALK; and in public
+      MSK and TCGA data on cBioPortal (3,625 patients, not GENIE, grouped by this pipeline's code), 3 matched
+      two main groups, all EGFR common with KRAS, none with ALK. There, putting ALK fusion first, or KRAS above
+      it, moves no one.
+      Question 5, decided 2026-11-24 (option D, with the codons kept): the two drafted KRAS groups are joined
+      into one, KRAS mutant: p.G12C, and KRAS missense or in-frame calls at codons 12, 13 and 61. In this era
+      no overall survival difference was found between G12C and other KRAS tumors: median 13.4
+      against 13.1 months at MSK in 2014-2018, with patients entering at sequencing (Arbour KC et al., Clin
+      Cancer Res 2021;27:2209-2215), and a hazard ratio of 1.03 (0.84-1.26) in a meta-analysis (Wankhede D et
+      al., Diagnostics (Basel) 2023;13:3043). The BPC NSCLC cohort paper's survival analysis used one KRAS
+      group (Choudhury 2023). One group gives a more precise bias estimate, and one KRAS comparison instead of
+      two. KRAS G12C, the design plan's example and the group the sotorasib (May 28, 2021) and adagrasib
+      (December 12, 2022) labels define, is kept as a sensitivity analysis, SA13. Both drugs are for patients
+      who have had at least one prior systemic therapy, and both came after follow-up, which ended August 31, 2020 in
+      the consortium's 2021 analysis of this cohort (Kehl KL et al., JAMA Netw Open 2021;4:e2117547). Their
+      trials began during follow-up (CodeBreaK 100, NCT03600883, August 27, 2018; KRYSTAL-1, NCT03785249,
+      January 15, 2019), and the release shows trial drugs only as "Investigational Drug". The codons stay 12,
+      13 and 61: none of the guidelines read defines which KRAS changes count in lung (Lindeman 2013 names
+      codons 12 and 13, but only as easy to test), and the other RAS changes are stated as left in the
+      reference (the note).
+      Fusion rows, decided 2026-11-24 (option C, the dry run's last item): an ALK, ROS1 or RET fusion row counts
+      when its description names a second gene, whatever the reading frame. The criterion is set before any
+      data are seen. Frame can't be used: in the CRC v2.0-public fusion file it is filled at MSK only (DFCI
+      leaves it blank, VICC writes "unknown"). A row describing a rearrangement inside the gene, with no second
+      gene named, is not a fusion by its own description; there such rows are written "GENE-intragenic" at MSK
+      and VICC and "GENE-INTRAGENIC" at DFCI, so the ALK rule and Other recognized driver's ROS1 and RET rule
+      except both spellings by their exact text. DFCI writes a row for each fused gene on its panel, each with
+      its own gene first ("A-B" under A, "B-A" under B), and ALK, ROS1 and RET are on DFCI-ONCOPANEL-2 and -3
+      and on every MSK and VICC panel there, so a rule on the gene finds their fusions (the CRC v2.0-public
+      fusion and panel files, aggregate counts only). The download check flags a fusion named for one of these
+      genes with no row for it on that sample.
+      Question 2's ERBB2 and MET scope, decided 2026-11-24: none of the optional changes is taken. ERBB2 keeps D769
+      and V842: the trastuzumab deruxtecan label (August 11, 2022) covers "activating HER2 (ERBB2) mutations" and
+      names no variant, DESTINY-Lung01's eligible list (Li 2022, supplement Table S1) includes D769N, H and Y but not
+      V842I, and V842I rests on lab studies (Bose 2013; Robichaux 2019). The except lists keep G660R (active in Pahuja
+      2018) and V777M, S310P, L755M and L755W (on DESTINY-Lung01's eligible list) out of the group, and no rule reads
+      codons 776, 678 or 733 (G776C, S and V, R678Q and T733I, also on that list); these stay in the reference, as
+      stated (2026-11-24, as proposed, no rule change); MET stays exon 14 skipping, as the capmatinib and tepotinib
+      labels define it, so Y1003 and in-frame deletions at codons 963 and 1010 stay out; BRAF stays V600E, as the
+      dabrafenib with trametinib label names it; and codons with except lists are kept over an exact list of variants,
+      which would make every listed label absent from the release FAIL the download check. In public data (not GENIE)
+      each optional change would move about one patient or fewer in 650-700.
     note: >-
-      REVIEW: questions 2-5: which drivers form groups, the order of precedence, whether "KRAS other" is
-      its own group, and what stays in the reference. The exon 19 codon range and the variant classes are
-      to be checked against the transcript and the release's calls.
+      Question 2 decided 2026-11-23 (option C): Other recognized driver and the reference's name. Question 3
+      decided 2026-11-23 (option C): EGFR common as drafted, and three EGFR rules in Other recognized driver;
+      an EGFR common tumor that also has one of their calls (most often T790M) stays EGFR common. Question 4
+      decided 2026-11-24 (option A): the draft order, with no analysis leaving out tumors with two drivers. A
+      tumor is labeled by its first-listed driver, not by the driver that dominates it. If the screen's count
+      of tumors matching two groups through calls in different genes is 11 or more, the study author reviews
+      question 4 when the readiness report is reviewed, before the plan is locked and before any outcome is
+      seen; a change is then a deviation from the locked settings, with a new settings version. Question 5
+      decided 2026-11-24 (option D, with the codons kept): one KRAS group, and SA13 for KRAS G12C. Two KRAS
+      calls in one codon that may together spell a stop codon (a G12C or G13C call with a silent call, or
+      Q61R with Q61*) are read as KRAS mutant.
+      Fusion rows decided 2026-11-24 (option C): a row naming a second gene counts, in any frame; the intragenic rows
+      don't. Question 2's ERBB2 and MET scope decided 2026-11-24: none of the optional changes. After download, and
+      before any outcome is seen, the release's ALK, ROS1 and RET fusion descriptions are listed; a row dropped beyond
+      the intragenic texts is a deviation from the locked settings, with a new settings version. The download check
+      never checks except lists against the release, so the intragenic texts are checked by eye against the listed
+      descriptions; a misspelled MET, ERBB2 or EGFR except-list entry would go unnoticed, and its change would count.
+      The rules read only the protein change, numbered on NM_005228 / ENST00000275493 (EGFR), NM_000245 /
+      ENST00000397752 (MET), NM_004448 / ENST00000269571 (ERBB2), NM_033360 / ENST00000256078 (KRAS; the same protein
+      as NM_004985 through codon 150) and NM_004333 / ENST00000288602 (BRAF); the exon codons were checked on NCBI
+      RefSeq (2026-11-23). On GRCh37, the human genome build the CRC release uses, ENST00000288602 is the same
+      766-amino-acid protein as NM_004333, with valine at codon 600 (the V600E site); in Ensembl release 116, on the
+      newer GRCh38 build, ENST00000288602 is a longer protein, on which V600E is numbered p.V640E (NCBI RefSeq and
+      Ensembl, 2026-11-24). These five pairs are the transcripts GENIE's annotation uses: GENIE annotates mutations
+      with Genome Nexus (de Bruijn I et al., Cancer Res 2023;83:3861-3867), set in every version of its code since
+      2020 to Genome Nexus's UniProt transcript list (Sage-Bionetworks/Genie and annotation-tools on GitHub), and
+      every MET, EGFR, ERBB2, KRAS and BRAF row in the CRC v2.0-public release, from the same pipeline, is on these
+      Ensembl transcripts. After download, and before any outcome is seen, the NSCLC file's rows for these genes are
+      counted by transcript; rows on another transcript are a deviation decision, and a change to the rules is a new
+      settings version. Left in the reference, and stated: NTRK fusions; ALK, ROS1 and
+      RET rearrangements inside the gene with no second gene named (the intragenic rows); ERBB2 and MET amplification;
+      MET fusions; MET changes near exon 14 that stop short of the splice site's two intron bases, which the CRC
+      v2.0-public release classes Splice_Region or Intron (such as polypyrimidine-tract and branch-point deletions,
+      and changes 3 to 8 bases into the intron), some of which cause exon 14 skipping (Drilon A et al., Nat Med
+      2020;26:47-51; Das R et al., Cancers (Basel) 2022;14:4814); MET Y1003 changes, including in-frame deletions that
+      remove Y1003; MET exon 14 deletions found only as structural variants; BRAF other than V600E; ERBB2 changes
+      other than exon 20 insertions and the listed missense changes, among them G660R, V777M, S310P, L755M and L755W
+      (excepted, though a cited source supports them), V659G (active only with normal HER2 present, Pahuja 2018),
+      G776C, S and V, R678Q and T733I (on DESTINY-Lung01's eligible list), S335C (enrolled in Li 2018) and G309A and
+      G309E (lab studies); EGFR point changes at codons the EGFR missense rule doesn't name (such as L747P or R776H),
+      and the 18 excepted single-base changes at its codons (such as G719R); EGFR changes that replace codons with the
+      same number of new ones (classed as missense) away from the EGFR missense rule's codons, such as
+      p.E746_L747delinsIP and p.H773_V774delinsLM; EGFR exon 18 in-frame deletions that don't touch codon 709 or 710;
+      EGFR exon 20 in-frame deletions; EGFR exon 18 and exon 21 in-frame insertions away from the boundary codons; the
+      EGFR kinase-domain duplication; EGFR fusions; and EGFR amplification, which isn't read (the guideline says copy
+      number shouldn't be used to choose EGFR drugs: Lindeman 2013, Recommendation 6.5). Also left in the reference,
+      and stated (question 5): KRAS changes outside codons 12, 13 and 61, such as A59T, K117N, A146T, L19F and Q22K,
+      and KRAS insertions written at codons 9-11 or from 62 on (such as p.G10_A11dup); NRAS and HRAS changes, on which
+      Lindeman 2018 makes no statement (it lists NRAS only among emerging markers); and KRAS amplification, which
+      isn't read. Lab studies show some of these KRAS changes activate KRAS. KRAS changes at codons 19, 22, 59-60, 117
+      and 146 and NRAS and HRAS changes at codons 12, 13 and 61 were together 2.6-6.8% of the reference in public MSK
+      and TCGA lung data on cBioPortal (not GENIE), before KRAS amplification. An insertion at an exon boundary (such
+      as p.K728_G729ins or p.K823_G824ins) can't be placed from the protein label, so a rare exon 18 or exon 21 one
+      counts in Other recognized driver. L858R written as one two-codon change (p.L858_A859delinsRS) goes to Other
+      recognized driver, not EGFR common. The group follows the guideline's list, not the drugs available: EGFR exon
+      20 insertions had no approved drug for essentially all of follow-up (amivantamab, May 21, 2021, and
+      mobocertinib, September 15, 2021, came at or after the end of curation), ERBB2 mutations had none until August
+      11, 2022, and de novo T790M had no first-line label.
+      p.X963_splice and p.X1010_splice also label exon 13's donor and exon 15's acceptor sites, which don't skip exon
+      14; both still count. The p.X1010_splice rule assigns no one new: the range rule above already counts that
+      label. It makes the download check fail if no MET call is written p.X1010_splice, as would almost always happen
+      if the release numbered MET on the longer transcript (NM_001127500), whose codons run 18 higher.
   reference:
-    value: No listed driver
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 6 (the group without the listed variants is the reference)"
+    value: No recognized driver
+    made_by: NSCLC study author
+    source: "question 2, decided 2026-11-23 (option C): the group with none of the other groups' drivers is the reference, as in the CRC plan, section 6"
+    note: >-
+      It means no recognized driver found by the first panel's DNA sequencing: FISH (fluorescence in situ
+      hybridization), IHC (immunohistochemistry) and RNA results aren't recorded (the dry run, item C1). NTRK fusions
+      stay in it.
   described_only:
-    value: []
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 5 (D1): every group is compared when it is large enough"
-    note: "REVIEW: question 13. A group gathering rare drivers (question 2) would be described only."
+    value: [Other recognized driver]
+    made_by: NSCLC study author
+    source: >-
+      Question 13, decided 2026-11-24 (option B): Other recognized driver is described, never compared, whatever
+      its size; the group's job is to keep the reference clean (question 2), not to be studied.
+    note: >-
+      It stays in every model: passes 1 and 2, pass 3a's Cox model, pass 3b's propensity model and its balance
+      verdict (the largest standardized mean difference across all pairs), and the stability rule's t*. Its own
+      naive and corrected survival are reported. Its comparison with No recognized driver is never labeled
+      (primary, 3a, 3b, SA2, S2, SA1, SA7, SA13), and in the primary analysis its own bias estimates are
+      described, not labeled, and can't become co-primary under the stability rule. In S2, SA1, SA7 and SA13 its
+      own bias estimates keep their labels, as a short group's do in the CRC plan's secondary analyses
+      (section 8). On made-up data with no true difference, one comparison's RMST-gap change passed the 2-month
+      bar about 21-30% of the time with a median delay of about 3.2 months, and 9-13% at about 1.3 months (the
+      dry run, question 5); this removes that chance for this group.
   coverage:
     required:
       value:
@@ -180,203 +482,428 @@ genotype:
                748, 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 858]
         KRAS: [12, 13, 61]
         ALK: whole_gene
-      made_by: study author (draft, awaiting lung oncologist review)
-      source: "the groups above; carried from the CRC plan, section 4a (every group needs a panel that covers its genes)"
-      note: "REVIEW: question 6. A panel listing ALK may still not detect ALK fusions, which need its introns tiled."
+      made_by: NSCLC study author
+      source: >-
+        Confirmed 2026-11-24 (not a numbered question): the groups above (question 3: EGFR common; question 5: KRAS
+        codons 12, 13 and 61; question 6: ALK fusions, through fusion_panels); structure carried from the CRC plan,
+        section 4a (every group needs a panel that covers its genes); checked at gene level (when_only_genes_listed);
+        the download check, section D, lists for review each panel that doesn't read EGFR, KRAS and ALK (by its gene
+        list, and for ALK by fusion_panels); the three hotspot panels are expected there.
+      note: >-
+        Question 2 (decided 2026-11-23) keeps the rule at EGFR, KRAS and ALK: applies_to is all_groups, so requiring
+        Other recognized driver's genes would make patients unassignable in every group. Those drivers leave the
+        reference only where the first panel detects them, stated driver by driver. Detection is near-complete for
+        BRAF, ERBB2 and RET, good for ROS1 and MET, and poor for NTRK, which stays in the reference anyway: every
+        capture panel covers BRAF V600, ERBB2 exon 20 and MET exon 14's coding bases, and MSK and VICC keep only about
+        10-13 bases of MET intron (GENIE 20.0-public genomic_information.txt). A ROS1 or RET fusion leaves No
+        recognized driver only where the first panel targets the intron where the gene breaks; the coverage rule
+        doesn't check this (stated, NEXT_STEPS 6a (d), 2026-11-24). ROS1 breaks mostly in intron 31 (SLC34A2- and
+        SDC4-ROS1; Davies KD et al., Clin Cancer Res 2012;18:4570-4579) and also in introns 33 and 34 (such as
+        CD74-ROS1; Benayed R et al., Clin Cancer Res 2019;25:4712-4722); RET mostly in intron 11, sometimes 10 or 7
+        (KIF5B-RET: Kohno T et al., Nat Med 2012;18:375-377; Lipson D et al., Nat Med 2012;18:382-384; KIF5B- and
+        CCDC6-RET: Benayed 2019). RET introns 9-11 and ROS1 introns 32-34 are targeted on all eight capture panels;
+        RET intron 7 isn't on MSK-IMPACT341, MSK-IMPACT410, VICC-01-T5A or VICC-01-T7. ROS1 intron 31 is targeted on
+        every capture panel, but MSK leaves most of it out of its baits because of repeated DNA (Benayed 2019), and
+        DFCI-ONCOPANEL-1 and -2 list about two-thirds of it and none of intron 35. GENIE's design rows show the
+        regions each center lists, not its baits, so repeats in intron 31 may be missed on other panels too.
+        DFCI-ONCOPANEL-3 lists both genes' introns only in rows GENIE marks as outside its gene list (includeInPanel
+        False), read as for ALK. The MSK panels have only exon rows in GENIE, so their introns come from MSK's
+        published lists (Cheng DT et al., J Mol Diagn 2015;17:251-264, for MSK-IMPACT341; Hyman DM et al., Drug Discov
+        Today 2015;20:1422-1428, and MSK's 2017 symposium slides, taken as MSK-IMPACT410 and -468). So some ROS1
+        fusions breaking in intron 31, mainly on MSK panels, and rare RET fusions breaking in intron 7 can stay unseen
+        in No recognized driver; FISH, IHC and RNA results aren't recorded. Question 3 (decided 2026-11-23, option C)
+        leaves the EGFR codons unchanged: the release's panel files list genes only, and every capture panel covers
+        EGFR exons 18-21 (question 2), so adding the new EGFR rules' codons would change no one. Whether a panel
+        detects ALK fusions is settled by fusion_panels below (question 6).
     applies_to:
       value: all_groups
-      made_by: study author (draft, awaiting lung oncologist review)
-      source: "carried from the CRC plan, section 4a"
+      made_by: NSCLC study author
+      source: "question 6, decided 2026-11-22 (option A): a patient whose first panel can't detect EGFR, KRAS and ALK (the coverage rule) is unassignable in every group, not only in the reference, as in the CRC plan, section 4a"
     when_only_genes_listed:
-      value: deviation
-      made_by: study author (draft, awaiting lung oncologist review)
-      source: "the release's gene-panel files list genes only; for fusions a listed gene doesn't show the panel detects them, so this is stated as a deviation rather than accepted"
+      value: accept_gene_level
+      made_by: NSCLC study author
+      source: >-
+        The coverage setting (no numbered question), decided 2026-11-24 (option A): the release has no panel
+        coverage file and its gene-panel files list genes only, so this plan checks coverage at gene level from
+        the gene-panel files, as the CRC plan did (section 4a). The eight capture panels tile EGFR exons 18-21
+        and KRAS codons 12, 13 and 61 (GENIE 20.0-public genomic_information.txt, rows in the panel), so for
+        them the gene-level check is a codon-level one. ALK's fusion detection is settled by fusion_panels below
+        (question 6).
+      note: >-
+        Neither value changes who is assignable; with this one the readiness report states the gene-level check
+        as a note, not a deviation. The draft's "deviation" was for fusions, whose detection a listed gene
+        doesn't show; fusion_panels (question 6) now settles that, so this choice governs only EGFR's and
+        KRAS's codons.
     fusion_panels:
-      value: {}
-      made_by: study author (draft, awaiting lung oncologist review)
-      source: "not yet settled: which of the release's panels detect ALK fusions is review question 6"
-      note: "REVIEW: question 6. While this names no panels, a panel that lists ALK counts as detecting ALK fusions, stated as a deviation."
+      value:
+        ALK: [DFCI-ONCOPANEL-1, DFCI-ONCOPANEL-2, DFCI-ONCOPANEL-3, MSK-IMPACT341, MSK-IMPACT410, MSK-IMPACT468,
+              VICC-01-T5A, VICC-01-T7]
+      made_by: NSCLC study author
+      source: >-
+        question 6, decided 2026-11-22 (option A), with the panel list made final 2026-11-23: the table in the NSCLC
+        dry run's question 6 (docs/nsclc_review_dry_run.md), from the labs' own papers and documents (Sholl LM et
+        al., JCI Insight 2016; Ramkissoon SH et al., Neuro-Oncology 2017; DFCI's OncoPanel v3 test information
+        sheet, 2017; Cheng DT et al., J Mol Diagn 2015; Hyman DM et al., Drug Discov Today 2015; MSK's MSK-IMPACT
+        symposium slides, 2017) and GENIE 20.0-public genomic_information.txt (Synapse syn76452557), checked
+        2026-11-22 and 2026-11-23. The eight capture panels tile ALK's introns. UHN-48-V1, UHN-50-V2 and
+        VICC-01-SOLIDTUMOR are hotspot panels that can't detect fusions (GENIE 13.0-public data guide, assay
+        descriptions), so a patient first sequenced on one of them is unassignable.
+      note: >-
+        Limits, stated in the plan: some of these panels bait ALK intron 19 only (MSK-IMPACT410 as of 2015,
+        VICC-01-T5A and VICC-01-T7), so a fusion breaking in intron 18 or 20 can be missed; DFCI-ONCOPANEL-3's
+        ALK regions are rows GENIE marks as outside the panel's gene list (includeInPanel False), counted for the
+        reasons the dry run gives; and DNA panels miss some fusions even where the intron is tiled.
   reference_drugs:
-    value: {}
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "not in the draft: drivers found outside sequencing were raised after drafting (review dry run, item C1)"
-    note: "REVIEW: item C1. A list of drugs by driver would have the screen count the reference patients who received one."
+    value:
+      EGFR: [Gefitinib, Afatinib, Osimertinib, Icotinib, Rociletinib]
+      EGFR (erlotinib): [Erlotinib]
+      ALK or ROS1: [Crizotinib, Ceritinib, Alectinib, Brigatinib, Lorlatinib, Ensartinib, Entrectinib]
+      BRAF V600E: [Dabrafenib, Trametinib, Vemurafenib]
+    made_by: NSCLC study author
+    source: >-
+      Item C1 (the dry run), decided 2026-11-24 (option B, four rows): a masked note in the readiness screen of how
+      many No recognized driver patients received a drug aimed at a recognized driver, at any time; no one changes
+      group. Each row but erlotinib's is a strong sign of a recognized driver the first panel's DNA sequencing missed.
+      Names are base generic names from the release's drug list (data guide, Appendix 2, in its August 2022 version);
+      the screen matches a whole name, ignoring case, so "Erlotinib" finds "Erlotinib Hydrochloride" and "Afatinib"
+      finds "Afatinib Dimaleate". Erlotinib has a row of its own: its maintenance and second-line indications needed
+      no EGFR mutation until October 18, 2016, when the FDA limited them to exon 19 deletions or L858R (the IUNO
+      trial; Drugs@FDA, NDA 021743, supplement 25, approved October 18, 2016), so before then it is a weak sign.
+      Crizotinib, ceritinib and lorlatinib act on both ALK and ROS1, and crizotinib on MET exon 14, so ALK and ROS1
+      share one row. Approval dates (Drugs@FDA approval letters): crizotinib for ROS1, March 11, 2016 (NDA 202570,
+      supplement 16); dabrafenib with trametinib for BRAF V600E NSCLC, June 22, 2017 (NDA 202806, supplement 6);
+      entrectinib for ROS1, August 15, 2019 (NDA 212725). Rociletinib was never approved, so its use was in a trial;
+      its name on the release's list suggests some sites didn't mask it. The release's drug list in its August 2022
+      version names no capmatinib, tepotinib, selpercatinib, pralsetinib, larotrectinib, sotorasib, adagrasib or
+      dacomitinib; an earlier version of the guide has a longer master list that names some of them, so the regimen
+      file is the real test: the download check finds each listed drug there, and after download the file is searched
+      for these eight names; one found there is a deviation decision, made before any outcome is seen.
+    note: >-
+      The count is a lower bound: FISH, IHC and RNA results aren't recorded, and drugs given in a trial are
+      released as "Investigational Drug" (some sites mask every drug in the trial). Erlotinib's row may also
+      count patients with no EGFR driver, treated before October 18, 2016. It counts a drug given at any time,
+      before or after the first sequencing report, from the index cancer's regimens only. No MET, RET, ERBB2,
+      KRAS G12C or NTRK row: cabozantinib serves both RET and MET, off label; the trastuzumab drugs and
+      neratinib also treat ERBB2 amplification, which stays in the reference; KRAS tumors aren't in the
+      reference, and sotorasib and adagrasib aren't on the list; NTRK fusions stay in the reference by design,
+      so an NTRK count would measure fusions the panel found. Entrectinib is counted under ALK or ROS1, though
+      it also treats NTRK fusions. Off-label BRAF drugs for BRAF changes other than V600E, which stay in the
+      reference, would also be counted. Since question 3 (option C) the guideline's uncommon EGFR drivers leave
+      the reference too, so an EGFR drug there signals a missed EGFR driver or an EGFR change the rules don't
+      list; afatinib's first-line label widened to non-resistant EGFR mutations on January 12, 2018 (Drugs@FDA,
+      NDA 201292). Drivers can share drugs, so if any two counts differ by 1 to 10, every count is shown
+      as a range. If the note shows many, the study author decides before the plan is locked, as a deviation.
 
 time:
   days_per_year:
     value: 365.25
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 4"
+    made_by: NSCLC study author
+    source: "confirmed 2026-11-24 (not a numbered question): carried from the CRC plan, section 4"
   horizon_years:
     value: 3
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 4"
-    note: "REVIEW: question 7. Stage IV NSCLC without a driver often has shorter survival; the driver groups longer."
+    made_by: NSCLC study author
+    source: >-
+      Question 7, decided 2026-11-24 (option A): carried from the CRC plan, section 4, for comparability. EGFR and ALK
+      survival on targeted therapy runs well past 2 years: FLAURA overall survival (Ramalingam SS et al., N Engl J Med
+      2020;382:41-50: median 38.6 months with osimertinib, 31.8 with gefitinib or erlotinib) and ALEX overall survival
+      (Mok T et al., Ann Oncol 2020;31(8):1056-1064: 62.5% alive at 5 years with alectinib, 45.5% with crizotinib). At
+      2 years their RMST would sit near the 24-month ceiling whether delayed entry is corrected or not. Follow-up
+      ended August 31, 2020 in the consortium's 2021 analysis of this cohort (Kehl KL et al., JAMA Netw Open
+      2021;4:e2117547; the v2.0-public data guide states no end date, so the date is approximate for this release), so
+      36 months from diagnosis is out of reach only for patients reported late in 2017 (after about November 10, 2017
+      at the median delay of 2.34 months in Brown S et al., JAMA Oncol 2022;8:287-291): about 3% of patients if report
+      dates are spread evenly, each short by 4 months or less, censored there like anyone alive at the end of
+      follow-up.
+    note: >-
+      Stage IV NSCLC without a driver often has shorter survival; the driver groups longer. Thin risk sets near
+      36 months show as wider intervals; no rule set in advance trims them. S2, timed from the start of
+      first-line treatment, has fewer patients near 36 months.
 
 summary:
   survival_at_years:
     value: [1, 2, 3, 4, 5]
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 4"
+    made_by: NSCLC study author
+    source: "item C2 (the dry run), decided 2026-11-24 (kept): carried from the CRC plan, section 4"
   median_limit_years:
     value: 5
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 6"
+    made_by: NSCLC study author
+    source: "item C2 (the dry run), decided 2026-11-24 (kept): carried from the CRC plan, section 6"
 
 materiality:
   rmst_months:
     value: 2
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 11"
-    note: "REVIEW: question 8 (all four bars)."
+    made_by: NSCLC study author
+    source: >-
+      Question 8, decided 2026-11-24 (option B', the CRC bars with a stated reading): carried from the CRC plan,
+      section 11; read by the rule in labels.material's source.
   median_months:
     value: 3
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 11"
+    made_by: NSCLC study author
+    source: >-
+      Question 8, decided 2026-11-24: carried from the CRC plan, section 11; at or just below the smallest clinically
+      meaningful gain in median overall survival for nonsquamous NSCLC, 3.25-4 months, hazard ratio (HR) 0.76-0.80, on
+      a baseline median of 13-14 months (Ellis LM et al., J Clin Oncol 2014;32:1277-1280, as reprinted in Cortinovis D
+      et al., J Thorac Dis 2015;7:E541-E547, Table 1, and adapted in Fenchel K et al., Transl Lung Cancer Res
+      2016;5:115-119, Table 2; the paper itself could not be read). Kept at 3 months rather than 3.25: comparable with
+      the CRC study, and the reference, No recognized driver (question 2), likely has a median below 13 months, so 3
+      months is a larger share of it.
   hr_ratio_change:
     value: 0.10
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 11"
+    made_by: NSCLC study author
+    source: >-
+      Question 8, decided 2026-11-24: carried from the CRC plan, section 11; read by the rule in labels.material's
+      source.
   rmst_gap_change_months:
     value: 2
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 11"
+    made_by: NSCLC study author
+    source: >-
+      Question 8, decided 2026-11-24: carried from the CRC plan, section 11; read by the rule in labels.material's
+      source.
 
 labels:
   clearly_material:
     value: estimate_and_whole_interval
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 11"
+    made_by: NSCLC study author
+    source: >-
+      Question 8, decided 2026-11-24 (option B'): carried from the CRC plan, section 11: the estimate and its whole
+      95% interval are past the bar. The labels are read by this rule: for the HR-ratio and RMST-gap comparison
+      rows only "clearly material" counts as material bias; "material" is reported with its interval as "past
+      the bar; chance not excluded"; a group's own overstatement is read as in the CRC plan, section 11. This is
+      a design difference from the CRC study, whose plan (section 11) counted either label as material bias; it
+      is set before the NSCLC plan is locked, so it is not a deviation.
+    note: >-
+      Only this label marks material bias in a comparison between groups (the HR ratio, the change in the RMST
+      gap). On made-up data with no true difference between groups, it arose by chance in about 2% of RMST-gap
+      comparisons (rough, from an SD-based interval; the dry run, question 8) and in under 0.2% of HR-ratio
+      comparisons (the same made-up runs, not quoted in the dry run).
   material:
     value: estimate_only
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 11"
+    made_by: NSCLC study author
+    source: >-
+      Question 8, decided 2026-11-24 (option B'): carried from the CRC plan, section 11: the estimate is past the
+      bar and its interval crosses it. The labels are read by this rule: for the HR-ratio and RMST-gap comparison
+      rows only "clearly material" counts as material bias; "material" is reported with its interval as "past
+      the bar; chance not excluded"; a group's own overstatement is read as in the CRC plan, section 11. This is
+      a design difference from the CRC study: its plan (section 11) counted either label as material bias, and
+      its README found both its comparisons material only through "material" labels (RAS-mutant's RMST-gap
+      change 2.7 months, interval 0.6 to 5.8; BRAF V600E's HR ratio 1.15, 0.93 to 1.39), which this rule would
+      not count. Why: on made-up data with no true difference between groups, a comparison's RMST-gap change
+      passed the 2-month bar 22-30% of the time with long delays (median about 3.2 months) and 8-11% with short
+      ones (about 1.3 months); a bar near 5 months would bring that near 5%, more than the clinically
+      meaningful gain itself (the dry run, question 8).
+    note: >-
+      A material comparison is reported with its interval, read as "past the bar; chance not excluded", not as
+      a finding of material bias. A group's own overstatement, where the bias is expected to be large and real,
+      is read as in the CRC plan: either label counts. On the same made-up data the HR-ratio change passed 10%
+      about 2-7% of the time with long delays and under 1% with short ones, and the RMST-gap change passed 5
+      months 3.6-5.2% of the time with long delays.
 
 smallest_group:
   patients:
     value: 30
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 5 (D1)"
+    made_by: NSCLC study author
+    source: "question 13, decided 2026-11-24 (option B): carried from the CRC plan, section 5 (D1)"
+    note: >-
+      The CRC plan states 30 with no reason (section 5, D1; its run workplan: no power calculation, the sample
+      fixed by the release). Kept: it is a feasibility gate, not a guard against chance labels, which the dry
+      run's question 5 simulation found at 80-190 patients too (question 8, decided 2026-11-24, answers them
+      with its reading rule); a higher floor would mainly describe ALK fusion.
   if_short:
     value:
       EGFR common: block
       ALK fusion: describe
-      KRAS G12C: describe
-      KRAS other: describe
-      No listed driver: block
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "by analogy with the CRC plan, section 5 (D1): the largest driver group and the reference are needed for the main question; the smaller groups are described if short"
+      KRAS mutant: describe
+      No recognized driver: block
+    made_by: NSCLC study author
+    source: >-
+      Question 13, decided 2026-11-24 (option B): by analogy with the CRC plan, section 5 (D1), the largest
+      driver group and the reference are needed for the main question; the smaller groups are described if
+      short.
+    note: >-
+      Other recognized driver is in genotype.described_only, so it has no rule here. Each subset and S2 has its
+      own if_short (describe), so only the primary analysis can block.
 
 biomarker:
   unknown_max_share:
     value: 0.30
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 4b; it applies once a biomarker analysis is added (PD-L1 is proposed: review question 10)"
+    made_by: NSCLC study author
+    source: "carried from the CRC plan, section 4b; unused, since no biomarker analysis runs for NSCLC (question 10, decided 2026-11-23: PD-L1 left out)"
 
 survival_after_entry:
   window_days:
     value: 730
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "data guide, Eligibility: a minimum of two years of possible follow-up after sequencing; check as in the CRC plan, section 5 (D2)"
+    made_by: NSCLC study author
+    source: >-
+      Item C2 (the dry run), decided 2026-11-24 (kept): data guide, Eligibility: a minimum of two years of possible
+      follow-up after sequencing; check as in the CRC plan, section 5 (D2)
   min_deaths:
     value: 11
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 5 (D2)"
+    made_by: NSCLC study author
+    source: "item C2 (the dry run), decided 2026-11-24 (kept): carried from the CRC plan, section 5 (D2)"
   if_fewer:
     value: move_entry_by_window
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 5 (D2)"
+    made_by: NSCLC study author
+    source: "item C2 (the dry run), decided 2026-11-24 (kept): carried from the CRC plan, section 5 (D2)"
 
 stability:
   risk_set:
     value: 20
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 6 (stability rule)"
+    made_by: NSCLC study author
+    source: "item C2 (the dry run), decided 2026-11-24 (kept): carried from the CRC plan, section 6 (stability rule)"
 
 uncertainty:
   bootstrap_resamples:
     value: 1000
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 6"
+    made_by: NSCLC study author
+    source: "item C2 (the dry run), decided 2026-11-24 (kept): carried from the CRC plan, section 6"
   seed:
     value: 20261113
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "a fixed seed, set at drafting (the date); any fixed value serves"
+    made_by: NSCLC study author
+    source: >-
+      Item C2 (the dry run), decided 2026-11-24 (kept): a fixed seed, set at drafting (the date); any fixed value
+      serves
   interval_level:
     value: 0.95
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 6"
+    made_by: NSCLC study author
+    source: "item C2 (the dry run), decided 2026-11-24 (kept): carried from the CRC plan, section 6"
   when_a_resample_has_no_value:
     value: no_interval
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 6"
+    made_by: NSCLC study author
+    source: >-
+      Confirmed 2026-11-24 (not a numbered question): carried from the CRC plan, section 6: an estimate that some
+      resample can't give (such as a median not reached within 5 years) gets no interval, and the number of such
+      resamples is reported; its label then rests on the estimate alone, so it can be material but not clearly
+      material.
+    note: >-
+      Most likely for ALK fusion, whose median may lie near or past the 5-year limit (ALEX: 62.5% alive at 5
+      years with alectinib; time.horizon_years' source).
 
 adjustment:
   variables:
     value:
       - {field: age_at_diagnosis, form: spline, knots_at_percentiles: [10, 50, 90]}
       - {field: sex, form: categorical, keep: [Male, Female]}
-      - {field: center, form: categorical, keep: [DFCI, MSK, UHN, VICC], reference: MSK}
-      - {field: smoking_at_diagnosis, form: categorical}
-      - {field: histology, form: categorical, keep: [Adenocarcinoma, Squamous cell, Carcinoma, Other histologies/mixed tumor]}
+      - {field: center, form: categorical, keep: [DFCI, MSK, VICC], reference: MSK}
+      - {field: smoking_at_diagnosis, form: categorical, reference: Never,
+         merge: {Never: ["Never used"], Former: ["Former user (quit >1 year)", "Former user (unknown time)"],
+                 Current: ["Current user", "Former user (quit <1 year)"]}}
+      - {field: histology, form: categorical, reference: Adenocarcinoma,
+         merge: {Adenocarcinoma: [Adenocarcinoma], "Carcinoma or other": [Carcinoma, Other histologies/mixed tumor]}}
       - {field: year_of_diagnosis, form: bands}
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 4c (age, sex, center, year); synopsis: the four NSCLC centers, ca_lung_cigarette (cigarette use at diagnosis) and ca_hist_adeno_squamous"
+    made_by: NSCLC study author
+    source: >-
+      Question 11, decided 2026-11-24: age, sex, center and year carried from the CRC plan, section 4c, with race
+      and ethnicity described only, as there; synopsis: the NSCLC centers DFCI, MSK and VICC (the release's
+      fourth, UHN, has no assignable patient: question 6). Smoking and histology replace CRC's tumor location.
+      Cigarette use at diagnosis (ca_lung_cigarette, six levels in the data guide) is merged as the release
+      spells it: Never (Never used), Former (quit over a year ago, or time unknown) and Current (Current user,
+      or quit under a year ago); its Unknown is missing. Histology (ca_hist_adeno_squamous) has two levels:
+      Adenocarcinoma, the reference, and Carcinoma or other (Carcinoma and Other histologies/mixed tumor, the
+      primary population's other two levels: question 1, decided 2026-11-23).
     note: >-
-      REVIEW: question 11. Smoking (ca_lung_cigarette) and histology replace CRC's tumor location. The
-      adapter's NSCLC spec has to carry ca_lung_cigarette as smoking_at_diagnosis (phase 3); how to
-      group its six levels is open.
+      A quit under a year counts as current, since quitting in the year before a lung cancer diagnosis is often
+      because of symptoms. Race and ethnicity (race_ethnicity) are described only, as in the CRC plan: race is
+      not a biological variable, and adjusting a genotype comparison for it could hide differences in access to
+      care; residual confounding by Asian ancestry, which goes with EGFR, is stated. Carcinoma and Other
+      histologies/mixed tumor are merged because the genotype term has five levels, and these small levels
+      would leave sparse cells in the propensity and imputation models and in the balance verdict across all
+      pairs of groups. Brain metastases at diagnosis are left out (on the path from genotype to survival).
+      Performance status isn't in the release (a stated limitation). A blank histology and smoking's Unknown
+      are missing and count toward the 5% complete-case limit; above it, missing_data.imputation_model applies.
   year_bands:
     value:
       - {label: "2013 or earlier", to: 2013}
       - {label: "2014-2015", from: 2014, to: 2015}
-      - {label: "2016-2017", from: 2016, to: 2017}
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "data guide, Eligibility: sequencing reports from 2014 to 2017 (UHN 2014-2015); bands merged when small, as in the CRC plan, section 4c"
+      - {label: "2016 or later", from: 2016}
+    made_by: NSCLC study author
+    source: >-
+      Item C2 (the dry run), decided 2026-11-24 (the last band open): data guide, Eligibility: sequencing reports
+      from 2014 to 2017; bands merged when small, as in the CRC plan, section 4c. The last band is "2016 or
+      later" because the year of diagnosis is estimated, from the birth year and the age at diagnosis
+      (floor(birth_year + 0.5 + dob_ca_dx_days / 365.25), the CRC plan, section 4c), so it is off by one year
+      for about a quarter of patients, and a 2017 (or a rare 2018) diagnosis can be coded 2018. Under a band
+      closed at 2017 it would fall in no band and count as missing an adjustment variable (on made-up dates,
+      12% of true-2017 diagnoses; none with the open band).
+    note: >-
+      The open ends remove blanks only: about 1 in 8 diagnoses in each year next to a band edge (2013 and 2014,
+      2015 and 2016) still falls in the neighboring band, a limitation stated in the plan (the CRC plan calls
+      the year "accurate to about one year").
   band_min_patients:
     value: 30
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 4c"
+    made_by: NSCLC study author
+    source: "confirmed 2026-11-24 (not a numbered question): carried from the CRC plan, section 4c"
+    note: >-
+      A band under 30 patients is merged before modeling, on counts only, by the CRC plan's rule (section 4c):
+      if "2013 or earlier" merges, the bands read "2015 or earlier" and "2016 or later".
 
 missing_data:
   complete_case_max_share:
     value: 0.05
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 9"
+    made_by: NSCLC study author
+    source: "item C2 (the dry run), decided 2026-11-24 (kept): carried from the CRC plan, section 9"
   imputations:
     value: 20
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 9"
+    made_by: NSCLC study author
+    source: "item C2 (the dry run), decided 2026-11-24 (kept): carried from the CRC plan, section 9"
+  imputation_model:
+    value:
+      engine: chained_equations
+      outcome_terms: [event, cumulative_hazard_corrected, entry_time]
+      include_group: true
+      methods: {linear: pmm, spline: pmm, categorical: polyreg, bands: polyreg}
+      pmm_donors: 5
+      iterations: 5
+      pooling: rubins_rules
+      bootstrap: impute_each_resample_once
+      point_estimates: average_across_imputations
+    made_by: NSCLC study author
+    source: >-
+      Question 11, decided 2026-11-24: the CRC plan, section 9 (the event indicator, the Nelson-Aalen cumulative
+      hazard with delayed entry and the entry time in the imputation model; Rubin's rules; each bootstrap
+      resample imputed once; point estimates averaged across the imputations). The pipeline's own
+      chained-equations engine, since the mice engine can't load on this machine; donors and iterations at
+      mice's defaults, since the CRC plan said only "with mice"; the group included, since it is in every
+      analysis model; multinomial draws (polyreg) for categories, since center and smoking have three levels.
+    note: >-
+      Set in advance: across all 1,846 v2.0-public patients, histology is Unknown for 257 (14%) (Choudhury NJ
+      et al., Clin Cancer Res 2023, Table 1; reading Unknown there as a blank field is an inference), and
+      squamous tumors leave the population while blanks stay, so the 5% limit is likely passed. It has no
+      effect if complete case holds. If imputed, a blank histology is placed among the nonsquamous levels,
+      though it may be a squamous tumor. The pipeline's multinomial draws carry mice's guard against sparse
+      cells (augmenting records), checked on made-up data with a sparse cell.
 
 weighting:
   variables:
     value: same_as_adjustment
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 6 (pass 3b)"
+    made_by: NSCLC study author
+    source: "item C2 (the dry run), decided 2026-11-24 (kept): carried from the CRC plan, section 6 (pass 3b)"
   trim_percentiles:
     value: [1, 99]
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 6 (pass 3b)"
+    made_by: NSCLC study author
+    source: "item C2 (the dry run), decided 2026-11-24 (kept): carried from the CRC plan, section 6 (pass 3b)"
   balance_target_smd:
     value: 0.1
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 6 (pass 3b)"
+    made_by: NSCLC study author
+    source: "item C2 (the dry run), decided 2026-11-24 (kept): carried from the CRC plan, section 6 (pass 3b)"
 
 ph_check:
   p_threshold:
     value: 0.01
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 8 (SA5)"
+    made_by: NSCLC study author
+    source: "confirmed 2026-11-24 (not a numbered question): carried from the CRC plan, section 8 (SA5)"
   split_months:
     value: 12
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 8 (SA5)"
+    made_by: NSCLC study author
+    source: "item C2 (the dry run), decided 2026-11-24 (kept): carried from the CRC plan, section 8 (SA5)"
 
 assumption_check:
   estimators:
     value: [MB, IPW1, IPW2]
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "the CRC plan, section 8 (SA6), registered MB; IPW1 and IPW2 added here in advance, since in the CRC study they were added post hoc and showed when the estimators disagree (the design plan, section 8)"
+    made_by: NSCLC study author
+    source: >-
+      Item C2 (the dry run), decided 2026-11-24 (kept): the CRC plan, section 8 (SA6), registered MB; IPW1 and IPW2
+      added here in advance, since in the CRC study they were added post hoc and showed when the estimators disagree
+      (the design plan, section 8)
 
 analyses:
   value:
@@ -402,16 +929,6 @@ analyses:
       run: true
       kind: adjusted_variant
       stratify_by: center
-    - id: SA4
-      label: Reference group without ROS1 or RET fusions
-      run: true
-      kind: subset
-      keep:
-        exclude_from_group: No listed driver
-        if_result:
-          kind: fusion
-          genes: [ROS1, RET]
-      if_short: describe
     - id: SA5
       label: Proportional hazards check
       run: true
@@ -428,30 +945,100 @@ analyses:
       if_short: describe
     - id: SA10
       label: Nonsquamous only
-      run: true
+      run: false
       kind: subset
       keep: {field: histology, op: not_in, values: ["Squamous cell"], normalize: trim, missing: pass}
       if_short: describe
     - id: SA11
       label: Without UHN
-      run: true
+      run: false
       kind: subset
       keep: {field: center, op: not_in, values: [UHN], normalize: trim, missing: pass}
       if_short: describe
-  made_by: study author (draft, awaiting lung oncologist review)
+    - id: SA12
+      label: Reference group only on panels that detect ALK fusions
+      run: false
+      kind: subset
+      keep:
+        fusion_detecting_panel:
+          gene: ALK
+          panels: [DFCI-ONCOPANEL-1, DFCI-ONCOPANEL-2, DFCI-ONCOPANEL-3, MSK-IMPACT341, MSK-IMPACT410,
+                   MSK-IMPACT468, VICC-01-T5A, VICC-01-T7]
+        groups: reference_only
+      if_short: describe
+    - id: SA13
+      label: KRAS G12C only
+      run: true
+      kind: subset
+      keep:
+        exclude_from_group: KRAS mutant
+        if_result:
+          kind: mutation
+          genes: [KRAS]
+          variant_classes: [Missense_Mutation, In_Frame_Del, In_Frame_Ins]
+          codons: [12, 13, 61]
+          except_variants: ["p.G12C"]
+      if_short: describe
+  made_by: NSCLC study author
   source: >-
-    Structure carried from the CRC plan, sections 7 and 8 (S2, S3, SA1, SA2, SA5, SA6, SA7). SA4 keeps
-    other targetable fusions out of the reference, as the CRC study's SA4 did for other BRAF variants;
-    SA10 restricts to the nonsquamous population, where broad molecular testing is routinely recommended
-    (NCCN NSCLC guidelines; the CAP/IASLC/AMP guideline targets tumors with an adenocarcinoma component,
-    Lindeman NI et al., J Thorac Oncol 2018). SA11 leaves out UHN, the one center outside the United States: its
+    Structure carried from the CRC plan, sections 7 and 8 (S2, S3, SA1, SA2, SA5, SA6, SA7), confirmed
+    2026-11-24 (not a numbered question), with SA1's 6 months decided as item C2 (the dry run), kept: a first
+    report at most 182.6 days (6 x 365.25 / 12) after diagnosis, a report before diagnosis included. There is no SA4:
+    question 2 (decided 2026-11-23, option C) puts ROS1 and RET fusions in Other recognized driver, so the
+    reference holds none and SA4 would remove no one.
+    SA10 (nonsquamous only) is switched off: question 1 (decided 2026-11-23, option B) makes the primary
+    population nonsquamous, so SA10 would repeat it. SA7 (adenocarcinoma only) still narrows it, leaving out
+    Carcinoma, Other histologies/mixed tumor and blank histology, so it is the one view without blank-histology
+    patients. SA11 leaves out UHN, the one center outside the United States: its
     sequencing window was shorter (data guide, Eligibility) and its deaths can't come from the US National
-    Death Index (synopsis, hybrid_death_source). The CRC study's S1, SA8 and SA9 concerned MSI/MMR, which the NSCLC
-    pathology data don't record; SA3 (co-mutants) is left out because the drivers rarely co-occur.
-  note: "REVIEW: questions 10 and 12 (a PD-L1 analysis; which sensitivity analyses to run)."
+    Death Index (synopsis, hybrid_death_source). SA11 is switched off: question 6 (decided 2026-11-22) leaves no
+    UHN patient assignable, since UHN's only panels are hotspot panels that can't detect ALK fusions, so SA11
+    would repeat the primary analysis and question 12 is settled with it. The CRC study's S1, SA8 and SA9 concerned MSI/MMR, which the NSCLC
+    pathology data don't record. SA3 (co-mutants) is left out (question 4, decided 2026-11-24, option A): the
+    main groups' drivers rarely co-occur (3 of 3,625 patients in public MSK and TCGA data, all EGFR common with
+    KRAS, none with ALK; genotype.groups' source), and the common case, an EGFR common tumor that also matches
+    one of Other recognized driver's EGFR rules (most often by T790M), stays EGFR common by precedence. SA12
+    keeps the
+    reference group only
+    where the entry test's panel can detect ALK fusions: in 2014-2017 ALK fusions were often found by FISH or
+    IHC rather than by DNA panels, and a DNA panel detects them only if it tiles ALK's introns, so an
+    ALK-positive tumor can sit unseen in the reference. The other groups keep everyone: a tumor there already
+    has its driver, EGFR ranks above ALK, and ALK rarely occurs with KRAS. SA12 is switched off for this study:
+    under question 6's option A (decided 2026-11-22) every assignable patient's first panel already detects ALK
+    fusions, so SA12 would repeat the primary analysis. Its panels are genotype.coverage.fusion_panels' list,
+    since one list must serve both. SA13 (question 5, decided 2026-11-24, option D) keeps KRAS G12C, the
+    design plan's example, in view beside the primary's one KRAS group: it leaves out KRAS mutant patients
+    whose first test has a KRAS missense or in-frame call at codon 12, 13 or 61 other than p.G12C, so its
+    KRAS group is G12C tumors without such a second call (a G12C tumor whose second KRAS call is elsewhere,
+    or silent, stays). Its rule keeps the except entry for p.G12C, or it would leave out every G12C tumor.
+    Its tables still name the group KRAS mutant, and its G12C comparison, like any other, can be labeled
+    material by chance. There is no PD-L1 analysis, the NSCLC
+    counterpart of the CRC study's S1
+    (question 10, decided 2026-11-23; named as later work). Most patients would be Unknown at entry: US PD-L1
+    testing began with the first companion test, approved October 2, 2015, and reached about 75% of newly
+    diagnosed metastatic patients only in 2017 (Velcheti V et al., PLoS One 2018), and 55% of the BPC NSCLC
+    patients treated with a checkpoint inhibitor had no PD-L1 status (Liu et al., BMC Pulm Med 2024), so the
+    analysis would fall back to description. The test's timing ties a PD-L1 group to treatment decisions and to
+    survival after entry. And it would need a new PD-L1 reader, the largest remaining pipeline work. Limitation
+    stated with it, the immunotherapy era: immunotherapy reached tumors without a driver, and KRAS tumors, far
+    more than EGFR or ALK tumors (the first-line pembrolizumab labels exclude EGFR- and ALK-positive tumors), so
+    the reference group's survival likely rose during 2015-2019 more than some driver groups'. For this
+    nonsquamous population: second-line nivolumab from October 9, 2015, and first-line pembrolizumab with
+    chemotherapy from May 10, 2017. The naive and
+    corrected passes have no calendar-year term (the year bands enter only the adjusted and weighted models),
+    and in a fixed sequencing window an earlier diagnosis means a longer delay, so the era can bend
+    quasi-independence (SA6's check). A toy simulation on made-up values put the effect well under a month of
+    median survival, below the materiality bars.
+  note: >-
+    PD-L1 is left out (question 10, decided 2026-11-23) and named as later work. SA10 is switched off by
+    question 1 (decided 2026-11-23). SA4 is deleted by question 2 (decided 2026-11-23, option C); the other
+    analyses keep their ids. SA3 stays out (question 4, decided 2026-11-24, option A). SA13 (KRAS G12C only)
+    is added by question 5 (decided 2026-11-24, option D).
 
 privacy:
   min_count:
     value: 11
-    made_by: study author (draft, awaiting lung oncologist review)
-    source: "carried from the CRC plan, section 13; the GENIE terms of access"
+    made_by: NSCLC study author
+    source: >-
+      Item C2 (the dry run), decided 2026-11-24 (kept): carried from the CRC plan, section 13; the GENIE terms of
+      access

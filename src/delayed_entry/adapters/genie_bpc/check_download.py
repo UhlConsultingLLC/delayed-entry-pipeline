@@ -10,8 +10,9 @@ and site codes) comes from the settings. It asks one question: are these the fil
 adapter expect? It checks the folders, the files (present, and byte for byte what Synapse holds), that
 every file can be read, that every column the adapter uses is there with values of the right kind, that
 coded columns hold only the documented values, that the units are what the adapter assumes, and that the
-files link to each other. Then it builds the standard tables once, to see that they build. It reports
-no survival estimate and no count of deaths.
+files link to each other, and that the groups' genes are on the transcripts the rules' codons assume. Then
+it builds the standard tables once, to see that they build, and counts each group rule's matches (report
+only). It reports no survival estimate and no count of deaths.
 
 Each check ends as one of:
     pass     as expected
@@ -37,10 +38,11 @@ import yaml
 
 from delayed_entry.adapters import genie_bpc
 from delayed_entry.adapters.genie_bpc import genomic_information, raw
-from delayed_entry.cohort import drug_matches
+from delayed_entry.cohort import codon_span, drug_matches, result_matches, variant_text
 from delayed_entry.lock import settings_lock_matches
 from delayed_entry.privacy import check_not_cloud
 from delayed_entry.settings import Settings, load_settings
+from delayed_entry.tables import StandardTables, outcome_blind
 
 PACKAGE_ROOT = Path(__file__).resolve().parents[4]      # the delayed-entry-pipeline folder
 REPORT_FILE = "check_download_report.txt"
@@ -126,6 +128,7 @@ def folder_of(row_folder: str, clinical: Path, genomic: Path) -> Path:
 def searched_labels(settings: Settings) -> dict:
     """Every label the settings' rules match by exact text."""
     genes, classes, variants, fusion_genes, field_values = set(), set(), set(), set(), []
+    variant_pairs = set()       # (the rule's genes, a protein change it names): the label must be in one of those genes
     for g in settings.read("genotype.groups"):
         for m in g.get("any_of", []):
             if m["kind"] == "fusion":
@@ -135,6 +138,7 @@ def searched_labels(settings: Settings) -> dict:
             genes |= set(m["genes"])
             classes |= set(m.get("variant_classes", []))
             variants |= set(m.get("variants", []))
+            variant_pairs |= {(tuple(sorted(m["genes"])), v) for v in m.get("variants", [])}
     for r in settings.read("cohort.rules"):
         for c in r["all_of"]:
             if c.get("field") in RAW_COLUMN and c["op"] in ("in", "starts_with_any"):
@@ -142,7 +146,8 @@ def searched_labels(settings: Settings) -> dict:
     other_primary = any(a["run"] and a["kind"] == "biomarker" and "other_primary_same_cancer" in a["exclude_if"]
                         for a in settings.read("analyses"))
     return {"genes": sorted(genes), "classes": sorted(classes),
-            "variants": sorted(variants), "fusion_genes": sorted(fusion_genes), "fields": field_values,
+            "variants": sorted(variants), "variant_pairs": sorted(variant_pairs),
+            "fusion_genes": sorted(fusion_genes), "fields": field_values,
             "fusion_panels": settings.read("genotype.coverage.fusion_panels"),
             "drugs": settings.read("genotype.reference_drugs"), "other_primary_used": other_primary,
             "cancer_labels": list(settings.read("source.genie_bpc.cancer_type_labels")),
@@ -327,9 +332,10 @@ def check_reading(con, clinical: Path, genomic: Path, cohort: str, show: Shower)
 
 # ---- D. Gene panels ----
 def check_panels(genomic: Path, expected: dict, genes: list[str], rehearsal: bool,
-                 fusion_panels: dict | None = None) -> list[Check]:
+                 fusion_panels: dict | None = None, analysis_panels: dict | None = None) -> list[Check]:
     """The panel files. For a gene in `fusion_panels` (the settings' panels that detect its fusions), a panel
-    reads it only if it is on that list too."""
+    reads it only if it is on that list too. `analysis_panels` ({analysis: panels}) are the panels a subset
+    analysis lists as detecting a gene's fusions: each must have a panel file too."""
     s = "D. Gene panels"
     fusion_panels = {g: ps for g, ps in (fusion_panels or {}).items() if g in genes}
     bad, lacking, full = [], [], []
@@ -356,6 +362,10 @@ def check_panels(genomic: Path, expected: dict, genes: list[str], rehearsal: boo
         out.append(Check(s, "Every panel the settings list as detecting fusions has a panel file", FAIL if unknown else PASS,
                          "not a panel here, so its patients would be unassignable (check the spelling): "
                          + ", ".join(unknown) if unknown else ""))
+    for aid, ps in (analysis_panels or {}).items():
+        unknown = sorted(set(ps) - set(names))
+        out.append(Check(s, f"Every panel {aid} lists as detecting fusions has a panel file", FAIL if unknown else PASS,
+                         "not a panel here (check the spelling): " + ", ".join(unknown) if unknown else ""))
     out.append(Check(s, f"Every panel reads {listed}", REVIEW if lacking else PASS,
                      "tumors on these fail the genotype rule: " + ", ".join(lacking) if lacking else ""))
     if rehearsal:
@@ -404,6 +414,18 @@ def has_value(con, table: str, column: str, values, normalize: str = "none") -> 
     return [v for v in values if v not in found]
 
 
+def absent_in_genes(con, pairs) -> list[str]:
+    """Each (rule genes, protein change) pair whose label never appears in one of those genes, gene and label
+    compared with spaces around them ignored, as the rules compare them; the variant class isn't compared. A
+    label found only in another gene (p.L858R in some gene other than EGFR, say) is absent."""
+    if not {"Hugo_Symbol", "HGVSp_Short"} <= columns_of(con, "raw_mutation"):
+        return [f"{v} in {'/'.join(genes)}" for genes, v in pairs]
+    listed = ", ".join(raw.sql_text(v) for v in sorted({v for _, v in pairs}))
+    found = set(con.execute(f"""SELECT DISTINCT trim(Hugo_Symbol), trim(HGVSp_Short) FROM {text_table('raw_mutation')}
+                                WHERE trim(HGVSp_Short) IN ({listed})""").fetchall())
+    return [f"{v} in {'/'.join(genes)}" for genes, v in pairs if not any((g, v) in found for g in genes)]
+
+
 def check_labels(con, readable: set[str], labels: dict, rehearsal: bool, show: Shower) -> list[Check]:
     """Labels the rules search for by exact text: if the spelling differed, a rule would quietly match nobody."""
     s = "E. Coded values"
@@ -422,10 +444,10 @@ def check_labels(con, readable: set[str], labels: dict, rehearsal: bool, show: S
         status = FAIL if len(gone) == len(labels["classes"]) else (REVIEW if gone else PASS)
         out.append(Check(s, "The variant classes the groups count appear in the mutation file", status,
                          "not in the file, or spelled differently (a rule would skip them): " + ", ".join(gone) if gone else ""))
-    if labels["variants"]:
-        gone = has_value(con, "raw_mutation", "HGVSp_Short", labels["variants"], "trim")
-        out.append(Check(s, "The protein changes the groups name are written in that form", FAIL if gone else PASS,
-                         ", ".join(gone)))
+    if labels["variant_pairs"]:
+        gone = absent_in_genes(con, labels["variant_pairs"])
+        out.append(Check(s, "The protein changes the groups name are written in that form, in the genes their rules name",
+                         FAIL if gone else PASS, ", ".join(gone)))
     out += check_fusion_labels(con, readable, labels, show)
     columns = [c for c in columns_of(con, "raw_pathology") if re.fullmatch(r"path_ca_type\d+", c)]
     found = set()
@@ -449,6 +471,84 @@ def check_labels(con, readable: set[str], labels: dict, rehearsal: bool, show: S
                          "spelled otherwise, so the exclusion would keep these patients: " + ", ".join(near) if near else ""))
     out.append(check_sites(con, readable, labels, rehearsal, show))
     return out
+
+
+def counts_unless_small(counts: dict, show: Shower) -> str:
+    """Each key with its count, or the keys alone if any count is under the privacy minimum (with the total
+    shown elsewhere, a small count could be worked out from the others)."""
+    small = any(1 <= n < show.min_count for n in counts.values())
+    return ", ".join(str(k) if small else f"{k} {show(n)}" for k, n in counts.items())
+
+
+def unversioned(text) -> str:
+    """A transcript ID without its version ("ENST00000275493.2" is "ENST00000275493"); blank for no ID."""
+    return "" if text is None else str(text).strip().split(".")[0]
+
+
+def check_transcripts(con, readable: set[str], labels: dict, transcripts: dict | None, rehearsal: bool,
+                      show: Shower) -> list[Check]:
+    """The rules read codons from the protein change, which is numbered on one transcript of each gene. For each gene
+    the groups' mutation rules name, the mutation file's rows are counted by transcript (Transcript_ID, and the
+    transcript HGVSc names before its colon, if it names one), against the transcript the cohort's spec expects
+    (expected_release.yml, `transcripts`). Some rows on another transcript is a review; most of a gene's rows, a
+    failure: the codons would be the wrong ones."""
+    s = "E. Coded values"
+    name = "The groups' genes are on the transcripts the rules' codons assume"
+    if not labels["genes"]:
+        return []
+    if not transcripts:
+        return [Check(s, name, SKIPPED, "the cohort's spec (expected_release.yml) lists no transcripts")]
+    if "raw_mutation" not in readable:
+        return [Check(s, name, SKIPPED, "the mutation file can't be read")]
+    have = columns_of(con, "raw_mutation")
+    if not {"Hugo_Symbol", "Transcript_ID"} <= have:
+        if rehearsal:
+            return [Check(s, name, SKIPPED, "the made-up file has no Transcript_ID column")]
+        return [Check(s, name, REVIEW, "the mutation file has no Transcript_ID column, so the transcripts can't be "
+                                       "checked here: count the rows by transcript by hand before any outcome is seen")]
+    hgvsc = "HGVSc" if "HGVSc" in have else "NULL"
+    gene_list = ", ".join(raw.sql_text(g) for g in labels["genes"])
+    rows = con.execute(f"""SELECT trim(Hugo_Symbol), Transcript_ID,
+                                  CASE WHEN strpos(coalesce({hgvsc}, ''), ':') > 0
+                                       THEN split_part({hgvsc}, ':', 1) END, count(*)
+                           FROM {text_table('raw_mutation')} WHERE trim(Hugo_Symbol) IN ({gene_list})
+                           GROUP BY 1, 2, 3""").fetchall()
+    status, parts = PASS, []
+    for gene in labels["genes"]:
+        expected = transcripts.get(gene)
+        if not expected:
+            status = FAIL if status == FAIL else REVIEW
+            parts.append(f"{gene}: no transcript expected in the cohort's spec")
+            continue
+        total, blank, other = 0, 0, {}
+        for g, tid, prefix, n in rows:
+            if g != gene:
+                continue
+            total += n
+            ids = {unversioned(tid), unversioned(prefix)} - {""}
+            if not ids:
+                blank += n
+            elif ids != {expected}:
+                key = min(ids - {expected})         # the row's other transcript (each row counted once)
+                other[key] = other.get(key, 0) + n
+        n_other = sum(other.values())
+        if total == 0:
+            continue                # the gene checks above say whether a gene is missing
+        if n_other > total / 2:
+            status = FAIL
+        elif (n_other or blank) and status == PASS:
+            status = REVIEW
+        line = f"{gene}: {show(total)} rows"
+        if not n_other and not blank:
+            line += f", all on {expected}"
+        if n_other:
+            line += f", {show(n_other)} on another transcript ({counts_unless_small(dict(sorted(other.items())), show)})"
+        if blank:
+            line += f", {show(blank)} with no transcript"
+        parts.append(line)
+    if status != PASS:
+        parts.append("rows on another transcript are a deviation decision, made before any outcome is seen")
+    return [Check(s, name, status, "; ".join(parts))]
 
 
 def gene_in_text(gene: str) -> str:
@@ -563,7 +663,9 @@ def check_links(con, limits: dict, genes: list[str], show: Shower) -> list[Check
         LEFT JOIN raw_panel_gene AS g ON g.panel = r.cpt_seq_assay_id AND g.gene = m.Hugo_Symbol
         WHERE m.Hugo_Symbol IN ({gene_list}) AND g.gene IS NULL""")
     out.append(Check(s, "Calls in the groups' genes are on panels that list those genes", REVIEW if n else PASS,
-                     f"{show(n)} calls: not used, since the panel can't confirm them" if n else ""))
+                     f"{show(n)} calls: the cohort still uses them (a call counts toward its group whatever the "
+                     "panel's gene list says; only the coverage rule reads the list), so check whether the panel "
+                     "file leaves the gene out" if n else ""))
     n = raw.scalar(con, """
         SELECT count(*) FROM (
             SELECT r.record_id FROM raw_regimen AS r
@@ -608,14 +710,72 @@ def check_units(con, limits: dict, show: Shower) -> list[Check]:
     ]
 
 
-def check_build(clinical: Path, genomic: Path, settings: Settings) -> list[Check]:
-    """Build the standard tables once, to see that they build. Nothing is counted."""
+def check_build(clinical: Path, genomic: Path, settings: Settings) -> tuple[list[Check], StandardTables | None]:
+    """Build the standard tables once, to see that they build; the tables (None if they don't build) are for the
+    count of each rule's matches. No outcome is counted."""
     s = "H. A trial build"
     try:
-        genie_bpc.read(clinical, genomic, settings)
-        return [Check(s, "The standard tables build, and every result label is known", PASS)]
+        tables = genie_bpc.read(clinical, genomic, settings).tables
+        return [Check(s, "The standard tables build, and every result label is known", PASS)], tables
     except Exception as e:      # any failure here is what this check exists to find
-        return [Check(s, "The standard tables build, and every result label is known", FAIL, safe_error(e))]
+        return [Check(s, "The standard tables build, and every result label is known", FAIL, safe_error(e))], None
+
+
+def rule_label(m: dict) -> str:
+    """A group rule in words. An except list is only said to be there: its text is never read here."""
+    parts = [f"{m['kind']} in {', '.join(m['genes'])}"]
+    if m.get("variant_classes"):
+        parts.append(", ".join(m["variant_classes"]))
+    if m.get("codons"):
+        parts.append("codons " + ", ".join(str(c) for c in m["codons"]))
+    if m.get("codon_ranges"):
+        parts.append("codons " + ", ".join(f"{lo}-{hi}" for lo, hi in m["codon_ranges"]))
+    if m.get("variants"):
+        vs = m["variants"]
+        parts.append(", ".join(vs) if len(vs) <= 5 else f"{len(vs)} listed changes")
+    if m.get("except_variants"):
+        parts.append("less its listed exceptions")
+    return "; ".join(parts)
+
+
+def check_rule_counts(tables: StandardTables | None, settings: Settings, show: Shower) -> list[Check]:
+    """Report only: how many calls and patients each group rule matches, on any test in the release, by the
+    cohort's own matching. For a rule on codons, also the codons it matched and the calls in its genes and classes
+    at other codons. A rule that matches nothing is a review, read before any outcome is seen; never a failure."""
+    s = "I. Each group rule's matches (any test in the release; report only)"
+    groups = [g for g in settings.read("genotype.groups") if g.get("any_of")]
+    if not groups:
+        return []
+    if tables is None:
+        return [Check(s, "The count of each group rule's matches", SKIPPED, "the standard tables don't build (see above)")]
+    blind = outcome_blind(tables)
+    res = blind.results
+    how = settings.read("genotype.variant_text")
+    patient = res["test_id"].map(blind.tests.drop_duplicates("test_id").set_index("test_id")["patient_id"])
+    out = []
+    for g in groups:
+        for i, m in enumerate(g["any_of"], 1):
+            hit = result_matches(res, m, how)
+            calls = int(hit.sum())
+            detail = f"{show(calls)} calls in {show(int(patient[hit].nunique()))} patients"
+            on_codons = "codons" in m or "codon_ranges" in m
+            if on_codons and calls:
+                start, end = codon_span(variant_text(res.loc[hit], how))
+                if "codons" in m:
+                    by = {c: int(((start <= c) & (end >= c)).sum()) for c in m["codons"]}
+                    by = {c: n for c, n in by.items() if n}
+                else:
+                    by = {int(c): int(n) for c, n in start.value_counts().sort_index().items()}
+                detail += ("; codons matched: " if "codons" in m else "; first codons matched: ") \
+                    + counts_unless_small(by, show)
+            if on_codons:
+                wide = {k: v for k, v in m.items() if k not in ("codons", "codon_ranges", "variants", "except_variants")}
+                at_codons = {**wide, **{k: m[k] for k in ("codons", "codon_ranges") if k in m}}
+                outside = int((result_matches(res, wide, how) & ~result_matches(res, at_codons, how)).sum())
+                detail += f"; its genes' calls of these classes at other codons: {show(outside)}"
+            out.append(Check(s, f"{g['name']}, rule {i}: {rule_label(m)}", PASS if calls else REVIEW,
+                             detail + ("" if calls else ": no call matches this rule; read it before any outcome is seen")))
+    return out
 
 
 # ---- All of it ----
@@ -637,10 +797,14 @@ def run_checks(clinical: Path, genomic: Path, work: Path, settings_path: Path, s
     scratch = duckdb.connect()
     reading, readable = check_reading(scratch, clinical, genomic, cohort, show)
     checks += reading
+    analysis_panels = {a["id"]: a["keep"]["fusion_detecting_panel"]["panels"] for a in settings.read("analyses")
+                       if a["run"] and a["kind"] == "subset" and "fusion_detecting_panel" in a["keep"]}
     checks += check_panels(genomic, expected, list(settings.read("genotype.coverage.required")), rehearsal,
-                           labels["fusion_panels"])
+                           labels["fusion_panels"], analysis_panels)
     checks += check_values(scratch, readable, expected, show)
     checks += check_labels(scratch, readable, labels, rehearsal, show)
+    checks += check_transcripts(scratch, readable, labels, expected.get("transcripts") or own.get("transcripts"),
+                                rehearsal, show)
     regimen_types = raw.raw_files(cohort).get("raw_regimen", ("", "", {}))[2]
     checks += check_drug_labels(scratch, readable, labels, "regimen_drugs" in regimen_types)
     scratch.close()
@@ -657,7 +821,9 @@ def run_checks(clinical: Path, genomic: Path, work: Path, settings_path: Path, s
     checks += check_links(con, limits, labels["genes"], show)
     checks += check_units(con, limits, show)
     con.close()
-    checks += check_build(clinical, genomic, settings)
+    build, tables = check_build(clinical, genomic, settings)
+    checks += build
+    checks += check_rule_counts(tables, settings, show)
     return checks
 
 

@@ -70,7 +70,7 @@ One settings file per study (YAML), validated against a schema, locked with the 
 
 Shipped with the tool:
 - **CRC settings** that reproduce the registered CRC BPC analysis exactly (the acceptance test, section 12).
-- **An NSCLC (lung) settings file** as the second example, with groups such as EGFR (exon 19 deletions, L858R), ALK fusions and KRAS G12C. You draft each choice from published sources, each cited in the file. A lung oncologist reviews it before it is locked (question E).
+- **An NSCLC (lung) settings file** as the second example, with groups such as EGFR (exon 19 deletions, L858R), ALK fusions and KRAS G12C (since question 5, one KRAS group, with G12C as a sensitivity analysis). You draft each choice from published sources, each cited in the file, and decide it, as for the CRC study. There is no clinical review (question E, reversed 2026-11-20), stated as a limitation.
 
 Every settings file records, for each choice, who made it and the source behind it.
 
@@ -231,7 +231,7 @@ A new package folder, `Portfolio_Projects/delayed-entry-pipeline/`, built locall
    *Done when:* the acceptance test passes, as section 12 defines it for the language chosen.
 3. **A second cancer and a second holder.** NSCLC settings on GENIE BPC NSCLC v2.0-public, and the OMOP adapter on made-up OMOP data.
    - Access: you request NSCLC access on Synapse while phases 1 and 2 are built (question D).
-   - The NSCLC settings are drafted, reviewed by a lung oncologist and locked before any NSCLC file is downloaded, the same order the CRC project used.
+   - The NSCLC settings are drafted, decided by the study author and locked before any NSCLC file is downloaded, the same order the CRC project used.
 
    *Done when:* both run end to end and their screens report correctly.
 4. **More formats, a command line and the guided setup.** SAS, Stata and SPSS; MAF and VCF; a command-line interface; the guided setup (questionnaire and spreadsheet form, section 4); documentation.
@@ -243,3 +243,4 @@ A new package folder, `Portfolio_Projects/delayed-entry-pipeline/`, built locall
 - **C. Second cancer:** lung, GENIE BPC NSCLC v2.0-public. It has well-defined driver groups with matching drugs, and its ALK fusions test the non-mutation result types.
 - **D. Data access:** you request NSCLC access on Synapse now, in parallel with phases 1 and 2. Downloading waits until the NSCLC settings are locked. Requesting access is yours to do; it can't be done for you.
 - **E. Clinical review:** you draft the lung settings from published sources, each choice cited. A lung oncologist reviews them before locking, and the settings file records who made each choice and its source.
+  **Reversed 2026-11-20:** there is no clinical review. The study author decides each choice from the cited sources, as the CRC study's author did; the settings file records the study author as having made each choice, with its source; and the lack of clinical review is stated as a limitation. An ALK sensitivity analysis (SA12) is added to the NSCLC plan before any download: the reference group kept only where the entry test's panel can detect ALK fusions, since in 2014-2017 ALK fusions were often found by FISH or IHC rather than DNA panels, and a DNA panel detects them only if it tiles ALK's introns. (2026-11-23: question 6 was decided as option A, so only patients whose first panel detects ALK fusions are assignable; SA12 would then repeat the primary analysis and is switched off for NSCLC, while the rule stays for other studies.)

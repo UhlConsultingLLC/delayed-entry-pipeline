@@ -31,7 +31,8 @@ import pandas as pd
 import yaml
 
 from delayed_entry import __version__
-from delayed_entry.analysis import RUN, AnalysisData, RunStop, build_analysis, compare_with_plan, keep_plan_decisions
+from delayed_entry.analysis import (RUN, AnalysisData, RunStop, build_analysis, compare_with_plan, comparison,
+                                    keep_plan_decisions)
 from delayed_entry.gate import DATE, Gate, GateError, check_outputs, plain_ids
 from delayed_entry.hashing import sha256_file
 from delayed_entry.lock import MANIFEST, PLAN_MD, PLAN_YAML, LockError, require_lock, verify_lock
@@ -145,6 +146,10 @@ def build_spec(data: AnalysisData, settings: Settings) -> dict:
         "genotype": data.genotype.to_dict(),
         "d1": data.d1.to_dict("records"),
         "primary_described": dict(primary.described),
+        # A group the settings describe only: its comparison is never labeled, in any analysis, and says why
+        # (the settings), not "smallest group", whatever the group's size.
+        "settings_described": {comparison(g, data.genotype.reference): "settings"
+                               for g in settings.read("genotype.described_only")},
         "labels": labels(settings),
         "adjustment": {"fields": [t.field for t in terms], "forms": [t.form for t in terms],
                        "levels": {t.field: list(t.levels) for t in terms if t.form in ("categorical", "bands")},

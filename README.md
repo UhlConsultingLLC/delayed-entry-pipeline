@@ -153,8 +153,38 @@ settings file, with who made it and the source behind it:
     settings check finds.
 
   Both write the same commented file. The CRC settings come back unchanged through either.
-- `settings/nsclc_bpc.yaml`: a DRAFT for NSCLC (GENIE BPC NSCLC v2.0-public), awaiting a lung
-  oncologist's review. The review's questions and answers will be published once the settings are locked.
+- `settings/nsclc_bpc.yaml`: the NSCLC settings (GENIE BPC NSCLC v2.0-public), decided, not yet registered
+  or locked. As in the CRC study, the study author decides each choice from cited published sources; there
+  is no clinical review (a stated limitation). The open questions and their answers will be published once
+  the settings are locked. Decided so far: only patients first sequenced on a panel that can
+  detect ALK fusions are assignable, since a DNA panel finds ALK fusions only if it tiles ALK's introns. The
+  release's eight capture panels do; its three hotspot panels, UHN's two among them, don't. So the ALK
+  sensitivity analysis, SA12 (subset rule `fusion_detecting_panel`), would repeat the primary analysis and is
+  switched off, as is SA11 (without UHN). PD-L1 is left out (2026-11-23) and named as later work. The
+  primary population is nonsquamous (2026-11-23): stage IV adenocarcinoma, carcinoma and other or mixed
+  histologies, with squamous tumors left out, so the nonsquamous-only sensitivity analysis (SA10) is switched
+  off and the all-histology view isn't reported. The driver groups follow the CAP/IASLC/AMP guideline's list
+  (2026-11-23): a further group, Other recognized driver (ROS1 and RET fusions, BRAF V600E, MET exon 14
+  skipping, ERBB2 exon 20 insertions and named ERBB2 hotspots), comes before the reference, renamed No
+  recognized driver; NTRK fusions stay in the reference, and the ROS1/RET sensitivity analysis (SA4) is gone.
+  EGFR common stays exon 19 deletions and L858R (2026-11-23), and the guideline's other EGFR drivers
+  (uncommon point changes such as G719A, L861Q and S768I, exon 19 and 20 insertions, and T790M without a
+  common variant) join Other recognized driver. KRAS is one group, KRAS mutant (G12C and
+  other missense or in-frame changes at codons 12, 13 and 61), with KRAS G12C alone as a sensitivity analysis
+  (2026-11-24). A tumor with two listed drivers goes to the first listed group (2026-11-24): EGFR common, ALK
+  fusion, KRAS mutant, then Other recognized driver. Also decided 2026-11-24: Other recognized driver is
+  described, never compared; the RMST horizon is 3 years, as in the CRC study; coverage of EGFR's and KRAS's
+  codons is checked at gene level from the panel files, as the CRC plan did; the labels for another lung
+  primary stay as drafted; and the positive control is two descriptive lines beside Brown et al.'s figures.
+  Decided 2026-11-24 as well: the materiality bars stay the CRC study's, but a comparison between groups counts
+  as materially biased only when labeled "clearly material" (a design difference from the CRC study); the
+  adjusted model groups smoking as never, former or current and histology as adenocarcinoma or not, with race
+  described only and imputation set in advance; the screen counts reference patients who received a drug
+  aimed at a recognized driver; and a fusion row counts when it names a second gene, so a rearrangement inside
+  ALK, ROS1 or RET stays in the reference. Every numbered question is now decided, and so (2026-11-24) are the
+  choices carried from the CRC plan (the dry run's C2), all kept but the last year band, now "2016 or later",
+  and those never put as questions, confirmed as drafted. Of the settings' choices, only the registered plan is
+  left; the checks before the lock are in `docs/NEXT_STEPS.md`.
 - A value may be the word `default`, which takes the documented default in
   `src/delayed_entry/defaults.yml`. The screen and the locked plan list every default used, with its
   source. Choices specific to a study (cohort rules, groups, coverage, horizon, analyses, privacy minimum)
@@ -165,8 +195,9 @@ settings file, with who made it and the source behind it:
   the Nelson-Aalen cumulative hazard with delayed entry, and the entry time) and the group. Hazard ratios are
   pooled by Rubin's rules; each bootstrap resample is imputed once; other point estimates, and pass 3b's balance,
   are averages across the imputations. The engine is the pipeline's own (`chained_equations`, in R with nnet and
-  MASS: predictive mean matching, Bayesian linear, logistic, multinomial or ordered draws, as mice does them) or
-  the mice package (`mice`). `missing_data.imputation_model` is the one optional choice: a study that never needs
+  MASS: predictive mean matching, Bayesian linear, logistic, multinomial or ordered draws, as mice does them,
+  with mice's guard against perfect prediction in the logistic and multinomial fits) or the mice package
+  (`mice`). `missing_data.imputation_model` is the one optional choice: a study that never needs
   imputation may leave it out. If the complete-case rule calls for imputation and it is missing, the screen blocks
   the plan, before any outcome is read, and the run stops.
 - **A biomarker's fallback by mutation burden** follows the CRC plan's section 4b, made general. When more
@@ -312,6 +343,8 @@ tests/                    made-up data only; fixtures/ holds the CRC project's m
 
 ## Known limits
 
+- The NSCLC settings have no clinical review: the study author decides each choice from cited published
+  sources, as for the CRC study.
 - GENIE BPC releases hold no panel coverage or size file. The main GENIE releases hold `genomic_information.txt`
   for the same panels. Placed in the genomic folder, the adapter reads it for panel sizes when the settings give the
   rule (`source.genie_bpc.panel_sizes`): the panel's regions of the listed feature types, only those marked
@@ -366,7 +399,7 @@ Work that uses or references the GENIE data must cite the consortium and the rel
 acknowledgment the terms of use give:
 - **Citation:** AACR Project GENIE Consortium. AACR Project GENIE: Powering Precision Medicine Through an
   International Consortium. Cancer Discov. 2017;7(8):818-831. Releases referenced here: GENIE BPC CRC
-  v2.0-public (the acceptance checks) and GENIE BPC NSCLC v2.0-public (the draft NSCLC settings).
+  v2.0-public (the acceptance checks) and GENIE BPC NSCLC v2.0-public (the NSCLC settings).
 - **Acknowledgment:** The authors would like to acknowledge the American Association
   for Cancer Research and its financial and material support in the development of the
   AACR Project GENIE registry, as well as members of the consortium for their commitment

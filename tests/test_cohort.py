@@ -6,7 +6,7 @@ import pandas as pd
 import pytest
 
 from delayed_entry.adapters.genie_bpc import raw
-from delayed_entry.cohort import build_cohort, codon_span, field_condition
+from delayed_entry.cohort import build_cohort, codon_span, field_condition, result_matches
 from delayed_entry.privacy import is_small, public_flow
 from delayed_entry.tables import outcome_blind
 from helpers import FIXTURE, cancer, crc_settings, hand_made_tables, report
@@ -219,6 +219,47 @@ def test_codon_spans():
                                       dtype="string"))
     assert start.tolist()[:4] == [12, 12, 62, 1450] and end.tolist()[:4] == [12, 13, 63, 1450]
     assert pd.isna(start.iloc[4]) and pd.isna(start.iloc[5])
+
+
+@pytest.mark.parametrize("how", ["trimmed", "exact"])
+def test_matching_ignores_spaces_around_the_gene_and_the_class(how):
+    """As the download check reads them (it trims both); the variant's own text follows genotype.variant_text."""
+    res = pd.DataFrame({"kind": "mutation", "gene": [" KRAS", "KRAS ", "KRAS", "NRAS", None],
+                        "variant_class": ["Missense_Mutation ", " Missense_Mutation", "Missense_Mutation",
+                                          "Missense_Mutation", "Missense_Mutation"],
+                        "variant": ["p.G12D", "p.G12D ", "p.G12D", "p.G12D", "p.G12D"]})
+    rule = {"kind": "mutation", "genes": ["KRAS"], "variant_classes": ["Missense_Mutation"], "codons": [12]}
+    assert result_matches(res, rule, how).tolist() == [True, True, True, False, False]
+    exact = {"kind": "mutation", "genes": ["KRAS"], "variants": ["p.G12D"]}
+    assert result_matches(res, exact, how).tolist() == [True, how == "trimmed", True, False, False]
+
+
+def test_a_gene_written_with_a_trailing_space_still_assigns_its_group(tmp_path):
+    from helpers import settings_with
+    s = settings_with(tmp_path, {})
+    cases = {"spaced": ([cancer("spaced")], [report("spaced", 1, 100.0)])}
+    t = hand_made_tables(s, cases=cases, calls=[("spaced-T01", "KRAS ", " " + MISSENSE, "p.G12D")])
+    assert build_cohort(outcome_blind(t), s).patients.loc["spaced", "genotype"] == "RAS-mutant"
+
+
+def test_overlaps_split_by_gene_only_when_two_groups_share_a_gene():
+    """6a (h): the CRC groups share no gene, so their overlap count stays whole (today's wording); the NSCLC groups
+    share EGFR, so it splits into calls in different genes and calls in one gene. Made-up patients."""
+    from delayed_entry.cohort import overlap_counts
+    from test_nsclc_spec import NSCLC_SETTINGS
+    from delayed_entry.settings import load_settings
+    crc = crc_settings()
+    names = [g["name"] for g in crc.read("genotype.groups") if not g.get("none_of_the_above")]
+    p = pd.DataFrame({f"match:{n}": [True, True, False] for n in names} | {"match_genes": [2, 2, 0]})
+    assert overlap_counts(p, crc) == {"total": 2}
+    ns = load_settings(NSCLC_SETTINGS)
+    names = [g["name"] for g in ns.read("genotype.groups") if not g.get("none_of_the_above")]
+    p = pd.DataFrame({f"match:{n}": [False] * 4 for n in names})
+    p["match:EGFR common"] = [True, True, True, False]
+    p["match:Other recognized driver"] = [True, False, True, True]
+    p["match:KRAS mutant"] = [False, True, False, False]
+    p["match_genes"] = [1, 2, 2, 1]        # EGFR + T790M; EGFR + KRAS; EGFR + BRAF; one group only
+    assert overlap_counts(p, ns) == {"total": 3, "same_gene": 1, "different_genes": 2}
 
 
 def test_reference_only_coverage_assigns_a_variant_found_on_a_partial_panel(tmp_path):

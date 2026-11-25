@@ -7,4 +7,4 @@ Phase 2: the run (delayed_entry.run, with delayed_entry.analysis and the R code 
 Since then: an OMOP CDM adapter, more flat-file formats (SAS, Stata, SPSS, MAF, VCF), panel sizes from GENIE, the
 attribution a source's terms require, and the guided setup (delayed_entry.setup).
 """
-__version__ = "0.3.1"
+__version__ = "0.4.0"

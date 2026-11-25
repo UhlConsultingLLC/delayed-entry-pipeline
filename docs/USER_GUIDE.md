@@ -164,7 +164,9 @@ python -m delayed_entry check-settings settings\my_study.yaml
 ```
 
 The privacy minimum (`privacy.min_count`) can be raised but never set below the data-use agreement's.
-For a new cancer, have a clinician of that specialty review the file before it is locked.
+For a new cancer, a clinician of that specialty can review the file before it is locked. Where none does,
+the study author decides each choice from cited sources and states the lack of clinical review as a
+limitation, as the CRC and NSCLC studies do.
 
 ### Step 2. Lock the settings before downloading (available)
 
@@ -539,5 +541,6 @@ on keeps its notes there.
 | 2026-11-17 | SAS (.sas7bdat, .xpt) and Stata (.dta) files in the flat-file adapter (step 4): dates held as numbers (`days_from`, `seconds_from`), Stata value labels or codes (`value_labels`), and a file's text encoding (`encoding`). |
 | 2026-11-17 | MAF and annotated VCF (VEP CSQ, SnpEff ANN) files in the flat-file adapter (step 4): a VCF's two reading rules (`annotation: {pick, filters}`), the `hgvsp_short` transform, and file patterns with `source_file`. |
 | 2026-11-17 | The guided setup (step 1): the `setup` questionnaire and the spreadsheet form (`setup-sheet`, `setup-read`). |
+| 2026-11-20 | No clinical review for NSCLC: the study author decides each choice (step 1). A subset rule, `fusion_detecting_panel`, keeps a group only where the entry test's panel is listed as detecting a gene's fusions; the NSCLC plan's SA12 uses it for ALK, and the check after download names a listed panel with no panel file. |
 | 2026-11-18 | SPSS (.sav) files in the flat-file adapter (step 4), with pyreadstat (the `spss` extra); `value_labels` applies to them too; one message in Part 5. |
 | 2026-11-17 | GENIE BPC panel sizes from a genomic_information file, by the optional settings choice `source.genie_bpc.panel_sizes`; the check after download judges the file against it; a center's BED file still stops the adapter; two messages in Part 5. |

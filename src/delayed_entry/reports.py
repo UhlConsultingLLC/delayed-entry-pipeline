@@ -40,6 +40,10 @@ SMD_DECIMALS_AFTER = 3          # balance after weighting: shown to three decima
 FLAG_LABELS = {
     "censored_at_age_limit": "Survival withheld by the source's age rule, so censored at the age limit",
     "overlapping_groups": "Matched more than one group's rules, so counted in the first by precedence",
+    "overlapping_groups_different_genes": "Matched more than one group's rules through calls in different genes, so "
+                                          "counted in the first by precedence",
+    "overlapping_groups_same_gene": "Matched more than one group's rules through calls in one gene only, so counted "
+                                    "in the first by precedence",
     "entry_before_diagnosis": "Entry event came before diagnosis",
     "first_test_linked_to_other_cancers": "First test is linked to more than one cancer",
     "unranked_first_test": "Another test has a withheld time, so it was ranked last",
@@ -54,6 +58,20 @@ def read_parquet(path) -> pd.DataFrame:
 
 def _exp(x):
     return None if x is None or pd.isna(x) else math.exp(x)
+
+
+def is_true(v) -> bool:
+    """A yes/no value from R, where a missing one (NA) is not yes."""
+    return False if v is None or pd.isna(v) else bool(v)
+
+
+def tau_verdict(row) -> str:
+    """The note on a Kendall's tau row. With no interval (the estimator failed for the group, or gave no standard
+    error) the row is neither flagged nor cleared: it says it wasn't assessed, and why when R said."""
+    if row.flagged is None or pd.isna(row.flagged):
+        why = getattr(row, "tau_note", None)
+        return "not assessed: " + (why if isinstance(why, str) and why else "no interval")
+    return "flagged" if row.flagged else "not flagged"
 
 
 class Results:
@@ -152,6 +170,13 @@ class Results:
         self.spec = self.count_spec()
         cv, cr, self.count_order = count_values(self.spec)
         flags = flag_counts(self.d, self.s)
+        if "overlapping_groups_same_gene" in flags:
+            # Each part is masked on its own (a flag's own rule); the total is shown only when neither part would be
+            # masked, so a masked part can't be worked out from the total and the other.
+            n = len(self.d.cohort)
+            parts = [flags["overlapping_groups_different_genes"], flags["overlapping_groups_same_gene"]]
+            if any(g.small(x) or g.small(n - x) for x in parts) or g.small(n - flags["overlapping_groups"]):
+                del flags["overlapping_groups"]
         flag_rows = [(self.flag_label(k), flags[k]) for k in FLAG_LABELS if k in flags]
         tables, keeps = self._descriptive_tables()
         dv, dr, self.desc_order = descriptive_values(len(self.d.cohort), flag_rows, tables)
@@ -321,12 +346,11 @@ class Results:
             several = tau["estimator"].nunique() > 1
             for s in tau.itertuples():
                 q = "conditional Kendall's tau" + (f" ({s.estimator})" if several else "")
-                rows.append((self.qi.id, "corrected", q, s.group, s.tau, s.lower, s.upper,
-                             "flagged" if s.flagged else "not flagged"))
+                rows.append((self.qi.id, "corrected", q, s.group, s.tau, s.lower, s.upper, tau_verdict(s)))
             for s in tau.drop_duplicates("group").itertuples():
                 if s.group != ALL:
                     rows.append((self.qi.id, "transformation model", "median, months", s.group, s.median_transformation,
-                                 None, None, s.warning or ""))
+                                 None, None, s.warning if isinstance(s.warning, str) else ""))
         if self.has("r_secondary_estimates.parquet"):
             for a, t in self.r("r_secondary_estimates.parquet").groupby("analysis", sort=False):
                 from_passes(t, a)
@@ -352,7 +376,7 @@ class Results:
         if self.qi is None:
             return set()
         t = self.r("r_tau.parquet")
-        return set(t.loc[t["flagged"].astype(bool), "group"])
+        return set(t.loc[t["flagged"].map(is_true), "group"])
 
     def qi_note(self) -> str:
         return f"{self.qi.id}: entry and survival may be dependent (Kendall's tau interval excludes 0)"

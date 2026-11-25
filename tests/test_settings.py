@@ -3,10 +3,12 @@ import ast
 import re
 from pathlib import Path
 
+import pandas as pd
 import pytest
 import yaml
 
 from delayed_entry import settings as st
+from delayed_entry.covariates import band_of, merge_bands
 from delayed_entry.settings import SettingsError, blank_template, load_settings, loads_settings, unfilled_choices
 from helpers import CRC_SETTINGS, ROOT, crc_settings, settings_with
 
@@ -80,11 +82,191 @@ def test_reading_a_choice_is_recorded():
     assert s.reads() == ["privacy.min_count", "time.horizon_years"]
 
 
-def test_the_nsclc_draft_loads_and_every_choice_awaits_review():
+def test_the_nsclc_settings_load_and_every_choice_is_decided():
+    """Every numbered question, the coverage setting, C1, the fusion rows, question 2's scope, item C2, the
+    choices never put as questions and the registered plan are decided (the last on 2026-11-24). The registered
+    plan points to the provenance log, where the registration's link goes, so the link stays out of the file
+    that is registered and locked (step 7). The log is published only after the lock, so it isn't read here."""
     s = load_settings(ROOT / "settings" / "nsclc_bpc.yaml")
-    assert s.read("source.genie_bpc.cohort") == "nsclc_v2.0" and s.read("study.registered_plan") == "not registered"
-    assert all("awaiting lung oncologist review" in p["made_by"] for p in s.provenance())
-    assert [g["name"] for g in s.read("genotype.groups")][-1] == s.read("genotype.reference") == "No listed driver"
+    assert s.read("source.genie_bpc.cohort") == "nsclc_v2.0"
+    plan = s.read("study.registered_plan")
+    assert "docs/provenance/nsclc_bpc_v2.0.md" in plan and "osf.io" not in plan
+    assert not {p["choice"]: p["made_by"] for p in s.provenance() if p["made_by"] != "NSCLC study author"}
+    assert not [a for a in s.read("analyses") if a["kind"].startswith("biomarker")]   # question 10: PD-L1 out
+    assert "oncologist" not in (ROOT / "settings" / "nsclc_bpc.yaml").read_text(encoding="utf-8")
+    assert [g["name"] for g in s.read("genotype.groups")][-1] == s.read("genotype.reference") == "No recognized driver"
+
+
+def test_the_nsclc_answers_to_questions_7_9_and_13_and_the_coverage_setting():
+    """Questions 7 (A), 9 (A) and 13 (B) and the coverage setting (A), decided 2026-11-24. Question 14 (B) changes
+    no setting: its two lines are in docs/nsclc_settings_review.md."""
+    s = load_settings(ROOT / "settings" / "nsclc_bpc.yaml")
+    assert s.read("time.horizon_years") == 3
+    assert s.read("source.genie_bpc.cancer_type_labels") == ["Non Small Cell Lung Cancer", "Lung Cancer, NOS"]
+    assert s.read("genotype.coverage.when_only_genes_listed") == "accept_gene_level"
+    assert s.read("genotype.described_only") == ["Other recognized driver"]
+    assert s.read("smallest_group.patients") == 30
+    assert s.read("smallest_group.if_short") == {"EGFR common": "block", "ALK fusion": "describe",
+                                                "KRAS mutant": "describe", "No recognized driver": "block"}
+    still_open = " ".join(p["note"] for p in s.provenance() if "TO DECIDE" in p.get("note", ""))
+    assert not re.search(r"question (7|9|13)\b", still_open) and "numbered questions" not in still_open
+
+
+READING_RULE = ('for the HR-ratio and RMST-gap comparison rows only "clearly material" counts as material bias; '
+                '"material" is reported with its interval as "past the bar; chance not excluded"; a group\'s own '
+                'overstatement is read as in the CRC plan, section 11')
+
+
+def test_the_nsclc_answers_to_questions_8_and_11_and_item_c1():
+    """Question 8 (option B': the CRC bars and labels, with a stated reading), question 11 and item C1 (four rows),
+    decided 2026-11-24. The reading rule is in both labels' source, since the locked plan prints each choice's source,
+    not its note."""
+    s = load_settings(ROOT / "settings" / "nsclc_bpc.yaml")
+    assert {k: s.read(f"materiality.{k}") for k in ("rmst_months", "median_months", "hr_ratio_change",
+                                                    "rmst_gap_change_months")} == \
+        {"rmst_months": 2, "median_months": 3, "hr_ratio_change": 0.10, "rmst_gap_change_months": 2}
+    assert s.read("labels.clearly_material") == "estimate_and_whole_interval"
+    assert s.read("labels.material") == "estimate_only"
+    for label in ("labels.clearly_material", "labels.material"):
+        source = s.provenance([label])[0]["source"]
+        assert READING_RULE in source and "design difference from the CRC study" in source, label
+    assert ("(Ellis LM et al., J Clin Oncol 2014;32:1277-1280, as reprinted in Cortinovis D et al., J Thorac Dis "
+            "2015;7:E541-E547, Table 1, and adapted in Fenchel K et al.") in \
+        s.provenance(["materiality.median_months"])[0]["source"]
+    variables = {v["field"]: v for v in s.read("adjustment.variables")}
+    assert list(variables) == ["age_at_diagnosis", "sex", "center", "smoking_at_diagnosis", "histology",
+                               "year_of_diagnosis"]                                    # race described only
+    smoking = variables["smoking_at_diagnosis"]
+    assert smoking["reference"] == "Never" and smoking["merge"] == {
+        "Never": ["Never used"], "Former": ["Former user (quit >1 year)", "Former user (unknown time)"],
+        "Current": ["Current user", "Former user (quit <1 year)"]}
+    release = yaml.safe_load((ROOT / "src" / "delayed_entry" / "adapters" / "genie_bpc" / "cohorts" / "nsclc_v2.0"
+                              / "expected_release.yml").read_text(encoding="utf-8"))
+    allowed = release["values"]["raw_cancer"]["ca_lung_cigarette"]["allowed"]
+    merged = [x for xs in smoking["merge"].values() for x in xs]
+    assert sorted(merged + ["Unknown"]) == sorted(allowed)      # spelled as the release does; Unknown is missing
+    assert variables["histology"] == {"field": "histology", "form": "categorical", "reference": "Adenocarcinoma",
+                                      "merge": {"Adenocarcinoma": ["Adenocarcinoma"],
+                                                "Carcinoma or other": ["Carcinoma", "Other histologies/mixed tumor"]}}
+    assert s.read("missing_data.imputation_model") == {
+        "engine": "chained_equations", "outcome_terms": ["event", "cumulative_hazard_corrected", "entry_time"],
+        "include_group": True,
+        "methods": {"linear": "pmm", "spline": "pmm", "categorical": "polyreg", "bands": "polyreg"},
+        "pmm_donors": 5, "iterations": 5, "pooling": "rubins_rules", "bootstrap": "impute_each_resample_once",
+        "point_estimates": "average_across_imputations"}
+    assert s.read("genotype.reference_drugs") == {
+        "EGFR": ["Gefitinib", "Afatinib", "Osimertinib", "Icotinib", "Rociletinib"],
+        "EGFR (erlotinib)": ["Erlotinib"],
+        "ALK or ROS1": ["Crizotinib", "Ceritinib", "Alectinib", "Brigatinib", "Lorlatinib", "Ensartinib",
+                        "Entrectinib"],
+        "BRAF V600E": ["Dabrafenib", "Trametinib", "Vemurafenib"]}
+    drugs = s.provenance(["genotype.reference_drugs"])[0]["source"]
+    assert "until October 18, 2016" in drugs and "Approval dates (Drugs@FDA approval letters)" in drugs
+    assert "NDA 021743, supplement 25, approved October 18, 2016" in drugs and "to confirm" not in drugs
+    assert not [p["choice"] for p in s.provenance() if "TO DECIDE" in p.get("note", "") + p["source"]]
+
+
+C2_KEPT = {"summary.survival_at_years": [1, 2, 3, 4, 5], "summary.median_limit_years": 5,
+           "survival_after_entry.window_days": 730, "survival_after_entry.min_deaths": 11,
+           "survival_after_entry.if_fewer": "move_entry_by_window", "stability.risk_set": 20,
+           "uncertainty.bootstrap_resamples": 1000, "uncertainty.seed": 20261113, "uncertainty.interval_level": 0.95,
+           "missing_data.complete_case_max_share": 0.05, "missing_data.imputations": 20,
+           "weighting.variables": "same_as_adjustment", "weighting.trim_percentiles": [1, 99],
+           "weighting.balance_target_smd": 0.1, "ph_check.split_months": 12,
+           "assumption_check.estimators": ["MB", "IPW1", "IPW2"], "privacy.min_count": 11}
+NEVER_ASKED = ("study.name", "study.cancer", "source.adapter", "source.genie_bpc.cohort",
+               "source.genie_bpc.cancer_site_pattern", "source.genie_bpc.withheld_survival", "cohort.rules",
+               "entry.event", "entry.acceptable_substitutes", "entry.modalities", "entry.first_test_order",
+               "entry.before_diagnosis", "genotype.results_from", "genotype.variant_text",
+               "genotype.coverage.required", "time.days_per_year", "adjustment.band_min_patients",
+               "ph_check.p_threshold", "uncertainty.when_a_resample_has_no_value", "analyses")
+
+
+def test_the_nsclc_answers_to_item_c2_and_the_choices_never_put_as_questions():
+    """Item C2 (the choices carried from the CRC plan) and the choices never put as numbered questions, decided
+    2026-11-24: every value kept, except the last year band, now open ("2016 or later"), and study.cancer, which names
+    the three centers (text only)."""
+    s = load_settings(ROOT / "settings" / "nsclc_bpc.yaml")
+    assert {c: s.read(c) for c in C2_KEPT} == C2_KEPT
+    bands = s.read("adjustment.year_bands")
+    assert bands == [{"label": "2013 or earlier", "to": 2013}, {"label": "2014-2015", "from": 2014, "to": 2015},
+                     {"label": "2016 or later", "from": 2016}]
+    # the year of diagnosis is estimated, so a 2017 diagnosis can be coded 2018: it lands in a band, never in none
+    assert band_of(pd.Series([2009, 2013, 2014, 2015, 2016, 2017, 2018]), bands).tolist() == [
+        "2013 or earlier", "2013 or earlier", "2014-2015", "2014-2015", "2016 or later", "2016 or later",
+        "2016 or later"]
+    assert merge_bands({"2013 or earlier": 12, "2014-2015": 400, "2016 or later": 500}, bands, 30) == {
+        "2013 or earlier": "2015 or earlier", "2014-2015": "2015 or earlier", "2016 or later": "2016 or later"}
+    assert s.read("study.cancer") == ("nonsquamous non-small cell lung cancer, stage IV at diagnosis, first "
+                                      "sequenced at DFCI, MSK or VICC (reports 2014-2017)")
+    assert next(a for a in s.read("analyses") if a["id"] == "SA1")["keep"] == {"within_months": 6}
+    assert [r["id"] for r in s.read("cohort.rules")] == ["stage_iv", "histology", "age_18", "has_report", "entry_known",
+                                                       "exit_known", "entry_before_exit", "genotype_assignable"]
+    assert s.read("genotype.coverage.required")["ALK"] == "whole_gene"
+    sources = {p["choice"]: p["source"] for p in s.provenance()}
+    notes = {p["choice"]: p.get("note", "") for p in s.provenance()}
+    for choice in C2_KEPT:
+        assert sources[choice].lower().startswith("item c2 (the dry run), decided 2026-11-24 (kept): "), choice
+    for choice in NEVER_ASKED:
+        assert "confirmed 2026-11-24 " in sources[choice].lower(), choice
+    assert sources["adjustment.year_bands"].startswith("Item C2 (the dry run), decided 2026-11-24 (the last band open)")
+    assert "item C2 (the dry run), kept" in sources["analyses"] and "182.6 days" in sources["analyses"]
+    assert "If that exclusion is applied as written" in notes["source.genie_bpc.withheld_survival"]
+    assert "skipped since question 9" in notes["source.genie_bpc.cancer_site_pattern"]
+    assert not [c for c in sources if "pending" in sources[c] + notes[c]]
+
+
+OPEN_CITATION = ("to check (C4)", "to confirm (C4)", "to check, C4", "to confirm in v2.0-public",
+                 "as reported by a secondary source")
+ERBB2_EXCEPT = ["p.S310A", "p.S310C", "p.S310P", "p.S310T",
+                "p.V659A", "p.V659F", "p.V659G", "p.V659I", "p.V659L",
+                "p.G660A", "p.G660C", "p.G660R", "p.G660S", "p.G660V",
+                "p.L755F", "p.L755M", "p.L755V", "p.L755W",
+                "p.D769A", "p.D769E", "p.D769G", "p.D769V",
+                "p.V777A", "p.V777E", "p.V777G", "p.V777M",
+                "p.V842A", "p.V842E", "p.V842G", "p.V842L"]
+
+
+def test_the_nsclc_checks_before_the_lock_leave_no_citation_open_and_change_no_rule():
+    """The checks before the lock (NEXT_STEPS 6a (a), (b) and (d) and the citations; the dry run's C5), decided
+    2026-11-24: sources and notes only. No source or note still calls a citation to check or to confirm; the ERBB2
+    except lists stay as they were (the excepted changes a cited source supports are stated, not counted), and the
+    MET rules still read Splice_Site, not Splice_Region (stated)."""
+    s = load_settings(ROOT / "settings" / "nsclc_bpc.yaml")
+    texts = {p["choice"]: p["source"] + " " + p.get("note", "") for p in s.provenance()}
+    assert not [(choice, m) for choice, text in texts.items() for m in OPEN_CITATION if m in text]
+    other = next(g for g in s.read("genotype.groups") if g["name"] == "Other recognized driver")
+    erbb2 = [(r["variant_classes"], r.get("codons"), r.get("codon_ranges"), r.get("except_variants"))
+             for r in other["any_of"] if r.get("genes") == ["ERBB2"]]
+    assert erbb2 == [(["In_Frame_Ins"], None, [[770, 831]], None),
+                     (["Missense_Mutation"], [310, 659, 660, 755, 769, 777, 842], None, ERBB2_EXCEPT)]
+    met = [r for r in other["any_of"] if r.get("genes") == ["MET"]]
+    assert [r["variant_classes"] for r in met] == [["Splice_Site"], ["Splice_Site"], ["Missense_Mutation"]]
+    note = s.provenance(["genotype.groups"])[0]["note"]
+    assert "among them G660R, V777M, S310P, L755M and L755W" in note and "classes Splice_Region or Intron" in note
+    assert "NM_000245 / ENST00000397752 (MET)" in note and "NM_004448 / ENST00000269571 (ERBB2)" in note
+    coverage = s.provenance(["genotype.coverage.required"])[0]["note"]
+    assert "RET intron 7 isn't on MSK-IMPACT341" in coverage and "ROS1 introns 32-34 are targeted" in coverage
+
+
+def test_the_nsclc_groups_note_matches_the_download_check_after_the_build():
+    """The two settings-note fixes after the build (the dry run's C6), decided 2026-11-24: the download check applies
+    except lists (item p's per-rule count) but never checks them against the release, so only the intragenic texts
+    are checked by eye; BRAF's transcript is named with the others. MET's three rules, with their except list, are
+    pinned whole, since no other test pins that list."""
+    s = load_settings(ROOT / "settings" / "nsclc_bpc.yaml")
+    note = s.provenance(["genotype.groups"])[0]["note"]
+    assert "never reads except lists" not in note and "never checks except lists against the release" in note
+    assert "so the intragenic texts are checked by eye against the listed descriptions" in note
+    assert "NM_004333 / ENST00000288602 (BRAF)" in note and "every MET, EGFR, ERBB2, KRAS and BRAF row" in note
+    assert "V600E is numbered p.V640E" in note and "except-list entry would go unnoticed" in note
+    other = next(g for g in s.read("genotype.groups") if g["name"] == "Other recognized driver")
+    met = [r for r in other["any_of"] if "MET" in r["genes"]]
+    assert met == [
+        {"kind": "mutation", "genes": ["MET"], "variant_classes": ["Splice_Site"], "codon_ranges": [[963, 1010]]},
+        {"kind": "mutation", "genes": ["MET"], "variant_classes": ["Splice_Site"], "variants": ["p.X1010_splice"]},
+        {"kind": "mutation", "genes": ["MET"], "variant_classes": ["Missense_Mutation"], "codons": [1010],
+         "except_variants": ["p.D1010A", "p.D1010E", "p.D1010G", "p.D1010V"]}]
 
 
 # ---- The blank template ----
@@ -226,6 +408,27 @@ def test_a_rule_must_say_what_a_blank_means(tmp_path):
     del rules[0]["all_of"][0]["missing"]
     with pytest.raises(SettingsError, match="say what a blank means"):
         settings_with(tmp_path, {"cohort.rules": rules})
+
+
+@pytest.mark.parametrize("ranges, message", [
+    ([[478, 439]], r"runs backward: write \[439, 478\]"),
+    ([[439, 460, 478]], r"must be two codons, \[first, last\], not 3"),
+    ([[439]], "must list at least 2"),
+])
+def test_a_codon_range_must_be_first_then_last(tmp_path, ranges, message):
+    """A reversed range would silently match nothing, and a three-number one stopped the screen."""
+    analyses = crc_settings().read("analyses")
+    rule = next(a["keep"]["if_result"] for a in analyses if "codon_ranges" in a.get("keep", {}).get("if_result", {}))
+    rule["codon_ranges"] = ranges
+    with pytest.raises(SettingsError, match=message):
+        settings_with(tmp_path, {"analyses": analyses})
+
+
+def test_a_one_codon_range_is_accepted(tmp_path):
+    analyses = crc_settings().read("analyses")
+    rule = next(a["keep"]["if_result"] for a in analyses if "codon_ranges" in a.get("keep", {}).get("if_result", {}))
+    rule["codon_ranges"] = [[600, 600]]
+    assert settings_with(tmp_path, {"analyses": analyses}).read("analyses")
 
 
 def test_if_short_must_name_each_group(tmp_path):

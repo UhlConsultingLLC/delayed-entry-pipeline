@@ -9,6 +9,19 @@
 # values: the values the variable synopsis (syn30557312, version 2) lists for each coded column the rules
 # read. stops: true means a value not on the list stops the run.
 # checks: the limits of the data checks, as for CRC v2.0-public.
+# transcripts: the Ensembl transcript each gene the groups' mutation rules name is expected on, since the rules read
+# codons from the protein change. GENIE annotates mutations with Genome Nexus, set to its UniProt transcript list
+# (Sage-Bionetworks/Genie on GitHub); every MET, EGFR, ERBB2, KRAS and BRAF row in the CRC v2.0-public release is
+# on these. The download check counts each gene's rows by transcript, ignoring ID versions: some rows on another
+# one is a review, most a failure.
+
+transcripts:
+  MET: ENST00000397752        # NM_000245; on NM_001127500 (ENST00000318493) the codons run 18 higher
+  EGFR: ENST00000275493       # NM_005228
+  ERBB2: ENST00000269571      # NM_004448
+  KRAS: ENST00000256078       # NM_033360
+  BRAF: ENST00000288602       # NM_004333 (version 6, on GRCh37; in Ensembl release 116, on GRCh38, a longer
+                              # protein, with V600E at codon 640)
 
 checks:
   min_call_link: 0.80

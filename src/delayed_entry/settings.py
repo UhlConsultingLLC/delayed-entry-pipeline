@@ -193,9 +193,22 @@ def _field_condition(v):
 condition = one_of(("check", record({"check": enum(*STRUCTURAL_CHECKS)})), ("field", _field_condition))
 cohort_rule = record({"id": text(), "label": text(), "all_of": list_of(condition)})
 
+
+def codon_range(v):
+    """[first, last]: two codons, the first no later than the last. A reversed range would match nothing."""
+    out = list_of(number(lo=1, integer=True), min_len=2)(v)
+    if out:
+        return out
+    if len(v) != 2:
+        return [f"must be two codons, [first, last], not {len(v)}"]
+    if v[0] > v[1]:
+        return [f"runs backward: write [{v[1]}, {v[0]}], the first codon then the last"]
+    return []
+
+
 result_match = record({"kind": enum(*RESULT_KINDS), "genes": list_of(text())},
                       {"variant_classes": list_of(text()), "codons": list_of(number(lo=1, integer=True)),
-                       "codon_ranges": list_of(list_of(number(lo=1, integer=True), min_len=2)),
+                       "codon_ranges": list_of(codon_range),
                        "variants": list_of(text()), "except_variants": list_of(text())})
 genotype_group = one_of(("any_of", record({"name": text(), "any_of": list_of(result_match)})),
                         ("none_of_the_above", record({"name": text(), "none_of_the_above": enum(True)})))
@@ -207,6 +220,11 @@ subset_keep = one_of(
     ("field", _field_condition),
     ("exclude_overlap", record({"exclude_overlap": list_of(text(), min_len=2, unique=True)})),
     ("exclude_from_group", record({"exclude_from_group": text(), "if_result": result_match})),
+    # Patients whose entry test's panel is on the list as detecting a gene's fusions: in the reference group only
+    # (the other groups keep everyone), or in every group.
+    ("fusion_detecting_panel", record({
+        "fusion_detecting_panel": record({"gene": text(), "panels": list_of(text(), min_len=0, unique=True)}),
+        "groups": enum("reference_only", "all_groups")})),
 )
 ANALYSIS_KINDS: dict[str, Validator] = {
     "subset": record({"keep": subset_keep, "if_short": if_short}),
@@ -668,6 +686,20 @@ def _cross_checks(values: dict[str, Any]) -> list[tuple[str, str]]:
             g = keep.get("exclude_from_group") if isinstance(keep, dict) else None
             if g is not None and g not in names:
                 out.append(("analyses", f"{a.get('id')}: '{g}' is not a genotype group"))
+            fp = keep.get("fusion_detecting_panel") if isinstance(keep, dict) else None
+            if isinstance(fp, dict) and isinstance(fp.get("gene"), str):
+                gene = fp["gene"]
+                counts_fusions = any(isinstance(m, dict) and m.get("kind") == "fusion" and gene in (m.get("genes") or [])
+                                     for grp in groups for m in grp.get("any_of", []) or [])
+                if not counts_fusions:
+                    out.append(("analyses", f"{a.get('id')}: no genotype group counts {gene}'s fusions, so its "
+                                            "fusion-detecting panels change nothing"))
+                listed = (values.get("genotype.coverage.fusion_panels") or {}).get(gene)
+                mine = fp.get("panels") or []
+                if isinstance(listed, list) and listed and mine and sorted(listed) != sorted(mine):
+                    out.append(("analyses", f"{a.get('id')}: its panels for {gene} differ from "
+                                            "genotype.coverage.fusion_panels; one list of the panels that detect a "
+                                            "gene's fusions must serve both"))
     required, fusion_panels = values.get("genotype.coverage.required"), values.get("genotype.coverage.fusion_panels")
     if isinstance(required, dict) and isinstance(fusion_panels, dict):
         for gene in fusion_panels:

@@ -140,6 +140,7 @@ def test_the_labels_searched_for_come_from_the_settings():
     from helpers import crc_settings
     labels = cd.searched_labels(crc_settings())
     assert labels["genes"] == ["BRAF", "KRAS", "NRAS"] and labels["variants"] == ["p.V600E"]
+    assert labels["variant_pairs"] == [(("BRAF",), "p.V600E")]             # the CRC labels, each with its genes
     assert labels["cancer_labels"] == list(CRC_LABELS)
     assert ("stage_at_diagnosis", "trim", ["Stage IV"]) in labels["fields"]
 
@@ -321,6 +322,27 @@ def test_no_panel_reading_every_gene_the_groups_need_stops_it(release):
     assert release.status("At least one panel reads every gene") == cd.FAIL
 
 
+def drop_gene_from_panels(folder, gene):
+    """Take a gene out of every made-up panel file's gene list."""
+    for p in folder.glob(raw.PANEL_FILES):
+        lines = []
+        for line in p.read_text(encoding="utf-8").splitlines():
+            if line.startswith("gene_list:"):
+                genes = [g for g in line.partition(":")[2].split("\t") if g.strip() and g.strip() != gene]
+                line = "gene_list:\t" + "\t".join(genes)
+            lines.append(line)
+        p.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="")
+
+
+def test_a_call_on_a_panel_that_doesnt_list_its_gene_is_named_as_used(release):
+    """The cohort counts such a call toward its group (only the coverage rule reads a panel's gene list), so the
+    check says so rather than calling the call unused."""
+    drop_gene_from_panels(release.genomic, "BRAF")
+    release.refresh()
+    c = release.check("Calls in the groups' genes are on panels that list those genes")
+    assert c.status == cd.REVIEW and "the cohort still uses them" in c.detail and "not used" not in c.detail
+
+
 def test_a_panel_that_is_not_in_the_release_is_named(release):
     y = yaml.safe_load(release.yml.read_text(encoding="utf-8"))
     y["panels"].append("MADE-UP-9")
@@ -365,6 +387,16 @@ def test_an_msi_label_not_documented_stops_it(release):
 def test_a_differently_written_protein_change_stops_it(release):
     release.edit_text(MUTATION, "p.V600E", "V600E")
     assert release.status("The protein changes the groups name") == cd.FAIL
+
+
+def test_a_protein_change_found_only_in_another_gene_stops_it(release):
+    """6a (o): the label check is gene-aware. Every made-up p.V600E moved from BRAF to NRAS (a gene the groups name,
+    so the gene checks still pass) leaves the BRAF rule's label in no BRAF call."""
+    assert release.status("The protein changes the groups name") == cd.PASS
+    release.edit_text(MUTATION, "BRAF\tMissense_Mutation\tp.V600E", "NRAS\tMissense_Mutation\tp.V600E")
+    check = release.check("The protein changes the groups name")
+    assert (check.status, check.detail) == (cd.FAIL, "p.V600E in BRAF")
+    assert release.status("The genes the groups name appear") == cd.PASS
 
 
 def test_a_renamed_gene_stops_it(release):

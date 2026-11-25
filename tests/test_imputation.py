@@ -6,7 +6,7 @@ import yaml
 
 from delayed_entry.analysis import RunStop, build_analysis
 from delayed_entry.run import build_spec
-from delayed_entry.screen import BLOCK, DEVIATION, screen
+from delayed_entry.screen import BLOCK, DEVIATION, NOTE, screen
 from delayed_entry.settings import SCHEMA_BY_PATH, load_settings
 from delayed_entry.tables import outcome_blind
 from helpers import CRC_SETTINGS, bpc_profile, crc_settings, make_tables
@@ -52,10 +52,14 @@ def test_too_much_missing_with_no_imputation_model_blocks_the_plan():
     assert "10" not in item.finding                               # the count itself is never shown
 
 
-def test_with_an_imputation_model_the_plan_states_it(tmp_path):
+def test_with_an_imputation_model_the_plan_states_it_as_a_note(tmp_path):
+    """Imputation the settings set in advance is the plan, not a departure from it (6a (l)): a note, so the primary
+    analysis can still run as planned."""
     rep = screen(outcome_blind(tables(10)), with_model(tmp_path), bpc_profile())
     (item,) = items(rep, "missing data")
-    assert item.severity == DEVIATION and "multiple imputation (20 imputations)" in item.effect
+    assert item.severity == NOTE and "multiple imputation (20 imputations)" in item.effect
+    assert any(i.finding == "the primary analysis can run as planned" for i in items(rep, "runs as standard"))
+    assert not [i for i in rep.items if i.analysis == "primary" and i.severity == DEVIATION]
 
 
 def test_a_complete_case_study_gets_no_missing_data_item():

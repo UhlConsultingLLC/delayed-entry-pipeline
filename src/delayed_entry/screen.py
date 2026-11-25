@@ -29,8 +29,8 @@ from pathlib import Path
 import pandas as pd
 import yaml
 
-from delayed_entry.cohort import (Cohort, MissingFieldError, build_cohort, drug_matches, field_condition,
-                                  result_matches)
+from delayed_entry.cohort import (Cohort, MissingFieldError, build_cohort, codon_span, drug_matches, field_condition,
+                                  fusion_panel_keep, label_text, overlap_counts, result_matches, variant_text)
 from delayed_entry.covariates import code_adjustment, missing_data_rule
 from delayed_entry.hashing import sha256_file
 from delayed_entry.privacy import is_small, public_flow, show
@@ -514,6 +514,7 @@ class _Screen:
                      "wild type can be confirmed", ("genotype.coverage.required",))
         if self.p.panel_coverage != "none":
             self.fusion_detection(required, when_genes)
+        self.unchecked_fusion_genes(required)
 
         if self.p.death_capture in ("partial", "unknown"):
             self.add(DEVIATIONS, DEVIATION, "all", "death capture", f"death capture is {self.p.death_capture}",
@@ -529,6 +530,20 @@ class _Screen:
                      "plan can't be locked until the settings are fixed", ("privacy.min_count",))
         for q in self.p.known_quirks:
             self.add(DEVIATIONS, NOTE, "all", "source quirk", q["name"], q["handling"])
+
+    def unchecked_fusion_genes(self, required: dict):
+        """Fusion genes the groups count that the coverage rule doesn't require: no panel is checked for detecting
+        them, so a tumor whose first panel can't see such a fusion is placed by its other calls. From the settings
+        alone; no data are read."""
+        genes = sorted({gene for g in self.s.read("genotype.groups") for m in g.get("any_of", [])
+                        if m["kind"] == "fusion" for gene in m["genes"]} - set(required))
+        if genes:
+            reference = self.s.read("genotype.reference")
+            self.add(DEVIATIONS, NOTE, PRIMARY, "fusion detection",
+                     f"the groups count {', '.join(genes)} fusions, but the coverage rule doesn't require "
+                     f"{'this gene' if len(genes) == 1 else 'these genes'}, so no panel is checked for detecting them",
+                     "a tumor whose first panel can't see such a fusion is placed by its other calls, in "
+                     f"{reference} if it has none; stated in the plan", ("genotype.coverage.required",))
 
     def fusion_detection(self, required: dict, when_genes: str):
         """A panel's files show the genes it reads, never whether it detects their fusions. For each required gene
@@ -592,14 +607,30 @@ class _Screen:
                 k = int(e[col].sum())
                 if k:
                     self.add(DEVIATIONS, NOTE, PRIMARY, topic, f"{self.n(k)} eligible {what}", effect)
-        groups = [g["name"] for g in self.s.read("genotype.groups") if not g.get("none_of_the_above")]
-        if len(groups) >= 2:
-            both = e[[f"match:{g}" for g in groups]].astype(bool).sum(axis=1) >= 2
-            k = int(both.sum())
-            if k:
+        self.overlaps(e)
+
+    def overlaps(self, e: pd.DataFrame):
+        """Patients matching more than one group's rules. When two groups' rules share a gene, in two parts: calls in
+        different genes (two drivers) and calls in one gene. Each part is masked on its own, and the total is shown
+        only when neither part is masked, so neither can be worked out from the total and the other; the part in
+        different genes is never hidden to protect the other."""
+        k = overlap_counts(e, self.s)
+        effect = "each is counted in the first group by the settings' precedence"
+        if not k.get("total"):
+            return
+        if "same_gene" not in k:
+            self.add(DEVIATIONS, NOTE, PRIMARY, "overlapping groups",
+                     f"{self.n(k['total'])} eligible patients match more than one group's rules", effect)
+            return
+        for part, how in (("different_genes", "through calls in different genes"),
+                          ("same_gene", "through calls in one gene only")):
+            if k[part] or part == "different_genes":           # the part across genes is always stated
                 self.add(DEVIATIONS, NOTE, PRIMARY, "overlapping groups",
-                         f"{self.n(k)} eligible patients match more than one group's rules",
-                         "each is counted in the first group by the settings' precedence")
+                         f"{self.n(k[part])} eligible patients match more than one group's rules {how}", effect)
+        if k["same_gene"] and k["different_genes"] and not any(
+                is_small(k[p], self.min_count) for p in ("different_genes", "same_gene")):
+            self.add(DEVIATIONS, NOTE, PRIMARY, "overlapping groups",
+                     f"{k['total']} eligible patients match more than one group's rules in all", effect)
 
     def missing_data(self, c: Cohort):
         """The complete-case rule, from counts alone (no outcome). When it calls for multiple imputation, the plan says
@@ -614,8 +645,8 @@ class _Screen:
             return
         what = (f"more than {self.s.read('missing_data.complete_case_max_share'):.0%} of eligible patients lack an "
                 "adjustment variable")
-        if self.s.has("missing_data.imputation_model"):
-            self.add(DEVIATIONS, DEVIATION, PRIMARY, "missing data", what,
+        if self.s.has("missing_data.imputation_model"):           # imputation set in advance is the plan: a note
+            self.add(DEVIATIONS, NOTE, PRIMARY, "missing data", what,
                      f"the adjusted and weighted models use multiple imputation ({self.s.read('missing_data.imputations')} "
                      "imputations), as the settings' imputation model says",
                      ("missing_data.complete_case_max_share", "missing_data.imputations", "missing_data.imputation_model"))
@@ -664,6 +695,90 @@ class _Screen:
                      f"({', '.join(names)}), at any time",
                      "a sign of a driver the first test didn't find, stated as a limitation; they stay in the group",
                      ("genotype.reference_drugs",))
+
+    def first_test_results(self, c: Cohort, kind: str) -> pd.DataFrame:
+        """The eligible patients' first-test results of one kind, with each row's patient_id."""
+        e = c.eligible
+        patient_of = e.reset_index().dropna(subset=["first_test_id"]).drop_duplicates("first_test_id") \
+            .set_index("first_test_id")["patient_id"]
+        res = self.b.results
+        r = res[res["test_id"].isin(patient_of.index) & (res["kind"] == kind).fillna(False).astype(bool)].copy()
+        r["patient_id"] = r["test_id"].map(patient_of)
+        return r
+
+    def unreadable_driver_calls(self, c: Cohort):
+        """Calls on eligible patients' first tests, in a gene a mutation rule names, that no rule can read: a variant
+        class written otherwise than the rules write it (letter case or spaces, such as In_Frame_DEL for
+        In_Frame_Del), a blank class, or a protein label that is blank or has no codon number where a rule would
+        read the call. Such a call matches no rule, so its patient stays wherever their other calls put them, most
+        often the reference. Counted only; nobody changes group."""
+        rules = [m for g in self.s.read("genotype.groups") for m in g.get("any_of", []) if m["kind"] == "mutation"]
+        genes = {x for m in rules for x in m["genes"]}
+        if not genes:
+            return
+        r = self.first_test_results(c, "mutation")
+        r = r[label_text(r, "gene").isin(genes).fillna(False).astype(bool).to_numpy()]
+        if not len(r):
+            return
+        named = {x for m in rules for x in m.get("variant_classes", [])}
+        squeeze = lambda s: s.str.lower().str.replace(r"[\s_]+", "", regex=True)
+        cls = label_text(r, "variant_class")
+        blank_class = (cls.isna() | (cls == "")).astype(bool)
+        odd = (~blank_class & ~cls.isin(named).fillna(False).astype(bool)
+               & squeeze(cls).isin({squeeze(pd.Series([x])).iloc[0] for x in named}).fillna(False).astype(bool))
+        readable_class = cls.isin(named).fillna(False).astype(bool) | odd | blank_class
+        if any("variant_classes" not in m for m in rules):          # a rule reading any class reads every call
+            readable_class[:] = True
+        how = self.s.read("genotype.variant_text")
+        read = pd.Series(False, index=r.index)
+        for m in rules:                                             # a call some rule reads isn't counted
+            read |= result_matches(r, m, how)
+        odd, blank_class = odd & ~read, blank_class & ~read
+        start, _ = codon_span(variant_text(r, how))
+        no_codon = start.isna().to_numpy() & readable_class.to_numpy() & ~read.to_numpy()
+        topic = "driver calls the rules can't read"
+        for mask, what in (
+                (odd.to_numpy(), "a variant class written otherwise than the rules write it ("
+                 + ", ".join(sorted(set(cls[odd.to_numpy()].dropna()))) + ")"),
+                (blank_class.to_numpy(), "a blank variant class"),
+                (no_codon, "a protein label that is blank or has no codon number")):
+            k = r.loc[mask, "patient_id"].nunique()
+            if k:
+                self.add(DEVIATIONS, NOTE, PRIMARY, topic,
+                         f"{self.n(k)} eligible patients' first test has a call in a group's gene ({', '.join(sorted(genes))}) "
+                         f"with {what}",
+                         "such a call matches no rule: the patient stays where their other calls put them (often the "
+                         "reference); check these before the plan lock", ("genotype.groups",))
+
+    def fusions_no_rule_reads(self, c: Cohort):
+        """Fusion rows on eligible patients' first tests in a gene some group's rule names that no fusion rule reads:
+        in a gene only mutation rules name (for example EGFR: a fusion rule can only name the gene and would count
+        every rearrangement row), or a row a fusion rule excepts by its text (for example an intragenic row). They
+        leave their patients where their other calls put them. Counted by gene and fusion text; nobody changes group."""
+        rules = [m for g in self.s.read("genotype.groups") for m in g.get("any_of", [])]
+        genes = {x for m in rules for x in m["genes"]}
+        r = self.first_test_results(c, "fusion")
+        if not genes or not len(r):
+            return
+        how = self.s.read("genotype.variant_text")
+        read = pd.Series(False, index=r.index)
+        for m in rules:
+            if m["kind"] == "fusion":
+                read |= result_matches(r, m, how)
+        r = r.assign(gene_=label_text(r, "gene"), text_=label_text(r, "variant").fillna("(no description)"))
+        r = r[r["gene_"].isin(genes).fillna(False).astype(bool).to_numpy() & ~read.to_numpy()]
+        for gene, by_gene in r.groupby("gene_", sort=True):
+            total = by_gene["patient_id"].nunique()
+            per_text = by_gene.groupby("text_")["patient_id"].nunique().sort_index()
+            # Counts by text only when none is small: a small one could be worked out from the total and the rest.
+            if is_small(total, self.min_count) or any(is_small(int(k), self.min_count) for k in per_text):
+                shown = "fusion texts: " + "; ".join(per_text.index)
+            else:
+                shown = "patients by fusion text: " + "; ".join(f"{t}: {int(k)}" for t, k in per_text.items())
+            self.add(DEVIATIONS, NOTE, PRIMARY, "fusions no rule reads",
+                     f"{self.n(total)} eligible patients' first test has a fusion row in {gene}, which no group's rule "
+                     f"reads ({shown})",
+                     "they stay where their other calls put them (often the reference), stated", ("genotype.groups",))
 
     # ---- the smallest-group rule (D1) ----
     def small_counts(self, analysis: str, counts: dict):
@@ -743,6 +858,8 @@ class _Screen:
             hit = res.loc[result_matches(res, keep["if_result"], how), "test_id"]
             has = e["first_test_id"].isin(set(hit))
             return ~((e["genotype"] == keep["exclude_from_group"]) & has)
+        if "fusion_detecting_panel" in keep:
+            return fusion_panel_keep(e, keep, self.s.read("genotype.reference"))
         raise ValueError(f"unknown subset rule {keep}")
 
     def subset(self, c: Cohort, a: dict, primary_counts: dict):
@@ -753,6 +870,21 @@ class _Screen:
                      f"{a['id']} keeps patients by the time of their entry event, so it can't run")
             self.decisions[a["id"]] = {"all comparisons": NOT_RUN}
             return
+        fp = a["keep"].get("fusion_detecting_panel")
+        if fp is not None:
+            gene, which = fp["gene"], "the reference group" if a["keep"]["groups"] == "reference_only" else "every group"
+            if not fp["panels"]:
+                self.add(MISSING, BLOCK, a["id"], "fusion-detecting panels",
+                         f"no panel is listed as detecting {gene} fusions",
+                         f"{a['id']} keeps {which} only on such panels, so it can't run until they are listed")
+                self.decisions[a["id"]] = {"all comparisons": NOT_RUN}
+                return
+            used = set(c.eligible["first_panel_id"].dropna())
+            unused = sorted(set(fp["panels"]) - used)
+            self.add(READY, "", a["id"], "fusion-detecting panels",
+                     f"{a['id']} keeps {which} only where the entry test's panel is listed as detecting {gene} fusions"
+                     + (f"; listed panels no entry test used: {', '.join(unused)}" if unused else ""),
+                     "a patient there whose panel can't see the fusion may carry it unseen")
         try:
             kept = c.eligible[self.keep_mask(c, a["keep"])]
         except MissingFieldError as err:
@@ -997,6 +1129,8 @@ def screen(blind: OutcomeBlindTables, settings: Settings, profile: CapabilityPro
         sc.flags(c)
         sc.missing_data(c)
         sc.reference_drugs(c)
+        sc.unreadable_driver_calls(c)
+        sc.fusions_no_rule_reads(c)
         counts = sc.primary(c)
         sc.analyses(c, counts)
         flow = c.flow(before=sc.source_steps)

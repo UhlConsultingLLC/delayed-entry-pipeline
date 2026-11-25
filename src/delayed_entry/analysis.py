@@ -28,7 +28,7 @@ from dataclasses import dataclass, field
 
 import pandas as pd
 
-from delayed_entry.cohort import Cohort, build_cohort, field_condition, result_matches
+from delayed_entry.cohort import Cohort, build_cohort, field_condition, fusion_panel_keep, overlap_counts, result_matches
 from delayed_entry.covariates import (Coded, apply_model_bands, code_adjustment, missing_any, missing_data_rule,
                                       model_bands)
 from delayed_entry.privacy import show
@@ -220,6 +220,8 @@ def keep_mask(kept: pd.DataFrame, patients: pd.DataFrame, results: pd.DataFrame,
         hit = res.loc[result_matches(res, keep["if_result"], how), "test_id"]
         has = kept["first_test_id"].isin(set(hit))
         return ~((kept["genotype"] == keep["exclude_from_group"]) & has)
+    if "fusion_detecting_panel" in keep:
+        return fusion_panel_keep(kept, keep, settings.read("genotype.reference"))
     raise ValueError(f"unknown subset rule {keep}")
 
 
@@ -382,6 +384,11 @@ def build_analysis(tables: StandardTables, settings: Settings, profile: Capabili
             continue
         k = a["kind"]
         if k == "subset":
+            fp = a["keep"].get("fusion_detecting_panel")
+            if fp is not None and not fp["panels"]:
+                analyses.append(PlannedAnalysis(a["id"], k, a["label"], NOT_RUN,
+                                                f"no panel is listed as detecting {fp['gene']} fusions"))
+                continue
             mask = keep_mask(inside_e, patients, blind.results, a["keep"], settings)
             col = f"keep_{a['id']}"
             secondary[col] = mask.to_numpy()
@@ -605,14 +612,18 @@ def delays(data: AnalysisData, settings: Settings, by: list[str]) -> pd.DataFram
 
 def flag_counts(data: AnalysisData, settings: Settings) -> dict[str, int]:
     """The patients kept but counted, among the eligible: each flag phase 1's cohort sets, and patients matching
-    more than one group's rules. Exact."""
+    more than one group's rules, split into calls in different genes and calls in one gene when two groups' rules
+    share a gene (cohort.overlap_counts). Exact; the reports decide what is shown."""
     e = data.eligible
     out = {}
     for col in [c for c in e.columns if c.startswith("f:")]:
         out[col[2:]] = int(e[col].astype(bool).sum())
-    groups = [g["name"] for g in settings.read("genotype.groups") if not g.get("none_of_the_above")]
-    if len(groups) >= 2:
-        out["overlapping_groups"] = int((e[[f"match:{g}" for g in groups]].astype(bool).sum(axis=1) >= 2).sum())
+    k = overlap_counts(e, settings)
+    if k:
+        out["overlapping_groups"] = k["total"]
+    if "same_gene" in k:
+        out["overlapping_groups_different_genes"] = k["different_genes"]
+        out["overlapping_groups_same_gene"] = k["same_gene"]
     return out
 
 

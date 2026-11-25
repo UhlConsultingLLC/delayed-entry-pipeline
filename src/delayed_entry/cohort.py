@@ -93,15 +93,21 @@ def codon_span(variants: pd.Series) -> tuple[pd.Series, pd.Series]:
     return start, end.fillna(start)
 
 
+def label_text(results: pd.DataFrame, column: str) -> pd.Series:
+    """A gene or variant class as text, spaces around it ignored, as the download check reads them."""
+    if column not in results.columns:
+        return pd.Series(pd.NA, index=results.index, dtype="string")
+    return results[column].astype("string").str.strip()
+
+
 def result_matches(results: pd.DataFrame, match: dict, how: str) -> pd.Series:
-    """True for each result row that matches a rule such as {kind, genes, variant_classes, codons, ...}."""
+    """True for each result row that matches a rule such as {kind, genes, variant_classes, codons, ...}. The gene
+    and the variant class are compared with spaces around them ignored; the variant's own text as `how` says."""
     hit = (results["kind"] == match["kind"]).fillna(False)
-    gene = results["gene"] if "gene" in results.columns else pd.Series(pd.NA, index=results.index)
-    hit &= gene.isin(match["genes"]).fillna(False)
+    hit &= label_text(results, "gene").isin(match["genes"]).fillna(False).astype(bool)
     v = variant_text(results, how)
     if "variant_classes" in match:
-        cls = results["variant_class"] if "variant_class" in results.columns else pd.Series(pd.NA, index=results.index)
-        hit &= cls.isin(match["variant_classes"]).fillna(False)
+        hit &= label_text(results, "variant_class").isin(match["variant_classes"]).fillna(False).astype(bool)
     if "variants" in match:
         hit &= v.isin(match["variants"]).fillna(False)
     if "except_variants" in match:
@@ -226,6 +232,35 @@ def panel_coverage(panels: pd.DataFrame, required: dict, when_only_genes: str,
     return out
 
 
+def overlap_counts(patients: pd.DataFrame, settings: Settings) -> dict[str, int]:
+    """How many of `patients` match two groups' rules or more ("total"). When two groups' rules name a gene in
+    common, also split: "different_genes", the matching calls are in two genes or more (two drivers), and
+    "same_gene", they are all in one gene (one gene's changes read by two groups' rules). With no gene in common
+    no overlap can be in one gene, so there is no split. Empty when there are fewer than two groups with rules."""
+    groups = [g for g in settings.read("genotype.groups") if not g.get("none_of_the_above")]
+    if len(groups) < 2:
+        return {}
+    both = patients[[f"match:{g['name']}" for g in groups]].astype(bool).sum(axis=1) >= 2
+    out = {"total": int(both.sum())}
+    gene_sets = [{x for m in g["any_of"] for x in m["genes"]} for g in groups]
+    if any(a & b for i, a in enumerate(gene_sets) for b in gene_sets[i + 1:]):
+        one = patients["match_genes"].astype(int) <= 1
+        out["same_gene"] = int((both & one).sum())
+        out["different_genes"] = out["total"] - out["same_gene"]
+    return out
+
+
+def fusion_panel_keep(patients: pd.DataFrame, keep: dict, reference: str) -> pd.Series:
+    """A subset analysis's fusion_detecting_panel rule: whether each patient's entry test was on a panel the rule
+    lists as detecting the gene's fusions. With groups: reference_only, only the reference group is restricted
+    (a patient there may carry a fusion the panel couldn't see); the other groups keep everyone."""
+    listed = set(keep["fusion_detecting_panel"]["panels"])
+    on_listed = patients["first_panel_id"].isin(listed).fillna(False).astype(bool)
+    if keep["groups"] == "all_groups":
+        return on_listed
+    return (patients["genotype"] != reference).fillna(True).astype(bool) | on_listed
+
+
 def assign_genotype(blind: OutcomeBlindTables, settings: Settings, first: pd.DataFrame,
                     coverage_known: bool = True) -> pd.DataFrame:
     """One row per patient with a first test: whether each group's rules match (before precedence), the
@@ -245,14 +280,23 @@ def assign_genotype(blind: OutcomeBlindTables, settings: Settings, first: pd.Dat
     res = res[res["test_id"].isin(first["test_id"])]
     patient_of_test = first.reset_index().drop_duplicates("test_id").set_index("test_id")["patient_id"]
     out = pd.DataFrame(index=first.index)
+    genes_hit: dict = {}                   # patient: the genes of the calls that matched any group's rules
     for g in groups:
         if g.get("none_of_the_above"):
             continue
         hit = pd.Series(False, index=res.index)
         for m in g["any_of"]:
             hit |= result_matches(res, m, how)
-        matched = set(patient_of_test.reindex(res.loc[hit, "test_id"]).dropna())
+        rows = res.loc[hit]
+        for pid, gene in zip(patient_of_test.reindex(rows["test_id"]).to_numpy(), label_text(rows, "gene").to_numpy()):
+            if pd.notna(pid):
+                genes_hit.setdefault(pid, set()).add(gene)
+        matched = set(patient_of_test.reindex(rows["test_id"]).dropna())
         out[f"match:{g['name']}"] = out.index.isin(list(matched))
+    # For a patient matching two groups or more: in how many genes the matching calls are (1: a same-gene overlap,
+    # such as two groups' rules on one gene; 2 or more: an overlap across genes).
+    out["match_genes"] = pd.Series({pid: len(gs) for pid, gs in genes_hit.items()}, dtype="int64") \
+        .reindex(out.index).fillna(0).astype(int)
     rest = next(g["name"] for g in groups if g.get("none_of_the_above"))
     group = pd.Series(rest, index=out.index, dtype="object")
     for g in reversed([g for g in groups if not g.get("none_of_the_above")]):
@@ -341,6 +385,7 @@ def build_cohort(blind: OutcomeBlindTables, settings: Settings, coverage_known: 
     out["genotype"] = p_geno["genotype"]
     for c in [c for c in geno.columns if c.startswith("match:")] + ["covered", "gene_level_coverage", "group_by_rules"]:
         out[c] = p_geno[c]
+    out["match_genes"] = p_geno["match_genes"].fillna(0).astype(int)
     out["entry_day"] = first["entry_day"]
     out["entry_from_birth"] = first["entry_from_birth"]
     out["first_test_id"] = first["test_id"]

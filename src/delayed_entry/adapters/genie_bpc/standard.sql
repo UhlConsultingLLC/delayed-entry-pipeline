@@ -158,8 +158,10 @@ JOIN index_cancer AS c ON c.record_id = r.record_id;
 
 -- step: std_results
 -- Mutation calls and fusions on the index cancer's sequenced samples, and the MSI/MMR readings (bpc_label holds
--- the source's labels and the standard readings they map to). A fusion has a row for each gene in it, so a
--- rule on a gene finds the fusion whichever partner the gene is; its description is kept as the variant.
+-- the source's labels and the standard readings they map to). A fusion has a row for each fused gene the panel
+-- reads (DFCI writes each with its own gene first: "A-B" under A, "B-A" under B), so a rule on a gene the panel
+-- reads finds the fusion whichever partner the gene is, and a fusion whose partner is off the panel has one row;
+-- its description is kept as the variant.
 CREATE OR REPLACE TABLE std_results AS
 SELECT m.Tumor_Sample_Barcode AS test_id, 'mutation' AS kind, m.Hugo_Symbol AS gene, m.HGVSp_Short AS variant,
        m.Variant_Classification AS variant_class, CAST(NULL AS VARCHAR) AS value

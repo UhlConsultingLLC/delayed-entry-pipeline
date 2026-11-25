@@ -91,6 +91,68 @@ check("categories stay within their levels", identical(levels(done[[1]]$trait), 
 check("the same seed gives the same imputations", identical(impute(x, 3, seed = 11), done))
 check("another seed gives others", !identical(impute(x, 3, seed = 12)[[1]]$age, done[[1]]$age))
 
+# The guard against perfect prediction: in group A every observed trait is "a". The augmenting records keep the other
+# categories possible there (on these numbers about 1 in 100; a plain fit leaves a few in a million)
+set.seed(5)
+cell <- data.frame(group = factor(rep(c("Ref", "A"), each = 30), levels = c("Ref", "A")), event = stats::rbinom(60, 1, 0.5))
+cell_trait <- factor(c(sample(c("a", "b", "c"), 30, replace = TRUE), rep("a", 30)), levels = c("a", "b", "c"))
+cell_trait[c(31, 32)] <- NA
+cell_miss <- is.na(cell_trait)
+cell_x <- design(cell)[, -1, drop = FALSE]
+pr <- polyreg_probs(droplevels(cell_trait[!cell_miss]), cell_x, cell_miss)
+check("a row of probabilities for each missing case, summing to 1", nrow(pr) == 2 && isTRUE(all.equal(rowSums(pr), c(1, 1))))
+check("a perfectly predicted cell keeps the other categories possible", all(pr[, 2:3] > 0.001) && all(pr[, 1] > 0.9))
+one_gap <- cell_miss
+one_gap[32] <- FALSE
+one_trait <- cell_trait
+one_trait[32] <- "a"
+pr1 <- polyreg_probs(droplevels(one_trait[!one_gap]), cell_x, one_gap)
+check("and with one missing case (where mice leaves the records out)", nrow(pr1) == 1 && all(pr1[, 2:3] > 0.001))
+cell_two <- factor(ifelse(cell_trait == "a", "a", "b"), levels = c("a", "b"))
+pr2 <- polyreg_probs(droplevels(cell_two[!cell_miss]), cell_x, cell_miss)
+check("and with two levels", ncol(pr2) == 2 && all(pr2[, 2] > 0.001) && isTRUE(all.equal(rowSums(pr2), c(1, 1))))
+set.seed(9)
+drawn <- unlist(lapply(1:400, function(i) as.character(draw_logreg(cell_two, design(cell), cell_miss))))
+check("the logistic draw is guarded too: the cell's other level is drawn, but rarely",
+      any(drawn == "b") && mean(drawn == "b") < 0.1)
+pr0 <- polyreg_probs(droplevels(cell_trait[!cell_miss]), cell_x[, 0, drop = FALSE], cell_miss)
+check("with no predictors, the observed shares",
+      isTRUE(all.equal(pr0[1, ], as.vector(table(cell_trait[!cell_miss])) / sum(!cell_miss))))
+check("multinomial draws on a sparse cell stay within the levels",
+      all(vapply(1:20, function(i) all(draw_polyreg(cell_trait, cell, cell_miss) %in% c("a", "b", "c")), logical(1))))
+
+# SA6 on a group too small for its estimators: no value and a note saying why, never a stop
+tiny <- data.frame(entry_day = c(10, 50, 200), exit_day = c(400, 300, 900), event = c(0, 1, 0))
+tr <- transformation_row(tiny, "A")
+check("a group too small for the transformation model gets no values", is.na(tr$median_transformation) && is.na(tr$a))
+check("and a warning that says so", startsWith(tr$warning, "transformation model not fitted:"))
+kr <- kendall_row(tiny, "no such estimator", "A")
+check("an estimator that stops gives no tau and no flag", is.na(kr$tau) && is.na(kr$flagged))
+check("and says why", startsWith(kr$tau_note, "the estimator stopped:"))
+kr <- kendall_row(tiny[0, ], "MB", "A")
+check("no standard error: neither flagged nor cleared", is.na(kr$flagged) && kr$tau_note == "no standard error, so no interval")
+g <- data.frame(entry_day = c(0, 5, 12, 20, 33, 41, 58, 64, 77, 90, 102, 130),
+                exit_day = c(300, 95, 410, 260, 120, 515, 200, 380, 160, 610, 240, 450),
+                event = c(1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0))
+kr <- kendall_row(g, "MB", "A")
+check("a group with an interval is flagged or cleared, with no note", identical(kr$flagged, FALSE) && kr$tau_note == "")
+check("and the transformation model is fitted", !is.na(transformation_row(g, "A")$median_transformation))
+
+# A group the settings describe only: its comparison says so, not "smallest group"; its own estimates keep labels
+LABELS <- c(LABELS, list(not_compared = "not compared (smallest group)", described = "described, not labeled (%s)",
+                         all_patients = "all patients", median_not_reached = "not reached", unstable = "unstable"))
+set.seed(3)
+b <- data.frame(quantity = "rmst_contrast_change", group = c("A", "A vs Ref"), value = c(3, 3))
+bt <- data.frame(quantity = "rmst_contrast_change", group = rep(c("A", "A vs Ref"), each = 20), value = 3 + rnorm(40, 0, 0.1))
+d1_short <- data.frame(comparison = "A vs Ref", decision = "describe")
+SPEC$settings_described <- list(`A vs Ref` = "settings")
+lab <- bias_table(b, bt, d1_short)
+check("a comparison the settings describe says so", lab$label[lab$group == "A vs Ref"] == "described, not labeled (settings)")
+check("and the group's own estimate keeps its label", lab$label[lab$group == "A"] == "clearly material")
+SPEC$settings_described <- NULL
+lab <- bias_table(b, bt, d1_short)
+check("otherwise a comparison not compared is the smallest group's", lab$label[lab$group == "A vs Ref"] == "not compared (smallest group)")
+
 # The mice engine, where mice loads (on Windows, Smart App Control can block a DLL it needs)
 if (isTRUE(tryCatch(requireNamespace("mice", quietly = TRUE), error = function(e) FALSE))) {
   SPEC$missing_data$model$engine <- "mice"

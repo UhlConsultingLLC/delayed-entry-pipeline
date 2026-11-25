@@ -61,8 +61,9 @@ raw_mutation:
     HGVSp_Short: VARCHAR
     Tumor_Sample_Barcode: VARCHAR
 
-# Fusions, in cBioPortal's fusion format: one row per gene in each fusion, so a fusion of two genes has a row
-# for each, with the fusion's description in Fusion. Only these three columns are read.
+# Fusions, in cBioPortal's fusion format: a row for each fused gene the panel reads, with the fusion's description
+# in Fusion (DFCI writes each with its own gene first: "A-B" under A, "B-A" under B; a partner off the panel
+# has no row). Only these three columns are read.
 raw_fusion:
   file: data_fusions.txt
   folder: genomic

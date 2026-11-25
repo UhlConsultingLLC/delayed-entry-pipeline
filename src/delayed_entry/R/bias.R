@@ -125,8 +125,12 @@ label_bias <- function(estimate, lower, upper, bar, center = 0) {
 # comparison (the Python side decides it from counts): a comparison not compared gets no label, and neither does
 # a group or comparison in `described` (named: why it is described) or a group in `unstable` (its corrected risk
 # set never reaches the stability size). A group whose median isn't reached is summarized by RMST instead.
-# "All patients" is described, not labeled.
+# "All patients" is described, not labeled. The comparison of a group the settings describe only
+# (SPEC$settings_described, by comparison name) is described for that reason in every analysis, not "not compared
+# (smallest group)"; the group's own estimates keep whatever `described` says.
 bias_table <- function(bias, boot, d1, grouping = GENOTYPE, described = character(), unstable = character()) {
+  by_settings <- named_text(SPEC$settings_described)
+  described <- c(described, by_settings[setdiff(names(by_settings), names(described))])
   t <- merge(bias[, c("quantity", "group", "value")], percentile_ci(boot), by = c("quantity", "group"), all.x = TRUE)
   names(t)[names(t) == "value"] <- "estimate"
   t$bar <- unname(BARS[t$quantity])

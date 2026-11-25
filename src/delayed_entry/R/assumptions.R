@@ -8,6 +8,8 @@
 #   interval, for the whole cohort and each group, by each estimator the spec names; a group whose interval
 #   excludes 0 is flagged, and estimators that disagree are reported. Each group's survival is also re-estimated
 #   with the transformation-model estimator for dependent truncation (tranSurv::trSurvfit): medians only.
+#   A group too small for an estimator (a few patients or deaths) gets no value and a note saying why, and the
+#   step goes on: tau_note on the tau rows (no interval, so neither flagged nor cleared), warning on the medians.
 MEDIAN_TOL <- sqrt(.Machine$double.eps)   # the tolerance survival uses for a curve "exactly" at 0.5
 
 # ---- Proportional hazards ----
@@ -49,15 +51,29 @@ quasi_independence <- function(cohort, grouping = GENOTYPE) {
   groups <- c(list(x), lapply(levels(x$group), function(g) x[x$group == g, ]))
   names(groups) <- c(ALL_PATIENTS, levels(x$group))
   rows <- list()
-  for (est in SPEC$tau_estimators) for (g in names(groups)) {
-    d <- groups[[g]]
-    k <- tranSurv::cKendall(trun = d$entry_day, obs = d$exit_day, delta = d$event, method = est)
-    rows[[length(rows) + 1]] <- data.frame(estimator = est, group = g, tau = k$PE, se = k$SE,
-                                           lower = k$PE - Z * k$SE, upper = k$PE + Z * k$SE, p = k$p.value,
-                                           flagged = (k$PE - Z * k$SE > 0) | (k$PE + Z * k$SE < 0))
-  }
+  for (est in SPEC$tau_estimators) for (g in names(groups)) rows[[length(rows) + 1]] <- kendall_row(groups[[g]], est, g)
   do.call(rbind, rows)
 }
+
+# One group's tau by one estimator. flagged is NA when there is no interval: the estimator failed, or gave no
+# standard error.
+kendall_row <- function(d, est, g) {
+  k <- tryCatch(tranSurv::cKendall(trun = d$entry_day, obs = d$exit_day, delta = d$event, method = est),
+                error = function(e) e)
+  if (inherits(k, "error")) {
+    return(data.frame(estimator = est, group = g, tau = NA_real_, se = NA_real_, lower = NA_real_, upper = NA_real_,
+                      p = NA_real_, flagged = NA, tau_note = paste("the estimator stopped:", one_line(conditionMessage(k)))))
+  }
+  pe <- as.numeric(k$PE)[1]
+  se <- as.numeric(k$SE)[1]
+  p <- if (length(k$p.value)) as.numeric(k$p.value)[1] else NA_real_
+  ok <- is.finite(pe) && is.finite(se)
+  data.frame(estimator = est, group = g, tau = pe, se = se, lower = pe - Z * se, upper = pe + Z * se, p = p,
+             flagged = if (ok) (pe - Z * se > 0) | (pe + Z * se < 0) else NA,
+             tau_note = if (ok) "" else "no standard error, so no interval")
+}
+
+one_line <- function(x) trimws(gsub("\\s+", " ", x))
 
 # The median read off any step curve: the earliest time at or below 0.5, or the midpoint of a stretch at exactly
 # 0.5 (within survival's tolerance).
@@ -75,13 +91,22 @@ median_from_curve <- function(times, surv, tol = MEDIAN_TOL) {
 # the fitted transformation parameter a. tranSurv's warnings are kept.
 transformation_medians <- function(cohort, grouping = GENOTYPE) {
   x <- analysis_frame(cohort, grouping)
-  do.call(rbind, lapply(levels(x$group), function(g) {
-    d <- x[x$group == g, ]
-    r <- with_warnings(tranSurv::trSurvfit(trun = d$entry_day, obs = d$exit_day, delta = d$event))
-    s <- r$value$surv
-    data.frame(group = g, a = r$value$byTau$par[1],
-               median_transformation = within_cap(median_from_curve(s$Time, s$trSurv)) / DAYS_PER_MONTH,
-               median_km = within_cap(median_from_curve(s$Time, s$kmSurv)) / DAYS_PER_MONTH,
-               warning = paste(unique(r$warnings), collapse = "; "))
-  }))
+  do.call(rbind, lapply(levels(x$group), function(g) transformation_row(x[x$group == g, ], g)))
+}
+
+# One group's row. A group the model can't be fitted to (tranSurv stops, as it does for a few patients) gets no
+# values and a warning that starts "transformation model not fitted".
+transformation_row <- function(d, g) {
+  r <- with_warnings(tryCatch(tranSurv::trSurvfit(trun = d$entry_day, obs = d$exit_day, delta = d$event),
+                              error = function(e) e))
+  if (inherits(r$value, "error")) {
+    why <- paste("transformation model not fitted:", one_line(conditionMessage(r$value)))
+    return(data.frame(group = g, a = NA_real_, median_transformation = NA_real_, median_km = NA_real_,
+                      warning = paste(c(why, unique(r$warnings)), collapse = "; ")))
+  }
+  s <- r$value$surv
+  data.frame(group = g, a = r$value$byTau$par[1],
+             median_transformation = within_cap(median_from_curve(s$Time, s$trSurv)) / DAYS_PER_MONTH,
+             median_km = within_cap(median_from_curve(s$Time, s$kmSurv)) / DAYS_PER_MONTH,
+             warning = paste(unique(r$warnings), collapse = "; "))
 }
