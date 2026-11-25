@@ -183,8 +183,9 @@ settings file, with who made it and the source behind it:
   aimed at a recognized driver; and a fusion row counts when it names a second gene, so a rearrangement inside
   ALK, ROS1 or RET stays in the reference. Every numbered question is now decided, and so (2026-11-24) are the
   choices carried from the CRC plan (the dry run's C2), all kept but the last year band, now "2016 or later",
-  and those never put as questions, confirmed as drafted. Of the settings' choices, only the registered plan is
-  left; the checks before the lock are in `docs/NEXT_STEPS.md`.
+  and those never put as questions, confirmed as drafted. The last choice, the registered plan, was decided the
+  same day: the OSF registration's link goes in the provenance log, not in the settings, so every choice is now
+  decided. The settings are registered on OSF and then locked before any NSCLC file is downloaded.
 - A value may be the word `default`, which takes the documented default in
   `src/delayed_entry/defaults.yml`. The screen and the locked plan list every default used, with its
   source. Choices specific to a study (cohort rules, groups, coverage, horizon, analyses, privacy minimum)

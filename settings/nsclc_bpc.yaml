@@ -41,7 +41,7 @@ study:
     source: >-
       Decided 2026-11-24 (not a numbered question): this file and docs/nsclc_settings_review.md are registered as
       they are locked, so the link, which exists only once they are registered, can't be in this file; it goes in
-      the provenance log (NEXT_STEPS step 7).
+      the provenance log.
     note: >-
       Text only: the run report prints it as the registered plan. The provenance log's row gives the
       registration's date and link, the pipeline version and this file's SHA-256, which must equal the settings
@@ -497,7 +497,7 @@ genotype:
         capture panel covers BRAF V600, ERBB2 exon 20 and MET exon 14's coding bases, and MSK and VICC keep only about
         10-13 bases of MET intron (GENIE 20.0-public genomic_information.txt). A ROS1 or RET fusion leaves No
         recognized driver only where the first panel targets the intron where the gene breaks; the coverage rule
-        doesn't check this (stated, NEXT_STEPS 6a (d), 2026-11-24). ROS1 breaks mostly in intron 31 (SLC34A2- and
+        doesn't check this (a stated limitation, 2026-11-24). ROS1 breaks mostly in intron 31 (SLC34A2- and
         SDC4-ROS1; Davies KD et al., Clin Cancer Res 2012;18:4570-4579) and also in introns 33 and 34 (such as
         CD74-ROS1; Benayed R et al., Clin Cancer Res 2019;25:4712-4722); RET mostly in intron 11, sometimes 10 or 7
         (KIF5B-RET: Kohno T et al., Nat Med 2012;18:375-377; Lipson D et al., Nat Med 2012;18:382-384; KIF5B- and
