@@ -86,7 +86,7 @@ def test_the_nsclc_settings_load_and_every_choice_is_decided():
     """Every numbered question, the coverage setting, C1, the fusion rows, question 2's scope, item C2, the
     choices never put as questions and the registered plan are decided (the last on 2026-11-24). The registered
     plan points to the provenance log, where the registration's link goes, so the link stays out of the file
-    that is registered and locked (step 7). The log is published only after the lock, so it isn't read here."""
+    that is registered and locked. The log is published only after the lock, so it isn't read here."""
     s = load_settings(ROOT / "settings" / "nsclc_bpc.yaml")
     assert s.read("source.genie_bpc.cohort") == "nsclc_v2.0"
     plan = s.read("study.registered_plan")
@@ -228,8 +228,8 @@ ERBB2_EXCEPT = ["p.S310A", "p.S310C", "p.S310P", "p.S310T",
 
 
 def test_the_nsclc_checks_before_the_lock_leave_no_citation_open_and_change_no_rule():
-    """The checks before the lock (NEXT_STEPS 6a (a), (b) and (d) and the citations; the dry run's C5), decided
-    2026-11-24: sources and notes only. No source or note still calls a citation to check or to confirm; the ERBB2
+    """The checks before the lock (transcripts, the MET splice guard, ROS1/RET detection and the citations; the dry
+    run's C5), decided 2026-11-24: sources and notes only. No source or note still calls a citation to check or to confirm; the ERBB2
     except lists stay as they were (the excepted changes a cited source supports are stated, not counted), and the
     MET rules still read Splice_Site, not Splice_Region (stated)."""
     s = load_settings(ROOT / "settings" / "nsclc_bpc.yaml")

@@ -155,9 +155,9 @@ settings file, with who made it and the source behind it:
   Both write the same commented file. The CRC settings come back unchanged through either.
 - `settings/nsclc_bpc.yaml`: the NSCLC settings (GENIE BPC NSCLC v2.0-public), decided, not yet registered
   or locked. As in the CRC study, the study author decides each choice from cited published sources; there
-  is no clinical review (a stated limitation). The open questions and their answers will be published once
-  the settings are locked. Decided so far: only patients first sequenced on a panel that can
-  detect ALK fusions are assignable, since a DNA panel finds ALK fusions only if it tiles ALK's introns. The
+  is no clinical review (a stated limitation). The questions and their answers are registered on OSF with the
+  settings, and published here once the settings are locked. Decided: only patients first sequenced on a panel
+  that can detect ALK fusions are assignable, since a DNA panel finds ALK fusions only if it tiles ALK's introns. The
   release's eight capture panels do; its three hotspot panels, UHN's two among them, don't. So the ALK
   sensitivity analysis, SA12 (subset rule `fusion_detecting_panel`), would repeat the primary analysis and is
   switched off, as is SA11 (without UHN). PD-L1 is left out (2026-11-23) and named as later work. The

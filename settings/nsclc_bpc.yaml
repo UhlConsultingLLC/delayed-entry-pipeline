@@ -1,11 +1,11 @@
 # Settings for an NSCLC delayed-entry study on GENIE BPC NSCLC v2.0-public.
 #
-# Every choice is decided (the last on 2026-11-24). Every choice was drafted by the study author from the
-# release's documentation and published sources and decided by the study author, as the CRC BPC study's
-# author did. There is no clinical review (design plan, question E, reversed 2026-11-20): that is a stated
-# limitation of the study. Each entry's source says where it comes from; "carried from the CRC plan" marks a
-# value taken over from the registered CRC BPC study (osf.io/eyq6b) for want of a lung-specific source. The
-# questions, with the alternatives and the answers, are in docs/nsclc_settings_review.md.
+# Every choice is decided (the last on 2026-11-24). Every choice was decided by the study author from the
+# release's documentation and published sources, as in the CRC BPC study. There is no clinical review (design
+# plan, question E, reversed 2026-11-20): that is a stated limitation of the study. Each entry's source says
+# where it comes from; "carried from the CRC plan" marks a value taken over from the registered CRC BPC study
+# (osf.io/eyq6b) for want of a lung-specific source. The questions, with the alternatives and the answers, are in
+# docs/nsclc_settings_review.md.
 #
 # This file and the questions document are registered on OSF, and this file is then locked, before the clinical
 # and genomic files are downloaded. The registration's link is in the provenance log
@@ -861,9 +861,10 @@ missing_data:
       Question 11, decided 2026-11-24: the CRC plan, section 9 (the event indicator, the Nelson-Aalen cumulative
       hazard with delayed entry and the entry time in the imputation model; Rubin's rules; each bootstrap
       resample imputed once; point estimates averaged across the imputations). The pipeline's own
-      chained-equations engine, since the mice engine can't load on this machine; donors and iterations at
-      mice's defaults, since the CRC plan said only "with mice"; the group included, since it is in every
-      analysis model; multinomial draws (polyreg) for categories, since center and smoking have three levels.
+      chained-equations engine, since the mice engine couldn't be run in the study's computing environment;
+      donors and iterations at mice's defaults, since the CRC plan said only "with mice"; the group included,
+      since it is in every analysis model; multinomial draws (polyreg) for categories, since center and smoking
+      have three levels.
     note: >-
       Set in advance: across all 1,846 v2.0-public patients, histology is Unknown for 257 (14%) (Choudhury NJ
       et al., Clin Cancer Res 2023, Table 1; reading Unknown there as a blank field is an inference), and
