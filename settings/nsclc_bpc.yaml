@@ -1,9 +1,8 @@
 # Settings for an NSCLC delayed-entry study on GENIE BPC NSCLC v2.0-public.
 #
-# Every choice is decided (the last on 2026-11-24). Every choice was decided by the study author from the
-# release's documentation and published sources, as in the CRC BPC study. There is no clinical review (design
-# plan, question E, reversed 2026-11-20): that is a stated limitation of the study. Each entry's source says
-# where it comes from; "carried from the CRC plan" marks a value taken over from the registered CRC BPC study
+# Every choice is decided (the last on 2026-11-24). Every choice was decided by the study author, from the
+# sources each entry names, as in the CRC BPC study. There is no clinical review (design plan, question E,
+# reversed 2026-11-20): that is a stated limitation of the study. Each entry's source says where it comes from; "carried from the CRC plan" marks a value taken over from the registered CRC BPC study
 # (osf.io/eyq6b) for want of a lung-specific source. The questions, with the alternatives and the answers, are in
 # docs/nsclc_settings_review.md.
 #
@@ -685,9 +684,9 @@ labels:
       rows only "clearly material" counts as material bias; "material" is reported with its interval as "past
       the bar; chance not excluded"; a group's own overstatement is read as in the CRC plan, section 11. This is
       a design difference from the CRC study: its plan (section 11) counted either label as material bias, and
-      its README found both its comparisons material only through "material" labels (RAS-mutant's RMST-gap
-      change 2.7 months, interval 0.6 to 5.8; BRAF V600E's HR ratio 1.15, 0.93 to 1.39), which this rule would
-      not count. Why: on made-up data with no true difference between groups, a comparison's RMST-gap change
+      its results (not yet published) found both its comparisons material only through "material" labels
+      (RAS-mutant's RMST-gap change 2.7 months, interval 0.6 to 5.8; BRAF V600E's HR ratio 1.15, 0.93 to 1.39),
+      which this rule would not count. Why: on made-up data with no true difference between groups, a comparison's RMST-gap change
       passed the 2-month bar 22-30% of the time with long delays (median about 3.2 months) and 8-11% with short
       ones (about 1.3 months); a bar near 5 months would bring that near 5%, more than the clinically
       meaningful gain itself (the dry run, question 8).
@@ -704,8 +703,8 @@ smallest_group:
     made_by: NSCLC study author
     source: "question 13, decided 2026-11-24 (option B): carried from the CRC plan, section 5 (D1)"
     note: >-
-      The CRC plan states 30 with no reason (section 5, D1; its run workplan: no power calculation, the sample
-      fixed by the release). Kept: it is a feasibility gate, not a guard against chance labels, which the dry
+      The CRC plan states 30 with no reason (section 5, D1; its workplan, not yet published: no power calculation,
+      the sample fixed by the release). Kept: it is a feasibility gate, not a guard against chance labels, which the dry
       run's question 5 simulation found at 80-190 patients too (question 8, decided 2026-11-24, answers them
       with its reading rule); a higher floor would mainly describe ALK fusion.
   if_short:
