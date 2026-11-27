@@ -301,7 +301,7 @@ def test_the_rehearsal_download_check_passes_on_nsclc_shaped_files(nsclc_files, 
     assert names["The labels a cohort rule matches on histology appear as the rule compares them"] == cd.PASS
 
 
-# ---- 6a (o): the label check is gene-aware ----
+# ---- The label check is gene-aware ----
 def test_a_met_splice_label_moved_to_another_gene_stops_the_download_check(nsclc_files, tmp_path):
     """MET's p.X1010_splice guard holds only if the label is in a MET call: the made-up MET call moved to EGFR (a
     gene the groups name) FAILs, though the label is still in the file; a MET call of another kind keeps MET in it."""
@@ -321,7 +321,7 @@ def test_a_met_splice_label_moved_to_another_gene_stops_the_download_check(nsclc
     assert unchanged[label.name].status == cd.PASS
 
 
-# ---- 6a (q): the transcript check ----
+# ---- The transcript check ----
 TRANSCRIPTS = {"MET": "ENST00000397752", "EGFR": "ENST00000275493", "ERBB2": "ENST00000269571",
                "KRAS": "ENST00000256078", "BRAF": "ENST00000288602"}
 RULE_GENES = ["BRAF", "EGFR", "ERBB2", "KRAS", "MET"]
@@ -400,7 +400,7 @@ def test_a_gene_with_no_expected_transcript_or_a_file_with_no_transcripts(nsclc_
     assert cd.check_transcripts(con, set(), {"genes": ["EGFR"]}, None, False, cd.Shower(11))[0].status == cd.SKIPPED
 
 
-# ---- 6a (p): each group rule's matches, report only ----
+# ---- Each group rule's matches, report only ----
 def test_the_download_check_counts_each_group_rule_and_never_fails_on_it(nsclc_files, tmp_path):
     path = nsclc_settings_file(tmp_path, {})
     checks = cd.run_checks(nsclc_files, nsclc_files, tmp_path, path, rehearsal=True)
@@ -431,7 +431,7 @@ def test_the_rule_counts_wait_for_the_trial_build_and_mask_small_codon_counts(ns
     assert cd.counts_unless_small({12: 30, 13: 2}, cd.Shower(11)) == "12, 13"     # 13's count would follow
 
 
-# ---- 6a (r): fusion genes no panel is checked for ----
+# ---- Fusion genes no panel is checked for ----
 UNCHECKED = "but the coverage rule doesn't require"
 
 
@@ -521,7 +521,7 @@ def test_size_and_md5_are_read_from_either_place():
     assert srl.size_and_md5(Newer()) == (20, "b" * 32)
 
 
-# ---- Calls no rule can read, and fusions in genes no fusion rule names (6a (g) and (i)) ----
+# ---- Calls no rule can read, and fusions in genes no fusion rule names ----
 def with_unreadable_calls(nsclc_files, nsclc, folder):
     """A copy of the made-up files where four made-up reference patients gain one call each that no rule reads:
     an EGFR deletion with its class written In_Frame_DEL, an EGFR call with a blank class, an EGFR deletion with
@@ -574,7 +574,7 @@ def test_the_made_up_files_as_they_are_have_no_unreadable_driver_calls(nsclc_fil
     assert not rep.find(topic="driver calls the rules can't read") and not rep.find(topic="fusions no rule reads")
 
 
-# ---- The overlapping-groups note, split by gene (6a (h)) ----
+# ---- The overlapping-groups note, split by gene ----
 def test_the_screen_splits_overlaps_into_different_genes_and_one_gene(nsclc_files, nsclc, tmp_path):
     """Two made-up reference patients gain two drivers each: EGFR L858R with T790M (one gene, read by EGFR common
     and Other recognized driver) and EGFR L858R with KRAS G12C (two genes). Each part is counted on its own."""

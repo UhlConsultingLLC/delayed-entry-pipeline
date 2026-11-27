@@ -154,8 +154,8 @@ settings file, with who made it and the source behind it:
 
   Both write the same commented file. The CRC settings come back unchanged through either.
 - `settings/nsclc_bpc.yaml`: the NSCLC settings (GENIE BPC NSCLC v2.0-public), decided, not yet registered
-  or locked. As in the CRC study, the study author decides each choice from cited published sources; there
-  is no clinical review (a stated limitation). The questions and their answers are registered on OSF with the
+  or locked. As in the CRC study, the study author decides each choice from the sources each entry names; there
+  is no clinical review (a stated limitation). The questions and their answers will be registered on OSF with the
   settings, and published here once the settings are locked. Decided: only patients first sequenced on a panel
   that can detect ALK fusions are assignable, since a DNA panel finds ALK fusions only if it tiles ALK's introns. The
   release's eight capture panels do; its three hotspot panels, UHN's two among them, don't. So the ALK
@@ -182,10 +182,10 @@ settings file, with who made it and the source behind it:
   described only and imputation set in advance; the screen counts reference patients who received a drug
   aimed at a recognized driver; and a fusion row counts when it names a second gene, so a rearrangement inside
   ALK, ROS1 or RET stays in the reference. Every numbered question is now decided, and so (2026-11-24) are the
-  choices carried from the CRC plan (the dry run's C2), all kept but the last year band, now "2016 or later",
+  choices carried from the CRC plan (item C2 of the dry run, published after the lock), all kept but the last year band, now "2016 or later",
   and those never put as questions, confirmed as drafted. The last choice, the registered plan, was decided the
   same day: the OSF registration's link goes in the provenance log, not in the settings, so every choice is now
-  decided. The settings are registered on OSF and then locked before any NSCLC file is downloaded.
+  decided. The settings will be registered on OSF and then locked before any NSCLC file is downloaded.
 - A value may be the word `default`, which takes the documented default in
   `src/delayed_entry/defaults.yml`. The screen and the locked plan list every default used, with its
   source. Choices specific to a study (cohort rules, groups, coverage, horizon, analyses, privacy minimum)
@@ -307,7 +307,7 @@ their reasons with the registered study's design gate (`scripts/crc_bpc_phase1_e
 python scripts/acceptance_phase2.py <CRC BPC repository> <the run's output folder>
 ```
 
-It compares every table of the CRC study's published `outputs/` with the run's, row by row, and checks each
+It compares every table of the CRC study's `outputs/` (not yet published) with the run's, row by row, and checks each
 number its README's Results section quotes (read from the README when it runs, so none is stored here).
 Passed on 2026-11-16, on the CRC plan locked that day: every count, estimate, interval, label, privacy
 decision, curve and the figure's curves and numbers at risk match. What differs is wording only (the general
@@ -318,7 +318,7 @@ general cohort code counts, and one note that says why a blank pass 3b interval 
 ## Layout
 
 ```
-settings/                 the CRC settings and the blank template
+settings/                 the CRC and NSCLC settings and the blank template
 scripts/                  the phase 1 and phase 2 acceptance checks (local data only), the Synapse download
                           and release list, and the Markdown-to-Word converter for documents sent outside
 src/delayed_entry/
@@ -344,8 +344,8 @@ tests/                    made-up data only; fixtures/ holds the CRC project's m
 
 ## Known limits
 
-- The NSCLC settings have no clinical review: the study author decides each choice from cited published
-  sources, as for the CRC study.
+- The NSCLC settings have no clinical review: the study author decides each choice from the sources each
+  entry names, as for the CRC study.
 - GENIE BPC releases hold no panel coverage or size file. The main GENIE releases hold `genomic_information.txt`
   for the same panels. Placed in the genomic folder, the adapter reads it for panel sizes when the settings give the
   rule (`source.genie_bpc.panel_sizes`): the panel's regions of the listed feature types, only those marked
@@ -387,7 +387,7 @@ tests/                    made-up data only; fixtures/ holds the CRC project's m
   each extra field the adapter carries that the model doesn't use. A source-specific description (for
   example how the year of diagnosis was worked out) needs that field in the standard tables first.
 - R's point estimates are not re-derived in Python (the CRC study did that for passes 1 and 2); the phase 2
-  acceptance check against the CRC study's published results stands in for it.
+  acceptance check against the CRC study's results (not yet published) stands in for it.
 
 ## Data and attribution
 

@@ -184,7 +184,7 @@ def test_the_described_only_groups_comparison_says_the_settings_describe_it(nscl
 
 
 def test_the_run_splits_the_overlap_count_by_gene(nsclc_run):
-    """6a (h): the NSCLC groups share EGFR, so descriptives.csv gives the overlaps through calls in different genes
+    """The NSCLC groups share EGFR, so descriptives.csv gives the overlaps through calls in different genes
     and in one gene, each masked on its own; the total only when neither part is masked."""
     base, _, _, _ = nsclc_run
     d = pd.read_csv(base / "out" / "descriptives.csv", keep_default_na=False)
@@ -200,7 +200,7 @@ def test_the_run_splits_the_overlap_count_by_gene(nsclc_run):
 
 
 def test_the_nsclc_shaped_run_imputes(nsclc_run):
-    """6a (m): about a sixth of the made-up patients have smoking Unknown, so the run imputes (question 11's model)."""
+    """About a sixth of the made-up patients have smoking Unknown, so the run imputes (question 11's model)."""
     base, _, _, summary = nsclc_run
     check = next(c for c in summary["checks"] if c["check"] == "the adjustment variables")
     assert check["verdict"] == "applied"
@@ -212,7 +212,7 @@ def test_the_nsclc_shaped_run_imputes(nsclc_run):
 
 
 def test_a_sparse_genotype_by_smoking_cell_still_imputes_and_publishes(sparse_run):
-    """6a (m): every made-up ALK fusion patient with a known smoking value is "Never used". The multinomial draw's
+    """Every made-up ALK fusion patient with a known smoking value is "Never used". The multinomial draw's
     guard against perfect prediction (mice's augmenting records; checked in tests/R/test_r_units.R) keeps the other
     categories possible for the cell's two Unknown patients; the run finishes and passes the gate."""
     base, alk, summary = sparse_run

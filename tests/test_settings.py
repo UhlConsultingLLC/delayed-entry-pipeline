@@ -229,9 +229,9 @@ ERBB2_EXCEPT = ["p.S310A", "p.S310C", "p.S310P", "p.S310T",
 
 def test_the_nsclc_checks_before_the_lock_leave_no_citation_open_and_change_no_rule():
     """The checks before the lock (transcripts, the MET splice guard, ROS1/RET detection and the citations; the dry
-    run's C5), decided 2026-11-24: sources and notes only. No source or note still calls a citation to check or to confirm; the ERBB2
-    except lists stay as they were (the excepted changes a cited source supports are stated, not counted), and the
-    MET rules still read Splice_Site, not Splice_Region (stated)."""
+    run's C5), decided 2026-11-24: sources and notes only. No source or note still calls a citation to check or to
+    confirm; the ERBB2 except lists stay as they were (the excepted changes a cited source supports are stated, not
+    counted), and the MET rules still read Splice_Site, not Splice_Region (stated)."""
     s = load_settings(ROOT / "settings" / "nsclc_bpc.yaml")
     texts = {p["choice"]: p["source"] + " " + p.get("note", "") for p in s.provenance()}
     assert not [(choice, m) for choice, text in texts.items() for m in OPEN_CITATION if m in text]

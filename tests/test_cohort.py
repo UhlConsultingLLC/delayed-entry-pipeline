@@ -243,7 +243,7 @@ def test_a_gene_written_with_a_trailing_space_still_assigns_its_group(tmp_path):
 
 
 def test_overlaps_split_by_gene_only_when_two_groups_share_a_gene():
-    """6a (h): the CRC groups share no gene, so their overlap count stays whole (today's wording); the NSCLC groups
+    """The CRC groups share no gene, so their overlap count stays whole (today's wording); the NSCLC groups
     share EGFR, so it splits into calls in different genes and calls in one gene. Made-up patients."""
     from delayed_entry.cohort import overlap_counts
     from test_nsclc_spec import NSCLC_SETTINGS

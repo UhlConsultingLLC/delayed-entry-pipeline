@@ -1,8 +1,9 @@
-"""Phase 2 acceptance (CRC BPC only): does the run reproduce the CRC BPC study's published results?
+"""Phase 2 acceptance (CRC BPC only): does the run reproduce the CRC BPC study's results (not yet published)?
 
     python scripts/acceptance_phase2.py <CRC repository> <the run's output folder>
 
-It compares every published table of the CRC study (its outputs/ folder) with the run's, row by row, and checks
+It compares every table of the CRC study's results (its outputs/ folder, not yet published) with the run's, row by
+row, and checks
 the numbers its README's Results section quotes against the run's tables. The README's numbers are read from the
 README itself when the script runs, so none is written here.
 

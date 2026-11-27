@@ -2,13 +2,15 @@
 #
 # Every choice is decided (the last on 2026-11-24). Every choice was decided by the study author, from the
 # sources each entry names, as in the CRC BPC study. There is no clinical review (design plan, question E,
-# reversed 2026-11-20): that is a stated limitation of the study. Each entry's source says where it comes from; "carried from the CRC plan" marks a value taken over from the registered CRC BPC study
-# (osf.io/eyq6b) for want of a lung-specific source. The questions, with the alternatives and the answers, are in
-# docs/nsclc_settings_review.md.
+# reversed 2026-11-20): that is a stated limitation of the study. Each entry's source says where it comes from;
+# "carried from the CRC plan" marks a value taken over from the registered CRC BPC study (osf.io/eyq6b) for want of a
+# lung-specific source. The questions, with the alternatives and the answers, are in docs/nsclc_settings_review.md.
 #
 # This file and the questions document are registered on OSF, and this file is then locked, before the clinical
 # and genomic files are downloaded. The registration's link is in the provenance log
-# (docs/provenance/nsclc_bpc_v2.0.md), not here, so the registered file and the locked file are the same file.
+# (docs/provenance/nsclc_bpc_v2.0.md), not here, so the registered file and the locked file are the same file. The
+# provenance log, the questions document and the dry run (docs/nsclc_review_dry_run.md, the record of the evidence
+# behind each answer, cited below as "the dry run") are published in this repository once this file is locked.
 # Sources cited as "data guide" are the GENIE BPC NSCLC v2.0-public Analytic Data Guide v5
 # (Synapse syn30557304); "synopsis" is the release's variable synopsis (syn30557312).
 
@@ -201,7 +203,7 @@ genotype:
     made_by: NSCLC study author
     source: >-
       Confirmed 2026-11-24 (not a numbered question): carried from the CRC plan, section 4a; spaces around a variant's
-      text are ignored when matching it, as the registered CRC code trimmed the protein change.
+      text are ignored when matching it, as the CRC study's code (not yet published) trimmed the protein change.
   groups:
     value:
       - name: EGFR common
@@ -417,8 +419,8 @@ genotype:
       every MET, EGFR, ERBB2, KRAS and BRAF row in the CRC v2.0-public release, from the same pipeline, is on these
       Ensembl transcripts. After download, and before any outcome is seen, the NSCLC file's rows for these genes are
       counted by transcript; rows on another transcript are a deviation decision, and a change to the rules is a new
-      settings version. Left in the reference, and stated: NTRK fusions; ALK, ROS1 and
-      RET rearrangements inside the gene with no second gene named (the intragenic rows); ERBB2 and MET amplification;
+      settings version. Left in the reference, and stated: NTRK fusions; ALK, ROS1 and RET rearrangements
+      inside the gene with no second gene named (the intragenic rows); ERBB2 and MET amplification;
       MET fusions; MET changes near exon 14 that stop short of the splice site's two intron bases, which the CRC
       v2.0-public release classes Splice_Region or Intron (such as polypyrimidine-tract and branch-point deletions,
       and changes 3 to 8 bases into the intron), some of which cause exon 14 skipping (Drilon A et al., Nat Med
@@ -686,9 +688,9 @@ labels:
       a design difference from the CRC study: its plan (section 11) counted either label as material bias, and
       its results (not yet published) found both its comparisons material only through "material" labels
       (RAS-mutant's RMST-gap change 2.7 months, interval 0.6 to 5.8; BRAF V600E's HR ratio 1.15, 0.93 to 1.39),
-      which this rule would not count. Why: on made-up data with no true difference between groups, a comparison's RMST-gap change
-      passed the 2-month bar 22-30% of the time with long delays (median about 3.2 months) and 8-11% with short
-      ones (about 1.3 months); a bar near 5 months would bring that near 5%, more than the clinically
+      which this rule would not count. Why: on made-up data with no true difference between groups, a comparison's
+      RMST-gap change passed the 2-month bar 22-30% of the time with long delays (median about 3.2 months) and 8-11%
+      with short ones (about 1.3 months); a bar near 5 months would bring that near 5%, more than the clinically
       meaningful gain itself (the dry run, question 8).
     note: >-
       A material comparison is reported with its interval, read as "past the bar; chance not excluded", not as
@@ -704,9 +706,9 @@ smallest_group:
     source: "question 13, decided 2026-11-24 (option B): carried from the CRC plan, section 5 (D1)"
     note: >-
       The CRC plan states 30 with no reason (section 5, D1; its workplan, not yet published: no power calculation,
-      the sample fixed by the release). Kept: it is a feasibility gate, not a guard against chance labels, which the dry
-      run's question 5 simulation found at 80-190 patients too (question 8, decided 2026-11-24, answers them
-      with its reading rule); a higher floor would mainly describe ALK fusion.
+      the sample fixed by the release). Kept: it is a feasibility gate, not a guard against chance labels, which
+      the dry run's question 5 simulation found at 80-190 patients too (question 8, decided 2026-11-24, answers
+      them with its reading rule); a higher floor would mainly describe ALK fusion.
   if_short:
     value:
       EGFR common: block
@@ -989,19 +991,17 @@ analyses:
     SA10 (nonsquamous only) is switched off: question 1 (decided 2026-11-23, option B) makes the primary
     population nonsquamous, so SA10 would repeat it. SA7 (adenocarcinoma only) still narrows it, leaving out
     Carcinoma, Other histologies/mixed tumor and blank histology, so it is the one view without blank-histology
-    patients. SA11 leaves out UHN, the one center outside the United States: its
-    sequencing window was shorter (data guide, Eligibility) and its deaths can't come from the US National
-    Death Index (synopsis, hybrid_death_source). SA11 is switched off: question 6 (decided 2026-11-22) leaves no
-    UHN patient assignable, since UHN's only panels are hotspot panels that can't detect ALK fusions, so SA11
-    would repeat the primary analysis and question 12 is settled with it. The CRC study's S1, SA8 and SA9 concerned MSI/MMR, which the NSCLC
+    patients. SA11 leaves out UHN, the one center outside the United States: its sequencing window was shorter
+    (data guide, Eligibility) and its deaths can't come from the US National Death Index (synopsis,
+    hybrid_death_source). SA11 is switched off: question 6 (decided 2026-11-22) leaves no UHN patient assignable,
+    since UHN's only panels are hotspot panels that can't detect ALK fusions, so SA11 would repeat the primary
+    analysis and question 12 is settled with it. The CRC study's S1, SA8 and SA9 concerned MSI/MMR, which the NSCLC
     pathology data don't record. SA3 (co-mutants) is left out (question 4, decided 2026-11-24, option A): the
     main groups' drivers rarely co-occur (3 of 3,625 patients in public MSK and TCGA data, all EGFR common with
     KRAS, none with ALK; genotype.groups' source), and the common case, an EGFR common tumor that also matches
-    one of Other recognized driver's EGFR rules (most often by T790M), stays EGFR common by precedence. SA12
-    keeps the
-    reference group only
-    where the entry test's panel can detect ALK fusions: in 2014-2017 ALK fusions were often found by FISH or
-    IHC rather than by DNA panels, and a DNA panel detects them only if it tiles ALK's introns, so an
+    one of Other recognized driver's EGFR rules (most often by T790M), stays EGFR common by precedence. SA12 keeps the
+    reference group only where the entry test's panel can detect ALK fusions: in 2014-2017 ALK fusions were often
+    found by FISH or IHC rather than by DNA panels, and a DNA panel detects them only if it tiles ALK's introns, so an
     ALK-positive tumor can sit unseen in the reference. The other groups keep everyone: a tumor there already
     has its driver, EGFR ranks above ALK, and ALK rarely occurs with KRAS. SA12 is switched off for this study:
     under question 6's option A (decided 2026-11-22) every assignable patient's first panel already detects ALK
@@ -1012,9 +1012,8 @@ analyses:
     KRAS group is G12C tumors without such a second call (a G12C tumor whose second KRAS call is elsewhere,
     or silent, stays). Its rule keeps the except entry for p.G12C, or it would leave out every G12C tumor.
     Its tables still name the group KRAS mutant, and its G12C comparison, like any other, can be labeled
-    material by chance. There is no PD-L1 analysis, the NSCLC
-    counterpart of the CRC study's S1
-    (question 10, decided 2026-11-23; named as later work). Most patients would be Unknown at entry: US PD-L1
+    material by chance. There is no PD-L1 analysis, the NSCLC counterpart of the CRC study's S1 (question 10,
+    decided 2026-11-23; named as later work). Most patients would be Unknown at entry: US PD-L1
     testing began with the first companion test, approved October 2, 2015, and reached about 75% of newly
     diagnosed metastatic patients only in 2017 (Velcheti V et al., PLoS One 2018), and 55% of the BPC NSCLC
     patients treated with a checkpoint inhibitor had no PD-L1 status (Liu et al., BMC Pulm Med 2024), so the
@@ -1024,11 +1023,10 @@ analyses:
     more than EGFR or ALK tumors (the first-line pembrolizumab labels exclude EGFR- and ALK-positive tumors), so
     the reference group's survival likely rose during 2015-2019 more than some driver groups'. For this
     nonsquamous population: second-line nivolumab from October 9, 2015, and first-line pembrolizumab with
-    chemotherapy from May 10, 2017. The naive and
-    corrected passes have no calendar-year term (the year bands enter only the adjusted and weighted models),
-    and in a fixed sequencing window an earlier diagnosis means a longer delay, so the era can bend
-    quasi-independence (SA6's check). A toy simulation on made-up values put the effect well under a month of
-    median survival, below the materiality bars.
+    chemotherapy from May 10, 2017. The naive and corrected passes have no calendar-year term (the year bands
+    enter only the adjusted and weighted models), and in a fixed sequencing window an earlier diagnosis means a
+    longer delay, so the era can bend quasi-independence (SA6's check). A toy simulation on made-up values put
+    the effect well under a month of median survival, below the materiality bars.
   note: >-
     PD-L1 is left out (question 10, decided 2026-11-23) and named as later work. SA10 is switched off by
     question 1 (decided 2026-11-23). SA4 is deleted by question 2 (decided 2026-11-23, option C); the other

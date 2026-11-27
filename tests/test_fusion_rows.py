@@ -63,7 +63,7 @@ def test_the_fusion_rows_and_the_scope_are_recorded_and_the_groups_decided(decid
     ([fusion("ALK", "ALK-INTRAGENIC"), fusion("ALK", "EML4-ALK fusion")], ALK),
     ([fusion("RET", "RET-INTRAGENIC"), ("mutation", "EGFR", "Missense_Mutation", "p.L858R")], COMMON),
     # only the exact texts are excepted: another spelling counts unless it is dropped, as a deviation, after the
-    # release's descriptions are listed, in the check after download
+    # release's descriptions are listed, after download and before any outcome is seen
     ([fusion("ALK", "ALK-Intragenic")], ALK),
 ], ids=case_id)
 def test_an_intragenic_row_is_not_counted_and_a_partner_named_row_is(decided, calls, group):

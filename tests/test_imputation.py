@@ -53,7 +53,7 @@ def test_too_much_missing_with_no_imputation_model_blocks_the_plan():
 
 
 def test_with_an_imputation_model_the_plan_states_it_as_a_note(tmp_path):
-    """Imputation the settings set in advance is the plan, not a departure from it (6a (l)): a note, so the primary
+    """Imputation the settings set in advance is the plan, not a departure from it: a note, so the primary
     analysis can still run as planned."""
     rep = screen(outcome_blind(tables(10)), with_model(tmp_path), bpc_profile())
     (item,) = items(rep, "missing data")

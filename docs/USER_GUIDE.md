@@ -34,8 +34,8 @@ Commands below are for Windows PowerShell. On macOS or Linux, use `/` in paths a
 
 ### 1.2 Get the code
 
-The pipeline is a local folder for now. It will be published as a public repository once phase 2's
-acceptance test passes. Nothing in the folder holds patient data, and nothing should be added that does.
+The pipeline is a public repository (https://github.com/UhlConsultingLLC/delayed-entry-pipeline); clone it
+or download a tagged version. Nothing in the folder holds patient data, and nothing should be added that does.
 
 ### 1.3 Make a Python environment
 
@@ -215,15 +215,15 @@ listed in `src/delayed_entry/adapters/genie_bpc/synapse_releases.yml`: `crc_v2.0
 ### Step 4. Check the files
 
 **GENIE BPC (available).** The check compares each downloaded file with the release list: its size and
-checksum on Synapse. For a release whose list isn't in the package yet (NSCLC v2.0-public so far), make it
-once, from Synapse's metadata, without downloading anything (it needs an approved account, like the
-download):
+checksum on Synapse. NSCLC v2.0-public's list is in the package (made from Synapse's metadata on 2026-11-13).
+For a release whose list isn't, make it once, from Synapse's metadata, without downloading anything (it needs
+an approved account, like the download):
 
 ```powershell
-python scripts\synapse_release_list.py nsclc_v2.0
+python scripts\synapse_release_list.py <release>
 ```
 
-It writes `src\delayed_entry\adapters\genie_bpc\cohorts\nsclc_v2.0\release_files.yml`. Then, right after
+It writes `src\delayed_entry\adapters\genie_bpc\cohorts\<release>\release_files.yml`. Then, right after
 downloading:
 
 ```powershell
@@ -472,8 +472,8 @@ The last line should read `RESULT: PASS`.
 
 ### The phase 2 acceptance check
 
-After a run of the CRC plan (step 8), this compares the run's outputs with the CRC BPC study's published
-`outputs/` and the numbers its README's Results section quotes. It prints only labels and match or differ:
+After a run of the CRC plan (step 8), this compares the run's outputs with the CRC BPC study's own
+`outputs/` (not yet published) and the numbers its README's Results section quotes. It prints only labels and match or differ:
 
 ```powershell
 python scripts\acceptance_phase2.py <CRC BPC repository> <the run's output folder>

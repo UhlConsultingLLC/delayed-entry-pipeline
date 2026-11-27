@@ -390,7 +390,7 @@ def test_a_differently_written_protein_change_stops_it(release):
 
 
 def test_a_protein_change_found_only_in_another_gene_stops_it(release):
-    """6a (o): the label check is gene-aware. Every made-up p.V600E moved from BRAF to NRAS (a gene the groups name,
+    """The label check is gene-aware. Every made-up p.V600E moved from BRAF to NRAS (a gene the groups name,
     so the gene checks still pass) leaves the BRAF rule's label in no BRAF call."""
     assert release.status("The protein changes the groups name") == cd.PASS
     release.edit_text(MUTATION, "BRAF\tMissense_Mutation\tp.V600E", "NRAS\tMissense_Mutation\tp.V600E")

@@ -1,6 +1,6 @@
 # Design plan: a general pipeline for survival by genotype with delayed entry
 
-Status: DRAFT for review, 2026-11-13. Nothing is built until this plan is approved. The five open questions were settled on 2026-11-13 (section 14).
+Status: drafted for review on 2026-11-13, and since built (the README says what is done). The five open questions were settled on 2026-11-13 (section 14); question E was reversed on 2026-11-20.
 
 ## 0. What it is, and what it is not
 
@@ -219,7 +219,7 @@ A new package folder, `Portfolio_Projects/delayed-entry-pipeline/`, built locall
 - Made-up data for every adapter, rule, deviation and check, built with the CRC project's synthetic-data approach.
 - **The screen never reads outcomes:** scrambled outcomes give the same readiness report.
 - **The safety gate:** a test for each of the five protections, built from the cases the CRC project found.
-- **Acceptance test:** with the CRC settings and the GENIE BPC adapter, the pipeline reproduces the CRC project's published `outputs/`. It runs on your machine only, against the data already there, and prints only pass or fail.
+- **Acceptance test:** with the CRC settings and the GENIE BPC adapter, the pipeline reproduces the CRC project's own `outputs/` (not yet published). It runs on your machine only, against the data already there, and prints only pass or fail.
   - Point estimates, counts, labels and the privacy decisions must match exactly.
   - Bootstrap intervals and robust Cox intervals match exactly only if the R parts are kept (section 8, question B). Otherwise they are checked for closeness, within what resampling noise allows.
 

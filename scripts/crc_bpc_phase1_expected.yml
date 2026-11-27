@@ -1,5 +1,6 @@
 # Phase 1 acceptance: what the readiness screen must find on the real GENIE BPC CRC v2.0-public data with
-# the CRC settings. Taken from the CRC BPC project's provenance log, "the design gate (workplan step 5.3)",
+# the CRC settings. Taken from the CRC BPC project's provenance log (not yet published), "the design gate (workplan step
+# 5.3)",
 # 2026-11-11, and its rerun the same day (three items read). Labels only: no counts.
 
 decisions:
